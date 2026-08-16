@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153f3a">
+  <title>CareRoute Pediatric — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">CareRoute</a>
+    <span class="demo-pill">Pediatric demo</span>
+  </header>
+
+  <div class="demo-warning" role="note">
+    <strong>Illustrative prototype only.</strong> Facility names, travel times, waits, hours, capabilities, and quality values are fictional demo data. Do not use this site for real medical decisions.
+  </div>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Know where to go</p>
+      <h1>A clearer route to the right kind of pediatric care.</h1>
+      <p>Answer three quick questions to see how CareRoute filters inappropriate options before ranking eligible facilities.</p>
+    </section>
+
+    <section class="panel" id="questionnaire" aria-labelledby="form-title">
+      <div class="progress"><span id="progressBar"></span></div>
+      <p class="step-label" id="stepLabel">Step 1 of 3</p>
+      <h2 id="form-title">How old is your child?</h2>
+
+      <form id="careForm">
+        <fieldset class="step active" data-step="1">
+          <legend class="sr-only">Child age</legend>
+          <div class="age-row">
+            <label><span>Age</span><input id="ageValue" type="number" min="0" max="21" step="1" value="5" required></label>
+            <label><span>Unit</span><select id="ageUnit"><option value="years">Years</option><option value="months">Months</option></select></label>
+          </div>
+          <button type="button" class="primary next">Continue</button>
+        </fieldset>
+
+        <fieldset class="step" data-step="2">
+          <legend>What seems to be going on?</legend>
+          <div class="choices">
+            <label><input type="radio" name="need" value="illness" checked><span>Fever or illness</span></label>
+            <label><input type="radio" name="need" value="breathing"><span>Breathing concern</span></label>
+            <label><input type="radio" name="need" value="injury"><span>Injury or possible fracture</span></label>
+            <label><input type="radio" name="need" value="wound"><span>Cut or wound</span></label>
+            <label><input type="radio" name="need" value="stomach"><span>Stomach symptoms</span></label>
+            <label><input type="radio" name="need" value="other"><span>Other</span></label>
+          </div>
+          <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" class="primary next">Continue</button></div>
+        </fieldset>
+
+        <fieldset class="step" data-step="3">
+          <legend>Could this be an emergency?</legend>
+          <p class="helper">This prototype does not diagnose or evaluate symptoms. Choose “yes or unsure” if emergency-level care may be needed.</p>
+          <div class="choices two">
+            <label><input type="radio" name="emergency" value="no" checked><span>No, I’m looking for available care options</span></label>
+            <label><input type="radio" name="emergency" value="yes"><span>Yes or I’m unsure</span></label>
+          </div>
+          <div class="actions"><button type="button" class="secondary back">Back</button><button type="submit" class="primary">Show demo routes</button></div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="results" class="results" hidden aria-live="polite">
+      <div class="results-head">
+        <div><p class="eyebrow">Illustrative results</p><h2>Your demo routes</h2></div>
+        <button id="startOver" class="secondary">Start over</button>
+      </div>
+      <div id="emergencyBanner" class="emergency" hidden><strong>If this may be an emergency, call 911 or seek emergency care now.</strong> CareRoute is not a substitute for professional medical advice or emergency services.</div>
+      <p class="data-note">Every facility, capability, travel time, wait estimate, quality value, and score below is invented for demonstration. Verify real information directly with a healthcare provider.</p>
+      <div id="cards" class="cards"></div>
+      <details><summary>How this demo ranks options</summary><p>First, it removes facilities that are closed, outside the child’s age range, lack required capabilities, or are not emergency departments when emergency care is selected. It then combines travel, appropriateness, wait, quality, and relevant capabilities into the CareRoute Pediatric Score v0.1. Scores are illustrative—not clinical advice.</p></details>
+    </section>
+  </main>
+
+  <footer>CareRoute Pediatric v0.1 · Concept prototype · Not for real medical decisions</footer>
+  <script src="app.js"></script>
+</body>
+</html>
