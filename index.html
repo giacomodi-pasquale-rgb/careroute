@@ -2,81 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#153f3a">
-  <title>CareRoute Pediatric — Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123c36">
+  <meta name="description" content="CareRoute helps Essex County families compare verified pediatric urgent care and emergency options.">
+  <title>CareRoute Pediatric</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#">CareRoute</a>
-    <span class="demo-pill">Pediatric demo</span>
+    <a class="brand" href="#">CareRoute<span>.</span></a>
+    <span class="pilot-pill">Essex County pilot</span>
   </header>
 
-  <div class="demo-warning" role="note">
-    <strong>Illustrative prototype only.</strong> Facility names, travel times, waits, hours, capabilities, and quality values are fictional demo data. Do not use this site for real medical decisions.
-  </div>
+  <aside class="safety-strip" role="note">
+    <strong>Not medical advice.</strong> If a child may have a life-threatening emergency, call <a href="tel:911">911</a> now.
+  </aside>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Know where to go</p>
-      <h1>A clearer route to the right kind of pediatric care.</h1>
-      <p>Answer three quick questions to see how CareRoute filters inappropriate options before ranking eligible facilities.</p>
+      <p class="eyebrow">Pediatric care navigation</p>
+      <h1>Find the right level of care—without the guesswork.</h1>
+      <p>Compare verified pediatric care options near West Orange, Livingston, Montclair, and Newark. CareRoute filters by age, care setting, and published capabilities, then adds live driving time when you share your location.</p>
+      <div class="trust-row" aria-label="Data principles">
+        <span>✓ Real facilities</span><span>✓ Source-linked facts</span><span>✓ No invented waits</span>
+      </div>
     </section>
 
     <section class="panel" id="questionnaire" aria-labelledby="form-title">
-      <div class="progress"><span id="progressBar"></span></div>
-      <p class="step-label" id="stepLabel">Step 1 of 3</p>
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <p class="step-label" id="stepLabel">Step 1 of 4</p>
       <h2 id="form-title">How old is your child?</h2>
 
       <form id="careForm">
         <fieldset class="step active" data-step="1">
           <legend class="sr-only">Child age</legend>
           <div class="age-row">
-            <label><span>Age</span><input id="ageValue" type="number" min="0" max="21" step="1" value="5" required></label>
+            <label><span>Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
             <label><span>Unit</span><select id="ageUnit"><option value="years">Years</option><option value="months">Months</option></select></label>
           </div>
           <button type="button" class="primary next">Continue</button>
         </fieldset>
 
         <fieldset class="step" data-step="2">
-          <legend>What seems to be going on?</legend>
+          <legend>What kind of concern?</legend>
+          <p class="helper">This does not diagnose symptoms. It only checks published facility capabilities.</p>
           <div class="choices">
-            <label><input type="radio" name="need" value="illness" checked><span>Fever or illness</span></label>
-            <label><input type="radio" name="need" value="breathing"><span>Breathing concern</span></label>
-            <label><input type="radio" name="need" value="injury"><span>Injury or possible fracture</span></label>
-            <label><input type="radio" name="need" value="wound"><span>Cut or wound</span></label>
-            <label><input type="radio" name="need" value="stomach"><span>Stomach symptoms</span></label>
-            <label><input type="radio" name="need" value="other"><span>Other</span></label>
+            <label><input type="radio" name="need" value="illness" checked><span><b>Fever or illness</b><small>Cold, flu, infection, rash</small></span></label>
+            <label><input type="radio" name="need" value="breathing"><span><b>Breathing concern</b><small>Asthma or respiratory symptoms</small></span></label>
+            <label><input type="radio" name="need" value="injury"><span><b>Injury</b><small>Sprain or possible fracture</small></span></label>
+            <label><input type="radio" name="need" value="wound"><span><b>Cut or wound</b><small>May need stitches</small></span></label>
+            <label><input type="radio" name="need" value="stomach"><span><b>Stomach symptoms</b><small>Vomiting, diarrhea, pain</small></span></label>
+            <label><input type="radio" name="need" value="other"><span><b>Other or unsure</b><small>Compare broader options</small></span></label>
           </div>
           <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" class="primary next">Continue</button></div>
         </fieldset>
 
         <fieldset class="step" data-step="3">
           <legend>Could this be an emergency?</legend>
-          <p class="helper">This prototype does not diagnose or evaluate symptoms. Choose “yes or unsure” if emergency-level care may be needed.</p>
-          <div class="choices two">
-            <label><input type="radio" name="emergency" value="no" checked><span>No, I’m looking for available care options</span></label>
-            <label><input type="radio" name="emergency" value="yes"><span>Yes or I’m unsure</span></label>
+          <div class="red-flags"><strong>Call 911 now</strong> for severe trouble breathing, blue/gray lips or skin, unresponsiveness, uncontrolled bleeding, a serious head/neck injury, or another immediate threat to life.</div>
+          <div class="choices one-col">
+            <label><input type="radio" name="emergency" value="no" checked><span><b>No</b><small>I’m comparing non-emergency care</small></span></label>
+            <label><input type="radio" name="emergency" value="yes"><span><b>Yes or unsure</b><small>Only show hospital emergency departments</small></span></label>
           </div>
-          <div class="actions"><button type="button" class="secondary back">Back</button><button type="submit" class="primary">Show demo routes</button></div>
+          <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" class="primary next">Continue</button></div>
+        </fieldset>
+
+        <fieldset class="step" data-step="4">
+          <legend>Route from where you are?</legend>
+          <p class="helper">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
+          <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
+          <p id="locationStatus" class="status" aria-live="polite">Optional—you can continue without location.</p>
+          <div class="actions"><button type="button" class="secondary back">Back</button><button type="submit" class="primary">See care options</button></div>
         </fieldset>
       </form>
     </section>
 
     <section id="results" class="results" hidden aria-live="polite">
       <div class="results-head">
-        <div><p class="eyebrow">Illustrative results</p><h2>Your demo routes</h2></div>
+        <div><p class="eyebrow">Verified pilot network</p><h2 id="resultsTitle">Care options</h2></div>
         <button id="startOver" class="secondary">Start over</button>
       </div>
-      <div id="emergencyBanner" class="emergency" hidden><strong>If this may be an emergency, call 911 or seek emergency care now.</strong> CareRoute is not a substitute for professional medical advice or emergency services.</div>
-      <p class="data-note">Every facility, capability, travel time, wait estimate, quality value, and score below is invented for demonstration. Verify real information directly with a healthcare provider.</p>
+      <div id="emergencyBanner" class="emergency" hidden><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
+      <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
-      <details><summary>How this demo ranks options</summary><p>First, it removes facilities that are closed, outside the child’s age range, lack required capabilities, or are not emergency departments when emergency care is selected. It then combines travel, appropriateness, wait, quality, and relevant capabilities into the CareRoute Pediatric Score v0.1. Scores are illustrative—not clinical advice.</p></details>
+      <details><summary>How CareRoute orders these options</summary><p>Safety gates come first: emergency selections show only hospital emergency departments; age and published capability limits are applied next. Eligible options are then ordered by care-setting fit and, when available, current driving duration. Wait time, insurance, cost, and a composite quality score are excluded because no reliable real-time or pediatric-comparable data feed is connected.</p></details>
+      <details><summary>What “verified” means</summary><p>Facility identity, address, care setting, pediatric capability, phone, and displayed hours are tied to provider or government sources. Each card links to its sources. Information can change—call the facility and insurer before non-emergency travel.</p></details>
+    </section>
+
+    <section class="scope-note">
+      <p class="eyebrow">Pilot limitations</p>
+      <h2>A careful foundation, not a finished medical product.</h2>
+      <p>This public pilot covers a curated set of nearby pediatric emergency and urgent-care options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, cost, or insurance network status. Facility pages remain the source of truth.</p>
     </section>
   </main>
 
-  <footer>CareRoute Pediatric v0.1 · Concept prototype · Not for real medical decisions</footer>
+  <footer><span>CareRoute Pediatric v0.2</span><span>Data reviewed August 17, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
+  <script src="data/facilities.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
