@@ -3,8 +3,22 @@ import { RoutingService, presentRoute } from './routing.js';
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
 const state = { step: 1, location: null, routes: new Map() };
+let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
 const titles = ['How old is your child?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
+
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  document.getElementById('installApp').hidden = false;
+});
+document.getElementById('installApp').addEventListener('click', async () => {
+  if (!installPrompt) return;
+  await installPrompt.prompt();
+  installPrompt = null;
+  document.getElementById('installApp').hidden = true;
+});
 
 function showStep(number) {
   state.step = number;
