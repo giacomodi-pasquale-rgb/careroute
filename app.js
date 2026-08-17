@@ -8,7 +8,10 @@ let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
 const titles = ['Who needs care?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
 
-if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
+  const registration = await navigator.serviceWorker.register('./service-worker.js?v=3');
+  await registration.update();
+});
 window.addEventListener('beforeinstallprompt', (event) => {
   event.preventDefault();
   installPrompt = event;
