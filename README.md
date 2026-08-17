@@ -4,7 +4,7 @@ CareRoute is a production-oriented, mobile-first foundation for a national pedia
 
 ## What is real
 
-- Seven real pediatric emergency or pediatric-capable urgent-care locations
+- Nine real pediatric emergency or pediatric-capable urgent-care locations
 - Provider-sourced identity, address, phone, care setting, pediatric capability, services, and published hours
 - Browser geolocation, with location kept in memory only
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status
@@ -51,7 +51,7 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false` and `pediatricCapability: null`. A reviewer must find authoritative pediatric evidence before promotion into the verified dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Four match verified CareRoute pediatric emergency records; all other records remain non-publishable until pediatric capability is verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Six match verified CareRoute pediatric emergency records; all other records remain non-publishable until pediatric capability is verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 17, 2026.
 
@@ -61,6 +61,8 @@ Data reviewed: August 17, 2026.
 - [Newark Beth Israel Emergency Services](https://www.rwjbh.org/newark-beth-israel-medical-center/treatment-care/emergency-room-services/)
 - [University Hospital Pediatric Emergency Medicine](https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/)
 - [Clara Maass Pediatric Services](https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/) and [Emergency Services](https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/)
+- [Children’s Hospital of Philadelphia Emergency Department](https://www.chop.edu/locations/emergency-department-main-hospital)
+- [NewYork-Presbyterian Pediatric Emergency Care and Trauma](https://www.nyp.org/pediatrics/emergency-care-and-trauma)
 - [PM Pediatric Livingston](https://pmpediatriccare.com/location/new-jersey-livingston/)
 - [AFC West Orange Pediatric Care](https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/) and [hours/contact](https://www.afcurgentcare.com/west-orange/resources/contact-us/)
 - [Summit Health Livingston Urgent Care](https://www.summithealth.com/locations/livingston-summit-health-urgent-care)

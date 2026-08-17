@@ -61,6 +61,7 @@ export function toWebFacility(facility) {
     id: facility.id,
     name: facility.identity.name,
     city: facility.location.city,
+    state: facility.location.state,
     type: facility.identity.type,
     typeLabel: facility.identity.typeLabel,
     pediatricSpecific: facility.identity.pediatricSpecific,
