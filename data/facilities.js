@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-17.1",
+  "datasetVersion": "2026-08-17.2",
   "reviewedAt": "2026-08-17"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -8,6 +8,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "cooperman-barnabas-peds-ed",
     "name": "Cooperman Barnabas Medical Center",
     "city": "Livingston",
+    "state": "NJ",
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
@@ -56,6 +57,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "newark-beth-israel-peds-ed",
     "name": "Children’s Hospital of New Jersey at Newark Beth Israel",
     "city": "Newark",
+    "state": "NJ",
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
@@ -104,6 +106,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "university-hospital-peds-ed",
     "name": "University Hospital Pediatric Emergency Department",
     "city": "Newark",
+    "state": "NJ",
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
@@ -152,6 +155,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "clara-maass-peds-ed",
     "name": "Clara Maass Medical Center",
     "city": "Belleville",
+    "state": "NJ",
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
@@ -197,9 +201,108 @@ window.CARE_ROUTE_FACILITIES = [
     }
   },
   {
+    "id": "chop-main-peds-ed",
+    "name": "Children’s Hospital of Philadelphia Emergency Department",
+    "city": "Philadelphia",
+    "state": "PA",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "address": "3401 Civic Center Boulevard, Philadelphia, PA 19104",
+    "coordinates": {
+      "lat": 39.9476976,
+      "lon": -75.1949802
+    },
+    "phone": "(215) 590-3480",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Dedicated children’s hospital emergency department",
+      "Physicians and nurses specially trained in pediatric emergency medicine",
+      "On-site radiology and procedural sedation capability"
+    ],
+    "sourceUrl": "https://www.chop.edu/locations/emergency-department-main-hospital",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-17",
+      "reviewBy": "2026-11-17",
+      "method": "authoritative-provider-source"
+    }
+  },
+  {
+    "id": "nyp-komansky-peds-ed",
+    "name": "NewYork-Presbyterian Komansky Children’s Hospital",
+    "city": "New York",
+    "state": "NY",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "address": "525 East 68th Street, New York, NY 10065",
+    "coordinates": {
+      "lat": 40.7642623,
+      "lon": -73.9553238
+    },
+    "phone": "(212) 746-3300",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Dedicated pediatric emergency care location",
+      "Pediatric emergency medicine team",
+      "Pediatric emergency and trauma care for acute illness and injury"
+    ],
+    "sourceUrl": "https://www.nyp.org/pediatrics/emergency-care-and-trauma",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-17",
+      "reviewBy": "2026-11-17",
+      "method": "authoritative-provider-source"
+    }
+  },
+  {
     "id": "pm-pediatric-livingston",
     "name": "PM Pediatric Urgent Care",
     "city": "Livingston",
+    "state": "NJ",
     "type": "urgent-care",
     "typeLabel": "Pediatric urgent care",
     "pediatricSpecific": true,
@@ -247,6 +350,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "afc-west-orange",
     "name": "AFC Urgent Care West Orange",
     "city": "West Orange",
+    "state": "NJ",
     "type": "urgent-care",
     "typeLabel": "Child-capable urgent care",
     "pediatricSpecific": false,
@@ -322,6 +426,7 @@ window.CARE_ROUTE_FACILITIES = [
     "id": "summit-urgent-care-livingston",
     "name": "Summit Health Urgent Care",
     "city": "Livingston",
+    "state": "NJ",
     "type": "urgent-care",
     "typeLabel": "Child-capable urgent care",
     "pediatricSpecific": false,

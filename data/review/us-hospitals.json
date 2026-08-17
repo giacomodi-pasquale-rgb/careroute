@@ -1,6 +1,6 @@
 {
-  "datasetVersion": "2026-08-17.1",
-  "generatedAt": "2026-08-17T19:31:35.923Z",
+  "datasetVersion": "2026-08-17.2",
+  "generatedAt": "2026-08-17T19:39:37.079Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,8 +11,8 @@
   "summary": {
     "total": 4495,
     "jurisdictions": 56,
-    "matchedVerified": 4,
-    "pendingReview": 4491,
+    "matchedVerified": 6,
+    "pendingReview": 4489,
     "publishable": 0,
     "states": [
       {
@@ -240,8 +240,8 @@
       {
         "state": "NY",
         "total": 160,
-        "matchedVerified": 0,
-        "pendingReview": 160
+        "matchedVerified": 1,
+        "pendingReview": 159
       },
       {
         "state": "OH",
@@ -264,8 +264,8 @@
       {
         "state": "PA",
         "total": 148,
-        "matchedVerified": 0,
-        "pendingReview": 148
+        "matchedVerified": 1,
+        "pendingReview": 147
       },
       {
         "state": "PR",
@@ -80373,9 +80373,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "nyp-komansky-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -91685,9 +91685,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "chop-main-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {

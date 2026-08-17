@@ -3,6 +3,7 @@ import { RoutingService, presentRoute } from './routing.js';
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
 const state = { step: 1, location: null, routes: new Map() };
+const MAX_SEARCH_MILES = 100;
 let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
 const titles = ['How old is your child?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
@@ -145,9 +146,11 @@ async function renderResults() {
     const ageEligible = !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
     const settingEligible = !inputs.emergency || facility.type === 'emergency';
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
-    return ageEligible && settingEligible && capabilityEligible;
+    const geographyEligible = state.location || facility.state === 'NJ';
+    return ageEligible && settingEligible && capabilityEligible && geographyEligible;
   });
   const routed = await loadRoutes(eligible);
+  if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);
   eligible = eligible.map((facility) => ({ ...facility, rankScore: scoreFacility(facility, inputs) }))
     .sort((a, b) => b.rankScore - a.rankScore || a.name.localeCompare(b.name));
 

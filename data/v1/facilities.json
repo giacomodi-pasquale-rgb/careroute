@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "datasetVersion": "2026-08-17.1",
+  "datasetVersion": "2026-08-17.2",
   "reviewedAt": "2026-08-17",
   "facilities": [
     {
@@ -69,6 +69,38 @@
         { "id": "clara-pediatrics", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/", "publisher": "RWJBarnabas Health", "supports": ["identity", "location", "pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" },
         { "id": "clara-emergency", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/", "publisher": "RWJBarnabas Health", "supports": ["contact", "hours", "highlights"], "checkedAt": "2026-08-17" }
       ]
+    },
+    {
+      "id": "chop-main-peds-ed",
+      "externalIds": { "cmsCcn": "393303" },
+      "identity": { "name": "Children’s Hospital of Philadelphia Emergency Department", "organization": "Children’s Hospital of Philadelphia", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "3401 Civic Center Boulevard", "city": "Philadelphia", "state": "PA", "postalCode": "19104", "latitude": 39.9476976, "longitude": -75.1949802 },
+      "contact": { "phone": "2155903480", "website": "https://www.chop.edu/locations/emergency-department-main-hospital", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated children’s hospital emergency department", "Physicians and nurses specially trained in pediatric emergency medicine", "On-site radiology and procedural sedation capability"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "chop-ed-provider", "url": "https://www.chop.edu/locations/emergency-department-main-hospital", "publisher": "Children’s Hospital of Philadelphia", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "nyp-komansky-peds-ed",
+      "externalIds": { "cmsCcn": "330101" },
+      "identity": { "name": "NewYork-Presbyterian Komansky Children’s Hospital", "organization": "NewYork-Presbyterian", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "525 East 68th Street", "city": "New York", "state": "NY", "postalCode": "10065", "latitude": 40.7642623, "longitude": -73.9553238 },
+      "contact": { "phone": "2127463300", "website": "https://www.nyp.org/pediatrics/emergency-care-and-trauma", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency care location", "Pediatric emergency medicine team", "Pediatric emergency and trauma care for acute illness and injury"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "nyp-pediatric-emergency", "url": "https://www.nyp.org/pediatrics/emergency-care-and-trauma", "publisher": "NewYork-Presbyterian", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
     },
     {
       "id": "pm-pediatric-livingston",
