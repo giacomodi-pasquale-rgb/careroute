@@ -52,6 +52,25 @@
       "evidence": [{ "id": "uh-provider", "url": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "publisher": "University Hospital", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
     },
     {
+      "id": "clara-maass-peds-ed",
+      "externalIds": { "cmsCcn": "310009" },
+      "identity": { "name": "Clara Maass Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "1 Clara Maass Drive", "city": "Belleville", "state": "NJ", "postalCode": "07109", "latitude": 40.7857547, "longitude": -74.1767192 },
+      "contact": { "phone": "9734502100", "website": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Provider identifies a Pediatric Emergency Department and pediatric emergency area", "Separate waiting areas for adult and pediatric patients", "Inpatient pediatric unit and access to pediatric specialists"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx" },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "clara-pediatrics", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/", "publisher": "RWJBarnabas Health", "supports": ["identity", "location", "pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" },
+        { "id": "clara-emergency", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/", "publisher": "RWJBarnabas Health", "supports": ["contact", "hours", "highlights"], "checkedAt": "2026-08-17" }
+      ]
+    },
+    {
       "id": "pm-pediatric-livingston",
       "identity": { "name": "PM Pediatric Urgent Care", "organization": "PM Pediatric Care", "type": "urgent-care", "typeLabel": "Pediatric urgent care", "pediatricSpecific": true },
       "location": { "address1": "571 West Mt. Pleasant Avenue", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7974457, "longitude": -74.3522841 },

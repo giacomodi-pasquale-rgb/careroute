@@ -7,16 +7,17 @@ const queue = JSON.parse(await readFile(new URL('../data/review/nj-hospitals.jso
 test('NJ queue reconciles every CMS emergency hospital exactly once', () => {
   assert.equal(queue.candidates.length, 57);
   assert.equal(queue.summary.total, 57);
-  assert.equal(queue.summary.matchedVerified + queue.summary.pendingEssex + queue.summary.pendingOtherNewJersey, 57);
+  assert.equal(queue.summary.matchedVerified + queue.summary.pendingEssex + queue.summary.pendingOtherNewJersey + queue.summary.heldNotVerified + queue.summary.outOfScope, 57);
 });
 
-test('the three existing pediatric emergency records match by CMS identifier', () => {
+test('the four verified pediatric emergency records match by CMS identifier', () => {
   const matches = queue.candidates.filter((item) => item.reconciliation.status === 'matched-verified');
-  assert.equal(matches.length, 3);
+  assert.equal(matches.length, 4);
   assert.deepEqual(new Set(matches.map((item) => item.reconciliation.facilityId)), new Set([
     'cooperman-barnabas-peds-ed',
     'newark-beth-israel-peds-ed',
     'university-hospital-peds-ed'
+    ,'clara-maass-peds-ed'
   ]));
   assert.ok(matches.every((item) => item.reconciliation.method === 'cms-ccn'));
 });
@@ -31,6 +32,6 @@ test('no imported CMS candidate becomes publishable', () => {
 
 test('Essex pending candidates are isolated as the first review batch', () => {
   const essex = queue.candidates.filter((item) => item.reviewPriority === 1);
-  assert.equal(essex.length, 5);
+  assert.equal(essex.length, 1);
   assert.ok(essex.every((item) => item.location.county === 'ESSEX' && item.reconciliation.status === 'unmatched'));
 });
