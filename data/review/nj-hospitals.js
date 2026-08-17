@@ -1,7 +1,7 @@
 // Generated review queue. Do not edit by hand.
 window.CARE_ROUTE_REVIEW_QUEUE = {
   "datasetVersion": "2026-08-17.1",
-  "generatedAt": "2026-08-17T19:08:42.161Z",
+  "generatedAt": "2026-08-17T19:17:55.035Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,12 +11,52 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
   "warning": "Review candidates only. CMS emergency-service status does not establish pediatric capability. No candidate may be published before authoritative pediatric verification.",
   "summary": {
     "total": 57,
-    "matchedVerified": 3,
-    "pendingEssex": 5,
+    "matchedVerified": 4,
+    "pendingEssex": 1,
     "pendingOtherNewJersey": 49,
+    "heldNotVerified": 2,
+    "outOfScope": 1,
     "publishable": 0
   },
   "candidates": [
+    {
+      "candidateId": "cms-310009",
+      "cmsCertificationNumber": "310009",
+      "status": "pending-pediatric-verification",
+      "identity": {
+        "name": "CLARA MAASS MEDICAL CENTER",
+        "hospitalType": "Acute Care Hospitals",
+        "ownership": "Voluntary non-profit - Private",
+        "emergencyServicesReported": true
+      },
+      "location": {
+        "address1": "ONE CLARA MAASS DRIVE",
+        "city": "BELLEVILLE",
+        "state": "NJ",
+        "postalCode": "07109",
+        "county": "ESSEX"
+      },
+      "phone": "9734502000",
+      "cmsOverallHospitalRating": "3",
+      "pediatricCapability": null,
+      "pediatricEvidence": [],
+      "publishable": false,
+      "reconciliation": {
+        "status": "matched-verified",
+        "facilityId": "clara-maass-peds-ed",
+        "method": "cms-ccn"
+      },
+      "reviewDecision": {
+        "status": "promoted",
+        "facilityId": "clara-maass-peds-ed",
+        "reason": "Current provider pages explicitly document a Pediatric Emergency Department, pediatric emergency area, care for adults and children 24/7, and inpatient pediatric support.",
+        "sources": [
+          "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/",
+          "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/"
+        ]
+      },
+      "reviewPriority": 0
+    },
     {
       "candidateId": "cms-310076",
       "cmsCertificationNumber": "310076",
@@ -44,6 +84,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": "cooperman-barnabas-peds-ed",
         "method": "cms-ccn"
       },
+      "reviewDecision": null,
       "reviewPriority": 0
     },
     {
@@ -73,6 +114,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": "newark-beth-israel-peds-ed",
         "method": "cms-ccn"
       },
+      "reviewDecision": null,
       "reviewPriority": 0
     },
     {
@@ -102,65 +144,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": "university-hospital-peds-ed",
         "method": "cms-ccn"
       },
+      "reviewDecision": null,
       "reviewPriority": 0
-    },
-    {
-      "candidateId": "cms-310083",
-      "cmsCertificationNumber": "310083",
-      "status": "pending-pediatric-verification",
-      "identity": {
-        "name": "CAREWELL HEALTH MEDICAL CENTER",
-        "hospitalType": "Acute Care Hospitals",
-        "ownership": "Proprietary",
-        "emergencyServicesReported": true
-      },
-      "location": {
-        "address1": "300 CENTRAL AVE",
-        "city": "EAST ORANGE",
-        "state": "NJ",
-        "postalCode": "07018",
-        "county": "ESSEX"
-      },
-      "phone": "9736728400",
-      "cmsOverallHospitalRating": "1",
-      "pediatricCapability": null,
-      "pediatricEvidence": [],
-      "publishable": false,
-      "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
-      },
-      "reviewPriority": 1
-    },
-    {
-      "candidateId": "cms-310009",
-      "cmsCertificationNumber": "310009",
-      "status": "pending-pediatric-verification",
-      "identity": {
-        "name": "CLARA MAASS MEDICAL CENTER",
-        "hospitalType": "Acute Care Hospitals",
-        "ownership": "Voluntary non-profit - Private",
-        "emergencyServicesReported": true
-      },
-      "location": {
-        "address1": "ONE CLARA MAASS DRIVE",
-        "city": "BELLEVILLE",
-        "state": "NJ",
-        "postalCode": "07109",
-        "county": "ESSEX"
-      },
-      "phone": "9734502000",
-      "cmsOverallHospitalRating": "3",
-      "pediatricCapability": null,
-      "pediatricEvidence": [],
-      "publishable": false,
-      "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
-      },
-      "reviewPriority": 1
     },
     {
       "candidateId": "cms-310054",
@@ -189,63 +174,14 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
-      "reviewPriority": 1
-    },
-    {
-      "candidateId": "cms-310096",
-      "cmsCertificationNumber": "310096",
-      "status": "pending-pediatric-verification",
-      "identity": {
-        "name": "SAINT MICHAEL'S MEDICAL CENTER",
-        "hospitalType": "Acute Care Hospitals",
-        "ownership": "Voluntary non-profit - Private",
-        "emergencyServicesReported": true
-      },
-      "location": {
-        "address1": "111 CENTRAL AVENUE",
-        "city": "NEWARK",
-        "state": "NJ",
-        "postalCode": "07102",
-        "county": "ESSEX"
-      },
-      "phone": "9738775350",
-      "cmsOverallHospitalRating": "4",
-      "pediatricCapability": null,
-      "pediatricEvidence": [],
-      "publishable": false,
-      "reconciliation": {
-        "status": "unmatched",
+      "reviewDecision": {
+        "status": "needs-current-evidence",
         "facilityId": null,
-        "method": null
-      },
-      "reviewPriority": 1
-    },
-    {
-      "candidateId": "cms-31001F",
-      "cmsCertificationNumber": "31001F",
-      "status": "pending-pediatric-verification",
-      "identity": {
-        "name": "VA NEW JERSEY HEALTH CARE SYSTEM",
-        "hospitalType": "Acute Care - Veterans Administration",
-        "ownership": "Veterans Health Administration",
-        "emergencyServicesReported": true
-      },
-      "location": {
-        "address1": "385 TREMONT AVENUE",
-        "city": "EAST ORANGE",
-        "state": "NJ",
-        "postalCode": "07018",
-        "county": "ESSEX"
-      },
-      "phone": "9736761000",
-      "cmsOverallHospitalRating": "2",
-      "pediatricCapability": null,
-      "pediatricEvidence": [],
-      "publishable": false,
-      "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "reason": "Older provider material mentions specialized pediatric emergency services, but current authoritative detail sufficient for CareRoute promotion was not found.",
+        "sources": [
+          "https://www.mountainsidenow.org/services.htm",
+          "https://mountainsidemedicalcenter.com/"
+        ]
       },
       "reviewPriority": 1
     },
@@ -276,6 +212,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -305,6 +242,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -334,6 +272,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -363,6 +302,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -392,6 +332,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -421,6 +362,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -450,6 +392,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -479,6 +422,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -508,6 +452,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -537,6 +482,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -566,6 +512,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -595,6 +542,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -624,6 +572,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -653,6 +602,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -682,6 +632,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -711,6 +662,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -740,6 +692,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -769,6 +722,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -798,6 +752,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -827,6 +782,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -856,6 +812,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -885,6 +842,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -914,6 +872,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -943,6 +902,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -972,6 +932,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1001,6 +962,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1030,6 +992,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1059,6 +1022,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1088,6 +1052,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1117,6 +1082,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1146,6 +1112,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1175,6 +1142,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1204,6 +1172,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1233,6 +1202,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1262,6 +1232,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1291,6 +1262,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1320,6 +1292,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1349,6 +1322,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1378,6 +1352,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1407,6 +1382,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1436,6 +1412,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1465,6 +1442,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1494,6 +1472,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1523,6 +1502,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1552,6 +1532,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1581,6 +1562,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1610,6 +1592,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1639,6 +1622,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
     },
     {
@@ -1668,7 +1652,121 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
         "facilityId": null,
         "method": null
       },
+      "reviewDecision": null,
       "reviewPriority": 2
+    },
+    {
+      "candidateId": "cms-310083",
+      "cmsCertificationNumber": "310083",
+      "status": "pending-pediatric-verification",
+      "identity": {
+        "name": "CAREWELL HEALTH MEDICAL CENTER",
+        "hospitalType": "Acute Care Hospitals",
+        "ownership": "Proprietary",
+        "emergencyServicesReported": true
+      },
+      "location": {
+        "address1": "300 CENTRAL AVE",
+        "city": "EAST ORANGE",
+        "state": "NJ",
+        "postalCode": "07018",
+        "county": "ESSEX"
+      },
+      "phone": "9736728400",
+      "cmsOverallHospitalRating": "1",
+      "pediatricCapability": null,
+      "pediatricEvidence": [],
+      "publishable": false,
+      "reconciliation": {
+        "status": "unmatched",
+        "facilityId": null,
+        "method": null
+      },
+      "reviewDecision": {
+        "status": "not-verified",
+        "facilityId": null,
+        "reason": "Current provider and NJ licensing material establish a general acute-care hospital and emergency medicine, but not a dedicated pediatric emergency service.",
+        "sources": [
+          "https://carewellhealth.org/",
+          "https://www.nj.gov/health/bc/documents/shpb/cn/cn-carewell-health-medical-center-07252025.pdf"
+        ]
+      },
+      "reviewPriority": 3
+    },
+    {
+      "candidateId": "cms-310096",
+      "cmsCertificationNumber": "310096",
+      "status": "pending-pediatric-verification",
+      "identity": {
+        "name": "SAINT MICHAEL'S MEDICAL CENTER",
+        "hospitalType": "Acute Care Hospitals",
+        "ownership": "Voluntary non-profit - Private",
+        "emergencyServicesReported": true
+      },
+      "location": {
+        "address1": "111 CENTRAL AVENUE",
+        "city": "NEWARK",
+        "state": "NJ",
+        "postalCode": "07102",
+        "county": "ESSEX"
+      },
+      "phone": "9738775350",
+      "cmsOverallHospitalRating": "4",
+      "pediatricCapability": null,
+      "pediatricEvidence": [],
+      "publishable": false,
+      "reconciliation": {
+        "status": "unmatched",
+        "facilityId": null,
+        "method": null
+      },
+      "reviewDecision": {
+        "status": "not-verified",
+        "facilityId": null,
+        "reason": "Current authoritative sources establish general emergency services but did not establish a dedicated pediatric emergency service.",
+        "sources": [
+          "https://web.doh.nj.gov/apps2/hpr/characteristics.aspx?num=10713",
+          "https://smmcnj.com/"
+        ]
+      },
+      "reviewPriority": 3
+    },
+    {
+      "candidateId": "cms-31001F",
+      "cmsCertificationNumber": "31001F",
+      "status": "pending-pediatric-verification",
+      "identity": {
+        "name": "VA NEW JERSEY HEALTH CARE SYSTEM",
+        "hospitalType": "Acute Care - Veterans Administration",
+        "ownership": "Veterans Health Administration",
+        "emergencyServicesReported": true
+      },
+      "location": {
+        "address1": "385 TREMONT AVENUE",
+        "city": "EAST ORANGE",
+        "state": "NJ",
+        "postalCode": "07018",
+        "county": "ESSEX"
+      },
+      "phone": "9736761000",
+      "cmsOverallHospitalRating": "2",
+      "pediatricCapability": null,
+      "pediatricEvidence": [],
+      "publishable": false,
+      "reconciliation": {
+        "status": "unmatched",
+        "facilityId": null,
+        "method": null
+      },
+      "reviewDecision": {
+        "status": "out-of-scope",
+        "facilityId": null,
+        "reason": "VA medical center serves the Veteran health system and is not a general pediatric emergency option for this product scope.",
+        "sources": [
+          "https://www.va.gov/new-jersey-health-care/locations/east-orange-va-medical-center/"
+        ]
+      },
+      "reviewPriority": 3
     }
   ]
 };

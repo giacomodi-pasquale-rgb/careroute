@@ -149,6 +149,54 @@ window.CARE_ROUTE_FACILITIES = [
     }
   },
   {
+    "id": "clara-maass-peds-ed",
+    "name": "Clara Maass Medical Center",
+    "city": "Belleville",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "address": "1 Clara Maass Drive, Belleville, NJ 07109",
+    "coordinates": {
+      "lat": 40.7857547,
+      "lon": -74.1767192
+    },
+    "phone": "(973) 450-2100",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Provider identifies a Pediatric Emergency Department and pediatric emergency area",
+      "Separate waiting areas for adult and pediatric patients",
+      "Inpatient pediatric unit and access to pediatric specialists"
+    ],
+    "sourceUrl": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/",
+    "quality": {
+      "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.",
+      "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-17",
+      "reviewBy": "2026-11-17",
+      "method": "authoritative-provider-source"
+    }
+  },
+  {
     "id": "pm-pediatric-livingston",
     "name": "PM Pediatric Urgent Care",
     "city": "Livingston",

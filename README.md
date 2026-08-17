@@ -1,13 +1,13 @@
 # CareRoute Pediatric v0.3
 
-CareRoute is a production-oriented, mobile-first web foundation for comparing pediatric care settings in the Essex County, New Jersey pilot area (West Orange, Livingston, Montclair, and Newark).
+CareRoute is a production-oriented, mobile-first web foundation for comparing pediatric care settings in the Essex County, New Jersey pilot area (West Orange, Livingston, Montclair, Belleville, and Newark).
 
 ## What is real
 
 - Six real pediatric emergency or pediatric-capable urgent-care locations
 - Provider-sourced identity, address, phone, care setting, pediatric capability, services, and published hours
 - Browser geolocation, with location kept in memory only
-- Road-network travel time and distance from the public OSRM demonstration service
+- Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status
 - Conservative emergency gating: emergency/unsure results contain only verified pediatric emergency departments
 - Direct provider-source, calling, and navigation links
 
@@ -21,6 +21,7 @@ The production contract now also includes:
 
 - `db/migrations/001_initial.sql`: normalized PostgreSQL schema for facilities, locations, capabilities, hours, evidence, and revision history
 - `api/openapi.yaml`: initial read-only mobile/web API contract
+- `docs/routing.md`: staged routing design from the OSRM pilot to server-side traffic-aware production routing
 - `scripts/validate-data.mjs`: release-blocking data and safety validation
 - `scripts/build-web-data.mjs`: deterministic canonical-data-to-web adapter
 - `scripts/import-cms-hospitals.mjs`: converts the official CMS Hospital General Information CSV into non-publishable review candidates; CMS records never establish pediatric capability by themselves

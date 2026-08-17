@@ -7,7 +7,9 @@ document.getElementById('summary').innerHTML = [
   ['NJ emergency hospitals', reviewData.summary.total],
   ['Already verified', reviewData.summary.matchedVerified],
   ['Essex awaiting review', reviewData.summary.pendingEssex],
-  ['Other NJ awaiting review', reviewData.summary.pendingOtherNewJersey]
+  ['Other NJ awaiting review', reviewData.summary.pendingOtherNewJersey],
+  ['Held—not verified', reviewData.summary.heldNotVerified],
+  ['Out of scope', reviewData.summary.outOfScope]
 ].map(([label, value]) => `<article><strong>${value}</strong><span>${label}</span></article>`).join('');
 document.getElementById('reviewGenerated').textContent = `Queue generated ${new Date(reviewData.generatedAt).toLocaleDateString()}`;
 
@@ -26,14 +28,19 @@ function renderQueue() {
 
 function card(candidate) {
   const matched = candidate.reconciliation.status === 'matched-verified';
-  const status = matched ? '<span class="review-status verified">Matched verified record</span>' : candidate.reviewPriority === 1 ? '<span class="review-status priority">Essex priority review</span>' : '<span class="review-status pending">Pediatric review pending</span>';
+  const decisionStatus = candidate.reviewDecision?.status;
+  const status = matched ? '<span class="review-status verified">Matched verified record</span>'
+    : decisionStatus === 'not-verified' ? '<span class="review-status pending">Held—not verified</span>'
+      : decisionStatus === 'out-of-scope' ? '<span class="review-status pending">Out of scope</span>'
+        : candidate.reviewPriority === 1 ? '<span class="review-status priority">Needs current evidence</span>'
+          : '<span class="review-status pending">Pediatric review pending</span>';
   const rating = candidate.cmsOverallHospitalRating ? `CMS overall hospital rating: ${escapeHtml(candidate.cmsOverallHospitalRating)}` : 'CMS overall hospital rating: unavailable';
   const sourceSearch = `https://www.google.com/search?q=${encodeURIComponent(`${candidate.identity.name} pediatric emergency department official`)}`;
   return `<article class="review-card">
     <div class="review-card-head"><div><span class="ccn">CMS ${escapeHtml(candidate.cmsCertificationNumber)}</span><h2>${escapeHtml(candidate.identity.name)}</h2><p>${escapeHtml(candidate.location.city)}, ${escapeHtml(candidate.location.state)} · ${escapeHtml(candidate.location.county)} County</p></div>${status}</div>
     <div class="review-facts"><span>CMS reports emergency services</span><span>${escapeHtml(candidate.identity.hospitalType)}</span><span>${rating}</span></div>
     <p class="review-address">${escapeHtml(candidate.location.address1)}, ${escapeHtml(candidate.location.city)}, ${escapeHtml(candidate.location.state)} ${escapeHtml(candidate.location.postalCode)} · ${formatPhone(candidate.phone)}</p>
-    ${matched ? `<p class="matched-note">Linked to CareRoute record <code>${escapeHtml(candidate.reconciliation.facilityId)}</code> by ${escapeHtml(candidate.reconciliation.method)}.</p>` : '<p class="pending-note"><strong>Unknown:</strong> pediatric capability, pediatric hours, age limits, and relevant pediatric services.</p>'}
+    ${matched ? `<p class="matched-note">Linked to CareRoute record <code>${escapeHtml(candidate.reconciliation.facilityId)}</code> by ${escapeHtml(candidate.reconciliation.method)}.</p>` : candidate.reviewDecision ? `<p class="pending-note"><strong>${escapeHtml(candidate.reviewDecision.status)}:</strong> ${escapeHtml(candidate.reviewDecision.reason)}</p>` : '<p class="pending-note"><strong>Unknown:</strong> pediatric capability, pediatric hours, age limits, and relevant pediatric services.</p>'}
     <div class="review-actions"><a href="${sourceSearch}" target="_blank" rel="noopener">Find authoritative pediatric source ↗</a><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${candidate.identity.name} ${candidate.location.city} NJ`)}" target="_blank" rel="noopener">Check location ↗</a></div>
   </article>`;
 }

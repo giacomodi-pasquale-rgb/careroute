@@ -1,4 +1,7 @@
+import { RoutingService, presentRoute } from './routing.js';
+
 const facilities = window.CARE_ROUTE_FACILITIES;
+const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
 const state = { step: 1, location: null, routes: new Map() };
 const steps = [...document.querySelectorAll('.step')];
 const titles = ['How old is your child?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
@@ -75,17 +78,8 @@ function isOpenNow(schedule) {
 async function loadRoutes(list) {
   state.routes.clear();
   if (!state.location || !list.length) return false;
-  const points = [state.location, ...list.map((facility) => facility.coordinates)];
-  const coordinates = points.map((point) => `${point.lon},${point.lat}`).join(';');
   try {
-    const response = await fetch(`https://router.project-osrm.org/table/v1/driving/${coordinates}?sources=0&annotations=duration,distance`);
-    if (!response.ok) throw new Error('Routing request failed');
-    const data = await response.json();
-    list.forEach((facility, index) => {
-      const duration = data.durations?.[0]?.[index + 1];
-      const distance = data.distances?.[0]?.[index + 1];
-      if (Number.isFinite(duration)) state.routes.set(facility.id, { minutes: Math.max(1, Math.round(duration / 60)), miles: (distance / 1609.344).toFixed(1) });
-    });
+    state.routes = await routingService.matrix(state.location, list);
     return state.routes.size > 0;
   } catch (error) {
     console.warn('Live routing unavailable', error);
@@ -94,7 +88,7 @@ async function loadRoutes(list) {
 }
 
 function scoreFacility(facility, inputs) {
-  const route = state.routes.get(facility.id);
+  const route = state.routes.has(facility.id) ? presentRoute(state.routes.get(facility.id)) : null;
   const specialization = facility.pediatricSpecific ? 30 : 18;
   const settingFit = inputs.emergency ? 50 : (facility.type === 'urgent-care' ? 45 : 20);
   const capability = facility.capabilities.includes(inputs.need) ? 20 : 0;
@@ -107,10 +101,10 @@ function escapeHtml(value) {
 }
 
 function facilityCard(facility, index, inputs) {
-  const route = state.routes.get(facility.id);
+  const route = state.routes.has(facility.id) ? presentRoute(state.routes.get(facility.id)) : null;
   const open = isOpenNow(facility.hours);
   const status = open === true ? '<span class="open">Open now</span>' : open === false ? '<span class="closed">Closed now</span>' : '<span class="unknown">Hours: check live</span>';
-  const routeText = route ? `<span class="metric strong">${route.minutes} min drive</span><span class="metric">${route.miles} mi by road</span>` : '<span class="metric">Driving time unavailable</span>';
+  const routeText = route ? `<span class="metric strong">${route.minutes} min drive</span><span class="metric">${route.miles} mi by road</span><span class="metric">Arrive about ${route.arrivalLabel}</span>` : '<span class="metric">Driving time unavailable</span>';
   const ageText = facility.age.verifiedLimits ? '' : '<span class="metric warning">Age limit: verify</span>';
   const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
@@ -125,6 +119,7 @@ function facilityCard(facility, index, inputs) {
     <p class="reason">${reason}</p>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>Published hours:</strong> ${escapeHtml(facility.hours.label)}</p>
+    ${route ? `<p class="route-source"><strong>Route source:</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? 'Current traffic included' : 'Current traffic not included'} · calculated ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
     <p class="quality"><strong>Quality:</strong> ${escapeHtml(facility.quality.note)}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">NJ report</a>` : ''}</p>
     <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">Directions</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">Call</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">Verify details ↗</a></div>
   </article>`;
@@ -145,7 +140,7 @@ async function renderResults() {
   document.getElementById('resultsTitle').textContent = inputs.emergency ? 'Pediatric emergency departments' : 'Care options for this concern';
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
   document.getElementById('routingNote').textContent = routed
-    ? 'Driving estimates are live OSRM road-network calculations. Traffic, closures, and emergency response conditions are not included.'
+    ? 'Driving distance, duration, and estimated arrival are current road-network calculations. Each card states whether live traffic is included.'
     : state.location
       ? 'Live routing is temporarily unavailable. Facility facts are still shown; use Directions for current navigation.'
       : 'Share your location on a new search to add road-network driving estimates. No wait times are estimated.';

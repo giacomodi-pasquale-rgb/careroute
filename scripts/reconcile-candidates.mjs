@@ -2,23 +2,27 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import { readDataset } from './data-lib.mjs';
 
-const [candidatePath, jsonOutput = 'data/review/nj-hospitals.json', jsOutput = 'data/review/nj-hospitals.js'] = process.argv.slice(2);
+const [candidatePath, jsonOutput = 'data/review/nj-hospitals.json', jsOutput = 'data/review/nj-hospitals.js', decisionsPath = 'data/review/essex-decisions.json'] = process.argv.slice(2);
 if (!candidatePath) {
   console.error('Usage: node scripts/reconcile-candidates.mjs <candidate.json> [output.json] [output.js]');
   process.exit(2);
 }
 
 const reviewQueue = JSON.parse(await readFile(candidatePath, 'utf8'));
+const decisions = JSON.parse(await readFile(decisionsPath, 'utf8'));
 const canonical = await readDataset();
 const verifiedByCcn = new Map(canonical.facilities.filter((item) => item.externalIds?.cmsCcn).map((item) => [item.externalIds.cmsCcn, item]));
 const verifiedByAddress = new Map(canonical.facilities.map((item) => [addressKey(item.location), item]));
 
 const candidates = reviewQueue.candidates.map((candidate) => {
   const existing = verifiedByCcn.get(candidate.cmsCertificationNumber) || verifiedByAddress.get(addressKey(candidate.location));
+  const decision = decisions.decisions[candidate.cmsCertificationNumber] || null;
+  const held = ['not-verified', 'out-of-scope'].includes(decision?.status);
   return {
     ...candidate,
     reconciliation: existing ? { status: 'matched-verified', facilityId: existing.id, method: verifiedByCcn.has(candidate.cmsCertificationNumber) ? 'cms-ccn' : 'address' } : { status: 'unmatched', facilityId: null, method: null },
-    reviewPriority: existing ? 0 : candidate.location.county === 'ESSEX' ? 1 : 2
+    reviewDecision: decision,
+    reviewPriority: existing ? 0 : held ? 3 : candidate.location.county === 'ESSEX' ? 1 : 2
   };
 }).sort((a, b) => a.reviewPriority - b.reviewPriority || a.identity.name.localeCompare(b.identity.name));
 
@@ -27,6 +31,8 @@ const summary = {
   matchedVerified: candidates.filter((item) => item.reconciliation.status === 'matched-verified').length,
   pendingEssex: candidates.filter((item) => item.reviewPriority === 1).length,
   pendingOtherNewJersey: candidates.filter((item) => item.reviewPriority === 2).length,
+  heldNotVerified: candidates.filter((item) => item.reviewDecision?.status === 'not-verified').length,
+  outOfScope: candidates.filter((item) => item.reviewDecision?.status === 'out-of-scope').length,
   publishable: 0
 };
 const output = {
