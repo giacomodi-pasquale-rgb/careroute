@@ -26,6 +26,8 @@ The mobile and production web clients will call CareRoute's `/v1/routes/matrix` 
 
 Recommended primary provider: Google Routes `ComputeRouteMatrix` with `TRAFFIC_AWARE` for normal ranking and `TRAFFIC_AWARE_OPTIMAL` for a final selected route. It can provide traffic-aware duration, static duration, and distance. Mapbox `driving-traffic` Matrix is a viable alternative. Apple Maps directions/ETA should be evaluated for the native iOS presentation layer, but using one server-side matrix provider keeps cross-platform rankings consistent.
 
+The repository now includes this gateway in `server/`. It validates coordinates and destination limits, keeps credentials off-device, requests Google traffic-aware matrices, and fails over to OSRM while preserving an explicit `trafficAware: false` label. Point the client at a deployed gateway only after TLS, monitoring, budgets, and origin restrictions are configured.
+
 ## Reliability requirements
 
 - 30–60 second cache for identical rounded origins and destination sets

@@ -1,0 +1,6 @@
+{
+  "appId": "org.careroute.pediatric",
+  "appName": "CareRoute Pediatric",
+  "webDir": ".",
+  "server": { "androidScheme": "https" }
+}
