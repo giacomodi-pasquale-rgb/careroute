@@ -1,6 +1,6 @@
 # CareRoute Pediatric v0.3
 
-CareRoute is a production-oriented, mobile-first web foundation for comparing pediatric care settings in the Essex County, New Jersey pilot area (West Orange, Livingston, Montclair, Belleville, and Newark).
+CareRoute is a production-oriented, mobile-first foundation for a national pediatric care-navigation network. The patient-facing verified pilot currently covers Essex County, New Jersey; the data-operations layer now seeds a nationwide evidence review queue.
 
 ## What is real
 
@@ -28,6 +28,7 @@ The production contract now also includes:
 - `scripts/validate-data.mjs`: release-blocking data and safety validation
 - `scripts/build-web-data.mjs`: deterministic canonical-data-to-web adapter
 - `scripts/import-cms-hospitals.mjs`: converts the official CMS Hospital General Information CSV into non-publishable review candidates; CMS records never establish pediatric capability by themselves
+- `scripts/reconcile-national.mjs`: reconciles the national emergency-hospital inventory and produces jurisdiction-level coverage reporting
 - `tests/data-validation.test.mjs`: automated checks against invented waits, insurance claims, quality scores, stale records, and unsafe emergency records
 
 ### Development checks
@@ -50,7 +51,7 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false` and `pediatricCapability: null`. A reviewer must find authoritative pediatric evidence before promotion into the verified dataset.
 
-The reconciled New Jersey batch is available at `review.html`. It contains 57 CMS hospitals reporting emergency services: four matched to verified CareRoute records, one Essex candidate needing current evidence, two held as not pediatric-verified, one out of scope, and 49 additional New Jersey records. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Four match verified CareRoute pediatric emergency records; all other records remain non-publishable until pediatric capability is verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 17, 2026.
 
