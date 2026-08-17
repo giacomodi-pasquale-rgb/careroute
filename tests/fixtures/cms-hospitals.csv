@@ -1,0 +1,4 @@
+Facility ID,Facility Name,Address,City/Town,State,ZIP Code,County/Parish,Telephone Number,Hospital Type,Hospital Ownership,Emergency Services,Hospital overall rating
+010001,"CHILDREN, COMMUNITY HOSPITAL",1 MAIN ST,TOWN,NJ,01234,COUNTY,(555) 111-2222,Acute Care Hospitals,Voluntary,Yes,4
+010002,NO EMERGENCY HOSPITAL,2 MAIN ST,TOWN,NJ,01235,COUNTY,(555) 111-3333,Acute Care Hospitals,Voluntary,No,3
+010003,OUT OF STATE HOSPITAL,3 MAIN ST,TOWN,NY,01236,COUNTY,(555) 111-4444,Acute Care Hospitals,Voluntary,Yes,5

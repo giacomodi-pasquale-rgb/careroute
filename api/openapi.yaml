@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: CareRoute Facility API
+  version: 0.1.0
+  description: Read-only contract for verified pediatric care navigation. Operational fields remain nullable unless backed by an approved live feed.
+servers:
+  - url: https://api.careroute.example/v1
+paths:
+  /facilities:
+    get:
+      summary: Search verified facilities
+      parameters:
+        - { name: latitude, in: query, required: true, schema: { type: number, minimum: -90, maximum: 90 } }
+        - { name: longitude, in: query, required: true, schema: { type: number, minimum: -180, maximum: 180 } }
+        - { name: ageMonths, in: query, required: true, schema: { type: integer, minimum: 0, maximum: 312 } }
+        - { name: emergency, in: query, required: true, schema: { type: boolean } }
+        - { name: capability, in: query, required: false, schema: { type: string, enum: [illness, breathing, injury, wound, stomach, other] } }
+        - { name: radiusMiles, in: query, required: false, schema: { type: number, minimum: 1, maximum: 100, default: 25 } }
+      responses:
+        '200':
+          description: Eligible, verified facilities. When emergency=true, only emergency departments are returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Facility' } }
+                  meta: { $ref: '#/components/schemas/ResponseMeta' }
+  /facilities/{facilityId}:
+    get:
+      summary: Retrieve a facility and its public evidence
+      parameters:
+        - { name: facilityId, in: path, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Facility detail
+          content: { application/json: { schema: { $ref: '#/components/schemas/Facility' } } }
+        '404': { description: Facility not found or not currently verified }
+components:
+  schemas:
+    Facility:
+      type: object
+      required: [id, name, careType, pediatricSpecific, location, capabilities, verification]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        careType: { type: string, enum: [emergency, urgent-care] }
+        pediatricSpecific: { type: boolean }
+        location:
+          type: object
+          properties:
+            address: { type: string }
+            latitude: { type: number }
+            longitude: { type: number }
+        capabilities: { type: array, items: { type: string } }
+        waitMinutes: { type: [integer, 'null'], description: Null unless supplied by an approved live feed. }
+        acceptingPatients: { type: [boolean, 'null'], description: Null unless supplied by an approved live feed. }
+        insuranceStatus: { type: string, enum: [verify, live-verified] }
+        qualityScore: { type: [number, 'null'], description: Null unless a comparable pediatric measure has been approved. }
+        verification:
+          type: object
+          required: [status, reviewedAt, reviewBy]
+          properties:
+            status: { type: string, enum: [verified, verified-with-unknowns] }
+            reviewedAt: { type: string, format: date }
+            reviewBy: { type: string, format: date }
+    ResponseMeta:
+      type: object
+      required: [datasetVersion, generatedAt, limitations]
+      properties:
+        datasetVersion: { type: string }
+        generatedAt: { type: string, format: date-time }
+        limitations: { type: array, items: { type: string } }
