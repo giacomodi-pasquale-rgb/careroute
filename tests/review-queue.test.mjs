@@ -10,14 +10,15 @@ test('NJ queue reconciles every CMS emergency hospital exactly once', () => {
   assert.equal(queue.summary.matchedVerified + queue.summary.pendingEssex + queue.summary.pendingOtherNewJersey + queue.summary.heldNotVerified + queue.summary.outOfScope, 57);
 });
 
-test('the four verified pediatric emergency records match by CMS identifier', () => {
+test('the five verified NJ emergency records match by CMS identifier', () => {
   const matches = queue.candidates.filter((item) => item.reconciliation.status === 'matched-verified');
-  assert.equal(matches.length, 4);
+  assert.equal(matches.length, 5);
   assert.deepEqual(new Set(matches.map((item) => item.reconciliation.facilityId)), new Set([
     'cooperman-barnabas-peds-ed',
     'newark-beth-israel-peds-ed',
     'university-hospital-peds-ed'
-    ,'clara-maass-peds-ed'
+    ,'clara-maass-peds-ed',
+    'carewell-health-ed'
   ]));
   assert.ok(matches.every((item) => item.reconciliation.method === 'cms-ccn'));
 });

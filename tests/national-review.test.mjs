@@ -10,7 +10,7 @@ test('national queue reconciles every candidate exactly once', () => {
   assert.equal(queue.summary.matchedVerified + queue.summary.pendingReview, queue.summary.total);
 });
 
-test('national seed never publishes CMS candidates as pediatric facilities', () => {
+test('national seed never publishes unreviewed CMS candidates as patient results', () => {
   assert.equal(queue.summary.publishable, 0);
   assert.ok(queue.candidates.every((item) => item.publishable === false));
   assert.ok(queue.candidates.every((item) => item.pediatricCapability === null));

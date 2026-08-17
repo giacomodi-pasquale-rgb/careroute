@@ -14,18 +14,18 @@
     <a class="brand" href="index.html">CareRoute<span>.</span></a>
     <span class="pilot-pill">Data operations</span>
   </header>
-  <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS emergency-service status does not establish pediatric capability. Pending records must not appear in patient results.</aside>
+  <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS emergency-service status does not establish exact hours, patient populations, or location-level capabilities. Pending records must not appear in patient results.</aside>
   <main class="review-main">
     <section class="review-hero">
       <p class="eyebrow">United States expansion</p>
       <h1>National facility review queue</h1>
-      <p>Official CMS hospital identities across the states, District of Columbia, and U.S. territories, reconciled against CareRoute’s verified pediatric dataset. This is an operational review view, not a patient-care directory.</p>
+      <p>Official CMS hospital identities across the states, District of Columbia, and U.S. territories, reconciled against CareRoute’s verified adult and pediatric dataset. This is an operational review view, not a patient-care directory.</p>
     </section>
     <section id="summary" class="review-summary" aria-label="Review queue summary"></section>
     <section class="review-controls" aria-label="Queue filters">
       <label><span>Search facilities</span><input id="reviewSearch" type="search" placeholder="Name, city, county, or CMS ID"></label>
       <label><span>Jurisdiction</span><select id="stateFilter"><option value="all">All jurisdictions</option></select></label>
-      <label><span>Status</span><select id="reviewFilter"><option value="all">All emergency hospitals</option><option value="pending">Pending pediatric review</option><option value="matched">Already verified</option></select></label>
+      <label><span>Status</span><select id="reviewFilter"><option value="all">All emergency hospitals</option><option value="pending">Pending service review</option><option value="matched">Already verified</option></select></label>
     </section>
     <p id="queueCount" class="data-note" aria-live="polite"></p>
     <div id="reviewQueue" class="review-queue"></div>
@@ -33,8 +33,8 @@
       <h2>Promotion requirements</h2>
       <ol>
         <li>Confirm the official facility identity and location.</li>
-        <li>Find an authoritative provider or government source explicitly describing pediatric emergency capability.</li>
-        <li>Verify hours, pediatric age limits, phone, and relevant capabilities.</li>
+        <li>Find an authoritative provider or government source describing the emergency service and whether it serves adults, children, or both.</li>
+        <li>Verify hours, age limits where relevant, phone, and location-level capabilities.</li>
         <li>Add claim-level evidence and a review deadline.</li>
         <li>Pass automated safety validation before publication.</li>
       </ol>

@@ -36,7 +36,7 @@ const output = { datasetVersion: canonical.datasetVersion, generatedAt: new Date
 await mkdir(dirname(jsonOutput), { recursive: true });
 await writeFile(jsonOutput, `${JSON.stringify(output, null, 2)}\n`);
 await writeFile(jsOutput, `// Generated national review queue. Do not edit by hand.\nwindow.CARE_ROUTE_REVIEW_QUEUE = ${JSON.stringify(output)};\n`);
-console.log(`Reconciled ${summary.total} emergency-service hospitals across ${summary.jurisdictions} jurisdictions: ${summary.matchedVerified} verified and ${summary.pendingReview} pending pediatric review.`);
+console.log(`Reconciled ${summary.total} emergency-service hospitals across ${summary.jurisdictions} jurisdictions: ${summary.matchedVerified} verified and ${summary.pendingReview} pending service review.`);
 
 function addressKey(location) { return `${normalize(location.address1)}|${normalize(location.city)}|${normalize(location.state)}|${normalize(location.postalCode).slice(0, 5)}`; }
 function normalize(value) { return String(value || '').toUpperCase().replace(/\b(STREET|ST)\b/g, 'ST').replace(/\b(AVENUE|AVE)\b/g, 'AVE').replace(/[^A-Z0-9]/g, ''); }

@@ -23,7 +23,7 @@ await writeFile(outputPath, `${JSON.stringify({
     url: 'https://data.cms.gov/provider-data/dataset/xubh-q36u'
   },
   generatedAt: new Date().toISOString(),
-  warning: 'Review candidates only. CMS emergency-service status does not establish pediatric capability. No candidate may be published before authoritative pediatric verification.',
+  warning: 'Review candidates only. CMS emergency-service status does not establish exact hours, patient populations, or location-level capabilities. No candidate may be published before authoritative service verification.',
   candidates
 }, null, 2)}\n`);
 console.log(`Created ${candidates.length} pending review candidates in ${outputPath}.`);
@@ -33,7 +33,7 @@ function toCandidate(row) {
   return {
     candidateId: `cms-${facilityId}`,
     cmsCertificationNumber: facilityId,
-    status: 'pending-pediatric-verification',
+    status: 'pending-service-verification',
     identity: {
       name: value(row, 'Facility Name'),
       hospitalType: value(row, 'Hospital Type'),
@@ -49,6 +49,8 @@ function toCandidate(row) {
     },
     phone: digits(value(row, 'Telephone Number', 'Phone Number')),
     cmsOverallHospitalRating: nullable(value(row, 'Hospital overall rating')),
+    patientGroups: null,
+    capabilityEvidence: [],
     pediatricCapability: null,
     pediatricEvidence: [],
     publishable: false
