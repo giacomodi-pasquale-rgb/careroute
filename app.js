@@ -9,7 +9,7 @@ const steps = [...document.querySelectorAll('.step')];
 const titles = ['Who needs care?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
 
 if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
-  const registration = await navigator.serviceWorker.register('./service-worker.js?v=3');
+  const registration = await navigator.serviceWorker.register('./service-worker.js?v=5');
   await registration.update();
 });
 window.addEventListener('beforeinstallprompt', (event) => {
@@ -77,9 +77,23 @@ document.getElementById('careForm').addEventListener('submit', async (event) => 
   const button = event.submitter || document.querySelector('#careForm button[type=submit]');
   button.disabled = true;
   button.textContent = state.location ? 'Calculating routes…' : 'Loading options…';
-  await renderResults();
-  button.disabled = false;
-  button.textContent = 'See care options';
+  document.getElementById('questionnaire').hidden = true;
+  document.getElementById('results').hidden = false;
+  document.getElementById('resultsTitle').textContent = 'Finding care options…';
+  document.getElementById('routingNote').textContent = state.location ? 'Calculating nearby driving routes…' : 'Loading verified facilities…';
+  document.getElementById('cards').innerHTML = '<div class="empty"><p>Finding verified care options…</p></div>';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  try {
+    await renderResults();
+  } catch (error) {
+    console.error('Unable to render care options', error);
+    document.getElementById('resultsTitle').textContent = 'Care options could not load';
+    document.getElementById('routingNote').textContent = 'Please try again. If care may be an emergency, call 911 or go to the nearest emergency department.';
+    document.getElementById('cards').innerHTML = '<div class="empty"><p>The care directory encountered an error. You can start over and continue without location, or use the Directions link from your preferred map app.</p></div>';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'See care options';
+  }
 });
 
 document.getElementById('startOver').addEventListener('click', () => {
@@ -144,10 +158,12 @@ function facilityCard(facility, index, inputs) {
   const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
   const reason = inputs.emergency
-    ? 'Shown because the provider verifies a dedicated pediatric emergency service.'
+    ? inputs.patientGroup === 'adult'
+      ? 'Shown because the provider verifies a 24-hour emergency department serving adults.'
+      : 'Shown because the provider verifies dedicated pediatric emergency capability.'
     : facility.type === 'urgent-care'
       ? 'Non-emergency urgent-care match based on published age and service information.'
-      : 'Hospital pediatric emergency backup; urgent care may be more appropriate for a non-emergency concern.';
+      : 'Hospital emergency backup; urgent care may be more appropriate for a non-emergency concern.';
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? 'Closest strong match' : `Option ${index + 1}`) : `Verified option ${index + 1}`}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(facility.typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
     <div class="metrics">${routeText}${ageText}<span class="metric">Wait: not available</span><span class="metric">Insurance: verify</span></div>
@@ -186,8 +202,5 @@ async function renderResults() {
       : 'Share your location on a new search to add road-network driving estimates. No wait times are estimated.';
   document.getElementById('cards').innerHTML = eligible.length
     ? eligible.map((facility, index) => facilityCard(facility, index, inputs)).join('')
-    : '<div class="empty"><h3>No verified match in this pilot dataset</h3><p>This does not mean care is unavailable. Call your pediatrician, insurer, or a facility directly. If symptoms could be an emergency, call 911 or go to an emergency department.</p></div>';
-  document.getElementById('questionnaire').hidden = true;
-  document.getElementById('results').hidden = false;
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    : '<div class="empty"><h3>No verified match in this pilot dataset</h3><p>This does not mean care is unavailable. Call your clinician, insurer, or a facility directly. If symptoms could be an emergency, call 911 or go to an emergency department.</p></div>';
 }
