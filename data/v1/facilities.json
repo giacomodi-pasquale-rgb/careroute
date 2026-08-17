@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetVersion": "2026-08-17.1",
+  "reviewedAt": "2026-08-17",
+  "facilities": [
+    {
+      "id": "cooperman-barnabas-peds-ed",
+      "identity": { "name": "Cooperman Barnabas Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "94 Old Short Hills Road", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7634604, "longitude": -74.3048418 },
+      "contact": { "phone": "9733225180", "website": "https://www.rwjbh.org/cooperman-barnabas-medical-center/treatment-care/emergency-department/pediatric-emergency-services/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 216, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated nine-room pediatric suite", "Pediatric emergency medicine specialists", "Pediatric critical-care room and trauma capability"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx" },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "cbmc-provider", "url": "https://www.rwjbh.org/cooperman-barnabas-medical-center/treatment-care/emergency-department/pediatric-emergency-services/", "publisher": "RWJBarnabas Health", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "newark-beth-israel-peds-ed",
+      "identity": { "name": "Children’s Hospital of New Jersey at Newark Beth Israel", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "201 Lyons Avenue", "city": "Newark", "state": "NJ", "postalCode": "07112", "latitude": 40.7102728, "longitude": -74.2125846 },
+      "contact": { "phone": "9739267337", "website": "https://www.rwjbh.org/newark-beth-israel-medical-center/treatment-care/emergency-room-services/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 216, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Separate pediatric emergency area", "Board-certified pediatric emergency specialists", "On-site pediatric intensive and specialty services"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/profile.aspx?name=Newark+Beth+Israel+Medical+Center&num=10709" },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "nbi-provider", "url": "https://www.rwjbh.org/newark-beth-israel-medical-center/treatment-care/emergency-room-services/", "publisher": "RWJBarnabas Health", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "university-hospital-peds-ed",
+      "identity": { "name": "University Hospital Pediatric Emergency Department", "organization": "University Hospital", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "location": { "address1": "150 Bergen Street", "city": "Newark", "state": "NJ", "postalCode": "07103", "latitude": 40.7405364, "longitude": -74.1911759 },
+      "contact": { "phone": "9739724300", "website": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 216, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency room", "Pediatric emergency-trained physicians", "Hospital pediatric critical-care and inpatient support"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No pediatric-specific emergency quality measure was found for display.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx" },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "uh-provider", "url": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "publisher": "University Hospital", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "pm-pediatric-livingston",
+      "identity": { "name": "PM Pediatric Urgent Care", "organization": "PM Pediatric Care", "type": "urgent-care", "typeLabel": "Pediatric urgent care", "pediatricSpecific": true },
+      "location": { "address1": "571 West Mt. Pleasant Avenue", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7974457, "longitude": -74.3522841 },
+      "contact": { "phone": "9739924767", "website": "https://pmpediatriccare.com/location/new-jersey-livingston/", "bookingUrl": "https://pmpediatriccare.com/location/new-jersey-livingston/" },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 312, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach"],
+      "hours": { "kind": "live", "timezone": "America/New_York", "label": "Dynamic—check the provider page or call before travel", "weekly": {} },
+      "highlights": ["Treats ages 0–26", "X-ray, splinting, lab testing, stitches, oxygen and nebulizer treatments", "Walk-ins accepted; online check-in available"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable public pediatric urgent-care quality measure found.", "sourceUrl": null },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-09-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "pm-provider", "url": "https://pmpediatriccare.com/location/new-jersey-livingston/", "publisher": "PM Pediatric Care", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "afc-west-orange",
+      "identity": { "name": "AFC Urgent Care West Orange", "organization": "AFC Urgent Care", "type": "urgent-care", "typeLabel": "Child-capable urgent care", "pediatricSpecific": false },
+      "location": { "address1": "464 Eagle Rock Avenue", "city": "West Orange", "state": "NJ", "postalCode": "07052", "latitude": 40.8034229, "longitude": -74.2499729 },
+      "contact": { "phone": "9736695900", "website": "https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/", "bookingUrl": "https://www.afcurgentcare.com/west-orange/" },
+      "pediatricAge": { "minimumMonths": 12, "maximumMonths": 216, "limitsVerified": true },
+      "capabilities": ["illness", "injury", "wound", "stomach"],
+      "hours": { "kind": "weekly", "timezone": "America/New_York", "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–5pm", "weekly": { "0": [480, 1020], "1": [480, 1200], "2": [480, 1200], "3": [480, 1200], "4": [480, 1200], "5": [480, 1200], "6": [480, 1020] } },
+      "highlights": ["Provider states it treats children age 1 and older", "Walk-in care seven days a week", "On-site X-ray and laboratory"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable public pediatric urgent-care quality measure found.", "sourceUrl": null },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-09-17", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "afc-pediatric", "url": "https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/", "publisher": "AFC Urgent Care", "supports": ["identity", "pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" },
+        { "id": "afc-contact", "url": "https://www.afcurgentcare.com/west-orange/resources/contact-us/", "publisher": "AFC Urgent Care", "supports": ["location", "contact", "hours"], "checkedAt": "2026-08-17" }
+      ]
+    },
+    {
+      "id": "summit-urgent-care-livingston",
+      "identity": { "name": "Summit Health Urgent Care", "organization": "Summit Health", "type": "urgent-care", "typeLabel": "Child-capable urgent care", "pediatricSpecific": false },
+      "location": { "address1": "75 East Northfield Road", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7737922, "longitude": -74.3204303 },
+      "contact": { "phone": "9734361500", "website": "https://www.summithealth.com/locations/livingston-summit-health-urgent-care", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "injury", "wound", "stomach"],
+      "hours": { "kind": "weekly", "timezone": "America/New_York", "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–5pm", "weekly": { "0": [480, 1020], "1": [480, 1200], "2": [480, 1200], "3": [480, 1200], "4": [480, 1200], "5": [480, 1200], "6": [480, 1020] } },
+      "highlights": ["Provider lists pediatric care; exact age limits are not published", "X-ray, CT, and lab capabilities published", "No appointment necessary"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable public pediatric urgent-care quality measure found.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-09-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "summit-provider", "url": "https://www.summithealth.com/locations/livingston-summit-health-urgent-care", "publisher": "Summit Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    }
+  ]
+}

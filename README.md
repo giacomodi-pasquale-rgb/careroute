@@ -1,4 +1,4 @@
-# CareRoute Pediatric v0.2
+# CareRoute Pediatric v0.3
 
 CareRoute is a production-oriented, mobile-first web foundation for comparing pediatric care settings in the Essex County, New Jersey pilot area (West Orange, Livingston, Montclair, and Newark).
 
@@ -13,9 +13,38 @@ CareRoute is a production-oriented, mobile-first web foundation for comparing pe
 
 No wait time, insurance acceptance, price, clinical recommendation, or invented quality score is displayed. Dynamic or unavailable fields are labeled as such. New Jersey hospital-quality reporting is linked where applicable but is not transformed into a pediatric emergency-care rating.
 
-## Data architecture
+## Platform foundation
 
-`data/facilities.js` is the current static repository layer. Each record contains routing coordinates, age bounds, care setting, capability tags, hours provenance, display facts, and source links. `app.js` contains separate eligibility, hours, routing, scoring, and presentation functions so the static layer can later be replaced by an API/database without rewriting the interface.
+`data/v1/facilities.json` is the canonical, versioned dataset. Every facility includes structured identity, location, age limits, capabilities, hours, explicit unavailable/live-only fields, verification status, review deadlines, and claim-level evidence. `data/facilities.js` is generated from that source for GitHub Pages and must not be edited by hand.
+
+The production contract now also includes:
+
+- `db/migrations/001_initial.sql`: normalized PostgreSQL schema for facilities, locations, capabilities, hours, evidence, and revision history
+- `api/openapi.yaml`: initial read-only mobile/web API contract
+- `scripts/validate-data.mjs`: release-blocking data and safety validation
+- `scripts/build-web-data.mjs`: deterministic canonical-data-to-web adapter
+- `scripts/import-cms-hospitals.mjs`: converts the official CMS Hospital General Information CSV into non-publishable review candidates; CMS records never establish pediatric capability by themselves
+- `tests/data-validation.test.mjs`: automated checks against invented waits, insurance claims, quality scores, stale records, and unsafe emergency records
+
+### Development checks
+
+Use Node.js 20 or newer:
+
+```sh
+npm run validate:data
+npm run build:data
+npm test
+```
+
+Any future facility expansion should update the canonical JSON (or, once deployed, the PostgreSQL/API layer), attach evidence, pass review, and regenerate the web artifact. The validator intentionally fails releases containing stale verification, unsupported capabilities, missing evidence, invented wait times, unverified insurance plans, or unapproved comparative quality scores.
+
+To seed a state review queue from the official CMS download:
+
+```sh
+npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json NJ
+```
+
+The resulting candidates are deliberately marked `publishable: false` and `pediatricCapability: null`. A reviewer must find authoritative pediatric evidence before promotion into the verified dataset.
 
 Data reviewed: August 17, 2026.
 

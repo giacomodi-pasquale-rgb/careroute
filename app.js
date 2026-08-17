@@ -111,6 +111,7 @@ function facilityCard(facility, index, inputs) {
   const open = isOpenNow(facility.hours);
   const status = open === true ? '<span class="open">Open now</span>' : open === false ? '<span class="closed">Closed now</span>' : '<span class="unknown">Hours: check live</span>';
   const routeText = route ? `<span class="metric strong">${route.minutes} min drive</span><span class="metric">${route.miles} mi by road</span>` : '<span class="metric">Driving time unavailable</span>';
+  const ageText = facility.age.verifiedLimits ? '' : '<span class="metric warning">Age limit: verify</span>';
   const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
   const reason = inputs.emergency
@@ -120,7 +121,7 @@ function facilityCard(facility, index, inputs) {
       : 'Hospital pediatric emergency backup; urgent care may be more appropriate for a non-emergency concern.';
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? 'Closest strong match' : `Option ${index + 1}`) : `Verified option ${index + 1}`}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(facility.typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
-    <div class="metrics">${routeText}<span class="metric">Wait: not available</span><span class="metric">Insurance: verify</span></div>
+    <div class="metrics">${routeText}${ageText}<span class="metric">Wait: not available</span><span class="metric">Insurance: verify</span></div>
     <p class="reason">${reason}</p>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>Published hours:</strong> ${escapeHtml(facility.hours.label)}</p>
@@ -132,7 +133,7 @@ function facilityCard(facility, index, inputs) {
 async function renderResults() {
   const inputs = getInputs();
   let eligible = facilities.filter((facility) => {
-    const ageEligible = inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths;
+    const ageEligible = !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
     const settingEligible = !inputs.emergency || facility.type === 'emergency';
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
     return ageEligible && settingEligible && capabilityEligible;
