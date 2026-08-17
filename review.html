@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c36">
+  <meta name="robots" content="noindex">
+  <title>CareRoute Facility Review Queue</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="review.css">
+</head>
+<body class="review-body">
+  <header class="topbar">
+    <a class="brand" href="index.html">CareRoute<span>.</span></a>
+    <span class="pilot-pill">Data operations</span>
+  </header>
+  <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS emergency-service status does not establish pediatric capability. Pending records must not appear in patient results.</aside>
+  <main class="review-main">
+    <section class="review-hero">
+      <p class="eyebrow">New Jersey expansion · Batch 1</p>
+      <h1>Facility review queue</h1>
+      <p>Official CMS hospital identities reconciled against CareRoute’s verified pediatric dataset. This is an operational review view, not a patient-care directory.</p>
+    </section>
+    <section id="summary" class="review-summary" aria-label="Review queue summary"></section>
+    <section class="review-controls" aria-label="Queue filters">
+      <label><span>Search facilities</span><input id="reviewSearch" type="search" placeholder="Name, city, county, or CMS ID"></label>
+      <label><span>Queue</span><select id="reviewFilter"><option value="all">All NJ emergency hospitals</option><option value="essex">Essex pending first</option><option value="pending">All pending review</option><option value="matched">Already verified</option></select></label>
+    </section>
+    <p id="queueCount" class="data-note" aria-live="polite"></p>
+    <div id="reviewQueue" class="review-queue"></div>
+    <section class="review-method">
+      <h2>Promotion requirements</h2>
+      <ol>
+        <li>Confirm the official facility identity and location.</li>
+        <li>Find an authoritative provider or government source explicitly describing pediatric emergency capability.</li>
+        <li>Verify hours, pediatric age limits, phone, and relevant capabilities.</li>
+        <li>Add claim-level evidence and a review deadline.</li>
+        <li>Pass automated safety validation before publication.</li>
+      </ol>
+      <p>Source inventory: <a href="https://data.cms.gov/provider-data/dataset/xubh-q36u" target="_blank" rel="noopener">CMS Hospital General Information ↗</a></p>
+    </section>
+  </main>
+  <footer><span>CareRoute data operations v0.3</span><span id="reviewGenerated"></span><span><a href="index.html">Patient pilot</a></span></footer>
+  <script src="data/review/nj-hospitals.js"></script>
+  <script src="review.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
   "facilities": [
     {
       "id": "cooperman-barnabas-peds-ed",
+      "externalIds": { "cmsCcn": "310076" },
       "identity": { "name": "Cooperman Barnabas Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
       "location": { "address1": "94 Old Short Hills Road", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7634604, "longitude": -74.3048418 },
       "contact": { "phone": "9733225180", "website": "https://www.rwjbh.org/cooperman-barnabas-medical-center/treatment-care/emergency-department/pediatric-emergency-services/", "bookingUrl": null },
@@ -20,6 +21,7 @@
     },
     {
       "id": "newark-beth-israel-peds-ed",
+      "externalIds": { "cmsCcn": "310002" },
       "identity": { "name": "Children’s Hospital of New Jersey at Newark Beth Israel", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
       "location": { "address1": "201 Lyons Avenue", "city": "Newark", "state": "NJ", "postalCode": "07112", "latitude": 40.7102728, "longitude": -74.2125846 },
       "contact": { "phone": "9739267337", "website": "https://www.rwjbh.org/newark-beth-israel-medical-center/treatment-care/emergency-room-services/", "bookingUrl": null },
@@ -35,6 +37,7 @@
     },
     {
       "id": "university-hospital-peds-ed",
+      "externalIds": { "cmsCcn": "310119" },
       "identity": { "name": "University Hospital Pediatric Emergency Department", "organization": "University Hospital", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
       "location": { "address1": "150 Bergen Street", "city": "Newark", "state": "NJ", "postalCode": "07103", "latitude": 40.7405364, "longitude": -74.1911759 },
       "contact": { "phone": "9739724300", "website": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "bookingUrl": null },

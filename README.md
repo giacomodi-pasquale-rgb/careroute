@@ -46,6 +46,8 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false` and `pediatricCapability: null`. A reviewer must find authoritative pediatric evidence before promotion into the verified dataset.
 
+The reconciled New Jersey batch is available at `review.html`. It currently contains 57 CMS hospitals reporting emergency services: three matched to verified CareRoute records, five unmatched Essex County priorities, and 49 additional New Jersey records. This operational view is explicitly not a patient directory.
+
 Data reviewed: August 17, 2026.
 
 ### Primary facility sources
