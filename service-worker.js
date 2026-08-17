@@ -1,4 +1,4 @@
-const CACHE = 'careroute-shell-v3';
+const CACHE = 'careroute-shell-v4';
 const SHELL = ['./', './index.html', './styles.css', './install.css', './app.js', './routing.js', './config.js', './data/facilities.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', (event) => {
   self.skipWaiting();

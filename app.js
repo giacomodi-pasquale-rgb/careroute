@@ -43,25 +43,38 @@ document.querySelectorAll('.back').forEach((button) => button.addEventListener('
 
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');
+  const locateButton = document.getElementById('locateMe');
+  const submitButton = document.querySelector('#careForm button[type=submit]');
   if (!navigator.geolocation) {
     status.textContent = 'Location is not supported by this browser. You can still view verified options.';
     return;
   }
+  locateButton.disabled = true;
   status.textContent = 'Finding your location…';
   navigator.geolocation.getCurrentPosition(
     ({ coords }) => {
       state.location = { lat: coords.latitude, lon: coords.longitude };
-      status.textContent = 'Location ready. Driving times will be requested when you continue.';
+      status.textContent = 'Location ready. Calculating nearby care options…';
       status.classList.add('success');
+      locateButton.disabled = false;
+      document.getElementById('careForm').requestSubmit(submitButton);
     },
-    () => { status.textContent = 'Location was not available. You can continue without it.'; },
-    { enableHighAccuracy: true, timeout: 12000, maximumAge: 300000 }
+    (error) => {
+      locateButton.disabled = false;
+      status.classList.remove('success');
+      status.textContent = error.code === error.PERMISSION_DENIED
+        ? 'Location access is blocked. Allow it in your browser settings, or tap “See care options” to continue without location.'
+        : error.code === error.TIMEOUT
+          ? 'Location timed out. Try again, or tap “See care options” to continue without location.'
+          : 'Location was not available. Tap “See care options” to continue without it.';
+    },
+    { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
   );
 });
 
 document.getElementById('careForm').addEventListener('submit', async (event) => {
   event.preventDefault();
-  const button = event.submitter;
+  const button = event.submitter || document.querySelector('#careForm button[type=submit]');
   button.disabled = true;
   button.textContent = state.location ? 'Calculating routes…' : 'Loading options…';
   await renderResults();
