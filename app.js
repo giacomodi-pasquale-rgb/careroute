@@ -9,8 +9,9 @@ const steps = [...document.querySelectorAll('.step')];
 const titles = ['Who needs care?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
 
 if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
-  const registration = await navigator.serviceWorker.register('./service-worker.js?v=5');
-  await registration.update();
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(registrations.map((registration) => registration.unregister()));
+  if ('caches' in window) await Promise.all((await caches.keys()).map((key) => caches.delete(key)));
 });
 window.addEventListener('beforeinstallprompt', (event) => {
   event.preventDefault();
@@ -44,7 +45,7 @@ document.querySelectorAll('.back').forEach((button) => button.addEventListener('
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');
   const locateButton = document.getElementById('locateMe');
-  const submitButton = document.querySelector('#careForm button[type=submit]');
+  const submitButton = document.getElementById('showCareOptions');
   if (!navigator.geolocation) {
     status.textContent = 'Location is not supported by this browser. You can still view verified options.';
     return;
@@ -57,7 +58,7 @@ document.getElementById('locateMe').addEventListener('click', () => {
       status.textContent = 'Location ready. Calculating nearby care options…';
       status.classList.add('success');
       locateButton.disabled = false;
-      document.getElementById('careForm').requestSubmit(submitButton);
+      showCareOptions(submitButton);
     },
     (error) => {
       locateButton.disabled = false;
@@ -72,9 +73,10 @@ document.getElementById('locateMe').addEventListener('click', () => {
   );
 });
 
-document.getElementById('careForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const button = event.submitter || document.querySelector('#careForm button[type=submit]');
+document.getElementById('showCareOptions').addEventListener('click', (event) => showCareOptions(event.currentTarget));
+document.getElementById('careForm').addEventListener('submit', (event) => event.preventDefault());
+
+async function showCareOptions(button) {
   button.disabled = true;
   button.textContent = state.location ? 'Calculating routes…' : 'Loading options…';
   document.getElementById('questionnaire').hidden = true;
@@ -94,7 +96,7 @@ document.getElementById('careForm').addEventListener('submit', async (event) => 
     button.disabled = false;
     button.textContent = 'See care options';
   }
-});
+}
 
 document.getElementById('startOver').addEventListener('click', () => {
   document.getElementById('results').hidden = true;
