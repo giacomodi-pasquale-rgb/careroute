@@ -17,14 +17,15 @@
   <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS emergency-service status does not establish pediatric capability. Pending records must not appear in patient results.</aside>
   <main class="review-main">
     <section class="review-hero">
-      <p class="eyebrow">New Jersey expansion · Batch 1</p>
-      <h1>Facility review queue</h1>
-      <p>Official CMS hospital identities reconciled against CareRoute’s verified pediatric dataset. This is an operational review view, not a patient-care directory.</p>
+      <p class="eyebrow">United States expansion</p>
+      <h1>National facility review queue</h1>
+      <p>Official CMS hospital identities across the states, District of Columbia, and U.S. territories, reconciled against CareRoute’s verified pediatric dataset. This is an operational review view, not a patient-care directory.</p>
     </section>
     <section id="summary" class="review-summary" aria-label="Review queue summary"></section>
     <section class="review-controls" aria-label="Queue filters">
       <label><span>Search facilities</span><input id="reviewSearch" type="search" placeholder="Name, city, county, or CMS ID"></label>
-      <label><span>Queue</span><select id="reviewFilter"><option value="all">All NJ emergency hospitals</option><option value="essex">Essex pending first</option><option value="pending">All pending review</option><option value="matched">Already verified</option></select></label>
+      <label><span>Jurisdiction</span><select id="stateFilter"><option value="all">All jurisdictions</option></select></label>
+      <label><span>Status</span><select id="reviewFilter"><option value="all">All emergency hospitals</option><option value="pending">Pending pediatric review</option><option value="matched">Already verified</option></select></label>
     </section>
     <p id="queueCount" class="data-note" aria-live="polite"></p>
     <div id="reviewQueue" class="review-queue"></div>
@@ -41,7 +42,7 @@
     </section>
   </main>
   <footer><span>CareRoute data operations v0.3</span><span id="reviewGenerated"></span><span><a href="index.html">Patient pilot</a></span></footer>
-  <script src="data/review/nj-hospitals.js"></script>
+  <script src="data/review/us-hospitals.js"></script>
   <script src="review.js"></script>
 </body>
 </html>

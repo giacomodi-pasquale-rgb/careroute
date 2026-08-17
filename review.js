@@ -2,28 +2,33 @@ const reviewData = window.CARE_ROUTE_REVIEW_QUEUE;
 const queueElement = document.getElementById('reviewQueue');
 const searchElement = document.getElementById('reviewSearch');
 const filterElement = document.getElementById('reviewFilter');
+const stateElement = document.getElementById('stateFilter');
 
 document.getElementById('summary').innerHTML = [
-  ['NJ emergency hospitals', reviewData.summary.total],
+  ['Emergency-service hospitals', reviewData.summary.total],
+  ['Jurisdictions', reviewData.summary.jurisdictions],
   ['Already verified', reviewData.summary.matchedVerified],
-  ['Essex awaiting review', reviewData.summary.pendingEssex],
-  ['Other NJ awaiting review', reviewData.summary.pendingOtherNewJersey],
-  ['Held—not verified', reviewData.summary.heldNotVerified],
-  ['Out of scope', reviewData.summary.outOfScope]
+  ['Pending pediatric review', reviewData.summary.pendingReview]
 ].map(([label, value]) => `<article><strong>${value}</strong><span>${label}</span></article>`).join('');
 document.getElementById('reviewGenerated').textContent = `Queue generated ${new Date(reviewData.generatedAt).toLocaleDateString()}`;
+stateElement.insertAdjacentHTML('beforeend', reviewData.summary.states.map(({ state, total }) => `<option value="${state}">${state} (${total})</option>`).join(''));
 
 function renderQueue() {
   const query = searchElement.value.trim().toLowerCase();
   const filter = filterElement.value;
+  const state = stateElement.value;
   const candidates = reviewData.candidates.filter((candidate) => {
     const pending = candidate.reconciliation.status === 'unmatched';
-    const filterMatch = filter === 'all' || (filter === 'essex' && candidate.reviewPriority === 1) || (filter === 'pending' && pending) || (filter === 'matched' && !pending);
+    const filterMatch = filter === 'all' || (filter === 'pending' && pending) || (filter === 'matched' && !pending);
+    const stateMatch = state === 'all' || candidate.location.state === state;
     const haystack = [candidate.identity.name, candidate.location.city, candidate.location.county, candidate.cmsCertificationNumber].join(' ').toLowerCase();
-    return filterMatch && (!query || haystack.includes(query));
+    return filterMatch && stateMatch && (!query || haystack.includes(query));
   });
-  document.getElementById('queueCount').textContent = `${candidates.length} of ${reviewData.summary.total} records shown`;
-  queueElement.innerHTML = candidates.map(card).join('') || '<div class="empty"><h3>No matching records</h3><p>Adjust the search or queue filter.</p></div>';
+  const visible = candidates.slice(0, 100);
+  document.getElementById('queueCount').textContent = candidates.length > visible.length
+    ? `${candidates.length} matches · showing the first ${visible.length}; select a jurisdiction or search to narrow the queue`
+    : `${candidates.length} records shown`;
+  queueElement.innerHTML = visible.map(card).join('') || '<div class="empty"><h3>No matching records</h3><p>Adjust the search or queue filter.</p></div>';
 }
 
 function card(candidate) {
@@ -32,8 +37,7 @@ function card(candidate) {
   const status = matched ? '<span class="review-status verified">Matched verified record</span>'
     : decisionStatus === 'not-verified' ? '<span class="review-status pending">Held—not verified</span>'
       : decisionStatus === 'out-of-scope' ? '<span class="review-status pending">Out of scope</span>'
-        : candidate.reviewPriority === 1 ? '<span class="review-status priority">Needs current evidence</span>'
-          : '<span class="review-status pending">Pediatric review pending</span>';
+        : '<span class="review-status pending">Pediatric review pending</span>';
   const rating = candidate.cmsOverallHospitalRating ? `CMS overall hospital rating: ${escapeHtml(candidate.cmsOverallHospitalRating)}` : 'CMS overall hospital rating: unavailable';
   const sourceSearch = `https://www.google.com/search?q=${encodeURIComponent(`${candidate.identity.name} pediatric emergency department official`)}`;
   return `<article class="review-card">
@@ -41,7 +45,7 @@ function card(candidate) {
     <div class="review-facts"><span>CMS reports emergency services</span><span>${escapeHtml(candidate.identity.hospitalType)}</span><span>${rating}</span></div>
     <p class="review-address">${escapeHtml(candidate.location.address1)}, ${escapeHtml(candidate.location.city)}, ${escapeHtml(candidate.location.state)} ${escapeHtml(candidate.location.postalCode)} · ${formatPhone(candidate.phone)}</p>
     ${matched ? `<p class="matched-note">Linked to CareRoute record <code>${escapeHtml(candidate.reconciliation.facilityId)}</code> by ${escapeHtml(candidate.reconciliation.method)}.</p>` : candidate.reviewDecision ? `<p class="pending-note"><strong>${escapeHtml(candidate.reviewDecision.status)}:</strong> ${escapeHtml(candidate.reviewDecision.reason)}</p>` : '<p class="pending-note"><strong>Unknown:</strong> pediatric capability, pediatric hours, age limits, and relevant pediatric services.</p>'}
-    <div class="review-actions"><a href="${sourceSearch}" target="_blank" rel="noopener">Find authoritative pediatric source ↗</a><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${candidate.identity.name} ${candidate.location.city} NJ`)}" target="_blank" rel="noopener">Check location ↗</a></div>
+    <div class="review-actions"><a href="${sourceSearch}" target="_blank" rel="noopener">Find authoritative pediatric source ↗</a><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${candidate.identity.name} ${candidate.location.city} ${candidate.location.state}`)}" target="_blank" rel="noopener">Check location ↗</a></div>
   </article>`;
 }
 
@@ -50,4 +54,5 @@ function escapeHtml(value) { return String(value).replace(/[&<>'"]/g, (character
 
 searchElement.addEventListener('input', renderQueue);
 filterElement.addEventListener('change', renderQueue);
+stateElement.addEventListener('change', renderQueue);
 renderQueue();
