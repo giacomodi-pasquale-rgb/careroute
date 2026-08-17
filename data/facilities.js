@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-17.2",
+  "datasetVersion": "2026-08-17.3",
   "reviewedAt": "2026-08-17"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -12,6 +12,9 @@ window.CARE_ROUTE_FACILITIES = [
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
     "address": "94 Old Short Hills Road, Livingston, NJ 07039",
     "coordinates": {
       "lat": 40.7634604,
@@ -55,12 +58,16 @@ window.CARE_ROUTE_FACILITIES = [
   },
   {
     "id": "newark-beth-israel-peds-ed",
-    "name": "Children’s Hospital of New Jersey at Newark Beth Israel",
+    "name": "Newark Beth Israel Medical Center",
     "city": "Newark",
     "state": "NJ",
     "type": "emergency",
-    "typeLabel": "Pediatric emergency department",
+    "typeLabel": "Adult and pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
     "address": "201 Lyons Avenue, Newark, NJ 07112",
     "coordinates": {
       "lat": 40.7102728,
@@ -104,12 +111,16 @@ window.CARE_ROUTE_FACILITIES = [
   },
   {
     "id": "university-hospital-peds-ed",
-    "name": "University Hospital Pediatric Emergency Department",
+    "name": "University Hospital Emergency Department",
     "city": "Newark",
     "state": "NJ",
     "type": "emergency",
-    "typeLabel": "Pediatric emergency department",
+    "typeLabel": "Adult and pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
     "address": "150 Bergen Street, Newark, NJ 07103",
     "coordinates": {
       "lat": 40.7405364,
@@ -157,8 +168,12 @@ window.CARE_ROUTE_FACILITIES = [
     "city": "Belleville",
     "state": "NJ",
     "type": "emergency",
-    "typeLabel": "Pediatric emergency department",
+    "typeLabel": "Adult and pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
     "address": "1 Clara Maass Drive, Belleville, NJ 07109",
     "coordinates": {
       "lat": 40.7857547,
@@ -201,6 +216,59 @@ window.CARE_ROUTE_FACILITIES = [
     }
   },
   {
+    "id": "carewell-health-ed",
+    "name": "CareWell Health Medical Center",
+    "city": "East Orange",
+    "state": "NJ",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "300 Central Avenue, East Orange, NJ 07018",
+    "coordinates": {
+      "lat": 40.7542133,
+      "lon": -74.2134091
+    },
+    "phone": "(973) 672-8400",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats adult, pediatric, geriatric, forensic, and psychiatric patients",
+      "Acute-care and fast-track treatment areas",
+      "On-site CT and X-ray technology"
+    ],
+    "sourceUrl": "https://carewellhealth.org/emergency-department/",
+    "quality": {
+      "note": "NJ hospital measures exist, but no condition-specific emergency score is displayed.",
+      "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-17",
+      "reviewBy": "2026-11-17",
+      "method": "authoritative-provider-source"
+    }
+  },
+  {
     "id": "chop-main-peds-ed",
     "name": "Children’s Hospital of Philadelphia Emergency Department",
     "city": "Philadelphia",
@@ -208,6 +276,9 @@ window.CARE_ROUTE_FACILITIES = [
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
     "address": "3401 Civic Center Boulevard, Philadelphia, PA 19104",
     "coordinates": {
       "lat": 39.9476976,
@@ -257,6 +328,9 @@ window.CARE_ROUTE_FACILITIES = [
     "type": "emergency",
     "typeLabel": "Pediatric emergency department",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
     "address": "525 East 68th Street, New York, NY 10065",
     "coordinates": {
       "lat": 40.7642623,
@@ -306,6 +380,9 @@ window.CARE_ROUTE_FACILITIES = [
     "type": "urgent-care",
     "typeLabel": "Pediatric urgent care",
     "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
     "address": "571 West Mt. Pleasant Avenue, Livingston, NJ 07039",
     "coordinates": {
       "lat": 40.7974457,
@@ -352,8 +429,12 @@ window.CARE_ROUTE_FACILITIES = [
     "city": "West Orange",
     "state": "NJ",
     "type": "urgent-care",
-    "typeLabel": "Child-capable urgent care",
+    "typeLabel": "Adult and child urgent care",
     "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
     "address": "464 Eagle Rock Avenue, West Orange, NJ 07052",
     "coordinates": {
       "lat": 40.8034229,
@@ -428,8 +509,12 @@ window.CARE_ROUTE_FACILITIES = [
     "city": "Livingston",
     "state": "NJ",
     "type": "urgent-care",
-    "typeLabel": "Child-capable urgent care",
+    "typeLabel": "Adult and child urgent care",
     "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
     "address": "75 East Northfield Road, Livingston, NJ 07039",
     "coordinates": {
       "lat": 40.7737922,

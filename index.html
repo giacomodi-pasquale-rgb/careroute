@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#123c36">
-  <meta name="description" content="CareRoute helps families compare verified pediatric urgent care and emergency options.">
-  <title>CareRoute Pediatric</title>
+  <meta name="description" content="CareRoute helps people compare verified urgent care and emergency options for adults and children.">
+  <title>CareRoute</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
@@ -18,14 +18,14 @@
   </header>
 
   <aside class="safety-strip" role="note">
-    <strong>Not medical advice.</strong> If a child may have a life-threatening emergency, call <a href="tel:911">911</a> now.
+    <strong>Not medical advice.</strong> If someone may have a life-threatening emergency, call <a href="tel:911">911</a> now.
   </aside>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Pediatric care navigation</p>
+      <p class="eyebrow">Care navigation for everyone</p>
       <h1>Find the right level of care—without the guesswork.</h1>
-      <p>Compare verified pediatric care options in the growing Northeast pilot network. CareRoute filters by age, care setting, and published capabilities, then adds driving time when you share your location.</p>
+      <p>Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, and published capabilities, then adds driving time when you share your location.</p>
       <div class="trust-row" aria-label="Data principles">
         <span>✓ Real facilities</span><span>✓ Source-linked facts</span><span>✓ No invented waits</span>
       </div>
@@ -34,12 +34,16 @@
     <section class="panel" id="questionnaire" aria-labelledby="form-title">
       <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
       <p class="step-label" id="stepLabel">Step 1 of 4</p>
-      <h2 id="form-title">How old is your child?</h2>
+      <h2 id="form-title">Who needs care?</h2>
 
       <form id="careForm">
         <fieldset class="step active" data-step="1">
-          <legend class="sr-only">Child age</legend>
-          <div class="age-row">
+          <legend class="sr-only">Patient age group</legend>
+          <div class="choices one-col patient-choices">
+            <label><input type="radio" name="patientGroup" value="adult" checked><span><b>Adult</b><small>Age 18 or older</small></span></label>
+            <label><input type="radio" name="patientGroup" value="pediatric"><span><b>Child or teen</b><small>Show pediatric-capable care</small></span></label>
+          </div>
+          <div class="age-row" id="childAge" hidden>
             <label><span>Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
             <label><span>Unit</span><select id="ageUnit"><option value="years">Years</option><option value="months">Months</option></select></label>
           </div>
@@ -88,18 +92,18 @@
       <div id="emergencyBanner" class="emergency" hidden><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
-      <details><summary>How CareRoute orders these options</summary><p>Safety gates come first: emergency selections show only hospital emergency departments; age and published capability limits are applied next. Eligible options are then ordered by care-setting fit and, when available, current driving duration. Wait time, insurance, cost, and a composite quality score are excluded because no reliable real-time or pediatric-comparable data feed is connected.</p></details>
-      <details><summary>What “verified” means</summary><p>Facility identity, address, care setting, pediatric capability, phone, and displayed hours are tied to provider or government sources. Each card links to its sources. Information can change—call the facility and insurer before non-emergency travel.</p></details>
+      <details><summary>How CareRoute orders these options</summary><p>Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit and, when available, current driving duration. Wait time, insurance, cost, and composite quality scores are excluded without reliable comparable feeds.</p></details>
+      <details><summary>What “verified” means</summary><p>Facility identity, address, care setting, adult/child population, phone, displayed hours, and listed capabilities are tied to provider or government sources. Each card links to its sources. Information can change—call the facility and insurer before non-emergency travel.</p></details>
     </section>
 
     <section class="scope-note">
       <p class="eyebrow">Pilot limitations</p>
       <h2>A careful foundation, not a finished medical product.</h2>
-      <p>This public pilot covers a curated set of nearby pediatric emergency and urgent-care options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, cost, or insurance network status. Facility pages remain the source of truth.</p>
+      <p>This public pilot covers a curated set of verified adult and pediatric emergency and urgent-care options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, cost, or insurance network status. Facility pages remain the source of truth.</p>
     </section>
   </main>
 
-  <footer><span>CareRoute Pediatric v0.2</span><span>Data reviewed August 17, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
+  <footer><span>CareRoute v0.5</span><span>Data reviewed August 17, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js"></script>
   <script type="module" src="app.js"></script>

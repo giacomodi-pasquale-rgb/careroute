@@ -1,5 +1,5 @@
 {
-  "name": "CareRoute Pediatric",
+  "name": "CareRoute",
   "short_name": "CareRoute",
   "start_url": "./",
   "display": "standalone",
@@ -7,7 +7,7 @@
   "id": "./",
   "background_color": "#f5f3ed",
   "theme_color": "#123c36",
-  "description": "Verified pediatric care navigation for the Essex County pilot.",
+  "description": "Verified urgent and emergency care navigation for adults and children.",
   "categories": ["medical", "navigation"],
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },

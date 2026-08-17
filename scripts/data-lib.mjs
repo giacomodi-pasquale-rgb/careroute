@@ -26,6 +26,8 @@ function validateFacility(facility, ids, errors, today) {
   ids.add(facility?.id);
   if (!FACILITY_TYPES.has(facility?.identity?.type)) fail('unsupported facility type');
   if (!facility?.identity?.name) fail('identity.name is required');
+  const patientGroups = facility?.identity?.patientGroups || ['pediatric'];
+  if (!patientGroups.length || patientGroups.some((group) => !['adult', 'pediatric'].includes(group))) fail('identity.patientGroups must contain adult and/or pediatric');
   if (!Number.isFinite(facility?.location?.latitude) || Math.abs(facility.location.latitude) > 90) fail('valid latitude is required');
   if (!Number.isFinite(facility?.location?.longitude) || Math.abs(facility.location.longitude) > 180) fail('valid longitude is required');
   if (!/^\d{10}$/.test(facility?.contact?.phone || '')) fail('phone must contain ten digits');
@@ -33,6 +35,7 @@ function validateFacility(facility, ids, errors, today) {
   if (!Array.isArray(facility?.capabilities) || facility.capabilities.some((item) => !CAPABILITIES.has(item))) fail('capabilities contain an unsupported value');
   if (!HOUR_KINDS.has(facility?.hours?.kind)) fail('unsupported hours kind');
   if (facility?.identity?.type === 'emergency' && facility?.hours?.kind !== 'always') fail('pilot emergency departments must have verified 24-hour availability');
+  if (facility?.identity?.type === 'emergency' && !facility?.identity?.pediatricSpecific && !patientGroups.includes('adult')) fail('general emergency departments must be verified for adult care');
   if (facility?.live?.waitMinutes !== null) fail('waitMinutes must remain null without an approved live feed');
   if (facility?.insurance?.status !== 'verify' || facility.insurance.plans?.length) fail('insurance must remain verify-only without an approved eligibility feed');
   if (facility?.quality?.displayScore !== null) fail('displayScore must remain null until a comparable pediatric measure is approved');
@@ -65,6 +68,7 @@ export function toWebFacility(facility) {
     type: facility.identity.type,
     typeLabel: facility.identity.typeLabel,
     pediatricSpecific: facility.identity.pediatricSpecific,
+    patientGroups: facility.identity.patientGroups || ['pediatric'],
     address: `${facility.location.address1}, ${facility.location.city}, ${facility.location.state} ${facility.location.postalCode}`,
     coordinates: { lat: facility.location.latitude, lon: facility.location.longitude },
     phone: facility.contact.phone.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3'),

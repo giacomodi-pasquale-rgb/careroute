@@ -1,28 +1,67 @@
 // Generated review queue. Do not edit by hand.
 window.CARE_ROUTE_REVIEW_QUEUE = {
-  "datasetVersion": "2026-08-17.1",
-  "generatedAt": "2026-08-17T19:17:55.035Z",
+  "datasetVersion": "2026-08-17.3",
+  "generatedAt": "2026-08-17T19:48:44.509Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
     "identifier": "xubh-q36u",
     "url": "https://data.cms.gov/provider-data/dataset/xubh-q36u"
   },
-  "warning": "Review candidates only. CMS emergency-service status does not establish pediatric capability. No candidate may be published before authoritative pediatric verification.",
+  "warning": "Review candidates only. CMS emergency-service status does not establish exact hours, patient populations, or location-level capabilities. No candidate may be published before authoritative service verification.",
   "summary": {
     "total": 57,
-    "matchedVerified": 4,
+    "matchedVerified": 5,
     "pendingEssex": 1,
     "pendingOtherNewJersey": 49,
-    "heldNotVerified": 2,
+    "heldNotVerified": 1,
     "outOfScope": 1,
     "publishable": 0
   },
   "candidates": [
     {
+      "candidateId": "cms-310083",
+      "cmsCertificationNumber": "310083",
+      "status": "pending-service-verification",
+      "identity": {
+        "name": "CAREWELL HEALTH MEDICAL CENTER",
+        "hospitalType": "Acute Care Hospitals",
+        "ownership": "Proprietary",
+        "emergencyServicesReported": true
+      },
+      "location": {
+        "address1": "300 CENTRAL AVE",
+        "city": "EAST ORANGE",
+        "state": "NJ",
+        "postalCode": "07018",
+        "county": "ESSEX"
+      },
+      "phone": "9736728400",
+      "cmsOverallHospitalRating": "1",
+      "patientGroups": null,
+      "capabilityEvidence": [],
+      "pediatricCapability": null,
+      "pediatricEvidence": [],
+      "publishable": false,
+      "reconciliation": {
+        "status": "matched-verified",
+        "facilityId": "carewell-health-ed",
+        "method": "cms-ccn"
+      },
+      "reviewDecision": {
+        "status": "promoted",
+        "facilityId": "carewell-health-ed",
+        "reason": "Current provider material explicitly establishes a 24-hour emergency department treating adult, pediatric, geriatric, forensic, and psychiatric patients. It is published for adult routing but is not treated as a dedicated pediatric ED.",
+        "sources": [
+          "https://carewellhealth.org/emergency-department/"
+        ]
+      },
+      "reviewPriority": 0
+    },
+    {
       "candidateId": "cms-310009",
       "cmsCertificationNumber": "310009",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CLARA MAASS MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -38,6 +77,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9734502000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -60,7 +101,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310076",
       "cmsCertificationNumber": "310076",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "COOPERMAN BARNABAS MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -76,6 +117,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9733225000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -90,7 +133,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310002",
       "cmsCertificationNumber": "310002",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "NEWARK BETH ISRAEL MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -106,6 +149,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9739267000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -120,7 +165,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310119",
       "cmsCertificationNumber": "310119",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "THE UNIVERSITY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -136,6 +181,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9739724300",
       "cmsOverallHospitalRating": "1",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -150,7 +197,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310054",
       "cmsCertificationNumber": "310054",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "HACKENSACK MERIDIAN MOUNTAINSIDE MEDICAL",
         "hospitalType": "Acute Care Hospitals",
@@ -166,6 +213,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9734296000",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -188,7 +237,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310115",
       "cmsCertificationNumber": "310115",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "AHS HOSPITAL CORP",
         "hospitalType": "Acute Care Hospitals",
@@ -204,6 +253,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9088525100",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -218,7 +269,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310064",
       "cmsCertificationNumber": "310064",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ATLANTICARE REGIONAL MEDICAL CENTER - CITY CAMPUS",
         "hospitalType": "Acute Care Hospitals",
@@ -234,6 +285,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6094418020",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -248,7 +301,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310112",
       "cmsCertificationNumber": "310112",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "BAYSHORE MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -264,6 +317,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7327395900",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -278,7 +333,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310058",
       "cmsCertificationNumber": "310058",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "BERGEN NEW BRIDGE MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -294,6 +349,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2019674000",
       "cmsOverallHospitalRating": null,
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -308,7 +365,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310011",
       "cmsCertificationNumber": "310011",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CAPE REGIONAL MEDICAL CENTER INC",
         "hospitalType": "Acute Care Hospitals",
@@ -324,6 +381,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6094632000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -338,7 +397,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310044",
       "cmsCertificationNumber": "310044",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CAPITAL HEALTH MEDICAL CENTER - HOPEWELL",
         "hospitalType": "Acute Care Hospitals",
@@ -354,6 +413,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6093034000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -368,7 +429,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310092",
       "cmsCertificationNumber": "310092",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CAPITAL HEALTH REGIONAL MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -384,6 +445,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6093946000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -398,7 +461,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310111",
       "cmsCertificationNumber": "310111",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CENTRASTATE MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -414,6 +477,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7322947012",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -428,7 +493,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310017",
       "cmsCertificationNumber": "310017",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "CHILTON MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -444,6 +509,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9738315000",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -458,7 +525,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310041",
       "cmsCertificationNumber": "310041",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "COMMUNITY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -474,6 +541,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7325578000",
       "cmsOverallHospitalRating": "1",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -488,7 +557,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310014",
       "cmsCertificationNumber": "310014",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "COOPER UNIVERSITY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -504,6 +573,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8563422000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -518,7 +589,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310045",
       "cmsCertificationNumber": "310045",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ENGLEWOOD HOSPITAL AND MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -534,6 +605,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2018943000",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -548,7 +621,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310130",
       "cmsCertificationNumber": "310130",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "HACKENSACK MERIDIAN HEALTH PASCACK VALLEY MEDICAL",
         "hospitalType": "Acute Care Hospitals",
@@ -564,6 +637,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2018802700",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -578,7 +653,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310001",
       "cmsCertificationNumber": "310001",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "HACKENSACK UNIVERSITY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -594,6 +669,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "5519962000",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -608,7 +685,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310008",
       "cmsCertificationNumber": "310008",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "HOLY NAME MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -624,6 +701,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2018333000",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -638,7 +717,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310118",
       "cmsCertificationNumber": "310118",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "HUDSON REGIONAL HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -654,6 +733,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2013923200",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -668,7 +749,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310069",
       "cmsCertificationNumber": "310069",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "INSPIRA MEDICAL CENTER MULLICA HILL",
         "hospitalType": "Acute Care Hospitals",
@@ -684,6 +765,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8563631000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -698,7 +781,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310032",
       "cmsCertificationNumber": "310032",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "INSPIRA MEDICAL CENTER VINELAND",
         "hospitalType": "Acute Care Hospitals",
@@ -714,6 +797,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8566418000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -728,7 +813,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310086",
       "cmsCertificationNumber": "310086",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "JEFFERSON STRATFORD HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -744,6 +829,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8563467802",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -758,7 +845,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310074",
       "cmsCertificationNumber": "310074",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "JERSEY CITY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -774,6 +861,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2019152000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -788,7 +877,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310073",
       "cmsCertificationNumber": "310073",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "JERSEY SHORE UNIVERSITY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -804,6 +893,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7327755500",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -818,7 +909,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310108",
       "cmsCertificationNumber": "310108",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "JFK UNIVERSITY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -834,6 +925,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7323217000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -848,7 +941,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310075",
       "cmsCertificationNumber": "310075",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "MONMOUTH MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -864,6 +957,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7322225200",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -878,7 +973,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310084",
       "cmsCertificationNumber": "310084",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "MONMOUTH MEDICAL CENTER-SOUTHERN CAMPUS",
         "hospitalType": "Acute Care Hospitals",
@@ -894,6 +989,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7323631900",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -908,7 +1005,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310015",
       "cmsCertificationNumber": "310015",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "MORRISTOWN MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -924,6 +1021,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9739715450",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -938,7 +1037,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310028",
       "cmsCertificationNumber": "310028",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "NEWTON MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -954,6 +1053,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9733832121",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -968,7 +1069,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310052",
       "cmsCertificationNumber": "310052",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "OCEAN MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -984,6 +1085,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7328402200",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -998,7 +1101,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310051",
       "cmsCertificationNumber": "310051",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "OVERLOOK MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1014,6 +1117,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9085222000",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1028,7 +1133,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310003",
       "cmsCertificationNumber": "310003",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "PALISADES MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1044,6 +1149,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2018545000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1058,7 +1165,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310039",
       "cmsCertificationNumber": "310039",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "RARITAN BAY MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1074,6 +1181,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7323245000",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1088,7 +1197,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310034",
       "cmsCertificationNumber": "310034",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "RIVERVIEW MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1104,6 +1213,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7327412700",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1118,7 +1229,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310038",
       "cmsCertificationNumber": "310038",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1134,6 +1245,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7328283000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1148,7 +1261,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310048",
       "cmsCertificationNumber": "310048",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL - SOMERSET",
         "hospitalType": "Acute Care Hospitals",
@@ -1164,6 +1277,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9086852200",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1178,7 +1293,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310110",
       "cmsCertificationNumber": "310110",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL AT HAMILTON",
         "hospitalType": "Acute Care Hospitals",
@@ -1194,6 +1309,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6095867900",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1208,7 +1325,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310024",
       "cmsCertificationNumber": "310024",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL AT RAHWAY",
         "hospitalType": "Acute Care Hospitals",
@@ -1224,6 +1341,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7323814200",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1238,7 +1357,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310050",
       "cmsCertificationNumber": "310050",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "SAINT CLARE'S HOSPITAL/ DENVILLE CAMPUS",
         "hospitalType": "Acute Care Hospitals",
@@ -1254,6 +1373,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9739835569",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1268,7 +1389,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310070",
       "cmsCertificationNumber": "310070",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "SAINT PETER'S UNIVERSITY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1284,6 +1405,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7327458600",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1298,7 +1421,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310047",
       "cmsCertificationNumber": "310047",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "SHORE MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1314,6 +1437,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6096533500",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1328,7 +1453,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310113",
       "cmsCertificationNumber": "310113",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "SOUTHERN OCEAN MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1344,6 +1469,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6095976011",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1358,7 +1485,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310060",
       "cmsCertificationNumber": "310060",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ST LUKE'S WARREN HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1374,6 +1501,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9088476700",
       "cmsOverallHospitalRating": "5",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1388,7 +1517,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310006",
       "cmsCertificationNumber": "310006",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "ST MARY'S GENERAL HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1404,6 +1533,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9733654300",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1418,7 +1549,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310027",
       "cmsCertificationNumber": "310027",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "TRINITAS REGIONAL MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1434,6 +1565,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9089945000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1448,7 +1581,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-314011",
       "cmsCertificationNumber": "314011",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "UNIVERSITY BEHAVIORAL HEALTH CARE",
         "hospitalType": "Psychiatric",
@@ -1464,6 +1597,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "7322355900",
       "cmsOverallHospitalRating": null,
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1478,7 +1613,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310010",
       "cmsCertificationNumber": "310010",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "UNIVERSITY MEDICAL CENTER OF PRINCETON AT PLAINSBORO",
         "hospitalType": "Acute Care Hospitals",
@@ -1494,6 +1629,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6098536500",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1508,7 +1645,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310012",
       "cmsCertificationNumber": "310012",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "VALLEY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1524,6 +1661,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "2014478000",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1538,7 +1677,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310057",
       "cmsCertificationNumber": "310057",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "VIRTUA MOUNT HOLLY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1554,6 +1693,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6092670700",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1568,7 +1709,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310029",
       "cmsCertificationNumber": "310029",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "VIRTUA OUR LADY OF LOURDES HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1584,6 +1725,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8568865373",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1598,7 +1741,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310061",
       "cmsCertificationNumber": "310061",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "VIRTUA WILLINGBORO HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1614,6 +1757,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "6098352900",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1628,7 +1773,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-310022",
       "cmsCertificationNumber": "310022",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "WEST JERSEY HOSPITAL",
         "hospitalType": "Acute Care Hospitals",
@@ -1644,6 +1789,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "8562473000",
       "cmsOverallHospitalRating": "3",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1656,47 +1803,9 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       "reviewPriority": 2
     },
     {
-      "candidateId": "cms-310083",
-      "cmsCertificationNumber": "310083",
-      "status": "pending-pediatric-verification",
-      "identity": {
-        "name": "CAREWELL HEALTH MEDICAL CENTER",
-        "hospitalType": "Acute Care Hospitals",
-        "ownership": "Proprietary",
-        "emergencyServicesReported": true
-      },
-      "location": {
-        "address1": "300 CENTRAL AVE",
-        "city": "EAST ORANGE",
-        "state": "NJ",
-        "postalCode": "07018",
-        "county": "ESSEX"
-      },
-      "phone": "9736728400",
-      "cmsOverallHospitalRating": "1",
-      "pediatricCapability": null,
-      "pediatricEvidence": [],
-      "publishable": false,
-      "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
-      },
-      "reviewDecision": {
-        "status": "not-verified",
-        "facilityId": null,
-        "reason": "Current provider and NJ licensing material establish a general acute-care hospital and emergency medicine, but not a dedicated pediatric emergency service.",
-        "sources": [
-          "https://carewellhealth.org/",
-          "https://www.nj.gov/health/bc/documents/shpb/cn/cn-carewell-health-medical-center-07252025.pdf"
-        ]
-      },
-      "reviewPriority": 3
-    },
-    {
       "candidateId": "cms-310096",
       "cmsCertificationNumber": "310096",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "SAINT MICHAEL'S MEDICAL CENTER",
         "hospitalType": "Acute Care Hospitals",
@@ -1712,6 +1821,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9738775350",
       "cmsOverallHospitalRating": "4",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,
@@ -1734,7 +1845,7 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
     {
       "candidateId": "cms-31001F",
       "cmsCertificationNumber": "31001F",
-      "status": "pending-pediatric-verification",
+      "status": "pending-service-verification",
       "identity": {
         "name": "VA NEW JERSEY HEALTH CARE SYSTEM",
         "hospitalType": "Acute Care - Veterans Administration",
@@ -1750,6 +1861,8 @@ window.CARE_ROUTE_REVIEW_QUEUE = {
       },
       "phone": "9736761000",
       "cmsOverallHospitalRating": "2",
+      "patientGroups": null,
+      "capabilityEvidence": [],
       "pediatricCapability": null,
       "pediatricEvidence": [],
       "publishable": false,

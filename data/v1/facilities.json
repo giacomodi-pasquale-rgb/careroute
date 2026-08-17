@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "datasetVersion": "2026-08-17.2",
+  "datasetVersion": "2026-08-17.3",
   "reviewedAt": "2026-08-17",
   "facilities": [
     {
@@ -22,7 +22,7 @@
     {
       "id": "newark-beth-israel-peds-ed",
       "externalIds": { "cmsCcn": "310002" },
-      "identity": { "name": "Children’s Hospital of New Jersey at Newark Beth Israel", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "identity": { "name": "Newark Beth Israel Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Adult and pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["adult", "pediatric"] },
       "location": { "address1": "201 Lyons Avenue", "city": "Newark", "state": "NJ", "postalCode": "07112", "latitude": 40.7102728, "longitude": -74.2125846 },
       "contact": { "phone": "9739267337", "website": "https://www.rwjbh.org/newark-beth-israel-medical-center/treatment-care/emergency-room-services/", "bookingUrl": null },
       "pediatricAge": { "minimumMonths": 0, "maximumMonths": 216, "limitsVerified": true },
@@ -38,7 +38,7 @@
     {
       "id": "university-hospital-peds-ed",
       "externalIds": { "cmsCcn": "310119" },
-      "identity": { "name": "University Hospital Pediatric Emergency Department", "organization": "University Hospital", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "identity": { "name": "University Hospital Emergency Department", "organization": "University Hospital", "type": "emergency", "typeLabel": "Adult and pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["adult", "pediatric"] },
       "location": { "address1": "150 Bergen Street", "city": "Newark", "state": "NJ", "postalCode": "07103", "latitude": 40.7405364, "longitude": -74.1911759 },
       "contact": { "phone": "9739724300", "website": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "bookingUrl": null },
       "pediatricAge": { "minimumMonths": 0, "maximumMonths": 216, "limitsVerified": true },
@@ -49,12 +49,15 @@
       "insurance": { "status": "verify", "plans": [] },
       "quality": { "displayScore": null, "note": "No pediatric-specific emergency quality measure was found for display.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx" },
       "verification": { "status": "verified", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
-      "evidence": [{ "id": "uh-provider", "url": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "publisher": "University Hospital", "supports": ["identity", "location", "contact", "pediatricAge", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+      "evidence": [
+        { "id": "uh-provider", "url": "https://www.uhnj.org/services/emergency-medicine/pediatric-emergency-medicine/", "publisher": "University Hospital", "supports": ["pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" },
+        { "id": "uh-general-ed", "url": "https://www.uhnj.org/services/emergency-medicine/", "publisher": "University Hospital", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }
+      ]
     },
     {
       "id": "clara-maass-peds-ed",
       "externalIds": { "cmsCcn": "310009" },
-      "identity": { "name": "Clara Maass Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true },
+      "identity": { "name": "Clara Maass Medical Center", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Adult and pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["adult", "pediatric"] },
       "location": { "address1": "1 Clara Maass Drive", "city": "Belleville", "state": "NJ", "postalCode": "07109", "latitude": 40.7857547, "longitude": -74.1767192 },
       "contact": { "phone": "9734502100", "website": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/", "bookingUrl": null },
       "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
@@ -69,6 +72,22 @@
         { "id": "clara-pediatrics", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/", "publisher": "RWJBarnabas Health", "supports": ["identity", "location", "pediatricAge", "capabilities", "highlights"], "checkedAt": "2026-08-17" },
         { "id": "clara-emergency", "url": "https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/", "publisher": "RWJBarnabas Health", "supports": ["contact", "hours", "highlights"], "checkedAt": "2026-08-17" }
       ]
+    },
+    {
+      "id": "carewell-health-ed",
+      "externalIds": { "cmsCcn": "310083" },
+      "identity": { "name": "CareWell Health Medical Center", "organization": "CareWell Health", "type": "emergency", "typeLabel": "Adult and pediatric emergency department", "pediatricSpecific": false, "patientGroups": ["adult", "pediatric"] },
+      "location": { "address1": "300 Central Avenue", "city": "East Orange", "state": "NJ", "postalCode": "07018", "latitude": 40.7542133, "longitude": -74.2134091 },
+      "contact": { "phone": "9736728400", "website": "https://carewellhealth.org/emergency-department/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Treats adult, pediatric, geriatric, forensic, and psychiatric patients", "Acute-care and fast-track treatment areas", "On-site CT and X-ray technology"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "NJ hospital measures exist, but no condition-specific emergency score is displayed.", "sourceUrl": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx" },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-11-17", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "carewell-ed-provider", "url": "https://carewellhealth.org/emergency-department/", "publisher": "CareWell Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
     },
     {
       "id": "chop-main-peds-ed",
@@ -119,7 +138,7 @@
     },
     {
       "id": "afc-west-orange",
-      "identity": { "name": "AFC Urgent Care West Orange", "organization": "AFC Urgent Care", "type": "urgent-care", "typeLabel": "Child-capable urgent care", "pediatricSpecific": false },
+      "identity": { "name": "AFC Urgent Care West Orange", "organization": "AFC Urgent Care", "type": "urgent-care", "typeLabel": "Adult and child urgent care", "pediatricSpecific": false, "patientGroups": ["adult", "pediatric"] },
       "location": { "address1": "464 Eagle Rock Avenue", "city": "West Orange", "state": "NJ", "postalCode": "07052", "latitude": 40.8034229, "longitude": -74.2499729 },
       "contact": { "phone": "9736695900", "website": "https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/", "bookingUrl": "https://www.afcurgentcare.com/west-orange/" },
       "pediatricAge": { "minimumMonths": 12, "maximumMonths": 216, "limitsVerified": true },
@@ -137,7 +156,7 @@
     },
     {
       "id": "summit-urgent-care-livingston",
-      "identity": { "name": "Summit Health Urgent Care", "organization": "Summit Health", "type": "urgent-care", "typeLabel": "Child-capable urgent care", "pediatricSpecific": false },
+      "identity": { "name": "Summit Health Urgent Care", "organization": "Summit Health", "type": "urgent-care", "typeLabel": "Adult and child urgent care", "pediatricSpecific": false, "patientGroups": ["adult", "pediatric"] },
       "location": { "address1": "75 East Northfield Road", "city": "Livingston", "state": "NJ", "postalCode": "07039", "latitude": 40.7737922, "longitude": -74.3204303 },
       "contact": { "phone": "9734361500", "website": "https://www.summithealth.com/locations/livingston-summit-health-urgent-care", "bookingUrl": null },
       "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },

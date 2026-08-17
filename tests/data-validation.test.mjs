@@ -18,12 +18,12 @@ test('no record contains invented operational or comparative data', async () => 
   }
 });
 
-test('emergency records are pediatric-specific, 24-hour facilities', async () => {
+test('emergency records have a verified population and 24-hour availability', async () => {
   const { facilities } = await readDataset();
   const emergency = facilities.filter((facility) => facility.identity.type === 'emergency');
   assert.ok(emergency.length > 0);
   for (const facility of emergency) {
-    assert.equal(facility.identity.pediatricSpecific, true);
+    assert.ok(facility.identity.pediatricSpecific || facility.identity.patientGroups?.includes('adult'));
     assert.equal(facility.hours.kind, 'always');
   }
 });

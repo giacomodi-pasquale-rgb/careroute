@@ -6,7 +6,7 @@ const state = { step: 1, location: null, routes: new Map() };
 const MAX_SEARCH_MILES = 100;
 let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
-const titles = ['How old is your child?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
+const titles = ['Who needs care?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
 
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
 window.addEventListener('beforeinstallprompt', (event) => {
@@ -30,8 +30,11 @@ function showStep(number) {
 }
 
 document.querySelectorAll('.next').forEach((button) => button.addEventListener('click', () => {
-  if (state.step === 1 && !document.getElementById('ageValue').reportValidity()) return;
+  if (state.step === 1 && document.querySelector('[name=patientGroup]:checked').value === 'pediatric' && !document.getElementById('ageValue').reportValidity()) return;
   showStep(state.step + 1);
+}));
+document.querySelectorAll('[name=patientGroup]').forEach((input) => input.addEventListener('change', () => {
+  document.getElementById('childAge').hidden = input.value !== 'pediatric';
 }));
 document.querySelectorAll('.back').forEach((button) => button.addEventListener('click', () => showStep(state.step - 1)));
 
@@ -74,6 +77,7 @@ function getInputs() {
   const value = Number(document.getElementById('ageValue').value);
   const unit = document.getElementById('ageUnit').value;
   return {
+    patientGroup: document.querySelector('[name=patientGroup]:checked').value,
     ageMonths: unit === 'months' ? value : value * 12,
     need: document.querySelector('[name=need]:checked').value,
     emergency: document.querySelector('[name=emergency]:checked').value === 'yes'
@@ -143,18 +147,21 @@ function facilityCard(facility, index, inputs) {
 async function renderResults() {
   const inputs = getInputs();
   let eligible = facilities.filter((facility) => {
-    const ageEligible = !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
+    const groupEligible = inputs.patientGroup === 'adult'
+      ? facility.patientGroups.includes('adult')
+      : facility.patientGroups.includes('pediatric') && (facility.type !== 'emergency' || facility.pediatricSpecific);
+    const ageEligible = inputs.patientGroup === 'adult' || !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
     const settingEligible = !inputs.emergency || facility.type === 'emergency';
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
     const geographyEligible = state.location || facility.state === 'NJ';
-    return ageEligible && settingEligible && capabilityEligible && geographyEligible;
+    return groupEligible && ageEligible && settingEligible && capabilityEligible && geographyEligible;
   });
   const routed = await loadRoutes(eligible);
   if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);
   eligible = eligible.map((facility) => ({ ...facility, rankScore: scoreFacility(facility, inputs) }))
     .sort((a, b) => b.rankScore - a.rankScore || a.name.localeCompare(b.name));
 
-  document.getElementById('resultsTitle').textContent = inputs.emergency ? 'Pediatric emergency departments' : 'Care options for this concern';
+  document.getElementById('resultsTitle').textContent = inputs.emergency ? `${inputs.patientGroup === 'adult' ? 'Adult' : 'Pediatric'} emergency departments` : 'Care options for this concern';
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
   document.getElementById('routingNote').textContent = routed
     ? 'Driving distance, duration, and estimated arrival are current road-network calculations. Each card states whether live traffic is included.'

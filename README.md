@@ -1,14 +1,14 @@
-# CareRoute Pediatric v0.3
+# CareRoute v0.5
 
-CareRoute is a production-oriented, mobile-first foundation for a national pediatric care-navigation network. The patient-facing verified pilot currently covers Essex County, New Jersey; the data-operations layer now seeds a nationwide evidence review queue.
+CareRoute is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
-- Nine real pediatric emergency or pediatric-capable urgent-care locations
-- Provider-sourced identity, address, phone, care setting, pediatric capability, services, and published hours
+- Ten verified adult and/or pediatric emergency or urgent-care locations
+- Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours
 - Browser geolocation, with location kept in memory only
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status
-- Conservative emergency gating: emergency/unsure results contain only verified pediatric emergency departments
+- Conservative emergency gating: adult emergency searches show verified adult EDs; child searches require pediatric-specific emergency capability
 - Direct provider-source, calling, and navigation links
 
 No wait time, insurance acceptance, price, clinical recommendation, or invented quality score is displayed. Dynamic or unavailable fields are labeled as such. New Jersey hospital-quality reporting is linked where applicable but is not transformed into a pediatric emergency-care rating.
@@ -49,9 +49,9 @@ To seed a state review queue from the official CMS download:
 npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json NJ
 ```
 
-The resulting candidates are deliberately marked `publishable: false` and `pediatricCapability: null`. A reviewer must find authoritative pediatric evidence before promotion into the verified dataset.
+The resulting candidates are deliberately marked `publishable: false`. A reviewer must verify hours, adult/child population, coordinates, and location-level service evidence before promotion into the patient dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Six match verified CareRoute pediatric emergency records; all other records remain non-publishable until pediatric capability is verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Seven match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 17, 2026.
 
