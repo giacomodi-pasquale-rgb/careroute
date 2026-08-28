@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { currentLanguage, format, initLanguage, t } from './i18n.js';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=2';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -48,6 +48,7 @@ document.addEventListener('careroute:language', async () => {
   showStep(state.step);
   if (!document.getElementById('results').hidden) await renderResults();
 });
+showStep(state.step);
 
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');

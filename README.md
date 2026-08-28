@@ -8,6 +8,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
+- A translated cost-access guide distinguishing FQHC full discounts or nominal charges, NJ hospital Charity Care, and service-specific published flat fees
 - Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours
 - Browser geolocation, with location kept in memory only
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status

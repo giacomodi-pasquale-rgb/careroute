@@ -717,9 +717,9 @@ window.CARE_ROUTE_FACILITIES = [
       "days": {}
     },
     "highlights": [
-      "Primary and preventive care for adults and children",
-      "Insurance is not required for care",
-      "Income-based sliding fee scale; no one is turned away for lack of funds"
+      "Primary, preventive, and pediatric care",
+      "Dental, women’s health, behavioral health, and laboratory services",
+      "Insurance is not required; fees are adjusted using income and family size"
     ],
     "sourceUrl": "https://www.nchcfqhc.org/",
     "quality": {
@@ -777,9 +777,9 @@ window.CARE_ROUTE_FACILITIES = [
       "days": {}
     },
     "highlights": [
-      "Primary and preventive care for adults and children",
-      "Insurance is not required for care",
-      "Income-based sliding fee scale; no one is turned away for lack of funds"
+      "Primary, preventive, and pediatric care",
+      "Dental, women’s health, behavioral health, and laboratory services",
+      "Insurance is not required; fees are adjusted using income and family size"
     ],
     "sourceUrl": "https://www.nchcfqhc.org/",
     "quality": {

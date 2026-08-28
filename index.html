@@ -15,7 +15,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#">CareRoute<span>.</span></a>
-    <div class="topbar-actions"><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
+    <div class="topbar-actions"><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
@@ -27,7 +27,7 @@
       <p class="eyebrow" data-i18n="eyebrow">Adult &amp; child care navigation</p>
       <h1 data-i18n="heroTitle">Find the right level of care—without the guesswork.</h1>
       <p data-i18n="heroBody">Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, access needs, and published capabilities, then adds driving time when you share your location.</p>
-      <div class="trust-row" aria-label="Data principles">
+      <div class="trust-row" aria-label="Data principles" data-i18n-aria-label="dataPrinciples">
         <span data-i18n="trustReal">✓ Real facilities</span><span data-i18n="trustSources">✓ Source-linked facts</span><span data-i18n="trustWaits">✓ No invented waits</span>
       </div>
     </section>
@@ -85,6 +85,7 @@
               <label><input type="checkbox" name="accessNeed" value="low-cost"><span data-i18n="accessLowCost">I need free or reduced-cost care</span></label>
               <label><input type="checkbox" name="accessNeed" value="language"><span data-i18n="accessLanguage">I need language support</span></label>
             </div>
+            <p class="access-caution" data-i18n="accessCaution">“Low cost” does not mean every service is automatically free. Eligibility, income, family size, service type, and clinic policy can affect the amount.</p>
           </div>
           <p class="helper" data-i18n="locationPrivacy">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
           <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span data-i18n="locationButton"><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
@@ -102,6 +103,7 @@
       <div id="emergencyBanner" class="emergency" hidden data-i18n="emergencyBanner"><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
+      <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> CareRoute shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
       <details><summary data-i18n="orderingTitle">How CareRoute orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
       <details><summary data-i18n="verifiedTitle">What “verified” means</summary><p data-i18n="verifiedBody">Facility identity, address, care setting, adult/child population, phone, displayed hours, listed capabilities, and access claims are tied to provider or government sources. Information can change—call before non-emergency travel.</p></details>
     </section>
@@ -116,6 +118,6 @@
   <footer><span>CareRoute v0.6 Access</span><span data-i18n="dataReviewed">Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js"></script>
-  <script type="module" src="app.js?v=14"></script>
+  <script type="module" src="app.js?v=15"></script>
 </body>
 </html>
