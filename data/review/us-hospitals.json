@@ -1,6 +1,6 @@
 {
-  "datasetVersion": "2026-08-28.2",
-  "generatedAt": "2026-08-28T17:27:28.668Z",
+  "datasetVersion": "2026-08-28.3",
+  "generatedAt": "2026-08-28T17:44:15.427Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,8 +11,8 @@
   "summary": {
     "total": 4495,
     "jurisdictions": 56,
-    "matchedVerified": 13,
-    "pendingReview": 4482,
+    "matchedVerified": 20,
+    "pendingReview": 4475,
     "publishable": 0,
     "states": [
       {
@@ -222,8 +222,8 @@
       {
         "state": "NJ",
         "total": 57,
-        "matchedVerified": 5,
-        "pendingReview": 52
+        "matchedVerified": 9,
+        "pendingReview": 48
       },
       {
         "state": "NM",
@@ -240,8 +240,8 @@
       {
         "state": "NY",
         "total": 160,
-        "matchedVerified": 1,
-        "pendingReview": 159
+        "matchedVerified": 4,
+        "pendingReview": 156
       },
       {
         "state": "OH",
@@ -80299,9 +80299,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "k-hovnanian-childrens-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -80419,9 +80419,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "goryeb-childrens-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -80539,9 +80539,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "overlook-hersh-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -80659,9 +80659,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "rwjuh-new-brunswick-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -86479,9 +86479,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "nyu-kids-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -87679,9 +87679,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "stony-brook-childrens-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -88069,9 +88069,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "maria-fareri-peds-ed",
+        "method": "cms-ccn"
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "datasetVersion": "2026-08-28.2",
+  "datasetVersion": "2026-08-28.3",
   "reviewedAt": "2026-08-28",
   "facilities": [
     {
@@ -316,6 +316,166 @@
       "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
       "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-and-government-geocoder-sources" },
       "evidence": [{ "id": "hasbro-pediatric-emergency", "url": "https://www.brownhealth.org/centers-services/emergency-services-hasbro-childrens", "publisher": "Brown University Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" }]
+    },
+    {
+      "id": "k-hovnanian-childrens-peds-ed",
+      "externalIds": { "cmsCcn": "310073" },
+      "identity": { "name": "K. Hovnanian Children’s Hospital Pediatric Emergency Department", "organization": "Hackensack Meridian Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "1945 Route 33", "city": "Neptune", "state": "NJ", "postalCode": "07753", "latitude": 40.2078802, "longitude": -74.0382886 },
+      "contact": { "phone": "7327764949", "website": "https://www.hackensackmeridianhealth.org/en/locations/k-hovnanian-children-hospital", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency department staffed by pediatric experts", "Open 24 hours", "Level 1 pediatric trauma capability"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-and-government-geocoder-sources" },
+      "evidence": [{ "id": "khch-provider", "url": "https://www.hackensackmeridianhealth.org/en/locations/k-hovnanian-children-hospital", "publisher": "Hackensack Meridian Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" }]
+    },
+    {
+      "id": "goryeb-childrens-peds-ed",
+      "externalIds": { "cmsCcn": "310015" },
+      "identity": { "name": "Gagnon Pediatric Emergency Department at Goryeb Children’s Hospital", "organization": "Atlantic Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "100 Madison Avenue", "city": "Morristown", "state": "NJ", "postalCode": "07960", "latitude": 40.7878685, "longitude": -74.463913 },
+      "contact": { "phone": "9739715000", "website": "https://www.atlantichealth.org/locations/goryeb-childrens-hospital/emergency-department", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency department", "Certified emergency pediatricians and pediatric-trained nurses", "Access to Goryeb pediatric critical-care and specialty services"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "goryeb-ed-location", "url": "https://www.atlantichealth.org/locations/goryeb-childrens-hospital/emergency-department", "publisher": "Atlantic Health", "supports": ["identity", "location", "contact", "hours"], "checkedAt": "2026-08-28" },
+        { "id": "goryeb-pediatric-care", "url": "https://www.atlantichealth.org/specialties/pediatric-emergency-care", "publisher": "Atlantic Health", "supports": ["capabilities", "highlights"], "checkedAt": "2026-08-28" }
+      ]
+    },
+    {
+      "id": "rwjuh-new-brunswick-peds-ed",
+      "externalIds": { "cmsCcn": "310038" },
+      "identity": { "name": "Bristol Myers Squibb Children’s Hospital Pediatric Emergency Department", "organization": "RWJBarnabas Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "1 Robert Wood Johnson Place", "city": "New Brunswick", "state": "NJ", "postalCode": "08901", "latitude": 40.4957224, "longitude": -74.4506175 },
+      "contact": { "phone": "7324188173", "website": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 240, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Treats pediatric patients from infancy through age 20", "Board-certified pediatric emergency physicians and pediatricians available 24/7", "Pediatric trauma, in-department imaging, ultrasound, and sedation services"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "access": { "uninsuredWelcome": true, "slidingFee": false, "noOneTurnedAway": true, "charityCare": true, "flatFee": null, "languages": [], "note": "The provider states emergency patients are treated even if they cannot pay and links to Charity Care and payment assistance. This does not mean every service is free.", "sourceUrl": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/" },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "bmsch-pediatric-ed", "url": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/", "publisher": "RWJBarnabas Health", "supports": ["identity", "contact", "pediatricAge", "capabilities", "hours", "highlights", "access"], "checkedAt": "2026-08-28" },
+        { "id": "bmsch-ed-directions", "url": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/directions-and-parking/", "publisher": "RWJBarnabas Health", "supports": ["location"], "checkedAt": "2026-08-28" }
+      ]
+    },
+    {
+      "id": "overlook-hersh-peds-ed",
+      "externalIds": { "cmsCcn": "310051" },
+      "identity": { "name": "Hersh Children’s Center Pediatric Emergency Department", "organization": "Atlantic Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "99 Beauvoir Avenue", "city": "Summit", "state": "NJ", "postalCode": "07901", "latitude": 40.7123739, "longitude": -74.3543787 },
+      "contact": { "phone": "9085225664", "website": "https://www.atlantichealth.org/locations/overlook-medical-center/pediatric-emergency-department", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 252, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency and inpatient center", "Pediatric doctors and nurses available 24/7", "Provider materials identify care for patients ages 0–21"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "hersh-ed-location", "url": "https://www.atlantichealth.org/locations/overlook-medical-center/pediatric-emergency-department", "publisher": "Atlantic Health", "supports": ["identity", "location", "contact", "hours"], "checkedAt": "2026-08-28" },
+        { "id": "hersh-childrens-center", "url": "https://www.atlantichealth.org/locations/overlook-medical-center/childrens-center", "publisher": "Atlantic Health", "supports": ["capabilities", "highlights"], "checkedAt": "2026-08-28" },
+        { "id": "hersh-age-provider", "url": "https://ahs.atlantichealth.org/content/dam/atlantichealth-v2/atlanticview/magazines/atlanticview-overlook/2022-spring.pdf", "publisher": "Atlantic Health", "supports": ["pediatricAge", "highlights"], "checkedAt": "2026-08-28" }
+      ]
+    },
+    {
+      "id": "st-josephs-paterson-peds-ed",
+      "identity": { "name": "St. Joseph’s Children’s Hospital Pediatric Emergency Department", "organization": "St. Joseph’s Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "703 Main Street", "city": "Paterson", "state": "NJ", "postalCode": "07503", "latitude": 40.9026027, "longitude": -74.1668133 },
+      "contact": { "phone": "9737542000", "website": "https://stjosephshealth.org/health-services/pediatrics/pediatric-emergency-medicine/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": 0, "maximumMonths": 252, "limitsVerified": true },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Separate pediatric emergency entrance, waiting room, registration, and triage", "Pediatric emergency specialists and pediatric-trained staff available 24/7", "Children’s hospital serves patients from birth through age 21"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-source" },
+      "evidence": [
+        { "id": "stj-pediatric-ed", "url": "https://stjosephshealth.org/health-services/pediatrics/pediatric-emergency-medicine/", "publisher": "St. Joseph’s Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" },
+        { "id": "stj-childrens-location", "url": "https://stjosephshealth.org/locations/st-josephs-childrens-hospital/", "publisher": "St. Joseph’s Health", "supports": ["location", "pediatricAge", "highlights"], "checkedAt": "2026-08-28" }
+      ]
+    },
+    {
+      "id": "nyp-morgan-stanley-peds-ed",
+      "identity": { "name": "NewYork-Presbyterian Morgan Stanley Children’s Hospital Emergency Department", "organization": "NewYork-Presbyterian", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "3959 Broadway", "city": "New York", "state": "NY", "postalCode": "10032", "latitude": 40.8392617, "longitude": -73.9411703 },
+      "contact": { "phone": "2123056628", "website": "https://www.nyp.org/morganstanley/clinical-services/emergency-care-and-trauma", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency and trauma care", "Pediatric emergency medicine specialists available 24/7", "Level 1 pediatric trauma center"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-and-government-geocoder-sources" },
+      "evidence": [{ "id": "nyp-msch-pediatric-ed", "url": "https://www.nyp.org/morganstanley/clinical-services/emergency-care-and-trauma", "publisher": "NewYork-Presbyterian", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" }]
+    },
+    {
+      "id": "nyu-kids-peds-ed",
+      "externalIds": { "cmsCcn": "330214" },
+      "identity": { "name": "NYU Langone KiDS Emergency Department", "organization": "NYU Langone Health", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "570 First Avenue", "city": "New York", "state": "NY", "postalCode": "10016", "latitude": 40.7426952, "longitude": -73.9742185 },
+      "contact": { "phone": "2122635550", "website": "https://nyulangone.org/locations/kids-emergency-department", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Emergency department dedicated entirely to children", "Pediatric emergency doctors and nurses", "Open 24 hours a day, seven days a week"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-and-government-geocoder-sources" },
+      "evidence": [{ "id": "nyu-kids-ed", "url": "https://nyulangone.org/locations/kids-emergency-department", "publisher": "NYU Langone Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" }]
+    },
+    {
+      "id": "stony-brook-childrens-peds-ed",
+      "externalIds": { "cmsCcn": "330393" },
+      "identity": { "name": "Stony Brook Children’s Pediatric Emergency Department", "organization": "Stony Brook Medicine", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "101 Nicolls Road", "city": "Stony Brook", "state": "NY", "postalCode": "11794", "latitude": 40.9085382, "longitude": -73.1147109 },
+      "contact": { "phone": "6316898333", "website": "https://www.stonybrookchildrens.org/pediatric-care/emergency-medicine", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated Pediatric Emergency Medicine Division available 24/7", "Separate pediatric entrance, waiting area, and treatment rooms", "Level 1 pediatric trauma capability"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-source" },
+      "evidence": [{ "id": "stony-brook-pediatric-ed", "url": "https://www.stonybrookchildrens.org/pediatric-care/emergency-medicine", "publisher": "Stony Brook Medicine", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" }]
+    },
+    {
+      "id": "maria-fareri-peds-ed",
+      "externalIds": { "cmsCcn": "330234" },
+      "identity": { "name": "Maria Fareri Children’s Hospital Pediatric Emergency Department", "organization": "WMCHealth", "type": "emergency", "typeLabel": "Pediatric emergency department", "pediatricSpecific": true, "patientGroups": ["pediatric"] },
+      "location": { "address1": "100 Woods Road", "city": "Valhalla", "state": "NY", "postalCode": "10595", "latitude": 41.0859065, "longitude": -73.8034506 },
+      "contact": { "phone": "9144937000", "website": "https://www.wmchealth.org/service-line/pediatric-services/pediatric-trauma", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "breathing", "injury", "wound", "stomach", "other"],
+      "hours": { "kind": "always", "timezone": "America/New_York", "label": "Open 24 hours", "weekly": {} },
+      "highlights": ["Dedicated pediatric emergency and Level 1 pediatric trauma care", "Pediatric emergency physicians and critical-care specialists", "Free interpretation in more than 200 languages and remote ASL available 24/7"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "access": { "uninsuredWelcome": false, "slidingFee": false, "noOneTurnedAway": false, "charityCare": false, "flatFee": null, "languages": ["200+ language interpretation", "ASL"], "note": "The hospital publishes free interpreter assistance in more than 200 languages by phone or video and remote ASL access 24/7. Ask the care team or Patient Experience for assistance.", "sourceUrl": "https://www.wmchealth.org/wp-content/uploads/2025/12/MFCH-patient-guide_Web-Spanish-FINAL-12.2.25.pdf" },
+      "quality": { "displayScore": null, "note": "No comparable pediatric emergency quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-provider-and-government-geocoder-sources" },
+      "evidence": [
+        { "id": "mfch-pediatric-trauma", "url": "https://www.wmchealth.org/service-line/pediatric-services/pediatric-trauma", "publisher": "WMCHealth", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-28" },
+        { "id": "mfch-language-access", "url": "https://www.wmchealth.org/wp-content/uploads/2025/12/MFCH-patient-guide_Web-Spanish-FINAL-12.2.25.pdf", "publisher": "WMCHealth", "supports": ["access", "highlights"], "checkedAt": "2026-08-28" }
+      ]
     }
   ]
 }

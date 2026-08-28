@@ -4,7 +4,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 
 ## What is real
 
-- Eighteen verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- Twenty-seven verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
@@ -55,7 +55,7 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false`. A reviewer must verify hours, adult/child population, coordinates, and location-level service evidence before promotion into the patient dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Thirteen match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Twenty match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 28, 2026.
 
@@ -73,6 +73,15 @@ Data reviewed: August 28, 2026.
 - [Dartmouth Health Children’s Pediatric Emergency Medicine](https://childrens.dartmouth-health.org/emergency-medicine)
 - [University of Vermont Medical Center Emergency Department](https://www.uvmhealth.org/locations/emergency-department-university-of-vermont-medical-center)
 - [Hasbro Children’s Hospital Emergency Services](https://www.brownhealth.org/centers-services/emergency-services-hasbro-childrens)
+- [K. Hovnanian Children’s Hospital Emergency Care](https://www.hackensackmeridianhealth.org/en/services/childrens-health/childrens-emergency-care)
+- [Goryeb Children’s Hospital Emergency Department](https://www.atlantichealth.org/locations/goryeb-childrens-hospital/emergency-department)
+- [Bristol Myers Squibb Children’s Hospital Emergency Services](https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/)
+- [Overlook Medical Center Pediatric Emergency Department](https://www.atlantichealth.org/locations/overlook-medical-center/pediatric-emergency-department)
+- [St. Joseph’s Children’s Hospital Pediatric Emergency Medicine](https://stjosephshealth.org/health-services/pediatrics/pediatric-emergency-medicine/)
+- [NewYork-Presbyterian Morgan Stanley Children’s Emergency Care](https://www.nyp.org/morganstanley/clinical-services/emergency-care-and-trauma)
+- [NYU Langone KiDS Emergency Department](https://nyulangone.org/locations/kids-emergency-department)
+- [Stony Brook Children’s Emergency Medicine](https://www.stonybrookchildrens.org/pediatric-care/emergency-medicine)
+- [Maria Fareri Children’s Hospital Pediatric Trauma](https://www.wmchealth.org/service-line/pediatric-services/pediatric-trauma)
 - [PM Pediatric Livingston](https://pmpediatriccare.com/location/new-jersey-livingston/)
 - [AFC West Orange Pediatric Care](https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/) and [hours/contact](https://www.afcurgentcare.com/west-orange/resources/contact-us/)
 - [Summit Health Livingston Urgent Care](https://www.summithealth.com/locations/livingston-summit-health-urgent-care)
