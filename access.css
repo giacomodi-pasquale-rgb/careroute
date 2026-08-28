@@ -14,4 +14,10 @@
 .state-row { margin: 22px 0 26px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f7faf8; }
 .state-row > label > span { font-size: 16px; }
 .state-row .helper { margin: 8px 0 0; }
+.zip-row { margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--line); }
+.zip-row > label > span { font-size: 14px; }
+.zip-row > div { display: grid; grid-template-columns: 1fr auto; gap: 9px; }
+.zip-row input { width: 100%; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: white; font: inherit; color: var(--ink); }
+.zip-row .status { margin: 8px 0 0; }
+@media (max-width: 480px) { .zip-row > div { grid-template-columns: 1fr; } }
 @media (max-width: 650px) { .pilot-pill { display: none; } .language-picker select { max-width: 132px; } }

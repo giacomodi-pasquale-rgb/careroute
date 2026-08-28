@@ -1,10 +1,11 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=3';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=4';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, routes: new Map() };
+const state = { step: 1, location: null, locationSource: null, routes: new Map() };
 const MAX_SEARCH_MILES = 100;
+const NORTHEAST_STATES = new Set(['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']);
 let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
 const titleKeys = ['step1', 'step2', 'step3', 'step4'];
@@ -50,6 +51,62 @@ document.addEventListener('careroute:language', async () => {
 });
 showStep(state.step);
 
+function clearLocation() {
+  state.location = null;
+  state.locationSource = null;
+  state.routes.clear();
+  document.getElementById('locationStatus').textContent = '';
+  document.getElementById('locationStatus').classList.remove('success');
+}
+
+document.getElementById('stateSelect').addEventListener('change', () => {
+  clearLocation();
+  document.getElementById('zipStatus').textContent = '';
+  document.getElementById('zipStatus').classList.remove('success');
+});
+
+document.getElementById('useZip').addEventListener('click', async () => {
+  const input = document.getElementById('zipCode');
+  const button = document.getElementById('useZip');
+  const status = document.getElementById('zipStatus');
+  const zip = input.value.trim();
+  status.classList.remove('success');
+  if (!/^\d{5}$/.test(zip)) {
+    status.textContent = t('zipInvalid');
+    input.focus();
+    return;
+  }
+  button.disabled = true;
+  status.textContent = t('zipFinding');
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 10000);
+  try {
+    const response = await fetch(`https://api.zippopotam.us/us/${zip}`, { signal: controller.signal });
+    if (!response.ok) throw new Error('ZIP not found');
+    const data = await response.json();
+    const place = data.places?.[0];
+    const region = place?.['state abbreviation'];
+    const lat = Number(place?.latitude);
+    const lon = Number(place?.longitude);
+    if (!NORTHEAST_STATES.has(region)) {
+      clearLocation();
+      status.textContent = t('zipOutside');
+      return;
+    }
+    document.getElementById('stateSelect').value = region;
+    state.location = { lat, lon };
+    state.locationSource = 'zip';
+    status.textContent = format('zipReady', { zip, place: place['place name'] });
+    status.classList.add('success');
+  } catch (error) {
+    clearLocation();
+    status.textContent = t('zipUnavailable');
+  } finally {
+    window.clearTimeout(timeout);
+    button.disabled = false;
+  }
+});
+
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');
   const locateButton = document.getElementById('locateMe');
@@ -63,6 +120,7 @@ document.getElementById('locateMe').addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(
     ({ coords }) => {
       state.location = { lat: coords.latitude, lon: coords.longitude };
+      state.locationSource = 'geolocation';
       status.textContent = t('locationReady');
       status.classList.add('success');
       locateButton.disabled = false;
@@ -107,6 +165,10 @@ async function showCareOptions(button) {
 }
 
 document.getElementById('startOver').addEventListener('click', () => {
+  clearLocation();
+  document.getElementById('zipCode').value = '';
+  document.getElementById('zipStatus').textContent = '';
+  document.getElementById('zipStatus').classList.remove('success');
   document.getElementById('results').hidden = true;
   document.getElementById('questionnaire').hidden = false;
   showStep(1);

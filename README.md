@@ -11,6 +11,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 - A translated cost-access guide distinguishing FQHC full discounts or nominal charges, NJ hospital Charity Care, and service-specific published flat fees
 - Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours
 - Browser geolocation, with location kept in memory only
+- Optional five-digit ZIP lookup as an alternative to browser geolocation; the ZIP is sent to Zippopotam.us for an approximate area, used in memory for routing, and not stored by CareRoute
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status
 - Conservative emergency gating: adult emergency searches show verified adult EDs; child searches require pediatric-specific emergency capability
 - Direct provider-source, calling, and navigation links

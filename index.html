@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
-  <link rel="stylesheet" href="access.css">
+  <link rel="stylesheet" href="access.css?v=2">
 </head>
 <body>
   <header class="topbar">
@@ -53,6 +53,12 @@
               <option value="PA" data-i18n="statePA">Pennsylvania</option><option value="RI" data-i18n="stateRI">Rhode Island</option><option value="VT" data-i18n="stateVT">Vermont</option>
             </select>
             <p class="helper" data-i18n="stateHelper">Optional. Choose a state to show only verified options there.</p>
+            <div class="zip-row">
+              <label for="zipCode"><span data-i18n="zipLabel">Or enter ZIP code</span></label>
+              <div><input id="zipCode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" placeholder="e.g. 06103" data-i18n-placeholder="zipPlaceholder"><button id="useZip" type="button" class="secondary" data-i18n="useZip">Use ZIP code</button></div>
+              <p class="helper" data-i18n="zipPrivacy">The ZIP is sent to a lookup service to find an approximate area. CareRoute does not store it.</p>
+              <p class="status" id="zipStatus" aria-live="polite"></p>
+            </div>
           </div>
           <div class="age-row" id="childAge" hidden>
             <label><span data-i18n="age">Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
@@ -128,6 +134,6 @@
   <footer><span>CareRoute v0.6 Access</span><span data-i18n="dataReviewed">Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=6"></script>
-  <script type="module" src="app.js?v=17"></script>
+  <script type="module" src="app.js?v=18"></script>
 </body>
 </html>
