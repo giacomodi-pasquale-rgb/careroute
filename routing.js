@@ -1,7 +1,7 @@
 export class RoutingService {
   constructor(config = {}, fetchImplementation = fetch) {
     this.config = config;
-    this.fetch = fetchImplementation;
+    this.fetch = fetchImplementation.bind(globalThis);
   }
 
   async matrix(origin, facilities) {
