@@ -155,7 +155,8 @@ function scoreFacility(facility, inputs) {
   const travel = route ? Math.max(0, 30 - route.minutes * 0.75) : 0;
   const accessMatch = inputs.emergency ? 0
     : (inputs.accessNeeds.has('uninsured') && facility.access.uninsuredWelcome ? 30 : 0)
-      + (inputs.accessNeeds.has('low-cost') && (facility.access.slidingFee || facility.access.noOneTurnedAway) ? 35 : 0);
+      + (inputs.accessNeeds.has('low-cost') && (facility.access.slidingFee || facility.access.noOneTurnedAway) ? 35 : 0)
+      + (inputs.accessNeeds.has('language') && facility.access.languages.length ? 25 : 0);
   return settingFit + specialization + capability + travel + accessMatch;
 }
 
@@ -215,8 +216,7 @@ async function renderResults() {
     const ageEligible = inputs.patientGroup === 'adult' || !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
     const settingEligible = inputs.emergency ? facility.type === 'emergency' : true;
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
-    const geographyEligible = state.location || facility.state === 'NJ';
-    return groupEligible && ageEligible && settingEligible && capabilityEligible && geographyEligible;
+    return groupEligible && ageEligible && settingEligible && capabilityEligible;
   });
   const routed = await loadRoutes(eligible);
   if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);

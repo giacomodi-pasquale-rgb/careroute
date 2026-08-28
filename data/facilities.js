@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-28.1",
+  "datasetVersion": "2026-08-28.2",
   "reviewedAt": "2026-08-28"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -801,6 +801,385 @@ window.CARE_ROUTE_FACILITIES = [
       "reviewedAt": "2026-08-28",
       "reviewBy": "2026-11-28",
       "method": "authoritative-government-and-provider-sources"
+    }
+  },
+  {
+    "id": "boston-childrens-peds-ed",
+    "name": "Boston Children’s Hospital Emergency Department",
+    "city": "Boston",
+    "state": "MA",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "300 Longwood Avenue, Boston, MA 02115",
+    "coordinates": {
+      "lat": 42.3379423,
+      "lon": -71.1057015
+    },
+    "phone": "(617) 355-6611",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 252,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Accepts emergency patients from birth through age 21",
+      "24-hour pediatric emergency, surgical, and trauma care",
+      "Interpreter services available in more than 70 languages"
+    ],
+    "sourceUrl": "https://cecourses.childrenshospital.org/graduate-medical-education/trainings-programs/division-of-emergency-medicine/",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+        "interpreter services"
+      ],
+      "note": "Financial assistance may be available for eligible emergency or medically necessary care; an application and supporting documents are required. Call 617-355-3397.",
+      "sourceUrl": "https://www.childrenshospital.org/sites/default/files/2022-04/plain-language-summary-031822-english.pdf"
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "yale-new-haven-childrens-peds-ed",
+    "name": "Yale New Haven Children’s Hospital Emergency Department",
+    "city": "New Haven",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "1 Park Street, New Haven, CT 06510",
+    "coordinates": {
+      "lat": 41.3043708,
+      "lon": -72.9368419
+    },
+    "phone": "(203) 688-3333",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 240,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Dedicated exclusively to children from infancy through age 20",
+      "Pediatric emergency medicine specialists",
+      "Children’s emergency entrance operates 24 hours a day, seven days a week"
+    ],
+    "sourceUrl": "https://www.ynhh.org/childrens-hospital/services/emergency-services",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "maine-medical-center-peds-ed",
+    "name": "MaineHealth Maine Medical Center Emergency Department",
+    "city": "Portland",
+    "state": "ME",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "22 Bramhall Street, Portland, ME 04102",
+    "coordinates": {
+      "lat": 43.6526568,
+      "lon": -70.2746361
+    },
+    "phone": "(207) 662-2381",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Maine’s only dedicated pediatric emergency department",
+      "Emergency and pediatric emergency medicine services",
+      "No-cost confidential interpreter services are available"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-maine-medical-center-portland-emergency-department",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+        "interpreter services"
+      ],
+      "note": "Financial assistance and payment-plan help are available; uninsured patients can call 866-804-2499. Eligibility and final cost require confirmation.",
+      "sourceUrl": "https://www.mainehealth.org/maine-medical-center/patients-visitors-mainehealth-maine-medical-center"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "dartmouth-hitchcock-peds-ed",
+    "name": "Dartmouth Hitchcock Medical Center Pediatric Emergency Department",
+    "city": "Lebanon",
+    "state": "NH",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1 Medical Center Drive, Lebanon, NH 03756",
+    "coordinates": {
+      "lat": 43.675493,
+      "lon": -72.272959
+    },
+    "phone": "(603) 650-7000",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 216,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Pediatric Emergency Services Unit for patients age 18 and under",
+      "24-hour emergency care for all illnesses and injuries",
+      "Dedicated pediatric rooms, equipment, and trauma capability"
+    ],
+    "sourceUrl": "https://childrens.dartmouth-health.org/emergency-medicine",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-source"
+    }
+  },
+  {
+    "id": "uvm-medical-center-peds-ed",
+    "name": "University of Vermont Medical Center Emergency Department",
+    "city": "Burlington",
+    "state": "VT",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "111 Colchester Avenue, Burlington, VT 05401",
+    "coordinates": {
+      "lat": 44.4819241,
+      "lon": -73.1932681
+    },
+    "phone": "(802) 847-2434",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Separate pediatric emergency department affiliated with UVM Children’s Hospital",
+      "Open 24 hours every day",
+      "Treats patients regardless of insurance coverage or ability to pay"
+    ],
+    "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-university-of-vermont-medical-center",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "The emergency department states that it treats all patients regardless of insurance coverage or ability to pay; this does not mean every service is free.",
+      "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-university-of-vermont-medical-center"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "hasbro-childrens-peds-ed",
+    "name": "Hasbro Children’s Hospital Emergency Department",
+    "city": "Providence",
+    "state": "RI",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "47 Dudley Street, Providence, RI 02903",
+    "coordinates": {
+      "lat": 41.8106916,
+      "lon": -71.4083576
+    },
+    "phone": "(401) 444-4900",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Dedicated pediatric emergency department",
+      "Staffed 24 hours by pediatric emergency specialists",
+      "Level 1 pediatric trauma, imaging, sedation, and observation capability"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/emergency-services-hasbro-childrens",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
     }
   }
 ];

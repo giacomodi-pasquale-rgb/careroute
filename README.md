@@ -4,7 +4,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 
 ## What is real
 
-- Twelve verified adult and/or pediatric emergency, urgent-care, or community health-center locations
+- Eighteen verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
@@ -55,9 +55,9 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false`. A reviewer must verify hours, adult/child population, coordinates, and location-level service evidence before promotion into the patient dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Seven match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Thirteen match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
-Data reviewed: August 17, 2026.
+Data reviewed: August 28, 2026.
 
 ### Primary facility sources
 
@@ -67,6 +67,12 @@ Data reviewed: August 17, 2026.
 - [Clara Maass Pediatric Services](https://www.rwjbh.org/clara-maass-medical-center/treatment-care/pediatrics/) and [Emergency Services](https://www.rwjbh.org/clara-maass-medical-center/treatment-care/emergency-room-services/)
 - [Children’s Hospital of Philadelphia Emergency Department](https://www.chop.edu/locations/emergency-department-main-hospital)
 - [NewYork-Presbyterian Pediatric Emergency Care and Trauma](https://www.nyp.org/pediatrics/emergency-care-and-trauma)
+- [Boston Children’s Hospital Emergency Medicine](https://cecourses.childrenshospital.org/graduate-medical-education/trainings-programs/division-of-emergency-medicine/)
+- [Yale New Haven Children’s Hospital Emergency Services](https://www.ynhh.org/childrens-hospital/services/emergency-services)
+- [MaineHealth Maine Medical Center Pediatric Emergency Care](https://www.mainehealth.org/care-services/pediatric-care-child-health/pediatric-emergency-care)
+- [Dartmouth Health Children’s Pediatric Emergency Medicine](https://childrens.dartmouth-health.org/emergency-medicine)
+- [University of Vermont Medical Center Emergency Department](https://www.uvmhealth.org/locations/emergency-department-university-of-vermont-medical-center)
+- [Hasbro Children’s Hospital Emergency Services](https://www.brownhealth.org/centers-services/emergency-services-hasbro-childrens)
 - [PM Pediatric Livingston](https://pmpediatriccare.com/location/new-jersey-livingston/)
 - [AFC West Orange Pediatric Care](https://www.afcurgentcare.com/west-orange/patient-services/pediatric-care/) and [hours/contact](https://www.afcurgentcare.com/west-orange/resources/contact-us/)
 - [Summit Health Livingston Urgent Care](https://www.summithealth.com/locations/livingston-summit-health-urgent-care)
