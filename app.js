@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=2';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=3';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -118,6 +118,7 @@ function getInputs() {
   const unit = document.getElementById('ageUnit').value;
   return {
     patientGroup: document.querySelector('[name=patientGroup]:checked').value,
+    selectedState: document.getElementById('stateSelect').value,
     ageMonths: unit === 'months' ? value : value * 12,
     need: document.querySelector('[name=need]:checked').value,
     emergency: document.querySelector('[name=emergency]:checked').value === 'yes',
@@ -216,7 +217,8 @@ async function renderResults() {
     const ageEligible = inputs.patientGroup === 'adult' || !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
     const settingEligible = inputs.emergency ? facility.type === 'emergency' : true;
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
-    return groupEligible && ageEligible && settingEligible && capabilityEligible;
+    const stateEligible = !inputs.selectedState || facility.state === inputs.selectedState;
+    return groupEligible && ageEligible && settingEligible && capabilityEligible && stateEligible;
   });
   const routed = await loadRoutes(eligible);
   if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);

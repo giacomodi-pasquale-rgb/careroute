@@ -82,6 +82,11 @@ Object.assign(copy.ht, {
   genericCommunityFacts:['Swen prensipal, prevantif ak pedyatrik','Sèvis dantè, sante fanm, sante konpòtman ak laboratwa','Asirans pa obligatwa; frè yo depann de revni ak kantite moun nan fanmi an']
 });
 
+Object.assign(copy.en, { stateQuestion:'Where are you located?', allStates:'All Northeast states', stateHelper:'Optional. Choose a state to show only verified options there.', stateCT:'Connecticut', stateME:'Maine', stateMA:'Massachusetts', stateNH:'New Hampshire', stateNJ:'New Jersey', stateNY:'New York', statePA:'Pennsylvania', stateRI:'Rhode Island', stateVT:'Vermont' });
+Object.assign(copy.es, { stateQuestion:'¿Dónde se encuentra?', allStates:'Todos los estados del noreste', stateHelper:'Opcional. Elija un estado para mostrar solo las opciones verificadas allí.', stateCT:'Connecticut', stateME:'Maine', stateMA:'Massachusetts', stateNH:'Nuevo Hampshire', stateNJ:'Nueva Jersey', stateNY:'Nueva York', statePA:'Pensilvania', stateRI:'Rhode Island', stateVT:'Vermont' });
+Object.assign(copy.pt, { stateQuestion:'Onde você está?', allStates:'Todos os estados do Nordeste', stateHelper:'Opcional. Escolha um estado para mostrar apenas as opções verificadas nele.', stateCT:'Connecticut', stateME:'Maine', stateMA:'Massachusetts', stateNH:'Nova Hampshire', stateNJ:'Nova Jersey', stateNY:'Nova York', statePA:'Pensilvânia', stateRI:'Rhode Island', stateVT:'Vermont' });
+Object.assign(copy.ht, { stateQuestion:'Ki kote ou ye?', allStates:'Tout eta nan Nòdès la', stateHelper:'Opsyonèl. Chwazi yon eta pou montre sèlman opsyon verifye ki ladan.', stateCT:'Connecticut', stateME:'Maine', stateMA:'Massachusetts', stateNH:'New Hampshire', stateNJ:'New Jersey', stateNY:'New York', statePA:'Pennsylvania', stateRI:'Rhode Island', stateVT:'Vermont' });
+
 let current = 'en';
 
 export function t(key) { return copy[current]?.[key] || copy.en[key] || key; }

@@ -11,4 +11,7 @@
 .metric.access { background: #dceee7; color: #134f45; }
 .metric.access-strong { background: #176458; color: #fff; }
 .metrics a.metric { text-decoration: none; color: inherit; }
+.state-row { margin: 22px 0 26px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f7faf8; }
+.state-row > label > span { font-size: 16px; }
+.state-row .helper { margin: 8px 0 0; }
 @media (max-width: 650px) { .pilot-pill { display: none; } .language-picker select { max-width: 132px; } }

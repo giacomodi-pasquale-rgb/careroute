@@ -44,6 +44,16 @@
             <label><input type="radio" name="patientGroup" value="adult" checked><span data-i18n="adultChoice"><b>Adult</b><small>Age 18 or older</small></span></label>
             <label><input type="radio" name="patientGroup" value="pediatric"><span data-i18n="childChoice"><b>Child or teen</b><small>Show pediatric-capable care</small></span></label>
           </div>
+          <div class="state-row">
+            <label for="stateSelect"><span data-i18n="stateQuestion">Where are you located?</span></label>
+            <select id="stateSelect">
+              <option value="" data-i18n="allStates">All Northeast states</option>
+              <option value="CT" data-i18n="stateCT">Connecticut</option><option value="ME" data-i18n="stateME">Maine</option><option value="MA" data-i18n="stateMA">Massachusetts</option>
+              <option value="NH" data-i18n="stateNH">New Hampshire</option><option value="NJ" data-i18n="stateNJ">New Jersey</option><option value="NY" data-i18n="stateNY">New York</option>
+              <option value="PA" data-i18n="statePA">Pennsylvania</option><option value="RI" data-i18n="stateRI">Rhode Island</option><option value="VT" data-i18n="stateVT">Vermont</option>
+            </select>
+            <p class="helper" data-i18n="stateHelper">Optional. Choose a state to show only verified options there.</p>
+          </div>
           <div class="age-row" id="childAge" hidden>
             <label><span data-i18n="age">Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
             <label><span data-i18n="unit">Unit</span><select id="ageUnit"><option value="years" data-i18n="years">Years</option><option value="months" data-i18n="months">Months</option></select></label>
@@ -118,6 +128,6 @@
   <footer><span>CareRoute v0.6 Access</span><span data-i18n="dataReviewed">Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=4"></script>
-  <script type="module" src="app.js?v=16"></script>
+  <script type="module" src="app.js?v=17"></script>
 </body>
 </html>
