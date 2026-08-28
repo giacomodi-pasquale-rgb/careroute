@@ -28,6 +28,15 @@ test('emergency records have a verified population and 24-hour availability', as
   }
 });
 
+test('every Northeast state has adult and dedicated pediatric emergency coverage', async () => {
+  const { facilities } = await readDataset();
+  for (const state of ['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']) {
+    const emergency = facilities.filter((facility) => facility.location.state === state && facility.identity.type === 'emergency');
+    assert.ok(emergency.some((facility) => facility.identity.patientGroups?.includes('adult')), `${state} needs a verified adult ED`);
+    assert.ok(emergency.some((facility) => facility.identity.patientGroups?.includes('pediatric') && facility.identity.pediatricSpecific), `${state} needs a verified pediatric ED`);
+  }
+});
+
 test('unknown age limits remain unknown through the web adapter', async () => {
   const { facilities } = await readDataset();
   const summit = facilities.find((facility) => facility.id === 'summit-urgent-care-livingston');

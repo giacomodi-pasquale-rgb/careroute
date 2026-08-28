@@ -4,7 +4,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 
 ## What is real
 
-- Thirty-four verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- Forty verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
@@ -55,7 +55,7 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false`. A reviewer must verify hours, adult/child population, coordinates, and location-level service evidence before promotion into the patient dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Twenty-five match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Thirty match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 28, 2026.
 
@@ -85,6 +85,12 @@ Data reviewed: August 28, 2026.
 - [UPMC Children’s Hospital of Pittsburgh Emergency Department](https://www.chp.edu/locations/emergency-department)
 - [Massachusetts General Hospital Pediatric Emergency Medicine](https://www.massgeneral.org/children/emergency-medicine)
 - [Connecticut Children’s Emergency Medicine](https://www.connecticutchildrens.org/specialties-conditions/emergency-medicine)
+- [Stamford Hospital Emergency Department](https://www.stamfordhealth.org/locations/ct/stamford/stamford-hospital-emergency-department/11142653/)
+- [Saint Francis Hospital Emergency Department](https://www.trinityhealthofne.org/location/saint-francis-emergency-department)
+- [Bridgeport Hospital](https://www.ynhhs.org/locations/bridgeport-267-grant-street)
+- [Yale New Haven Hospital York Street Campus](https://www.ynhhs.org/locations/new-haven-20-york-street)
+- [Albany Medical Center Emergency Department](https://www.albanymed.org/location/albany-medical-center-emergency-department/)
+- [Hospital of the University of Pennsylvania Emergency Department](https://www.pennmedicine.org/locations/hospital-of-the-university-of-pennsylvania/getting-around)
 - [Northern Light Eastern Maine Medical Center Emergency Care](https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center/Locations/Emergency-Care)
 - [Elliot Hospital Emergency and Trauma Care](https://www.elliothospital.org/about-us/newsroom/news/j-and-leslie-roberto-share-their-story-life-saving-care-elliot-hospital)
 - [Central Vermont Medical Center Emergency Department](https://www.uvmhealth.org/locations/emergency-department-uvm-health-central-vermont-medical-center)

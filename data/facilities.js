@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-28.4",
+  "datasetVersion": "2026-08-28.6",
   "reviewedAt": "2026-08-28"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -2157,6 +2157,378 @@ window.CARE_ROUTE_FACILITIES = [
       "Emergency imaging and behavioral-health observation capabilities"
     ],
     "sourceUrl": "https://www.brownhealth.org/centers-services/emergency-services-rhode-island-hospital",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "stamford-hospital-adult-ed",
+    "name": "Stamford Hospital Emergency Department",
+    "city": "Stamford",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "One Hospital Plaza, Stamford, CT 06902",
+    "coordinates": {
+      "lat": 41.0554928,
+      "lon": -73.5538126
+    },
+    "phone": "(203) 276-7777",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24 hours every day",
+      "Board-certified emergency physicians",
+      "Trauma, laboratory, radiology, and specialist access"
+    ],
+    "sourceUrl": "https://www.stamfordhealth.org/locations/ct/stamford/stamford-hospital-emergency-department/11142653/",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "saint-francis-hartford-adult-ed",
+    "name": "Saint Francis Hospital Emergency Department",
+    "city": "Hartford",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "231 Ashley Street, Hartford, CT 06105",
+    "coordinates": {
+      "lat": 41.7754327,
+      "lon": -72.6969003
+    },
+    "phone": "(860) 714-4000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24 hours a day, 365 days a year",
+      "Verified Level 1 Trauma Center",
+      "Treats serious and non-life-threatening emergencies"
+    ],
+    "sourceUrl": "https://www.trinityhealthofne.org/location/saint-francis-emergency-department",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "bridgeport-hospital-adult-ed",
+    "name": "Bridgeport Hospital Emergency Department",
+    "city": "Bridgeport",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "267 Grant Street, Bridgeport, CT 06610",
+    "coordinates": {
+      "lat": 41.1888414,
+      "lon": -73.1656915
+    },
+    "phone": "(203) 384-3000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency care available 24/7",
+      "Advanced diagnostics, trauma, and specialist access",
+      "Hospital services include emergency, stroke, surgery, and trauma care"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/bridgeport-267-grant-street",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "yale-new-haven-york-adult-ed",
+    "name": "Yale New Haven Hospital Adult Emergency Department",
+    "city": "New Haven",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "6 York Street, New Haven, CT 06510",
+    "coordinates": {
+      "lat": 41.3033026,
+      "lon": -72.936292
+    },
+    "phone": "(203) 688-4242",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Adult emergency entrance open 24/7",
+      "Tertiary medical center with advanced emergency services",
+      "Separate pediatric emergency entrance remains available for children"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/new-haven-20-york-street",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "albany-medical-center-adult-ed",
+    "name": "Albany Medical Center Emergency Department",
+    "city": "Albany",
+    "state": "NY",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "43 New Scotland Avenue, Albany, NY 12208",
+    "coordinates": {
+      "lat": 42.6527958,
+      "lon": -73.780932
+    },
+    "phone": "(518) 262-3131",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24/7",
+      "Northeastern New York’s only Level 1 Trauma Center",
+      "24-hour stroke, cardiac, psychiatric, and substance-related emergency care"
+    ],
+    "sourceUrl": "https://www.albanymed.org/location/albany-medical-center-emergency-department/",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "hospital-university-pennsylvania-adult-ed",
+    "name": "Hospital of the University of Pennsylvania Emergency Department",
+    "city": "Philadelphia",
+    "state": "PA",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "3400 Spruce Street, Philadelphia, PA 19104",
+    "coordinates": {
+      "lat": 39.9503956,
+      "lon": -75.192672
+    },
+    "phone": "(215) 662-4000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Hospital and emergency department available 24 hours",
+      "Emergency department located in the Clifton Center for Medical Breakthroughs",
+      "Advanced academic-hospital diagnostics and specialist access"
+    ],
+    "sourceUrl": "https://www.pennmedicine.org/locations/hospital-of-the-university-of-pennsylvania/getting-around",
     "quality": {
       "note": "No comparative emergency-care quality score is displayed.",
       "url": null

@@ -1,6 +1,6 @@
 {
-  "datasetVersion": "2026-08-28.4",
-  "generatedAt": "2026-08-28T17:55:52.355Z",
+  "datasetVersion": "2026-08-28.6",
+  "generatedAt": "2026-08-28T18:21:56.197Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,8 +11,8 @@
   "summary": {
     "total": 4495,
     "jurisdictions": 56,
-    "matchedVerified": 25,
-    "pendingReview": 4470,
+    "matchedVerified": 30,
+    "pendingReview": 4465,
     "publishable": 0,
     "states": [
       {
@@ -60,8 +60,8 @@
       {
         "state": "CT",
         "total": 27,
-        "matchedVerified": 2,
-        "pendingReview": 25
+        "matchedVerified": 5,
+        "pendingReview": 22
       },
       {
         "state": "DC",
@@ -240,8 +240,8 @@
       {
         "state": "NY",
         "total": 160,
-        "matchedVerified": 4,
-        "pendingReview": 156
+        "matchedVerified": 5,
+        "pendingReview": 155
       },
       {
         "state": "OH",
@@ -264,8 +264,8 @@
       {
         "state": "PA",
         "total": 148,
-        "matchedVerified": 1,
-        "pendingReview": 147
+        "matchedVerified": 2,
+        "pendingReview": 146
       },
       {
         "state": "PR",
@@ -19669,9 +19669,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "bridgeport-hospital-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -20209,9 +20209,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "saint-francis-hartford-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -20269,9 +20269,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "stamford-hospital-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -83569,9 +83569,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "albany-medical-center-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -99019,9 +99019,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "hospital-university-pennsylvania-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
