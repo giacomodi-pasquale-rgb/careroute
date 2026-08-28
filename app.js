@@ -157,6 +157,9 @@ function facilityCard(facility, index, inputs) {
   const status = open === true ? '<span class="open">Open now</span>' : open === false ? '<span class="closed">Closed now</span>' : '<span class="unknown">Hours: check live</span>';
   const routeText = route ? `<span class="metric strong">${route.minutes} min drive</span><span class="metric">${route.miles} mi by road</span><span class="metric">Arrive about ${route.arrivalLabel}</span>` : '<span class="metric">Driving time unavailable</span>';
   const ageText = facility.age.verifiedLimits ? '' : '<span class="metric warning">Age limit: verify</span>';
+  const operationalStatus = facility.type === 'emergency' && facility.state === 'NJ'
+  ? '<a class="metric" href="https://njdivert.juvare.com/" target="_blank" rel="noopener">NJ ED status: check live ↗</a>'
+  : `<a class="metric" href="${facility.sourceUrl}" target="_blank" rel="noopener">Wait: check provider ↗</a>`;
   const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
   const reason = inputs.emergency
