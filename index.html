@@ -15,7 +15,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#">CareRoute<span>.</span></a>
-    <div class="topbar-actions"><label class="language-picker"><span class="sr-only">Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" hidden>Install app</button></div>
+    <div class="topbar-actions"><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
@@ -28,7 +28,7 @@
       <h1 data-i18n="heroTitle">Find the right level of care—without the guesswork.</h1>
       <p data-i18n="heroBody">Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, access needs, and published capabilities, then adds driving time when you share your location.</p>
       <div class="trust-row" aria-label="Data principles">
-        <span>✓ Real facilities</span><span>✓ Source-linked facts</span><span>✓ No invented waits</span>
+        <span data-i18n="trustReal">✓ Real facilities</span><span data-i18n="trustSources">✓ Source-linked facts</span><span data-i18n="trustWaits">✓ No invented waits</span>
       </div>
     </section>
 
@@ -39,40 +39,40 @@
 
       <form id="careForm" novalidate>
         <fieldset class="step active" data-step="1">
-          <legend class="sr-only">Patient age group</legend>
+          <legend class="sr-only" data-i18n="patientGroup">Patient age group</legend>
           <div class="choices one-col patient-choices">
-            <label><input type="radio" name="patientGroup" value="adult" checked><span><b>Adult</b><small>Age 18 or older</small></span></label>
-            <label><input type="radio" name="patientGroup" value="pediatric"><span><b>Child or teen</b><small>Show pediatric-capable care</small></span></label>
+            <label><input type="radio" name="patientGroup" value="adult" checked><span data-i18n="adultChoice"><b>Adult</b><small>Age 18 or older</small></span></label>
+            <label><input type="radio" name="patientGroup" value="pediatric"><span data-i18n="childChoice"><b>Child or teen</b><small>Show pediatric-capable care</small></span></label>
           </div>
           <div class="age-row" id="childAge" hidden>
-            <label><span>Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
-            <label><span>Unit</span><select id="ageUnit"><option value="years">Years</option><option value="months">Months</option></select></label>
+            <label><span data-i18n="age">Age</span><input id="ageValue" type="number" min="0" max="26" step="1" value="5" inputmode="numeric" required></label>
+            <label><span data-i18n="unit">Unit</span><select id="ageUnit"><option value="years" data-i18n="years">Years</option><option value="months" data-i18n="months">Months</option></select></label>
           </div>
-          <button type="button" class="primary next">Continue</button>
+          <button type="button" class="primary next" data-i18n="continue">Continue</button>
         </fieldset>
 
         <fieldset class="step" data-step="2">
-          <legend>What kind of concern?</legend>
-          <p class="helper">This does not diagnose symptoms. It only checks published facility capabilities.</p>
+          <legend data-i18n="step2">What kind of concern?</legend>
+          <p class="helper" data-i18n="concernHelper">This does not diagnose symptoms. It only checks published facility capabilities.</p>
           <div class="choices">
-            <label><input type="radio" name="need" value="illness" checked><span><b>Fever or illness</b><small>Cold, flu, infection, rash</small></span></label>
-            <label><input type="radio" name="need" value="breathing"><span><b>Breathing concern</b><small>Asthma or respiratory symptoms</small></span></label>
-            <label><input type="radio" name="need" value="injury"><span><b>Injury</b><small>Sprain or possible fracture</small></span></label>
-            <label><input type="radio" name="need" value="wound"><span><b>Cut or wound</b><small>May need stitches</small></span></label>
-            <label><input type="radio" name="need" value="stomach"><span><b>Stomach symptoms</b><small>Vomiting, diarrhea, pain</small></span></label>
-            <label><input type="radio" name="need" value="other"><span><b>Other or unsure</b><small>Compare broader options</small></span></label>
+            <label><input type="radio" name="need" value="illness" checked><span data-i18n="illnessChoice"><b>Fever or illness</b><small>Cold, flu, infection, rash</small></span></label>
+            <label><input type="radio" name="need" value="breathing"><span data-i18n="breathingChoice"><b>Breathing concern</b><small>Asthma or respiratory symptoms</small></span></label>
+            <label><input type="radio" name="need" value="injury"><span data-i18n="injuryChoice"><b>Injury</b><small>Sprain or possible fracture</small></span></label>
+            <label><input type="radio" name="need" value="wound"><span data-i18n="woundChoice"><b>Cut or wound</b><small>May need stitches</small></span></label>
+            <label><input type="radio" name="need" value="stomach"><span data-i18n="stomachChoice"><b>Stomach symptoms</b><small>Vomiting, diarrhea, pain</small></span></label>
+            <label><input type="radio" name="need" value="other"><span data-i18n="otherChoice"><b>Other or unsure</b><small>Compare broader options</small></span></label>
           </div>
-          <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" class="primary next">Continue</button></div>
+          <div class="actions"><button type="button" class="secondary back" data-i18n="back">Back</button><button type="button" class="primary next" data-i18n="continue">Continue</button></div>
         </fieldset>
 
         <fieldset class="step" data-step="3">
-          <legend>Could this be an emergency?</legend>
-          <div class="red-flags"><strong>Call 911 now</strong> for severe trouble breathing, blue/gray lips or skin, unresponsiveness, uncontrolled bleeding, a serious head/neck injury, or another immediate threat to life.</div>
+          <legend data-i18n="step3">Could this be an emergency?</legend>
+          <div class="red-flags" data-i18n="redFlags"><strong>Call 911 now</strong> for severe trouble breathing, blue/gray lips or skin, unresponsiveness, uncontrolled bleeding, a serious head/neck injury, or another immediate threat to life.</div>
           <div class="choices one-col">
-            <label><input type="radio" name="emergency" value="no" checked><span><b>No</b><small>I’m comparing non-emergency care</small></span></label>
-            <label><input type="radio" name="emergency" value="yes"><span><b>Yes or unsure</b><small>Only show hospital emergency departments</small></span></label>
+            <label><input type="radio" name="emergency" value="no" checked><span data-i18n="noEmergency"><b>No</b><small>I’m comparing non-emergency care</small></span></label>
+            <label><input type="radio" name="emergency" value="yes"><span data-i18n="yesEmergency"><b>Yes or unsure</b><small>Only show hospital emergency departments</small></span></label>
           </div>
-          <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" class="primary next">Continue</button></div>
+          <div class="actions"><button type="button" class="secondary back" data-i18n="back">Back</button><button type="button" class="primary next" data-i18n="continue">Continue</button></div>
         </fieldset>
 
         <fieldset class="step" data-step="4">
@@ -87,35 +87,35 @@
             </div>
           </div>
           <p class="helper" data-i18n="locationPrivacy">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
-          <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
-          <p id="locationStatus" class="status" aria-live="polite">Optional. Using location will automatically calculate and open nearby results.</p>
-          <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" id="showCareOptions" class="primary">See care options</button></div>
+          <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span data-i18n="locationButton"><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
+          <p id="locationStatus" class="status" aria-live="polite" data-i18n="locationOptional">Optional. Using location will automatically calculate and open nearby results.</p>
+          <div class="actions"><button type="button" class="secondary back" data-i18n="back">Back</button><button type="button" id="showCareOptions" class="primary" data-i18n="seeOptions">See care options</button></div>
         </fieldset>
       </form>
     </section>
 
     <section id="results" class="results" hidden aria-live="polite">
       <div class="results-head">
-        <div><p class="eyebrow">Verified pilot network</p><h2 id="resultsTitle">Care options</h2></div>
-        <button id="startOver" class="secondary">Start over</button>
+        <div><p class="eyebrow" data-i18n="verifiedNetwork">Verified pilot network</p><h2 id="resultsTitle" data-i18n="careOptions">Care options</h2></div>
+        <button id="startOver" class="secondary" data-i18n="startOver">Start over</button>
       </div>
-      <div id="emergencyBanner" class="emergency" hidden><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
+      <div id="emergencyBanner" class="emergency" hidden data-i18n="emergencyBanner"><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
-      <details><summary>How CareRoute orders these options</summary><p>Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit and, when available, current driving duration. Wait time, insurance, cost, and composite quality scores are excluded without reliable comparable feeds.</p></details>
-      <details><summary>What “verified” means</summary><p>Facility identity, address, care setting, adult/child population, phone, displayed hours, and listed capabilities are tied to provider or government sources. Each card links to its sources. Information can change—call the facility and insurer before non-emergency travel.</p></details>
+      <details><summary data-i18n="orderingTitle">How CareRoute orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
+      <details><summary data-i18n="verifiedTitle">What “verified” means</summary><p data-i18n="verifiedBody">Facility identity, address, care setting, adult/child population, phone, displayed hours, listed capabilities, and access claims are tied to provider or government sources. Information can change—call before non-emergency travel.</p></details>
     </section>
 
     <section class="scope-note">
-      <p class="eyebrow">Pilot limitations</p>
-      <h2>A careful foundation, not a finished medical product.</h2>
-      <p>This public pilot covers a curated set of verified adult and pediatric emergency, urgent-care, and community health-center options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, final cost, or insurance network status. Access labels describe verified programs, not individual eligibility. Facility and government pages remain the source of truth.</p>
+      <p class="eyebrow" data-i18n="limitationsEyebrow">Pilot limitations</p>
+      <h2 data-i18n="limitationsTitle">A careful foundation, not a finished medical product.</h2>
+      <p data-i18n="limitationsBody">This public pilot covers a curated set of verified adult and pediatric emergency, urgent-care, and community health-center options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, final cost, or insurance network status. Access labels describe verified programs, not individual eligibility. Facility and government pages remain the source of truth.</p>
     </section>
   </main>
 
-  <footer><span>CareRoute v0.6 Access</span><span>Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
+  <footer><span>CareRoute v0.6 Access</span><span data-i18n="dataReviewed">Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js"></script>
-  <script type="module" src="app.js?v=13"></script>
+  <script type="module" src="app.js?v=14"></script>
 </body>
 </html>

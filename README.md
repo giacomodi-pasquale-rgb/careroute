@@ -5,7 +5,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 ## What is real
 
 - Twelve verified adult and/or pediatric emergency, urgent-care, or community health-center locations
-- English, Spanish, Portuguese, and Haitian Creole navigation for the core access flow; provider-sourced facility details remain in their source language pending professional translation review
+- Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
 - Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours

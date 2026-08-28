@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { initLanguage, t } from './i18n.js';
+import { currentLanguage, format, initLanguage, t } from './i18n.js';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -32,7 +32,7 @@ function showStep(number) {
   state.step = number;
   steps.forEach((item) => item.classList.toggle('active', Number(item.dataset.step) === number));
   document.getElementById('form-title').textContent = t(titleKeys[number - 1]);
-  document.getElementById('stepLabel').textContent = `Step ${number} of 4`;
+  document.getElementById('stepLabel').textContent = format('stepLabel', { n: number });
   document.getElementById('progressBar').style.width = `${number * 25}%`;
 }
 
@@ -44,22 +44,25 @@ document.querySelectorAll('[name=patientGroup]').forEach((input) => input.addEve
   document.getElementById('childAge').hidden = input.value !== 'pediatric';
 }));
 document.querySelectorAll('.back').forEach((button) => button.addEventListener('click', () => showStep(state.step - 1)));
-document.addEventListener('careroute:language', () => showStep(state.step));
+document.addEventListener('careroute:language', async () => {
+  showStep(state.step);
+  if (!document.getElementById('results').hidden) await renderResults();
+});
 
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');
   const locateButton = document.getElementById('locateMe');
   const submitButton = document.getElementById('showCareOptions');
   if (!navigator.geolocation) {
-    status.textContent = 'Location is not supported by this browser. You can still view verified options.';
+    status.textContent = t('locationUnsupported');
     return;
   }
   locateButton.disabled = true;
-  status.textContent = 'Finding your location…';
+  status.textContent = t('findingLocation');
   navigator.geolocation.getCurrentPosition(
     ({ coords }) => {
       state.location = { lat: coords.latitude, lon: coords.longitude };
-      status.textContent = 'Location ready. Calculating nearby care options…';
+      status.textContent = t('locationReady');
       status.classList.add('success');
       locateButton.disabled = false;
       showCareOptions(submitButton);
@@ -68,10 +71,10 @@ document.getElementById('locateMe').addEventListener('click', () => {
       locateButton.disabled = false;
       status.classList.remove('success');
       status.textContent = error.code === error.PERMISSION_DENIED
-        ? 'Location access is blocked. Allow it in your browser settings, or tap “See care options” to continue without location.'
+        ? t('locationBlocked')
         : error.code === error.TIMEOUT
-          ? 'Location timed out. Try again, or tap “See care options” to continue without location.'
-          : 'Location was not available. Tap “See care options” to continue without it.';
+          ? t('locationTimeout')
+          : t('locationUnavailable');
     },
     { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
   );
@@ -82,23 +85,23 @@ document.getElementById('careForm').addEventListener('submit', (event) => event.
 
 async function showCareOptions(button) {
   button.disabled = true;
-  button.textContent = state.location ? 'Calculating routes…' : 'Loading options…';
+  button.textContent = state.location ? t('calculatingRoutes') : t('loadingOptions');
   document.getElementById('questionnaire').hidden = true;
   document.getElementById('results').hidden = false;
-  document.getElementById('resultsTitle').textContent = 'Finding care options…';
-  document.getElementById('routingNote').textContent = state.location ? 'Calculating nearby driving routes…' : 'Loading verified facilities…';
-  document.getElementById('cards').innerHTML = '<div class="empty"><p>Finding verified care options…</p></div>';
+  document.getElementById('resultsTitle').textContent = t('findingOptions');
+  document.getElementById('routingNote').textContent = state.location ? t('calculatingNearby') : t('loadingFacilities');
+  document.getElementById('cards').innerHTML = `<div class="empty"><p>${t('findingOptions')}</p></div>`;
   document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
   try {
     await renderResults();
   } catch (error) {
     console.error('Unable to render care options', error);
-    document.getElementById('resultsTitle').textContent = 'Care options could not load';
-    document.getElementById('routingNote').textContent = 'Please try again. If care may be an emergency, call 911 or go to the nearest emergency department.';
-    document.getElementById('cards').innerHTML = '<div class="empty"><p>The care directory encountered an error. You can start over and continue without location, or use the Directions link from your preferred map app.</p></div>';
+    document.getElementById('resultsTitle').textContent = t('loadErrorTitle');
+    document.getElementById('routingNote').textContent = t('loadErrorNote');
+    document.getElementById('cards').innerHTML = `<div class="empty"><p>${t('loadErrorBody')}</p></div>`;
   } finally {
     button.disabled = false;
-    button.textContent = 'See care options';
+    button.textContent = t('seeOptions');
   }
 }
 
@@ -162,40 +165,43 @@ function escapeHtml(value) {
 function facilityCard(facility, index, inputs) {
   const route = state.routes.has(facility.id) ? presentRoute(state.routes.get(facility.id)) : null;
   const open = isOpenNow(facility.hours);
-  const status = open === true ? '<span class="open">Open now</span>' : open === false ? '<span class="closed">Closed now</span>' : '<span class="unknown">Hours: check live</span>';
-  const routeText = route ? `<span class="metric strong">${route.minutes} min drive</span><span class="metric">${route.miles} mi by road</span><span class="metric">Arrive about ${route.arrivalLabel}</span>` : '<span class="metric">Driving time unavailable</span>';
-  const ageText = facility.age.verifiedLimits ? '' : '<span class="metric warning">Age limit: verify</span>';
+  const status = open === true ? `<span class="open">${t('openNow')}</span>` : open === false ? `<span class="closed">${t('closedNow')}</span>` : `<span class="unknown">${t('hoursCheck')}</span>`;
+  const routeText = route ? `<span class="metric strong">${format('minuteDrive',{n:route.minutes})}</span><span class="metric">${format('milesRoad',{n:route.miles})}</span><span class="metric">${format('arriveAbout',{time:route.arrivalLabel})}</span>` : `<span class="metric">${t('driveUnavailable')}</span>`;
+  const ageText = facility.age.verifiedLimits ? '' : `<span class="metric warning">${t('ageVerify')}</span>`;
   const operationalStatus = facility.type === 'emergency' && facility.state === 'NJ'
-  ? '<a class="metric" href="https://njdivert.juvare.com/" target="_blank" rel="noopener">NJ ED status: check live ↗</a>'
-  : `<a class="metric" href="${facility.sourceUrl}" target="_blank" rel="noopener">Wait: check provider ↗</a>`;
+  ? `<a class="metric" href="https://njdivert.juvare.com/" target="_blank" rel="noopener">${t('njStatus')}</a>`
+  : `<a class="metric" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('waitProvider')}</a>`;
   const accessBadges = [
-    facility.access.uninsuredWelcome ? '<span class="metric access-strong">Insurance not required</span>' : '',
-    facility.access.slidingFee ? '<span class="metric access">Sliding fee based on income</span>' : '',
-    facility.access.noOneTurnedAway ? '<span class="metric access">No one turned away for lack of funds</span>' : '',
-    facility.access.charityCare ? '<a class="metric access" href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care may apply ↗</a>' : '',
+    facility.access.uninsuredWelcome ? `<span class="metric access-strong">${t('insuranceNotRequired')}</span>` : '',
+    facility.access.slidingFee ? `<span class="metric access">${t('slidingFee')}</span>` : '',
+    facility.access.noOneTurnedAway ? `<span class="metric access">${t('noOneTurnedAway')}</span>` : '',
+    facility.access.charityCare ? `<a class="metric access" href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">${t('charityCare')}</a>` : '',
     facility.access.flatFee ? `<span class="metric access">Published self-pay: ${escapeHtml(facility.access.flatFee)}</span>` : ''
   ].join('');
-  const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
+  const translatedFacts = currentLanguage() === 'en' ? facility.highlights.slice(0, 3) : t(facility.type === 'emergency' ? 'genericEmergencyFacts' : facility.type === 'urgent-care' ? 'genericUrgentFacts' : 'genericCommunityFacts');
+  const facts = translatedFacts.map((item) => `<li>${escapeHtml(item)}</li>`).join('');
+  const typeLabel = currentLanguage() === 'en' ? facility.typeLabel : t(facility.type === 'emergency' ? 'typeEmergency' : facility.type === 'urgent-care' ? 'typeUrgent' : 'typeCommunity');
+  const hoursLabel = currentLanguage() === 'en' ? facility.hours.label : t(facility.hours.kind === 'always' ? 'hoursAlways' : facility.hours.kind === 'weekly' ? 'hoursWeekly' : 'hoursLive');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
   const reason = inputs.emergency
     ? inputs.patientGroup === 'adult'
-      ? 'Shown because the provider verifies a 24-hour emergency department serving adults.'
-      : 'Shown because the provider verifies dedicated pediatric emergency capability.'
+      ? t('adultEmergencyReason')
+      : t('pediatricEmergencyReason')
     : facility.type === 'urgent-care'
-      ? 'Non-emergency urgent-care match based on published age and service information.'
+      ? t('urgentReason')
       : facility.type === 'community-health-center'
-        ? 'Community health-center option for non-emergency primary care; call to confirm same-day availability.'
-      : 'Hospital emergency backup; urgent care may be more appropriate for a non-emergency concern.';
+        ? t('communityReason')
+      : t('hospitalBackupReason');
   return `<article class="card ${index === 0 ? 'best' : ''}">
-    <div class="card-top"><div><div class="rank">${route ? (index === 0 ? 'Closest strong match' : `Option ${index + 1}`) : `Verified option ${index + 1}`}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(facility.typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
-    <div class="metrics">${routeText}${ageText}${operationalStatus}${accessBadges}${facility.access.uninsuredWelcome ? '' : '<span class="metric">Insurance: verify</span>'}</div>
+    <div class="card-top"><div><div class="rank">${route ? (index === 0 ? t('closestMatch') : format('option',{n:index+1})) : format('verifiedOption',{n:index+1})}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
+    <div class="metrics">${routeText}${ageText}${operationalStatus}${accessBadges}${facility.access.uninsuredWelcome ? '' : `<span class="metric">${t('insuranceVerify')}</span>`}</div>
     <p class="reason">${reason}</p>
     <ul class="facts">${facts}</ul>
-    <p class="hours"><strong>Published hours:</strong> ${escapeHtml(facility.hours.label)}</p>
-    ${facility.access.note ? `<p class="access-note"><strong>Cost access:</strong> ${escapeHtml(facility.access.note)} <a class="text-link" href="${facility.access.sourceUrl}" target="_blank" rel="noopener">Official source ↗</a></p>` : ''}
-    ${route ? `<p class="route-source"><strong>Route source:</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? 'Current traffic included' : 'Current traffic not included'} · calculated ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
-    <p class="quality"><strong>Quality:</strong> ${escapeHtml(facility.quality.note)}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">NJ report</a>` : ''}</p>
-    <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">Directions</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">Call</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">Verify details ↗</a></div>
+    <p class="hours"><strong>${t('publishedHours')}</strong> ${escapeHtml(hoursLabel)}</p>
+    ${facility.access.note ? `<p class="access-note"><strong>${t('costAccess')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.access.note : t('accessNote'))} <a class="text-link" href="${facility.access.sourceUrl}" target="_blank" rel="noopener">${t('officialSource')}</a></p>` : ''}
+    ${route ? `<p class="route-source"><strong>${t('routeSource')}</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? t('trafficYes') : t('trafficNo')} · ${t('calculated')} ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
+    <p class="quality"><strong>${t('quality')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.quality.note : t('qualityUnavailable'))}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">${t('njReport')}</a>` : ''}</p>
+    <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a></div>
   </article>`;
 }
 
@@ -216,14 +222,14 @@ async function renderResults() {
   eligible = eligible.map((facility) => ({ ...facility, rankScore: scoreFacility(facility, inputs) }))
     .sort((a, b) => b.rankScore - a.rankScore || a.name.localeCompare(b.name));
 
-  document.getElementById('resultsTitle').textContent = inputs.emergency ? `${inputs.patientGroup === 'adult' ? 'Adult' : 'Pediatric'} emergency departments` : 'Care options for this concern';
+  document.getElementById('resultsTitle').textContent = inputs.emergency ? t(inputs.patientGroup === 'adult' ? 'adultEDs' : 'pediatricEDs') : t('concernOptions');
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
   document.getElementById('routingNote').textContent = routed
-    ? 'Driving distance, duration, and estimated arrival are current road-network calculations. Each card states whether live traffic is included.'
+    ? t('routingReady')
     : state.location
-      ? 'Live routing is temporarily unavailable. Facility facts are still shown; use Directions for current navigation.'
-      : 'Share your location on a new search to add road-network driving estimates. No wait times are estimated.';
+      ? t('routingFailed')
+      : t('routingOptional');
   document.getElementById('cards').innerHTML = eligible.length
     ? eligible.map((facility, index) => facilityCard(facility, index, inputs)).join('')
-    : '<div class="empty"><h3>No verified match in this pilot dataset</h3><p>This does not mean care is unavailable. Call your clinician, insurer, or a facility directly. If symptoms could be an emergency, call 911 or go to an emergency department.</p></div>';
+    : `<div class="empty"><h3>${t('noMatchTitle')}</h3><p>${t('noMatchBody')}</p></div>`;
 }
