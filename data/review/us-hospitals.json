@@ -1,6 +1,6 @@
 {
-  "datasetVersion": "2026-08-28.3",
-  "generatedAt": "2026-08-28T17:44:15.427Z",
+  "datasetVersion": "2026-08-28.4",
+  "generatedAt": "2026-08-28T17:55:52.355Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,8 +11,8 @@
   "summary": {
     "total": 4495,
     "jurisdictions": 56,
-    "matchedVerified": 20,
-    "pendingReview": 4475,
+    "matchedVerified": 25,
+    "pendingReview": 4470,
     "publishable": 0,
     "states": [
       {
@@ -60,8 +60,8 @@
       {
         "state": "CT",
         "total": 27,
-        "matchedVerified": 1,
-        "pendingReview": 26
+        "matchedVerified": 2,
+        "pendingReview": 25
       },
       {
         "state": "DC",
@@ -144,8 +144,8 @@
       {
         "state": "MA",
         "total": 60,
-        "matchedVerified": 1,
-        "pendingReview": 59
+        "matchedVerified": 2,
+        "pendingReview": 58
       },
       {
         "state": "MD",
@@ -156,8 +156,8 @@
       {
         "state": "ME",
         "total": 32,
-        "matchedVerified": 1,
-        "pendingReview": 31
+        "matchedVerified": 2,
+        "pendingReview": 30
       },
       {
         "state": "MI",
@@ -216,8 +216,8 @@
       {
         "state": "NH",
         "total": 26,
-        "matchedVerified": 1,
-        "pendingReview": 25
+        "matchedVerified": 2,
+        "pendingReview": 24
       },
       {
         "state": "NJ",
@@ -324,8 +324,8 @@
       {
         "state": "VT",
         "total": 15,
-        "matchedVerified": 1,
-        "pendingReview": 14
+        "matchedVerified": 2,
+        "pendingReview": 13
       },
       {
         "state": "WA",
@@ -19759,9 +19759,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "connecticut-childrens-hartford-peds-ed",
+        "method": "address"
       }
     },
     {
@@ -53929,9 +53929,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "massachusetts-general-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -56599,9 +56599,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "northern-light-eastern-maine-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -79009,9 +79009,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "elliot-hospital-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -126289,9 +126289,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "central-vermont-medical-center-ed",
+        "method": "cms-ccn"
       }
     },
     {

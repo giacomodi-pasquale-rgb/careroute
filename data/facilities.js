@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-28.3",
+  "datasetVersion": "2026-08-28.4",
   "reviewedAt": "2026-08-28"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -1735,6 +1735,441 @@ window.CARE_ROUTE_FACILITIES = [
       ],
       "note": "The hospital publishes free interpreter assistance in more than 200 languages by phone or video and remote ASL access 24/7. Ask the care team or Patient Experience for assistance.",
       "sourceUrl": "https://www.wmchealth.org/wp-content/uploads/2025/12/MFCH-patient-guide_Web-Spanish-FINAL-12.2.25.pdf"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "upmc-childrens-pittsburgh-peds-ed",
+    "name": "UPMC Children’s Hospital of Pittsburgh Emergency Department",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "4401 Penn Avenue, Pittsburgh, PA 15224",
+    "coordinates": {
+      "lat": 40.4659369,
+      "lon": -79.953861
+    },
+    "phone": "(412) 692-5555",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Dedicated children’s hospital emergency department",
+      "Attending pediatric emergency physician on duty 24/7",
+      "Treats acute illness, chronic-condition exacerbations, and injuries of all severity levels"
+    ],
+    "sourceUrl": "https://www.chp.edu/locations/emergency-department",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "massachusetts-general-ed",
+    "name": "Massachusetts General Hospital Emergency Department",
+    "city": "Boston",
+    "state": "MA",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "55 Fruit Street, Boston, MA 02114",
+    "coordinates": {
+      "lat": 42.362486,
+      "lon": -71.0698343
+    },
+    "phone": "(617) 724-4110",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Distinct pediatric emergency unit with separate waiting and exam rooms",
+      "Pediatric emergency doctors and nurses available 24/7",
+      "Level I adult and pediatric trauma capability"
+    ],
+    "sourceUrl": "https://www.massgeneral.org/children/emergency-medicine",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "Mass General states that patients presenting to the Emergency Department are assessed and stabilized regardless of ability to pay. This does not mean all services are free.",
+      "sourceUrl": "https://www.massgeneral.org/surgery/trauma/about/support/patients-and-families"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "connecticut-childrens-hartford-peds-ed",
+    "name": "Connecticut Children’s Emergency Department",
+    "city": "Hartford",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "282 Washington Street, Hartford, CT 06106",
+    "coordinates": {
+      "lat": 41.7540705,
+      "lon": -72.682687
+    },
+    "phone": "(860) 545-9000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "35-bed pediatric emergency department open 24/7",
+      "Level 1 Pediatric Trauma Center",
+      "Specialized emergency care for infants, children, and teens"
+    ],
+    "sourceUrl": "https://www.connecticutchildrens.org/specialties-conditions/emergency-medicine",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "northern-light-eastern-maine-ed",
+    "name": "Northern Light Eastern Maine Medical Center Emergency Department",
+    "city": "Bangor",
+    "state": "ME",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "489 State Street, Bangor, ME 04401",
+    "coordinates": {
+      "lat": 44.8099801,
+      "lon": -68.7494564
+    },
+    "phone": "(207) 973-8000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Hospital emergency department open 24 hours every day",
+      "Location-specific emergency-care address and telephone published by the provider"
+    ],
+    "sourceUrl": "https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center/Locations/Emergency-Care",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "elliot-hospital-ed",
+    "name": "Elliot Hospital Emergency Department",
+    "city": "Manchester",
+    "state": "NH",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "1 Elliot Way, Manchester, NH 03103",
+    "coordinates": {
+      "lat": 42.9827714,
+      "lon": -71.4347928
+    },
+    "phone": "(603) 669-5300",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency and trauma team available 24 hours every day",
+      "ACS Level II Trauma Center",
+      "Provider states it cares for patients regardless of ability to pay"
+    ],
+    "sourceUrl": "https://www.elliothospital.org/services/emergency-department",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "Elliot states that it cares for all patients regardless of ability to pay. This does not mean all services are free.",
+      "sourceUrl": "https://www.elliothospital.org/about-us/newsroom/news/j-and-leslie-roberto-share-their-story-life-saving-care-elliot-hospital"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "central-vermont-medical-center-ed",
+    "name": "Central Vermont Medical Center Emergency Department",
+    "city": "Berlin",
+    "state": "VT",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "130 Fisher Road, Berlin, VT 05602",
+    "coordinates": {
+      "lat": 44.2192015,
+      "lon": -72.5606616
+    },
+    "phone": "(802) 371-4264",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24/7",
+      "Highest-level Always Ready for Children pediatric-readiness recognition",
+      "Treats patients regardless of insurance coverage or ability to pay"
+    ],
+    "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-uvm-health-central-vermont-medical-center",
+    "quality": {
+      "note": "No comparable pediatric emergency quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "The provider states that its Emergency Department treats all patients regardless of insurance coverage or ability to pay. This does not mean all services are free; financial counselors are available.",
+      "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-uvm-health-central-vermont-medical-center"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "rhode-island-hospital-ed",
+    "name": "Rhode Island Hospital Emergency Department",
+    "city": "Providence",
+    "state": "RI",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "80 Dudley Street, Providence, RI 02903",
+    "coordinates": {
+      "lat": 41.810581,
+      "lon": -71.408316
+    },
+    "phone": "(401) 444-5411",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department available 24 hours a day, 365 days a year",
+      "Level I Trauma Center",
+      "Emergency imaging and behavioral-health observation capabilities"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/emergency-services-rhode-island-hospital",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
     },
     "verification": {
       "status": "verified-with-unknowns",
