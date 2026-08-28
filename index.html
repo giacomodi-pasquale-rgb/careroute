@@ -10,22 +10,23 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
+  <link rel="stylesheet" href="access.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#">CareRoute<span>.</span></a>
-    <span class="pilot-pill">Northeast pilot</span><button id="installApp" class="install-button" hidden>Install app</button>
+    <div class="topbar-actions"><label class="language-picker"><span class="sr-only">Language</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
-    <strong>Not medical advice.</strong> If someone may have a life-threatening emergency, call <a href="tel:911">911</a> now.
+    <span data-i18n="safety"><strong>Not medical advice.</strong> If someone may have a life-threatening emergency, call <a href="tel:911">911</a> now.</span>
   </aside>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Adult &amp; child care navigation</p>
-      <h1>Find the right level of care—without the guesswork.</h1>
-      <p>Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, and published capabilities, then adds driving time when you share your location.</p>
+      <p class="eyebrow" data-i18n="eyebrow">Adult &amp; child care navigation</p>
+      <h1 data-i18n="heroTitle">Find the right level of care—without the guesswork.</h1>
+      <p data-i18n="heroBody">Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, access needs, and published capabilities, then adds driving time when you share your location.</p>
       <div class="trust-row" aria-label="Data principles">
         <span>✓ Real facilities</span><span>✓ Source-linked facts</span><span>✓ No invented waits</span>
       </div>
@@ -75,8 +76,17 @@
         </fieldset>
 
         <fieldset class="step" data-step="4">
-          <legend>Route from where you are?</legend>
-          <p class="helper">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
+          <legend data-i18n="routeTitle">Route from where you are?</legend>
+          <div class="access-box">
+            <p class="access-title" data-i18n="accessTitle">What would make care easier to access?</p>
+            <p class="helper" data-i18n="accessHelper">Optional. Select everything that matters today.</p>
+            <div class="access-choices">
+              <label><input type="checkbox" name="accessNeed" value="uninsured"><span data-i18n="accessUninsured">I do not have insurance</span></label>
+              <label><input type="checkbox" name="accessNeed" value="low-cost"><span data-i18n="accessLowCost">I need free or reduced-cost care</span></label>
+              <label><input type="checkbox" name="accessNeed" value="language"><span data-i18n="accessLanguage">I need language support</span></label>
+            </div>
+          </div>
+          <p class="helper" data-i18n="locationPrivacy">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
           <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
           <p id="locationStatus" class="status" aria-live="polite">Optional. Using location will automatically calculate and open nearby results.</p>
           <div class="actions"><button type="button" class="secondary back">Back</button><button type="button" id="showCareOptions" class="primary">See care options</button></div>
@@ -99,13 +109,13 @@
     <section class="scope-note">
       <p class="eyebrow">Pilot limitations</p>
       <h2>A careful foundation, not a finished medical product.</h2>
-      <p>This public pilot covers a curated set of verified adult and pediatric emergency and urgent-care options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, cost, or insurance network status. Facility pages remain the source of truth.</p>
+      <p>This public pilot covers a curated set of verified adult and pediatric emergency, urgent-care, and community health-center options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, final cost, or insurance network status. Access labels describe verified programs, not individual eligibility. Facility and government pages remain the source of truth.</p>
     </section>
   </main>
 
-  <footer><span>CareRoute v0.5</span><span>Data reviewed August 17, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
+  <footer><span>CareRoute v0.6 Access</span><span>Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js"></script>
-  <script type="module" src="app.js?v=12"></script>
+  <script type="module" src="app.js?v=13"></script>
 </body>
 </html>

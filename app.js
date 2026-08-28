@@ -1,4 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js';
+import { initLanguage, t } from './i18n.js';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -6,7 +7,9 @@ const state = { step: 1, location: null, routes: new Map() };
 const MAX_SEARCH_MILES = 100;
 let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
-const titles = ['Who needs care?', 'What kind of concern?', 'Could this be an emergency?', 'Route from where you are?'];
+const titleKeys = ['step1', 'step2', 'step3', 'step4'];
+
+initLanguage();
 
 if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
   const registrations = await navigator.serviceWorker.getRegistrations();
@@ -28,7 +31,7 @@ document.getElementById('installApp').addEventListener('click', async () => {
 function showStep(number) {
   state.step = number;
   steps.forEach((item) => item.classList.toggle('active', Number(item.dataset.step) === number));
-  document.getElementById('form-title').textContent = titles[number - 1];
+  document.getElementById('form-title').textContent = t(titleKeys[number - 1]);
   document.getElementById('stepLabel').textContent = `Step ${number} of 4`;
   document.getElementById('progressBar').style.width = `${number * 25}%`;
 }
@@ -41,6 +44,7 @@ document.querySelectorAll('[name=patientGroup]').forEach((input) => input.addEve
   document.getElementById('childAge').hidden = input.value !== 'pediatric';
 }));
 document.querySelectorAll('.back').forEach((button) => button.addEventListener('click', () => showStep(state.step - 1)));
+document.addEventListener('careroute:language', () => showStep(state.step));
 
 document.getElementById('locateMe').addEventListener('click', () => {
   const status = document.getElementById('locationStatus');
@@ -112,7 +116,8 @@ function getInputs() {
     patientGroup: document.querySelector('[name=patientGroup]:checked').value,
     ageMonths: unit === 'months' ? value : value * 12,
     need: document.querySelector('[name=need]:checked').value,
-    emergency: document.querySelector('[name=emergency]:checked').value === 'yes'
+    emergency: document.querySelector('[name=emergency]:checked').value === 'yes',
+    accessNeeds: new Set([...document.querySelectorAll('[name=accessNeed]:checked')].map((input) => input.value))
   };
 }
 
@@ -141,10 +146,13 @@ async function loadRoutes(list) {
 function scoreFacility(facility, inputs) {
   const route = state.routes.has(facility.id) ? presentRoute(state.routes.get(facility.id)) : null;
   const specialization = facility.pediatricSpecific ? 30 : 18;
-  const settingFit = inputs.emergency ? 50 : (facility.type === 'urgent-care' ? 45 : 20);
+  const settingFit = inputs.emergency ? 50 : (facility.type === 'urgent-care' ? 45 : facility.type === 'community-health-center' ? 38 : 20);
   const capability = facility.capabilities.includes(inputs.need) ? 20 : 0;
   const travel = route ? Math.max(0, 30 - route.minutes * 0.75) : 0;
-  return settingFit + specialization + capability + travel;
+  const accessMatch = inputs.emergency ? 0
+    : (inputs.accessNeeds.has('uninsured') && facility.access.uninsuredWelcome ? 30 : 0)
+      + (inputs.accessNeeds.has('low-cost') && (facility.access.slidingFee || facility.access.noOneTurnedAway) ? 35 : 0);
+  return settingFit + specialization + capability + travel + accessMatch;
 }
 
 function escapeHtml(value) {
@@ -160,6 +168,13 @@ function facilityCard(facility, index, inputs) {
   const operationalStatus = facility.type === 'emergency' && facility.state === 'NJ'
   ? '<a class="metric" href="https://njdivert.juvare.com/" target="_blank" rel="noopener">NJ ED status: check live ↗</a>'
   : `<a class="metric" href="${facility.sourceUrl}" target="_blank" rel="noopener">Wait: check provider ↗</a>`;
+  const accessBadges = [
+    facility.access.uninsuredWelcome ? '<span class="metric access-strong">Insurance not required</span>' : '',
+    facility.access.slidingFee ? '<span class="metric access">Sliding fee based on income</span>' : '',
+    facility.access.noOneTurnedAway ? '<span class="metric access">No one turned away for lack of funds</span>' : '',
+    facility.access.charityCare ? '<a class="metric access" href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care may apply ↗</a>' : '',
+    facility.access.flatFee ? `<span class="metric access">Published self-pay: ${escapeHtml(facility.access.flatFee)}</span>` : ''
+  ].join('');
   const facts = facility.highlights.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(facility.address)}`;
   const reason = inputs.emergency
@@ -168,13 +183,16 @@ function facilityCard(facility, index, inputs) {
       : 'Shown because the provider verifies dedicated pediatric emergency capability.'
     : facility.type === 'urgent-care'
       ? 'Non-emergency urgent-care match based on published age and service information.'
+      : facility.type === 'community-health-center'
+        ? 'Community health-center option for non-emergency primary care; call to confirm same-day availability.'
       : 'Hospital emergency backup; urgent care may be more appropriate for a non-emergency concern.';
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? 'Closest strong match' : `Option ${index + 1}`) : `Verified option ${index + 1}`}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(facility.typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
-    <div class="metrics">${routeText}${ageText}${operationalStatus}<span class="metric">Insurance: verify</span></div>
+    <div class="metrics">${routeText}${ageText}${operationalStatus}${accessBadges}${facility.access.uninsuredWelcome ? '' : '<span class="metric">Insurance: verify</span>'}</div>
     <p class="reason">${reason}</p>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>Published hours:</strong> ${escapeHtml(facility.hours.label)}</p>
+    ${facility.access.note ? `<p class="access-note"><strong>Cost access:</strong> ${escapeHtml(facility.access.note)} <a class="text-link" href="${facility.access.sourceUrl}" target="_blank" rel="noopener">Official source ↗</a></p>` : ''}
     ${route ? `<p class="route-source"><strong>Route source:</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? 'Current traffic included' : 'Current traffic not included'} · calculated ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
     <p class="quality"><strong>Quality:</strong> ${escapeHtml(facility.quality.note)}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">NJ report</a>` : ''}</p>
     <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">Directions</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">Call</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">Verify details ↗</a></div>
@@ -188,7 +206,7 @@ async function renderResults() {
       ? facility.patientGroups.includes('adult')
       : facility.patientGroups.includes('pediatric') && (facility.type !== 'emergency' || facility.pediatricSpecific);
     const ageEligible = inputs.patientGroup === 'adult' || !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
-    const settingEligible = !inputs.emergency || facility.type === 'emergency';
+    const settingEligible = inputs.emergency ? facility.type === 'emergency' : true;
     const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
     const geographyEligible = state.location || facility.state === 'NJ';
     return groupEligible && ageEligible && settingEligible && capabilityEligible && geographyEligible;

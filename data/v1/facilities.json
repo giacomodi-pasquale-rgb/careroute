@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "datasetVersion": "2026-08-17.3",
-  "reviewedAt": "2026-08-17",
+  "datasetVersion": "2026-08-28.1",
+  "reviewedAt": "2026-08-28",
   "facilities": [
     {
       "id": "cooperman-barnabas-peds-ed",
@@ -168,6 +168,44 @@
       "quality": { "displayScore": null, "note": "No comparable public pediatric urgent-care quality measure found.", "sourceUrl": null },
       "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-17", "reviewBy": "2026-09-17", "method": "authoritative-provider-source" },
       "evidence": [{ "id": "summit-provider", "url": "https://www.summithealth.com/locations/livingston-summit-health-urgent-care", "publisher": "Summit Health", "supports": ["identity", "location", "contact", "capabilities", "hours", "highlights"], "checkedAt": "2026-08-17" }]
+    },
+    {
+      "id": "newark-community-health-center-broadway",
+      "identity": { "name": "Newark Community Health Center – Broadway", "organization": "Newark Community Health Centers", "type": "community-health-center", "typeLabel": "Federally Qualified Health Center", "pediatricSpecific": false, "patientGroups": ["adult", "pediatric"] },
+      "location": { "address1": "741 Broadway", "city": "Newark", "state": "NJ", "postalCode": "07104", "latitude": 40.77521, "longitude": -74.158715 },
+      "contact": { "phone": "9734831300", "website": "https://www.nchcfqhc.org/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "stomach", "other"],
+      "hours": { "kind": "live", "timezone": "America/New_York", "label": "Call or check the provider before travel; an appointment may be required", "weekly": {} },
+      "highlights": ["Primary and preventive care for adults and children", "Insurance is not required for care", "Income-based sliding fee scale; no one is turned away for lack of funds"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "access": { "uninsuredWelcome": true, "slidingFee": true, "noOneTurnedAway": true, "charityCare": false, "flatFee": null, "languages": [], "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.", "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/" },
+      "quality": { "displayScore": null, "note": "No comparable public primary-care quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-government-and-provider-sources" },
+      "evidence": [
+        { "id": "nj-fqhc-access", "url": "https://www.nj.gov/health/fhs/fqhc/", "publisher": "New Jersey Department of Health", "supports": ["identity", "capabilities", "highlights", "access"], "checkedAt": "2026-08-28" },
+        { "id": "nj-fqhc-location", "url": "https://www.nj.gov/health/vaccines/programs/vfc/vfc-317-vaccine-locations/", "publisher": "New Jersey Department of Health", "supports": ["location", "contact"], "checkedAt": "2026-08-28" }
+      ]
+    },
+    {
+      "id": "newark-community-health-center-east-orange",
+      "identity": { "name": "Newark Community Health Center – East Orange", "organization": "Newark Community Health Centers", "type": "community-health-center", "typeLabel": "Federally Qualified Health Center", "pediatricSpecific": false, "patientGroups": ["adult", "pediatric"] },
+      "location": { "address1": "444 William Street", "city": "East Orange", "state": "NJ", "postalCode": "07017", "latitude": 40.765682, "longitude": -74.213327 },
+      "contact": { "phone": "9736751900", "website": "https://www.nchcfqhc.org/", "bookingUrl": null },
+      "pediatricAge": { "minimumMonths": null, "maximumMonths": null, "limitsVerified": false },
+      "capabilities": ["illness", "stomach", "other"],
+      "hours": { "kind": "live", "timezone": "America/New_York", "label": "Call or check the provider before travel; an appointment may be required", "weekly": {} },
+      "highlights": ["Primary and preventive care for adults and children", "Insurance is not required for care", "Income-based sliding fee scale; no one is turned away for lack of funds"],
+      "live": { "waitMinutes": null, "acceptingPatients": null },
+      "insurance": { "status": "verify", "plans": [] },
+      "access": { "uninsuredWelcome": true, "slidingFee": true, "noOneTurnedAway": true, "charityCare": false, "flatFee": null, "languages": [], "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.", "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/" },
+      "quality": { "displayScore": null, "note": "No comparable public primary-care quality score is displayed.", "sourceUrl": null },
+      "verification": { "status": "verified-with-unknowns", "reviewedAt": "2026-08-28", "reviewBy": "2026-11-28", "method": "authoritative-government-and-provider-sources" },
+      "evidence": [
+        { "id": "nj-fqhc-access-east-orange", "url": "https://www.nj.gov/health/fhs/fqhc/", "publisher": "New Jersey Department of Health", "supports": ["identity", "capabilities", "highlights", "access"], "checkedAt": "2026-08-28" },
+        { "id": "nj-fqhc-location-east-orange", "url": "https://www.nj.gov/health/vaccines/programs/vfc/vfc-317-vaccine-locations/", "publisher": "New Jersey Department of Health", "supports": ["location", "contact"], "checkedAt": "2026-08-28" }
+      ]
     }
   ]
 }

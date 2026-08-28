@@ -1,0 +1,12 @@
+.topbar-actions { display: flex; align-items: center; gap: 9px; }
+.language-picker select { width: auto; padding: 7px 30px 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 750; }
+.access-box { margin: 4px 0 22px; padding: 18px; border: 1px solid #bfd8ce; background: #f2f9f6; border-radius: 16px; }
+.access-title { font-weight: 850; margin: 0; }
+.access-box .helper { margin: 4px 0 12px; }
+.access-choices { display: grid; gap: 8px; }
+.access-choices label { display: flex; align-items: center; gap: 9px; font-weight: 700; }
+.access-choices input { width: 18px; height: 18px; accent-color: var(--green); }
+.metric.access { background: #dceee7; color: #134f45; }
+.metric.access-strong { background: #176458; color: #fff; }
+.metrics a.metric { text-decoration: none; color: inherit; }
+@media (max-width: 650px) { .pilot-pill { display: none; } .language-picker select { max-width: 132px; } }

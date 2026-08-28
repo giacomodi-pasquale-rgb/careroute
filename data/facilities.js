@@ -1,7 +1,7 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-17.3",
-  "reviewedAt": "2026-08-17"
+  "datasetVersion": "2026-08-28.1",
+  "reviewedAt": "2026-08-28"
 };
 window.CARE_ROUTE_FACILITIES = [
   {
@@ -48,6 +48,16 @@ window.CARE_ROUTE_FACILITIES = [
     "quality": {
       "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.",
       "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
     },
     "verification": {
       "status": "verified",
@@ -102,6 +112,16 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.",
       "url": "https://web.doh.nj.gov/apps2/hpr/profile.aspx?name=Newark+Beth+Israel+Medical+Center&num=10709"
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified",
       "reviewedAt": "2026-08-17",
@@ -154,6 +174,16 @@ window.CARE_ROUTE_FACILITIES = [
     "quality": {
       "note": "No pediatric-specific emergency quality measure was found for display.",
       "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
     },
     "verification": {
       "status": "verified",
@@ -208,6 +238,16 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "NJ hospital measures exist, but no comparable pediatric urgent/emergency score is displayed.",
       "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified-with-unknowns",
       "reviewedAt": "2026-08-17",
@@ -261,6 +301,16 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "NJ hospital measures exist, but no condition-specific emergency score is displayed.",
       "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified-with-unknowns",
       "reviewedAt": "2026-08-17",
@@ -312,6 +362,16 @@ window.CARE_ROUTE_FACILITIES = [
     "quality": {
       "note": "No comparable pediatric emergency quality score is displayed.",
       "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
     },
     "verification": {
       "status": "verified-with-unknowns",
@@ -365,6 +425,16 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "No comparable pediatric emergency quality score is displayed.",
       "url": null
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified-with-unknowns",
       "reviewedAt": "2026-08-17",
@@ -415,6 +485,16 @@ window.CARE_ROUTE_FACILITIES = [
     "quality": {
       "note": "No comparable public pediatric urgent-care quality measure found.",
       "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
     },
     "verification": {
       "status": "verified",
@@ -496,6 +576,16 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "No comparable public pediatric urgent-care quality measure found.",
       "url": null
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified",
       "reviewedAt": "2026-08-17",
@@ -576,11 +666,141 @@ window.CARE_ROUTE_FACILITIES = [
       "note": "No comparable public pediatric urgent-care quality measure found.",
       "url": null
     },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
     "verification": {
       "status": "verified-with-unknowns",
       "reviewedAt": "2026-08-17",
       "reviewBy": "2026-09-17",
       "method": "authoritative-provider-source"
+    }
+  },
+  {
+    "id": "newark-community-health-center-broadway",
+    "name": "Newark Community Health Center – Broadway",
+    "city": "Newark",
+    "state": "NJ",
+    "type": "community-health-center",
+    "typeLabel": "Federally Qualified Health Center",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "741 Broadway, Newark, NJ 07104",
+    "coordinates": {
+      "lat": 40.77521,
+      "lon": -74.158715
+    },
+    "phone": "(973) 483-1300",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Call or check the provider before travel; an appointment may be required",
+      "days": {}
+    },
+    "highlights": [
+      "Primary and preventive care for adults and children",
+      "Insurance is not required for care",
+      "Income-based sliding fee scale; no one is turned away for lack of funds"
+    ],
+    "sourceUrl": "https://www.nchcfqhc.org/",
+    "quality": {
+      "note": "No comparable public primary-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": true,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.",
+      "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-government-and-provider-sources"
+    }
+  },
+  {
+    "id": "newark-community-health-center-east-orange",
+    "name": "Newark Community Health Center – East Orange",
+    "city": "East Orange",
+    "state": "NJ",
+    "type": "community-health-center",
+    "typeLabel": "Federally Qualified Health Center",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "444 William Street, East Orange, NJ 07017",
+    "coordinates": {
+      "lat": 40.765682,
+      "lon": -74.213327
+    },
+    "phone": "(973) 675-1900",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Call or check the provider before travel; an appointment may be required",
+      "days": {}
+    },
+    "highlights": [
+      "Primary and preventive care for adults and children",
+      "Insurance is not required for care",
+      "Income-based sliding fee scale; no one is turned away for lack of funds"
+    ],
+    "sourceUrl": "https://www.nchcfqhc.org/",
+    "quality": {
+      "note": "No comparable public primary-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": true,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.",
+      "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-28",
+      "reviewBy": "2026-11-28",
+      "method": "authoritative-government-and-provider-sources"
     }
   }
 ];

@@ -1,10 +1,13 @@
-# CareRoute v0.5
+# CareRoute v0.6 Access
 
 CareRoute is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
-- Ten verified adult and/or pediatric emergency or urgent-care locations
+- Twelve verified adult and/or pediatric emergency, urgent-care, or community health-center locations
+- English, Spanish, Portuguese, and Haitian Creole navigation for the core access flow; provider-sourced facility details remain in their source language pending professional translation review
+- Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
+- Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
 - Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours
 - Browser geolocation, with location kept in memory only
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status

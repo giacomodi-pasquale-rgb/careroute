@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
 export const CAPABILITIES = new Set(['illness', 'breathing', 'injury', 'wound', 'stomach', 'other']);
-export const FACILITY_TYPES = new Set(['emergency', 'urgent-care']);
+export const FACILITY_TYPES = new Set(['emergency', 'urgent-care', 'community-health-center']);
 export const HOUR_KINDS = new Set(['always', 'weekly', 'live', 'unknown']);
 export const VERIFIED_STATUSES = new Set(['verified', 'verified-with-unknowns']);
 
@@ -78,6 +78,16 @@ export function toWebFacility(facility) {
     highlights: facility.highlights,
     sourceUrl: facility.contact.website,
     quality: { note: facility.quality.note, url: facility.quality.sourceUrl },
+    access: facility.access || {
+      uninsuredWelcome: false,
+      slidingFee: false,
+      noOneTurnedAway: false,
+      charityCare: facility.identity.type === 'emergency' && facility.location.state === 'NJ',
+      flatFee: null,
+      languages: [],
+      note: null,
+      sourceUrl: null
+    },
     verification: facility.verification
   };
 }

@@ -35,3 +35,16 @@ test('unknown age limits remain unknown through the web adapter', async () => {
   assert.equal(summit.pediatricAge.minimumMonths, null);
   assert.equal(summit.pediatricAge.maximumMonths, null);
 });
+
+test('community health centers expose verified access terms without invented prices', async () => {
+  const { facilities } = await readDataset();
+  const centers = facilities.filter((facility) => facility.identity.type === 'community-health-center');
+  assert.equal(centers.length, 2);
+  for (const facility of centers) {
+    assert.equal(facility.access.uninsuredWelcome, true);
+    assert.equal(facility.access.slidingFee, true);
+    assert.equal(facility.access.noOneTurnedAway, true);
+    assert.equal(facility.access.flatFee, null);
+    assert.match(facility.access.sourceUrl, /^https:\/\/www\.nj\.gov\//);
+  }
+});
