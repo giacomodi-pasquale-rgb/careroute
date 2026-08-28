@@ -171,7 +171,7 @@ function facilityCard(facility, index, inputs) {
       : 'Hospital emergency backup; urgent care may be more appropriate for a non-emergency concern.';
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? 'Closest strong match' : `Option ${index + 1}`) : `Verified option ${index + 1}`}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(facility.typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
-    <div class="metrics">${routeText}${ageText}<span class="metric">Wait: not available</span><span class="metric">Insurance: verify</span></div>
+    <div class="metrics">${routeText}${ageText}${operationalStatus}<span class="metric">Insurance: verify</span></div>
     <p class="reason">${reason}</p>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>Published hours:</strong> ${escapeHtml(facility.hours.label)}</p>
