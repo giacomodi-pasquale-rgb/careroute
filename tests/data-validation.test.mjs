@@ -37,6 +37,14 @@ test('every Northeast state has adult and dedicated pediatric emergency coverage
   }
 });
 
+test('every Northeast state has at least three verified care locations', async () => {
+  const { facilities } = await readDataset();
+  for (const state of ['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']) {
+    const local = facilities.filter((facility) => facility.location.state === state);
+    assert.ok(local.length >= 3, `${state} needs at least three verified care locations`);
+  }
+});
+
 test('unknown age limits remain unknown through the web adapter', async () => {
   const { facilities } = await readDataset();
   const summit = facilities.find((facility) => facility.id === 'summit-urgent-care-livingston');

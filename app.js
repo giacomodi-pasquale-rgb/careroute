@@ -1,9 +1,9 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=4';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=5';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, locationSource: null, routes: new Map() };
+const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false };
 const MAX_SEARCH_MILES = 100;
 const NORTHEAST_STATES = new Set(['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']);
 let installPrompt = null;
@@ -143,6 +143,7 @@ document.getElementById('showCareOptions').addEventListener('click', (event) => 
 document.getElementById('careForm').addEventListener('submit', (event) => event.preventDefault());
 
 async function showCareOptions(button) {
+  state.showAllResults = false;
   button.disabled = true;
   button.textContent = state.location ? t('calculatingRoutes') : t('loadingOptions');
   document.getElementById('questionnaire').hidden = true;
@@ -165,6 +166,7 @@ async function showCareOptions(button) {
 }
 
 document.getElementById('startOver').addEventListener('click', () => {
+  state.showAllResults = false;
   clearLocation();
   document.getElementById('zipCode').value = '';
   document.getElementById('zipStatus').textContent = '';
@@ -294,7 +296,16 @@ async function renderResults() {
     : state.location
       ? t('routingFailed')
       : t('routingOptional');
+  const visible = state.showAllResults ? eligible : eligible.slice(0, 3);
+  const resultControls = eligible.length > 3
+    ? `<div class="result-controls"><p>${format('showingResults', { shown: visible.length, total: eligible.length })}</p><button class="secondary" id="toggleAllResults" type="button">${state.showAllResults ? t('showTopThree') : format('viewAllOptions', { n: eligible.length })}</button></div>`
+    : '';
   document.getElementById('cards').innerHTML = eligible.length
-    ? eligible.map((facility, index) => facilityCard(facility, index, inputs)).join('')
+    ? `${resultControls}${visible.map((facility, index) => facilityCard(facility, index, inputs)).join('')}`
     : `<div class="empty"><h3>${t('noMatchTitle')}</h3><p>${t('noMatchBody')}</p></div>`;
+  document.getElementById('toggleAllResults')?.addEventListener('click', async () => {
+    state.showAllResults = !state.showAllResults;
+    await renderResults();
+    document.getElementById('cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }

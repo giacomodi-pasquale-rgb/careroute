@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-28.6",
+  "datasetVersion": "2026-08-29.7",
   "reviewedAt": "2026-08-28"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -2548,6 +2548,565 @@ window.CARE_ROUTE_FACILITIES = [
       "reviewedAt": "2026-08-28",
       "reviewBy": "2026-11-28",
       "method": "authoritative-provider-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "hartford-hospital-adult-ed",
+    "name": "Hartford Hospital Emergency Department",
+    "city": "Hartford",
+    "state": "CT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "80 Seymour Street, Hartford, CT 06102",
+    "coordinates": {
+      "lat": 41.7538983,
+      "lon": -72.6806796
+    },
+    "phone": "(860) 545-5000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Adult emergency department with more than 100,000 annual visits",
+      "Level I trauma, stroke, and chest-pain capabilities",
+      "Laboratory, imaging, procedures, and specialist consultations"
+    ],
+    "sourceUrl": "https://hartfordhospital.org/file%20library/services/pdfs/hh-ed-pamphlet.pdf",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "mainegeneral-alfond-adult-ed",
+    "name": "MaineGeneral Alfond Center for Health Emergency Department",
+    "city": "Augusta",
+    "state": "ME",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "35 Medical Center Parkway, Augusta, ME 04330",
+    "coordinates": {
+      "lat": 44.3637461,
+      "lon": -69.7803281
+    },
+    "phone": "(207) 626-1000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Hospital emergency care available 24/7",
+      "Evaluation for severe illness, breathing problems, bleeding, and injury",
+      "On-site laboratory, X-ray, ultrasound, CT, and cardiac evaluation"
+    ],
+    "sourceUrl": "https://www.mainegeneral.org/medical-services/emergency-care/",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-public-geocoder-sources"
+    }
+  },
+  {
+    "id": "brigham-womens-adult-ed",
+    "name": "Brigham and Women’s Hospital Emergency Department",
+    "city": "Boston",
+    "state": "MA",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "75 Francis Street, Boston, MA 02115",
+    "coordinates": {
+      "lat": 42.3350103,
+      "lon": -71.10608
+    },
+    "phone": "(617) 732-5636",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Immediate emergency care 24 hours a day, seven days a week",
+      "Treats common and life-threatening medical illness and traumatic injury",
+      "Collaboration with radiology, critical care, burn, trauma, and surgical specialists"
+    ],
+    "sourceUrl": "https://www.brighamandwomens.org/emergency-medicine/about-the-emergency-department",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "southern-nh-medical-adult-ed",
+    "name": "Southern New Hampshire Medical Center Emergency Department",
+    "city": "Nashua",
+    "state": "NH",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "8 Prospect Street, Nashua, NH 03060",
+    "coordinates": {
+      "lat": 42.7562364,
+      "lon": -71.4607839
+    },
+    "phone": "(603) 577-2000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Trauma and emergency professionals available 24/7/365",
+      "State-designated Level III Trauma Center",
+      "Immediate access to imaging, surgery, critical care, and hospital specialists"
+    ],
+    "sourceUrl": "https://www.snhhealth.org/services/emergency-services",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "hackensack-university-adult-ed",
+    "name": "Hackensack University Medical Center Emergency Trauma Center",
+    "city": "Hackensack",
+    "state": "NJ",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "30 Prospect Avenue, Hackensack, NJ 07601",
+    "coordinates": {
+      "lat": 40.883701,
+      "lon": -74.05632
+    },
+    "phone": "(551) 996-2000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency Trauma Center open 24/7",
+      "Verified Level I Adult Trauma Center",
+      "Advanced diagnostics and around-the-clock specialty teams"
+    ],
+    "sourceUrl": "https://scprod.hackensackmeridianhealth.org/en/locations/hackensack-university-medical-center",
+    "quality": {
+      "note": "NJ hospital measures exist, but no condition-specific emergency score is displayed.",
+      "url": "https://web.doh.nj.gov/apps2/hpr/hospitals.aspx"
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": true,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-and-cms-sources"
+    }
+  },
+  {
+    "id": "mount-sinai-hospital-adult-ed",
+    "name": "The Mount Sinai Hospital Emergency Department",
+    "city": "New York",
+    "state": "NY",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1468 Madison Avenue, New York, NY 10029",
+    "coordinates": {
+      "lat": 40.7903991,
+      "lon": -73.9519358
+    },
+    "phone": "(212) 241-6639",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency care 24 hours a day, seven days a week",
+      "Treats adults and children",
+      "Care for medical illness, breathing problems, severe injury, and trauma"
+    ],
+    "sourceUrl": "https://www.mountsinai.org/locations/mount-sinai/patient-care/emergency",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "upmc-presbyterian-adult-ed",
+    "name": "UPMC Presbyterian Emergency Department",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "200 Lothrop Street, Pittsburgh, PA 15213",
+    "coordinates": {
+      "lat": 40.4418957,
+      "lon": -79.9607501
+    },
+    "phone": "(412) 647-8762",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24/7",
+      "Treats conditions from heart attack and stroke to infection and injury",
+      "Laboratory and imaging services available around the clock"
+    ],
+    "sourceUrl": "https://www.upmc.com/locations/hospitals/presbyterian/services/emergency",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "miriam-hospital-adult-ed",
+    "name": "The Miriam Hospital Emergency Department",
+    "city": "Providence",
+    "state": "RI",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "164 Summit Avenue, Providence, RI 02906",
+    "coordinates": {
+      "lat": 41.8512104,
+      "lon": -71.3979102
+    },
+    "phone": "(401) 793-3000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department staffed 24 hours a day, 365 days a year",
+      "Board-certified emergency physicians and advanced practice providers",
+      "On-site X-ray, CT, other imaging, monitoring, and emergency treatment"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/emergency-services-miriam-hospital",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "northwestern-medical-center-adult-ed",
+    "name": "Northwestern Medical Center Emergency Department",
+    "city": "St. Albans",
+    "state": "VT",
+    "type": "emergency",
+    "typeLabel": "Adult emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "133 Fairfield Street, St. Albans, VT 05478",
+    "coordinates": {
+      "lat": 44.8065637,
+      "lon": -73.0726772
+    },
+    "phone": "(802) 524-5911",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {}
+    },
+    "highlights": [
+      "Emergency department open 24/7/365",
+      "Board-certified emergency physicians and advanced practice providers",
+      "Treats breathing problems, severe abdominal pain, stroke, trauma, burns, and overdose"
+    ],
+    "sourceUrl": "https://www.northwesternmedicalcenter.org/services/emergency-department/",
+    "quality": {
+      "note": "No comparative emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-29",
+      "reviewBy": "2026-11-29",
+      "method": "authoritative-provider-cms-and-government-geocoder-sources"
     }
   }
 ];

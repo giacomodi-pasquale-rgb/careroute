@@ -1,6 +1,6 @@
 {
-  "datasetVersion": "2026-08-28.6",
-  "generatedAt": "2026-08-28T18:21:56.197Z",
+  "datasetVersion": "2026-08-29.7",
+  "generatedAt": "2026-08-29T13:38:39.355Z",
   "source": {
     "publisher": "Centers for Medicare & Medicaid Services",
     "dataset": "Hospital General Information",
@@ -11,8 +11,8 @@
   "summary": {
     "total": 4495,
     "jurisdictions": 56,
-    "matchedVerified": 30,
-    "pendingReview": 4465,
+    "matchedVerified": 39,
+    "pendingReview": 4456,
     "publishable": 0,
     "states": [
       {
@@ -60,8 +60,8 @@
       {
         "state": "CT",
         "total": 27,
-        "matchedVerified": 5,
-        "pendingReview": 22
+        "matchedVerified": 6,
+        "pendingReview": 21
       },
       {
         "state": "DC",
@@ -144,8 +144,8 @@
       {
         "state": "MA",
         "total": 60,
-        "matchedVerified": 2,
-        "pendingReview": 58
+        "matchedVerified": 3,
+        "pendingReview": 57
       },
       {
         "state": "MD",
@@ -156,8 +156,8 @@
       {
         "state": "ME",
         "total": 32,
-        "matchedVerified": 2,
-        "pendingReview": 30
+        "matchedVerified": 3,
+        "pendingReview": 29
       },
       {
         "state": "MI",
@@ -216,14 +216,14 @@
       {
         "state": "NH",
         "total": 26,
-        "matchedVerified": 2,
-        "pendingReview": 24
+        "matchedVerified": 3,
+        "pendingReview": 23
       },
       {
         "state": "NJ",
         "total": 57,
-        "matchedVerified": 9,
-        "pendingReview": 48
+        "matchedVerified": 10,
+        "pendingReview": 47
       },
       {
         "state": "NM",
@@ -240,8 +240,8 @@
       {
         "state": "NY",
         "total": 160,
-        "matchedVerified": 5,
-        "pendingReview": 155
+        "matchedVerified": 6,
+        "pendingReview": 154
       },
       {
         "state": "OH",
@@ -264,8 +264,8 @@
       {
         "state": "PA",
         "total": 148,
-        "matchedVerified": 2,
-        "pendingReview": 146
+        "matchedVerified": 3,
+        "pendingReview": 145
       },
       {
         "state": "PR",
@@ -276,8 +276,8 @@
       {
         "state": "RI",
         "total": 12,
-        "matchedVerified": 1,
-        "pendingReview": 11
+        "matchedVerified": 2,
+        "pendingReview": 10
       },
       {
         "state": "SC",
@@ -324,8 +324,8 @@
       {
         "state": "VT",
         "total": 15,
-        "matchedVerified": 2,
-        "pendingReview": 13
+        "matchedVerified": 3,
+        "pendingReview": 12
       },
       {
         "state": "WA",
@@ -19909,9 +19909,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "hartford-hospital-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -53389,9 +53389,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "brigham-womens-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -56239,9 +56239,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "mainegeneral-alfond-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -79369,9 +79369,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "southern-nh-medical-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -80089,9 +80089,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "hackensack-university-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -85879,9 +85879,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "mount-sinai-hospital-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -101779,9 +101779,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "upmc-presbyterian-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -104209,9 +104209,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "miriam-hospital-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
@@ -126469,9 +126469,9 @@
       "pediatricEvidence": [],
       "publishable": false,
       "reconciliation": {
-        "status": "unmatched",
-        "facilityId": null,
-        "method": null
+        "status": "matched-verified",
+        "facilityId": "northwestern-medical-center-adult-ed",
+        "method": "cms-ccn"
       }
     },
     {
