@@ -45,6 +45,24 @@ test('every Northeast state has at least three verified care locations', async (
   }
 });
 
+test('every Northeast state has a verified urgent-care pathway', async () => {
+  const { facilities } = await readDataset();
+  for (const state of ['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']) {
+    const urgentCare = facilities.filter((facility) => facility.location.state === state && facility.identity.type === 'urgent-care');
+    assert.ok(urgentCare.length >= 1, `${state} needs at least one verified urgent-care location`);
+  }
+});
+
+test('adult and pediatric eligibility remain explicit in the focused network', async () => {
+  const { facilities } = await readDataset();
+  const pediatricOnly = facilities.filter((facility) => facility.identity.patientGroups?.length === 1 && facility.identity.patientGroups[0] === 'pediatric');
+  const adultOnly = facilities.filter((facility) => facility.identity.patientGroups?.length === 1 && facility.identity.patientGroups[0] === 'adult');
+  assert.ok(pediatricOnly.length > 0);
+  assert.ok(adultOnly.length > 0);
+  assert.ok(pediatricOnly.every((facility) => !facility.identity.patientGroups.includes('adult')));
+  assert.ok(adultOnly.every((facility) => !facility.identity.patientGroups.includes('pediatric')));
+});
+
 test('unknown age limits remain unknown through the web adapter', async () => {
   const { facilities } = await readDataset();
   const summit = facilities.find((facility) => facility.id === 'summit-urgent-care-livingston');

@@ -35,6 +35,11 @@
 .proof-stats strong, .proof-stats span { display: block; }
 .proof-stats strong { color: var(--green); font: 700 27px/1 Georgia, serif; }
 .proof-stats span { margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.decision-path { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 760px; margin: 16px auto 0; }
+.decision-path > span { display: flex; align-items: center; gap: 8px; }
+.decision-path b { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--green); color: white; font-size: 11px; }
+.decision-path em { color: var(--green-dark); font-size: 12px; font-style: normal; font-weight: 800; }
+.decision-path i { color: #91a49e; font-style: normal; }
 .demo-banner { margin-bottom: 15px; padding: 14px 16px; border: 1px solid #b7d6ca; border-radius: 14px; background: #edf8f3; color: var(--green-dark); }
 .journey-summary { padding: 16px; border-radius: 15px; background: #f5f3ed; }
 .journey-summary > strong { display: block; margin-bottom: 10px; }
@@ -55,6 +60,7 @@
 .vision-line span { color: #d8ebe5; }
 @media (max-width: 760px) { .difference-section { margin-inline: 10px; padding: 34px 22px; } .difference-grid { grid-template-columns: 1fr; } .vision-line { grid-template-columns: 1fr; gap: 5px; } }
 @media (max-width: 480px) { .proof-stats { grid-template-columns: 1fr; } .proof-stats div + div { border-left: 0; border-top: 1px solid var(--line); } .hero-actions > * { width: 100%; } }
+@media (max-width: 600px) { .decision-path { align-items: stretch; flex-direction: column; width: max-content; text-align: left; } .decision-path i { display: none; } }
 .network-section { max-width: 950px; margin: 0 auto 88px; padding: 44px 34px; border: 1px solid #c8d9d3; border-radius: 28px; background: #fbfdfc; box-shadow: 0 20px 55px rgba(18,60,54,.07); }
 .network-heading { display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; align-items: end; }
 .network-heading h2 { margin: 0; max-width: 600px; font: 700 clamp(31px,5vw,46px)/1.08 Georgia,serif; letter-spacing: -.03em; }

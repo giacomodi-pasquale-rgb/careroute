@@ -1,10 +1,12 @@
-# CareRoute v0.7 Evidence Network
+# CareRoute v0.8 Urgent & Emergency Navigation
 
 CareRoute is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
-- Forty-nine decision-ready adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- Fifty-eight decision-ready adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- A focused urgent-care-versus-emergency pathway with separate adult and pediatric eligibility and safety gates
+- At least one verified urgent-care option in every Northeast pilot state, including pediatric-only and adult-and-child locations
 - A national evidence foundation of 22,292 official federal records: 4,495 CMS emergency-hospital candidates and 17,797 active HRSA health-center service-site candidates
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
@@ -68,7 +70,7 @@ npm run build:network
 
 CareRoute uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
 
-The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 49 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 58 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 30, 2026.
 

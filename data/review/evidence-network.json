@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-30T12:47:26.384Z",
-  "datasetVersion": "2026-08-29.7",
+  "generatedAt": "2026-08-30T13:46:27.908Z",
+  "datasetVersion": "2026-08-30.8",
   "tiers": {
     "officiallyIndexed": {
       "total": 22292,
@@ -16,8 +16,8 @@
       "patientVisible": false
     },
     "decisionReady": {
-      "total": 49,
-      "evidenceRecords": 68,
+      "total": 58,
+      "evidenceRecords": 77,
       "reviewDueSoon": 3,
       "definition": "CareRoute records that passed release-blocking identity, location, care-setting, patient-group, capability, contact and source checks.",
       "patientVisible": true

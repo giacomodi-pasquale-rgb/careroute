@@ -1,7 +1,7 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-29.7",
-  "reviewedAt": "2026-08-28"
+  "datasetVersion": "2026-08-30.8",
+  "reviewedAt": "2026-08-30"
 };
 window.CARE_ROUTE_FACILITIES = [
   {
@@ -3107,6 +3107,725 @@ window.CARE_ROUTE_FACILITIES = [
       "reviewedAt": "2026-08-29",
       "reviewBy": "2026-11-29",
       "method": "authoritative-provider-cms-and-government-geocoder-sources"
+    }
+  },
+  {
+    "id": "ynhhs-urgent-care-stratford",
+    "name": "Yale New Haven Health Urgent Care – Stratford",
+    "city": "Stratford",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and pediatric urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1040 Barnum Avenue, Stratford, CT 06614",
+    "coordinates": {
+      "lat": 41.1987734,
+      "lon": -73.1333235
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; weekends 9am–5pm",
+      "days": {
+        "0": [
+          540,
+          1020
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          540,
+          1020
+        ]
+      }
+    },
+    "highlights": [
+      "Adult and pediatric urgent care",
+      "Treats common illnesses and minor injuries",
+      "X-ray and walk-in or online booking available"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/stratford-1040-barnum-ave-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "mgb-express-care-boston-common",
+    "name": "Mass General Brigham Express Care – Boston Common",
+    "city": "Boston",
+    "state": "MA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "137 Stuart Street, Boston, MA 02116",
+    "coordinates": {
+      "lat": 42.3511515,
+      "lon": -71.0663498
+    },
+    "phone": "(617) 393-5059",
+    "age": {
+      "minMonths": 24,
+      "maxMonths": 216,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "9am–8:30pm six days a week; capacity may change closing time",
+      "days": {
+        "0": [
+          540,
+          1230
+        ],
+        "1": [
+          540,
+          1230
+        ],
+        "2": [
+          540,
+          1230
+        ],
+        "3": [
+          540,
+          1230
+        ],
+        "4": [
+          540,
+          1230
+        ],
+        "6": [
+          540,
+          1230
+        ]
+      }
+    },
+    "highlights": [
+      "Treats adults and children age 2 and older",
+      "Care for non-life-threatening illness, cuts, and broken bones",
+      "Imaging and blood-draw services listed; X-ray availability varies"
+    ],
+    "sourceUrl": "https://www.massgeneralbrigham.org/en/locations/boston-ma/mass-general-brigham-express-care-boston-common-loc0000280951",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "mainehealth-urgent-care-plus-portland",
+    "name": "MaineHealth Urgent Care Plus – Brighton Avenue",
+    "city": "Portland",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult urgent care plus",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "335 Brighton Avenue, Floor 1, Portland, ME 04102",
+    "coordinates": {
+      "lat": 43.6662221,
+      "lon": -70.2917524
+    },
+    "phone": "(207) 662-8111",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Daily 9am–8pm",
+      "days": {
+        "0": [
+          540,
+          1200
+        ],
+        "1": [
+          540,
+          1200
+        ],
+        "2": [
+          540,
+          1200
+        ],
+        "3": [
+          540,
+          1200
+        ],
+        "4": [
+          540,
+          1200
+        ],
+        "5": [
+          540,
+          1200
+        ],
+        "6": [
+          540,
+          1200
+        ]
+      }
+    },
+    "highlights": [
+      "Advanced urgent care for non-life-threatening needs",
+      "Open seven days a week",
+      "Provider warns that this location is billed similarly to emergency care"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-urgent-care-plus-brighton-ave-portland",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "mainehealth-urgent-care-north-conway",
+    "name": "MaineHealth Urgent Care – North Conway",
+    "city": "North Conway",
+    "state": "NH",
+    "type": "urgent-care",
+    "typeLabel": "Adult urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult"
+    ],
+    "address": "1976 White Mountain Highway, North Conway, NH 03860",
+    "coordinates": {
+      "lat": 44.033125,
+      "lon": -71.1216853
+    },
+    "phone": "(603) 356-4906",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Daily 8am–7pm",
+      "days": {
+        "0": [
+          480,
+          1140
+        ],
+        "1": [
+          480,
+          1140
+        ],
+        "2": [
+          480,
+          1140
+        ],
+        "3": [
+          480,
+          1140
+        ],
+        "4": [
+          480,
+          1140
+        ],
+        "5": [
+          480,
+          1140
+        ],
+        "6": [
+          480,
+          1140
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in urgent care for non-life-threatening needs",
+      "Open seven days a week",
+      "On-site imaging and laboratory services"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-urgent-care-north-conway",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "brown-health-urgent-care-providence",
+    "name": "Brown University Health Urgent Care – Providence",
+    "city": "Providence",
+    "state": "RI",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "66 Branch Avenue, Suite 150, Providence, RI 02904",
+    "coordinates": {
+      "lat": 41.8448828,
+      "lon": -71.4098695
+    },
+    "phone": "(401) 606-2590",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; weekends 8am–6pm; some holiday closures",
+      "days": {
+        "0": [
+          480,
+          1080
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1080
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in or online urgent care for adults and children",
+      "Treats common non-life-threatening conditions",
+      "Connected to Brown University Health emergency and specialty services"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "uvm-urgent-care-colchester",
+    "name": "UVM Medical Center Urgent Care – Colchester",
+    "city": "Colchester",
+    "state": "VT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "790 College Parkway, Fanny Allen Campus, Colchester, VT 05446",
+    "coordinates": {
+      "lat": 44.4975347,
+      "lon": -73.1585584
+    },
+    "phone": "(802) 847-1170",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Extended hours; check the provider page or call before travel",
+      "days": {}
+    },
+    "highlights": [
+      "Same-day walk-in care without an appointment",
+      "Clinicians with family, emergency, and pediatric experience",
+      "Treats illness, minor broken bones, cuts, breathing concerns, and dehydration"
+    ],
+    "sourceUrl": "https://www.uvmhealth.org/conditions-specialties/urgent-expresscare",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "wellspan-urgent-care-lititz",
+    "name": "WellSpan Urgent Care – Lititz",
+    "city": "Lititz",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "101 West Airport Road, Lititz, PA 17543",
+    "coordinates": {
+      "lat": 40.1163235,
+      "lon": -76.305747
+    },
+    "phone": "(717) 466-2445",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Daily 8am–8pm",
+      "days": {
+        "0": [
+          480,
+          1200
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1200
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in urgent care for everyday illnesses and injuries",
+      "Open seven days a week",
+      "WellSpan guidance states urgent care accepts children but not infants younger than 3 months"
+    ],
+    "sourceUrl": "https://www.wellspan.org/locations/wellspan-urgent-care-lititz-loc0000169694",
+    "quality": {
+      "note": "No comparable public urgent-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-census-geocoder-sources"
+    }
+  },
+  {
+    "id": "pm-pediatric-bayside",
+    "name": "PM Pediatric Urgent Care – Bayside",
+    "city": "Bayside",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "210-31 26th Avenue, Bayside, NY 11360",
+    "coordinates": {
+      "lat": 40.7791801,
+      "lon": -73.7791862
+    },
+    "phone": "(718) 747-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Dynamic—check the provider page or call before travel",
+      "days": {}
+    },
+    "highlights": [
+      "Treats children and young adults ages 0–26",
+      "X-ray, splinting, labs, stitches, oxygen, nebulizer, and EKG services",
+      "Walk-ins and online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-york-city-bayside/",
+    "quality": {
+      "note": "No comparable public pediatric urgent-care quality measure is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "pm-pediatric-bridgewater",
+    "name": "PM Pediatric Urgent Care – Bridgewater",
+    "city": "Bridgewater",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "966 US-22 East, Bridgewater, NJ 08807",
+    "coordinates": {
+      "lat": 40.5801505,
+      "lon": -74.6080792
+    },
+    "phone": "(732) 605-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Dynamic—check the provider page or call before travel",
+      "days": {}
+    },
+    "highlights": [
+      "Treats children and young adults ages 0–26",
+      "X-ray, splinting, labs, stitches, oxygen, nebulizer, and EKG services",
+      "Walk-ins and online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-jersey-bridgewater/",
+    "quality": {
+      "note": "No comparable public pediatric urgent-care quality measure is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-and-openstreetmap-sources"
     }
   }
 ];

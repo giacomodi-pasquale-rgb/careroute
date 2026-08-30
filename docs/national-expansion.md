@@ -26,6 +26,6 @@ The generated queue covers U.S. territories as well as the 50 states and Distric
 
 - **22,292 officially indexed records:** 4,495 CMS emergency-hospital candidates plus 17,797 active HRSA service-site candidates
 - **9,972 evidence-enriched candidates:** records with additional location, contact, operating, or reconciliation evidence, still not patient-visible
-- **49 decision-ready locations:** records that passed CareRoute's release-blocking checks and may appear in patient results
+- **58 decision-ready locations:** records that passed CareRoute's release-blocking checks and may appear in patient results, including at least one urgent-care location in every Northeast pilot state
 
 This funnel is a product capability, not merely a data count. It lets CareRoute demonstrate a credible national expansion path while refusing to disguise unverified listings as care recommendations.
