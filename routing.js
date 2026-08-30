@@ -14,7 +14,8 @@ export class RoutingService {
     const endpoint = this.config.endpoint || 'https://router.project-osrm.org';
     const points = [origin, ...facilities.map((facility) => facility.coordinates)];
     const coordinates = points.map((point) => `${point.lon},${point.lat}`).join(';');
-    const data = await this.request(`${endpoint}/table/v1/driving/${coordinates}?sources=0&annotations=duration,distance`);
+    const destinationIndexes = facilities.map((_, index) => index + 1).join(';');
+    const data = await this.request(`${endpoint}/table/v1/driving/${coordinates}?sources=0&destinations=${destinationIndexes}&annotations=duration,distance`);
     const calculatedAt = new Date().toISOString();
     return new Map(facilities.flatMap((facility, index) => {
       const durationSeconds = data.durations?.[0]?.[index + 1];
@@ -37,7 +38,7 @@ export class RoutingService {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), this.config.timeoutMs || 8000);
     try {
-      const response = await this.fetch(url, { ...options, signal: controller.signal });
+      const response = await this.fetch(url, { cache: 'no-store', ...options, signal: controller.signal });
       if (!response.ok) throw new Error(`Routing request failed (${response.status})`);
       return await response.json();
     } finally { clearTimeout(timer); }

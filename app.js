@@ -1,4 +1,4 @@
-import { RoutingService, presentRoute } from './routing.js';
+import { RoutingService, presentRoute } from './routing.js?v=2';
 import { currentLanguage, format, initLanguage, t } from './i18n.js?v=8';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
