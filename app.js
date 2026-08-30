@@ -12,6 +12,14 @@ const titleKeys = ['step1', 'step2', 'step3', 'step4'];
 
 initLanguage();
 document.getElementById('facilityCount').textContent = facilities.length;
+const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
+if (evidenceNetwork) {
+  const number = new Intl.NumberFormat().format;
+  document.getElementById('networkOfficial').textContent = number(evidenceNetwork.tiers.officiallyIndexed.total);
+  document.getElementById('networkHospitals').textContent = number(evidenceNetwork.tiers.officiallyIndexed.hospitalCandidates);
+  document.getElementById('networkHealthCenters').textContent = number(evidenceNetwork.tiers.officiallyIndexed.affordableHealthCenterCandidates);
+  document.getElementById('networkReady').textContent = number(evidenceNetwork.tiers.decisionReady.total);
+}
 
 if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
   const registrations = await navigator.serviceWorker.getRegistrations();

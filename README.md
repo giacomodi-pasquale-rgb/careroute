@@ -1,10 +1,11 @@
-# CareRoute v0.6 Access
+# CareRoute v0.7 Evidence Network
 
 CareRoute is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
-- Forty verified adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- Forty-nine decision-ready adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- A national evidence foundation of 22,292 official federal records: 4,495 CMS emergency-hospital candidates and 17,797 active HRSA health-center service-site candidates
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies
@@ -33,7 +34,9 @@ The production contract now also includes:
 - `scripts/validate-data.mjs`: release-blocking data and safety validation
 - `scripts/build-web-data.mjs`: deterministic canonical-data-to-web adapter
 - `scripts/import-cms-hospitals.mjs`: converts the official CMS Hospital General Information CSV into non-publishable review candidates; CMS records never establish pediatric capability by themselves
+- `scripts/import-hrsa-health-centers.mjs`: converts the free official HRSA service-site CSV into non-publishable affordability-network candidates; HRSA inclusion never establishes exact services, price, hours, or pediatric capability by itself
 - `scripts/reconcile-national.mjs`: reconciles the national emergency-hospital inventory and produces jurisdiction-level coverage reporting
+- `scripts/build-evidence-network.mjs`: creates the compact three-tier national proof summary displayed on the website and reviewer dashboard
 - `tests/data-validation.test.mjs`: automated checks against invented waits, insurance claims, quality scores, stale records, and unsafe emergency records
 
 ### Development checks
@@ -56,9 +59,18 @@ npm run import:cms -- HOSPITAL_GENERAL_INFORMATION.csv work/nj-candidates.json N
 
 The resulting candidates are deliberately marked `publishable: false`. A reviewer must verify hours, adult/child population, coordinates, and location-level service evidence before promotion into the patient dataset.
 
-The national queue is available at `review.html`. The current CMS seed contains 4,495 hospitals reporting emergency services across 56 states, districts, and territories. Thirty match verified CareRoute emergency records; all others remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+To refresh the national affordable-care candidate layer from HRSA's free daily CSV export:
 
-Data reviewed: August 28, 2026.
+```sh
+npm run import:hrsa -- Health_Center_Service_Delivery_and_LookAlike_Sites.csv
+npm run build:network
+```
+
+CareRoute uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
+
+The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 49 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+
+Data reviewed: August 30, 2026.
 
 ### Primary facility sources
 

@@ -1,8 +1,24 @@
 const reviewData = window.CARE_ROUTE_REVIEW_QUEUE;
+const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
 const queueElement = document.getElementById('reviewQueue');
 const searchElement = document.getElementById('reviewSearch');
 const filterElement = document.getElementById('reviewFilter');
 const stateElement = document.getElementById('stateFilter');
+
+if (evidenceNetwork) {
+  const indexed = evidenceNetwork.tiers.officiallyIndexed;
+  document.getElementById('evidenceSummary').innerHTML = [
+    ['Official records indexed', indexed.total],
+    ['CMS hospital candidates', indexed.hospitalCandidates],
+    ['HRSA health-center candidates', indexed.affordableHealthCenterCandidates],
+    ['Decision-ready locations', evidenceNetwork.tiers.decisionReady.total]
+  ].map(([label, value], index) => `<article${index === 3 ? ' class="ready"' : ''}><strong>${Number(value).toLocaleString()}</strong><span>${label}</span></article>`).join('');
+  document.getElementById('evidenceTiers').innerHTML = [
+    ['01', 'Officially indexed', `${indexed.total.toLocaleString()} identities from free federal datasets`, false],
+    ['02', 'Evidence enriched', `${evidenceNetwork.tiers.evidenceEnriched.total.toLocaleString()} records with added operating or verification evidence`, false],
+    ['03', 'Decision-ready', `${evidenceNetwork.tiers.decisionReady.total.toLocaleString()} records that passed release-blocking checks`, true]
+  ].map(([number, title, body, visible]) => `<article><span>${number}</span><div><strong>${title}</strong><p>${body}</p></div><em>${visible ? 'Patient visible' : 'Not patient visible'}</em></article>`).join('');
+}
 
 document.getElementById('summary').innerHTML = [
   ['Emergency-service hospitals', reviewData.summary.total],

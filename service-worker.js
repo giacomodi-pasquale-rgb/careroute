@@ -1,5 +1,5 @@
-const CACHE = 'careroute-shell-v5';
-const SHELL = ['./', './index.html', './styles.css', './install.css', './app.js', './routing.js', './config.js', './data/facilities.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'careroute-shell-v6';
+const SHELL = ['./', './index.html', './styles.css', './install.css', './access.css', './app.js', './routing.js', './i18n.js', './config.js', './data/facilities.js', './data/review/evidence-network.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)));

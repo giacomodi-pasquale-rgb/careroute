@@ -14,14 +14,21 @@
     <a class="brand" href="index.html">CareRoute<span>.</span></a>
     <span class="pilot-pill">Data operations</span>
   </header>
-  <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS emergency-service status does not establish exact hours, patient populations, or location-level capabilities. Pending records must not appear in patient results.</aside>
+  <aside class="safety-strip"><strong>Reviewer workspace.</strong> CMS or HRSA inclusion establishes an official identity—not exact services, hours, patient populations, affordability for a particular patient, or location-level capabilities. Pending records must not appear in patient results.</aside>
   <main class="review-main">
     <section class="review-hero">
       <p class="eyebrow">United States expansion</p>
       <h1>National facility review queue</h1>
-      <p>Official CMS hospital identities across the states, District of Columbia, and U.S. territories, reconciled against CareRoute’s verified adult and pediatric dataset. This is an operational review view, not a patient-care directory.</p>
+      <p>Official CMS hospital and HRSA health-center identities across the states, District of Columbia, and U.S. territories, organized into a safety-gated evidence pipeline. This is an operational review view, not a patient-care directory.</p>
     </section>
-    <section id="summary" class="review-summary" aria-label="Review queue summary"></section>
+    <section id="evidenceSummary" class="review-summary evidence-summary" aria-label="National evidence network summary"></section>
+    <section class="review-method network-method">
+      <h2>Three evidence tiers</h2>
+      <div id="evidenceTiers" class="review-tiers"></div>
+      <p><strong>Patient-safety rule:</strong> official indexing demonstrates reach, but it does not authorize publication. Only decision-ready records appear to patients.</p>
+    </section>
+    <h2 class="queue-title">CMS emergency-hospital review queue</h2>
+    <section id="summary" class="review-summary" aria-label="Hospital review queue summary"></section>
     <section class="review-controls" aria-label="Queue filters">
       <label><span>Search facilities</span><input id="reviewSearch" type="search" placeholder="Name, city, county, or CMS ID"></label>
       <label><span>Jurisdiction</span><select id="stateFilter"><option value="all">All jurisdictions</option></select></label>
@@ -38,10 +45,11 @@
         <li>Add claim-level evidence and a review deadline.</li>
         <li>Pass automated safety validation before publication.</li>
       </ol>
-      <p>Source inventory: <a href="https://data.cms.gov/provider-data/dataset/xubh-q36u" target="_blank" rel="noopener">CMS Hospital General Information ↗</a></p>
+      <p>Source inventory: <a href="https://data.cms.gov/provider-data/dataset/xubh-q36u" target="_blank" rel="noopener">CMS Hospital General Information ↗</a> · <a href="https://data.hrsa.gov/topics/health-centers/" target="_blank" rel="noopener">HRSA Health Center Data ↗</a></p>
     </section>
   </main>
   <footer><span>CareRoute data operations v0.3</span><span id="reviewGenerated"></span><span><a href="index.html">Patient pilot</a></span></footer>
+  <script src="data/review/evidence-network.js"></script>
   <script src="data/review/us-hospitals.js"></script>
   <script src="review.js"></script>
 </body>

@@ -7,8 +7,10 @@
     "validate:data": "node scripts/validate-data.mjs",
     "build:data": "node scripts/build-web-data.mjs",
     "import:cms": "node scripts/import-cms-hospitals.mjs",
+    "import:hrsa": "node scripts/import-hrsa-health-centers.mjs",
     "reconcile:cms": "node scripts/reconcile-candidates.mjs",
     "reconcile:national": "node scripts/reconcile-national.mjs",
+    "build:network": "node scripts/build-evidence-network.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run validate:data && npm test",
     "start:api": "node server/index.mjs"
