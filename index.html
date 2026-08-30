@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#123c36">
   <meta name="description" content="CareRoute helps people compare verified urgent care and emergency options for adults and children.">
+  <meta property="og:title" content="CareRoute — a realistic path to care">
+  <meta property="og:description" content="Verified, situation-specific care navigation built for the realities of fragmented healthcare.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://giacomodi-pasquale-rgb.github.io/careroute/">
+  <meta property="og:image" content="https://giacomodi-pasquale-rgb.github.io/careroute/icons/og-care-route.png">
+  <meta property="og:image:width" content="1730">
+  <meta property="og:image:height" content="909">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://giacomodi-pasquale-rgb.github.io/careroute/icons/og-care-route.png">
   <title>CareRoute</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
-  <link rel="stylesheet" href="access.css?v=3">
+  <link rel="stylesheet" href="access.css?v=4">
 </head>
 <body>
   <header class="topbar">
@@ -29,6 +38,13 @@
       <p data-i18n="heroBody">Compare verified care options for adults and children in the growing Northeast pilot network. CareRoute filters by patient group, care setting, access needs, and published capabilities, then adds driving time when you share your location.</p>
       <div class="trust-row" aria-label="Data principles" data-i18n-aria-label="dataPrinciples">
         <span data-i18n="trustReal">✓ Real facilities</span><span data-i18n="trustSources">✓ Source-linked facts</span><span data-i18n="trustWaits">✓ No invented waits</span>
+      </div>
+      <div class="hero-actions"><a class="primary link-button" href="#questionnaire" data-i18n="startNavigation">Find care options</a><button id="tryDemo" class="demo-button" type="button" data-i18n="tryDemo">▶ Try a 30-second demo</button></div>
+      <p class="demo-helper" data-i18n="demoHelper">See CareRoute help a parent in Newark find realistic care for a sick child without insurance.</p>
+      <div class="proof-stats" aria-label="Pilot at a glance" data-i18n-aria-label="proofLabel">
+        <div><strong id="facilityCount">49</strong><span data-i18n="statFacilities">verified care locations</span></div>
+        <div><strong>9</strong><span data-i18n="statStates">Northeast states</span></div>
+        <div><strong>4</strong><span data-i18n="statLanguages">complete languages</span></div>
       </div>
     </section>
 
@@ -117,11 +133,25 @@
         <button id="startOver" class="secondary" data-i18n="startOver">Start over</button>
       </div>
       <div id="emergencyBanner" class="emergency" hidden data-i18n="emergencyBanner"><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
+      <div id="demoBanner" class="demo-banner" hidden data-i18n="demoBanner"><strong>Demo scenario:</strong> A parent in Newark is looking for non-emergency care for a 5-year-old with a fever, without insurance, and needs an affordable option.</div>
+      <div id="journeySummary" class="journey-summary"></div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
       <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> CareRoute shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
       <details><summary data-i18n="orderingTitle">How CareRoute orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
       <details><summary data-i18n="verifiedTitle">What “verified” means</summary><p data-i18n="verifiedBody">Facility identity, address, care setting, adult/child population, phone, displayed hours, listed capabilities, and access claims are tied to provider or government sources. Information can change—call before non-emergency travel.</p></details>
+    </section>
+
+    <section class="difference-section" aria-labelledby="difference-title">
+      <p class="eyebrow" data-i18n="differenceEyebrow">Why CareRoute is different</p>
+      <h2 id="difference-title" data-i18n="differenceTitle">Not another directory. A realistic pathway through fragmented care.</h2>
+      <p class="difference-lead" data-i18n="differenceLead">Most tools begin after someone already knows which provider or service they need. CareRoute starts earlier—when the person is unsure, the system is confusing, and affordability or language may change what is actually possible.</p>
+      <div class="difference-grid">
+        <article><span>01</span><h3 data-i18n="differenceSafetyTitle">Safety before ranking</h3><p data-i18n="differenceSafetyBody">Emergency and pediatric suitability rules remove inappropriate settings before distance or convenience can influence the list.</p></article>
+        <article><span>02</span><h3 data-i18n="differenceAccessTitle">Access changes the answer</h3><p data-i18n="differenceAccessBody">Insurance, reduced-cost care, language, age, opening hours, and travel feasibility become part of the pathway—not footnotes.</p></article>
+        <article><span>03</span><h3 data-i18n="differenceEvidenceTitle">Every claim is accountable</h3><p data-i18n="differenceEvidenceBody">Displayed facts link back to provider or government sources. Unknown information stays visibly unknown instead of being guessed.</p></article>
+      </div>
+      <div class="vision-line"><strong data-i18n="visionTitle">The larger opportunity</strong><span data-i18n="visionBody">Measure where healthcare is fragmented, help people navigate it, and learn which barriers communities encounter in real life—without selling placement in the rankings.</span></div>
     </section>
 
     <section class="scope-note">
@@ -131,9 +161,9 @@
     </section>
   </main>
 
-  <footer><span>CareRoute v0.6 Access</span><span data-i18n="dataReviewed">Data reviewed August 28, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
+  <footer><span>CareRoute v0.7 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 29, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=7"></script>
-  <script type="module" src="app.js?v=19"></script>
+  <script type="module" src="app.js?v=20"></script>
 </body>
 </html>

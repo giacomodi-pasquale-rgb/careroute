@@ -1,9 +1,9 @@
 import { RoutingService, presentRoute } from './routing.js';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=5';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=6';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false };
+const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false, demoScenario: false };
 const MAX_SEARCH_MILES = 100;
 const NORTHEAST_STATES = new Set(['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']);
 let installPrompt = null;
@@ -11,6 +11,7 @@ const steps = [...document.querySelectorAll('.step')];
 const titleKeys = ['step1', 'step2', 'step3', 'step4'];
 
 initLanguage();
+document.getElementById('facilityCount').textContent = facilities.length;
 
 if ('serviceWorker' in navigator) window.addEventListener('load', async () => {
   const registrations = await navigator.serviceWorker.getRegistrations();
@@ -66,6 +67,7 @@ document.getElementById('stateSelect').addEventListener('change', () => {
 });
 
 document.getElementById('useZip').addEventListener('click', async () => {
+  state.demoScenario = false;
   const input = document.getElementById('zipCode');
   const button = document.getElementById('useZip');
   const status = document.getElementById('zipStatus');
@@ -108,6 +110,7 @@ document.getElementById('useZip').addEventListener('click', async () => {
 });
 
 document.getElementById('locateMe').addEventListener('click', () => {
+  state.demoScenario = false;
   const status = document.getElementById('locationStatus');
   const locateButton = document.getElementById('locateMe');
   const submitButton = document.getElementById('showCareOptions');
@@ -139,8 +142,25 @@ document.getElementById('locateMe').addEventListener('click', () => {
   );
 });
 
-document.getElementById('showCareOptions').addEventListener('click', (event) => showCareOptions(event.currentTarget));
+document.getElementById('showCareOptions').addEventListener('click', (event) => {
+  state.demoScenario = false;
+  showCareOptions(event.currentTarget);
+});
 document.getElementById('careForm').addEventListener('submit', (event) => event.preventDefault());
+document.getElementById('tryDemo').addEventListener('click', () => {
+  document.querySelector('[name=patientGroup][value=pediatric]').checked = true;
+  document.getElementById('childAge').hidden = false;
+  document.getElementById('ageValue').value = '5';
+  document.getElementById('ageUnit').value = 'years';
+  document.getElementById('stateSelect').value = 'NJ';
+  document.querySelector('[name=need][value=illness]').checked = true;
+  document.querySelector('[name=emergency][value=no]').checked = true;
+  document.querySelectorAll('[name=accessNeed]').forEach((input) => { input.checked = ['uninsured', 'low-cost'].includes(input.value); });
+  state.location = { lat: 40.7357, lon: -74.1724 };
+  state.locationSource = 'demo';
+  state.demoScenario = true;
+  showCareOptions(document.getElementById('showCareOptions'));
+});
 
 async function showCareOptions(button) {
   state.showAllResults = false;
@@ -167,6 +187,7 @@ async function showCareOptions(button) {
 
 document.getElementById('startOver').addEventListener('click', () => {
   state.showAllResults = false;
+  state.demoScenario = false;
   clearLocation();
   document.getElementById('zipCode').value = '';
   document.getElementById('zipStatus').textContent = '';
@@ -229,6 +250,20 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 }
 
+function journeySummary(inputs) {
+  const needKeys = { illness: 'summaryIllness', breathing: 'summaryBreathing', injury: 'summaryInjury', wound: 'summaryWound', stomach: 'summaryStomach', other: 'summaryOther' };
+  const chips = [
+    t(inputs.patientGroup === 'adult' ? 'summaryAdult' : 'summaryChild'),
+    t(needKeys[inputs.need]),
+    t(inputs.emergency ? 'summaryEmergency' : 'summaryNonEmergency'),
+    inputs.selectedState ? t(`state${inputs.selectedState}`) : t('allStates')
+  ];
+  if (inputs.accessNeeds.has('uninsured')) chips.push(t('summaryUninsured'));
+  if (inputs.accessNeeds.has('low-cost')) chips.push(t('summaryLowCost'));
+  if (inputs.accessNeeds.has('language')) chips.push(t('summaryLanguage'));
+  return `<strong>${t('yourSituation')}</strong><div>${chips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join('')}</div>`;
+}
+
 function facilityCard(facility, index, inputs) {
   const route = state.routes.has(facility.id) ? presentRoute(state.routes.get(facility.id)) : null;
   const open = isOpenNow(facility.hours);
@@ -262,11 +297,12 @@ function facilityCard(facility, index, inputs) {
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? t('closestMatch') : format('option',{n:index+1})) : format('verifiedOption',{n:index+1})}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
     <div class="metrics">${routeText}${ageText}${operationalStatus}${accessBadges}${facility.access.uninsuredWelcome ? '' : `<span class="metric">${t('insuranceVerify')}</span>`}</div>
-    <p class="reason">${reason}</p>
+    <p class="reason"><strong>${t('whyThisFits')}</strong> ${reason}</p>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>${t('publishedHours')}</strong> ${escapeHtml(hoursLabel)}</p>
     ${facility.access.note ? `<p class="access-note"><strong>${t('costAccess')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.access.note : t('accessNote'))} <a class="text-link" href="${facility.access.sourceUrl}" target="_blank" rel="noopener">${t('officialSource')}</a></p>` : ''}
     ${route ? `<p class="route-source"><strong>${t('routeSource')}</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? t('trafficYes') : t('trafficNo')} · ${t('calculated')} ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
+    <p class="verification-line">✓ ${format('verificationReviewed', { date: new Date(`${facility.verification.reviewedAt}T12:00:00`).toLocaleDateString(currentLanguage(), { month: 'short', day: 'numeric', year: 'numeric' }) })}</p>
     <p class="quality"><strong>${t('quality')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.quality.note : t('qualityUnavailable'))}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">${t('njReport')}</a>` : ''}</p>
     <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a></div>
   </article>`;
@@ -291,6 +327,8 @@ async function renderResults() {
 
   document.getElementById('resultsTitle').textContent = inputs.emergency ? t(inputs.patientGroup === 'adult' ? 'adultEDs' : 'pediatricEDs') : t('concernOptions');
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
+  document.getElementById('demoBanner').hidden = !state.demoScenario;
+  document.getElementById('journeySummary').innerHTML = journeySummary(inputs);
   document.getElementById('routingNote').textContent = routed
     ? t('routingReady')
     : state.location
