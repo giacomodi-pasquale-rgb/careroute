@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { readDataset } from '../scripts/data-lib.mjs';
 
 const readJson = (path) => readFile(new URL(path, import.meta.url), 'utf8').then(JSON.parse);
 
@@ -9,7 +10,7 @@ test('national evidence network totals reconcile to their official source queues
     readJson('../data/review/evidence-network.json'),
     readJson('../data/review/us-hospitals.json'),
     readJson('../data/review/us-health-centers.json'),
-    readJson('../data/v1/facilities.json')
+    readDataset()
   ]);
   assert.equal(network.tiers.officiallyIndexed.hospitalCandidates, hospitals.summary.total);
   assert.equal(network.tiers.officiallyIndexed.affordableHealthCenterCandidates, healthCenters.summary.total);

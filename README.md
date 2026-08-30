@@ -70,7 +70,7 @@ npm run build:network
 
 CareRoute uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
 
-The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 58 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 99 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
 Data reviewed: August 30, 2026.
 

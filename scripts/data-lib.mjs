@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { DATASET_VERSION, expandUrgentCareLocations } from '../data/v1/urgent-care-expansion.mjs';
 
 export const CAPABILITIES = new Set(['illness', 'breathing', 'injury', 'wound', 'stomach', 'other']);
 export const FACILITY_TYPES = new Set(['emergency', 'urgent-care', 'community-health-center']);
@@ -6,7 +7,15 @@ export const HOUR_KINDS = new Set(['always', 'weekly', 'live', 'unknown']);
 export const VERIFIED_STATUSES = new Set(['verified', 'verified-with-unknowns']);
 
 export async function readDataset(path = new URL('../data/v1/facilities.json', import.meta.url)) {
-  return JSON.parse(await readFile(path, 'utf8'));
+  const dataset = JSON.parse(await readFile(path, 'utf8'));
+  const isCanonicalDataset = new URL(path, import.meta.url).pathname.endsWith('/data/v1/facilities.json');
+  if (!isCanonicalDataset) return dataset;
+  return {
+    ...dataset,
+    datasetVersion: DATASET_VERSION,
+    reviewedAt: '2026-08-30',
+    facilities: [...dataset.facilities, ...expandUrgentCareLocations()]
+  };
 }
 
 export function validateDataset(dataset, today = new Date()) {

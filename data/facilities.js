@@ -1,6 +1,6 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-30.8",
+  "datasetVersion": "2026-08-30.9",
   "reviewedAt": "2026-08-30"
 };
 window.CARE_ROUTE_FACILITIES = [
@@ -3826,6 +3826,2627 @@ window.CARE_ROUTE_FACILITIES = [
       "reviewedAt": "2026-08-30",
       "reviewBy": "2026-11-30",
       "method": "authoritative-provider-and-openstreetmap-sources"
+    }
+  },
+  {
+    "id": "brown-barrington",
+    "name": "Brown University Health Urgent Care",
+    "city": "Barrington",
+    "state": "RI",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "236 County Road, Suite C, Barrington, RI 02806",
+    "coordinates": {
+      "lat": 41.738376503209,
+      "lon": -71.306107056731
+    },
+    "phone": "(401) 606-3550",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–6pm",
+      "days": {
+        "0": [
+          480,
+          1080
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1080
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in care for adults and children",
+      "Treatment for minor illness and injury",
+      "Provider publishes weekday and weekend hours"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "brown-johnston",
+    "name": "Brown University Health Urgent Care",
+    "city": "Johnston",
+    "state": "RI",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "11 Commerce Way, Unit 5, Johnston, RI 02919",
+    "coordinates": {
+      "lat": 41.820319483977,
+      "lon": -71.498826074933
+    },
+    "phone": "(401) 606-2610",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–6pm",
+      "days": {
+        "0": [
+          480,
+          1080
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1080
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in care for adults and children",
+      "Treatment for minor illness and injury",
+      "Provider publishes weekday and weekend hours"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "brown-middletown",
+    "name": "Brown University Health Urgent Care",
+    "city": "Middletown",
+    "state": "RI",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1360 West Main Road, Middletown, RI 02842",
+    "coordinates": {
+      "lat": 41.536680865009,
+      "lon": -71.292141705952
+    },
+    "phone": "(401) 606-3110",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–6pm",
+      "days": {
+        "0": [
+          480,
+          1080
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1080
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in care for adults and children",
+      "Treatment for minor illness and injury",
+      "Provider publishes weekday and weekend hours"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "brown-warwick",
+    "name": "Brown University Health Urgent Care",
+    "city": "Warwick",
+    "state": "RI",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "17 Airport Road, Warwick, RI 02889",
+    "coordinates": {
+      "lat": 41.733476417294,
+      "lon": -71.407845127768
+    },
+    "phone": "(401) 606-2520",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "weekly",
+      "label": "Mon–Fri 8am–8pm; Sat–Sun 8am–6pm",
+      "days": {
+        "0": [
+          480,
+          1080
+        ],
+        "1": [
+          480,
+          1200
+        ],
+        "2": [
+          480,
+          1200
+        ],
+        "3": [
+          480,
+          1200
+        ],
+        "4": [
+          480,
+          1200
+        ],
+        "5": [
+          480,
+          1200
+        ],
+        "6": [
+          480,
+          1080
+        ]
+      }
+    },
+    "highlights": [
+      "Walk-in care for adults and children",
+      "Treatment for minor illness and injury",
+      "Provider publishes weekday and weekend hours"
+    ],
+    "sourceUrl": "https://www.brownhealth.org/centers-services/urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-annville",
+    "name": "WellSpan Urgent Care",
+    "city": "Annville",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "9 Nathan Lane, Annville, PA 17003",
+    "coordinates": {
+      "lat": 40.325467270019,
+      "lon": -76.536442589265
+    },
+    "phone": "(717) 639-3350",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-chambersburg",
+    "name": "WellSpan Urgent Care",
+    "city": "Chambersburg",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1000 Norland Avenue, Chambersburg, PA 17201",
+    "coordinates": {
+      "lat": 39.9391317,
+      "lon": -77.626336
+    },
+    "phone": "(717) 267-6363",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-ephrata",
+    "name": "WellSpan Urgent Care",
+    "city": "Ephrata",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "446 North Reading Road, Ephrata, PA 17522",
+    "coordinates": {
+      "lat": 40.195467829426,
+      "lon": -76.171247610218
+    },
+    "phone": "(717) 721-4301",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-gettysburg",
+    "name": "WellSpan Urgent Care",
+    "city": "Gettysburg",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "455 South Washington Street, Gettysburg, PA 17325",
+    "coordinates": {
+      "lat": 39.824400522137,
+      "lon": -77.233320245716
+    },
+    "phone": "(717) 339-2875",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-greencastle",
+    "name": "WellSpan Urgent Care",
+    "city": "Greencastle",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "24 Antrim Commons Drive, Greencastle, PA 17225",
+    "coordinates": {
+      "lat": 39.758745085724,
+      "lon": -77.72813311243
+    },
+    "phone": "(717) 593-0512",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-hanover",
+    "name": "WellSpan Urgent Care",
+    "city": "Hanover",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "100 Eisenhower Drive, Hanover, PA 17331",
+    "coordinates": {
+      "lat": 39.823115879456,
+      "lon": -76.99865852568
+    },
+    "phone": "(717) 646-4201",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-manchester",
+    "name": "WellSpan Urgent Care",
+    "city": "Manchester",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "4050 North George Street Extension, Manchester, PA 17345",
+    "coordinates": {
+      "lat": 40.041838712078,
+      "lon": -76.72534034435
+    },
+    "phone": "(717) 356-4370",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "wellspan-shippensburg",
+    "name": "WellSpan Urgent Care",
+    "city": "Shippensburg",
+    "state": "PA",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "46 Walnut Bottom Road, Shippensburg, PA 17257",
+    "coordinates": {
+      "lat": 40.058736706157,
+      "lon": -77.503630235381
+    },
+    "phone": "(717) 477-2764",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor illness and injury",
+      "Treats cuts, burns, sprains and stomach illness",
+      "Pediatric service limits should be confirmed before travel"
+    ],
+    "sourceUrl": "https://www.wellspan.org/Conditions-And-Treatments/Urgent-Care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "uvm-berlin",
+    "name": "UVM Health Network ExpressCare",
+    "city": "Berlin",
+    "state": "VT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "1311 Barre-Montpelier Road, Suite 200, Berlin, VT 05602",
+    "coordinates": {
+      "lat": 44.2265604,
+      "lon": -72.5527367
+    },
+    "phone": "(802) 371-4239",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Same-day walk-in care without an appointment",
+      "Clinicians have pediatrics, family or emergency-care experience",
+      "Treats minor illness, wounds and injuries"
+    ],
+    "sourceUrl": "https://www.uvmhealth.org/conditions-specialties/urgent-expresscare",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "uvm-middlebury",
+    "name": "UVM Health Network ExpressCare",
+    "city": "Middlebury",
+    "state": "VT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "115 Porter Drive, Middlebury, VT 05753",
+    "coordinates": {
+      "lat": 43.999314851672,
+      "lon": -73.169140888223
+    },
+    "phone": "(802) 388-5678",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Same-day walk-in care without an appointment",
+      "Clinicians have pediatrics, family or emergency-care experience",
+      "Treats minor illness, wounds and injuries"
+    ],
+    "sourceUrl": "https://www.uvmhealth.org/conditions-specialties/urgent-expresscare",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-brunswick",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Brunswick",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "22 Station Avenue, Suite 102, Brunswick, ME 04011",
+    "coordinates": {
+      "lat": 43.911446787425,
+      "lon": -69.964175829115
+    },
+    "phone": "(207) 406-7500",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-brunswick",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-saco",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Saco",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "655 Main Street, Saco, ME 04072",
+    "coordinates": {
+      "lat": 43.514330170774,
+      "lon": -70.429720960473
+    },
+    "phone": "(207) 294-5600",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-saco",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-sanford",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Sanford",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "25A June Street, Sanford, ME 04073",
+    "coordinates": {
+      "lat": 43.44840936989,
+      "lon": -70.767132952235
+    },
+    "phone": "(207) 490-7900",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-sanford",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-kennebunk",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Kennebunk",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "2 Livewell Drive, Kennebunk, ME 04043",
+    "coordinates": {
+      "lat": 43.3939338,
+      "lon": -70.5278273
+    },
+    "phone": "(207) 467-6900",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-kennebunk",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-rockland",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Rockland",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "75 Maverick Street, Suite 6, Rockland, ME 04841",
+    "coordinates": {
+      "lat": 44.115221517491,
+      "lon": -69.104288912874
+    },
+    "phone": "(207) 301-6000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-rockland",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-damariscotta",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Damariscotta",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "24 Miles Center Way, Damariscotta, ME 04543",
+    "coordinates": {
+      "lat": 44.0253946,
+      "lon": -69.531092
+    },
+    "phone": "(207) 563-4379",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-damariscotta",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-belfast",
+    "name": "MaineHealth Walk-In Care",
+    "city": "Belfast",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "119 Northport Avenue, Floor 1, Belfast, ME 04915",
+    "coordinates": {
+      "lat": 44.412973019599,
+      "lon": -68.995271618788
+    },
+    "phone": "(207) 505-4567",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-primary-care-and-walk-care-belfast",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "maine-east-waterboro",
+    "name": "MaineHealth Walk-In Care",
+    "city": "East Waterboro",
+    "state": "ME",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child walk-in care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "10 Goodall Drive, Suite 900, East Waterboro, ME 04030",
+    "coordinates": {
+      "lat": 43.5709528,
+      "lon": -70.678857
+    },
+    "phone": "(207) 490-7760",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Walk-in care for minor, non-life-threatening illness and injury",
+      "Adult and pediatric care availability published by the provider",
+      "Call or check online before travel"
+    ],
+    "sourceUrl": "https://www.mainehealth.org/locations/mainehealth-walk-care-east-waterboro",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-brick",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Brick",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "990 Cedar Bridge Avenue, Suite A01A, Brick, NJ 08723",
+    "coordinates": {
+      "lat": 40.053919920818,
+      "lon": -74.13825239599
+    },
+    "phone": "(732) 477-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-jersey-brick/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-cherry-hill",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Cherry Hill",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "828 Haddonfield Road, Cherry Hill, NJ 08002",
+    "coordinates": {
+      "lat": 39.926626107064,
+      "lon": -75.032563162
+    },
+    "phone": "(856) 663-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/cherry-hill/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-holmdel",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Holmdel",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "2107 Route 35, Holmdel, NJ 07733",
+    "coordinates": {
+      "lat": 40.413262425183,
+      "lon": -74.14361400257
+    },
+    "phone": "(732) 706-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-jersey-holmdel/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-north-brunswick",
+    "name": "PM Pediatric Urgent Care",
+    "city": "North Brunswick",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "2421 US Route 1, North Brunswick, NJ 08902",
+    "coordinates": {
+      "lat": 40.44214000946,
+      "lon": -74.505643991058
+    },
+    "phone": "(732) 297-6767",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-jersey-north-brunswick/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-pompton-plains",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Pompton Plains",
+    "state": "NJ",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "562 NJ-23, Pompton Plains, NJ 07444",
+    "coordinates": {
+      "lat": 40.969622312565,
+      "lon": -74.286029913596
+    },
+    "phone": "(973) 616-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-jersey-pompton-plains/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-forest-hills",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Forest Hills",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "70-20 Austin Street, Forest Hills, NY 11375",
+    "coordinates": {
+      "lat": 40.720537364262,
+      "lon": -73.845995193197
+    },
+    "phone": "(718) 268-4767",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/pm-pediatrics-new-york-city-forest-hills/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-yonkers",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Yonkers",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "2290 Central Park Avenue, Yonkers, NY 10710",
+    "coordinates": {
+      "lat": 40.975592867393,
+      "lon": -73.832575414726
+    },
+    "phone": "(914) 337-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/pm-pediatrics-westchester-yonkers/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-riverdale",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Bronx",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "5740 Broadway, Unit E, Bronx, NY 10463",
+    "coordinates": {
+      "lat": 40.882880086592,
+      "lon": -73.901916267227
+    },
+    "phone": "(929) 920-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/bronx-riverdale/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-bellerose",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Bellerose",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "253-11 Hillside Avenue, Bellerose, NY 11426",
+    "coordinates": {
+      "lat": 40.736044403102,
+      "lon": -73.714595659984
+    },
+    "phone": "(929) 438-5437",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/new-york-bellerose/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "pm-hopewell-junction",
+    "name": "PM Pediatric Urgent Care",
+    "city": "Hopewell Junction",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Pediatric urgent care",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "1983 Route 52, Hopewell Junction, NY 12533",
+    "coordinates": {
+      "lat": 41.541300602682,
+      "lon": -73.83593474023
+    },
+    "phone": "(845) 897-4500",
+    "age": {
+      "minMonths": 0,
+      "maxMonths": 312,
+      "verifiedLimits": true
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Treats ages 0–26",
+      "X-ray, splinting, lab testing, stitches and breathing treatments",
+      "Walk-ins accepted; online check-in available"
+    ],
+    "sourceUrl": "https://pmpediatriccare.com/location/pm-pediatrics-dutchess-hopewell-junction/",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-newtown",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Newtown",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "266 South Main Street, Newtown, CT 06470",
+    "coordinates": {
+      "lat": 41.370716729175,
+      "lon": -73.271757947627
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/newtown-266-south-main-street-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-southbury",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Southbury",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "900 Main Street South, Building 2 Suite 100, Southbury, CT 06488",
+    "coordinates": {
+      "lat": 41.460378710674,
+      "lon": -73.235157009253
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/southbury-900-south-main-street-south-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-groton",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Groton",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "220 Route 12, Groton, CT 06340",
+    "coordinates": {
+      "lat": 41.369823048421,
+      "lon": -72.070970575421
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/groton-220-route-12-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-fairfield",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Fairfield",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "340 Grasmere Avenue, Fairfield, CT 06824",
+    "coordinates": {
+      "lat": 41.158214725564,
+      "lon": -73.242886177153
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/fairfield-340-grasmere-ave-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-norwich",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Norwich",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "607 West Main Street, Norwich, CT 06360",
+    "coordinates": {
+      "lat": 41.51611129171,
+      "lon": -72.100756812664
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/norwich-607-west-main-street-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-norwalk",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Norwalk",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "346 Main Avenue, Norwalk, CT 06851",
+    "coordinates": {
+      "lat": 41.138529532229,
+      "lon": -73.426024365323
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/norwalk-346-main-ave-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-ridgefield",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Ridgefield",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "10 South Street, Suite 101, Ridgefield, CT 06877",
+    "coordinates": {
+      "lat": 41.290539809375,
+      "lon": -73.494741383917
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/ridgefield-10-south-street-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-branford",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Branford",
+    "state": "CT",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "349 East Main Street, Suite 101, Branford, CT 06405",
+    "coordinates": {
+      "lat": 41.294821443992,
+      "lon": -72.782478135634
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/branford-349-east-main-street-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "yale-somers",
+    "name": "Yale New Haven Health Urgent Care",
+    "city": "Somers",
+    "state": "NY",
+    "type": "urgent-care",
+    "typeLabel": "Adult and child urgent care",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "80 Route 6, Suite 704-705, Somers, NY 10505",
+    "coordinates": {
+      "lat": 41.344865306856,
+      "lon": -73.757546149976
+    },
+    "phone": "(860) 650-3848",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "injury",
+      "wound",
+      "stomach"
+    ],
+    "hours": {
+      "kind": "live",
+      "label": "Check the provider page or call for today’s hours",
+      "days": {}
+    },
+    "highlights": [
+      "Urgent care for adults and children",
+      "Treatment for illness, minor wounds, strains and burns",
+      "On-site X-ray services published"
+    ],
+    "sourceUrl": "https://www.ynhhs.org/locations/somers-80-route-6-urgent-care",
+    "quality": {
+      "note": "No comparable public urgent-care quality measure found.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": false,
+      "slidingFee": false,
+      "noOneTurnedAway": false,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [],
+      "note": null,
+      "sourceUrl": null
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-08-30",
+      "reviewBy": "2026-11-30",
+      "method": "authoritative-provider-source-and-public-geocoder"
     }
   }
 ];
