@@ -206,6 +206,44 @@ document.getElementById('startOver').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+const billDialog = document.getElementById('billProtection');
+const billIntake = document.getElementById('billIntake');
+const billPlanResult = document.getElementById('billPlanResult');
+
+function openBillProtection() {
+  billIntake.hidden = false;
+  billPlanResult.hidden = true;
+  billDialog.showModal();
+}
+
+document.getElementById('openBillHelp').addEventListener('click', openBillProtection);
+document.getElementById('openBillHelpHero').addEventListener('click', openBillProtection);
+document.getElementById('buildBillPlan').addEventListener('click', () => {
+  const situation = document.querySelector('[name=billSituation]:checked').value;
+  const plan = document.querySelector('[name=billPlan]:checked').value;
+  const careState = document.getElementById('billState').value;
+  const signalKeys = {
+    directory: 'billSignalDirectory',
+    facility: 'billSignalFacility',
+    emergency: 'billSignalEmergency',
+    other: 'billSignalOther'
+  };
+  document.getElementById('billProtectionSignal').innerHTML = `<strong>${t('billSignalLabel')}</strong><span>${t(signalKeys[situation])}</span>`;
+  document.getElementById('njBillHelp').hidden = careState !== 'NJ';
+  document.getElementById('dolBillHelp').hidden = plan !== 'employer';
+  billIntake.hidden = true;
+  billPlanResult.hidden = false;
+  billPlanResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+document.getElementById('restartBillPlan').addEventListener('click', () => {
+  billPlanResult.hidden = true;
+  billIntake.hidden = false;
+  billDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.addEventListener('careroute:language', () => {
+  if (!billPlanResult.hidden) document.getElementById('buildBillPlan').click();
+});
+
 function getInputs() {
   const value = Number(document.getElementById('ageValue').value);
   const unit = document.getElementById('ageUnit').value;

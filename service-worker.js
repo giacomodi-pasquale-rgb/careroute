@@ -1,4 +1,4 @@
-const CACHE = 'nearsignal-shell-v10';
+const CACHE = 'nearsignal-shell-v11';
 const SHELL = ['./', './index.html', './styles.css', './brand.css', './install.css', './access.css', './app.js', './routing.js', './i18n.js', './config.js', './data/facilities.js', './data/review/evidence-network.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', (event) => {
   self.skipWaiting();
