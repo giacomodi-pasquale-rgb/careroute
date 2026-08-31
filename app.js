@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=8';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=9';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -213,7 +213,16 @@ const billPlanResult = document.getElementById('billPlanResult');
 function openBillProtection() {
   billIntake.hidden = false;
   billPlanResult.hidden = true;
-  billDialog.showModal();
+  if (typeof billDialog.showModal === 'function') {
+    try {
+      billDialog.showModal();
+      return;
+    } catch (error) {
+      console.warn('Native dialog unavailable; using compatible fallback.', error);
+    }
+  }
+  billDialog.setAttribute('open', '');
+  billDialog.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 document.getElementById('openBillHelp').addEventListener('click', openBillProtection);
