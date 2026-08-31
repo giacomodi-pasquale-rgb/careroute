@@ -1,6 +1,6 @@
 {
-  "appId": "org.careroute.pediatric",
-  "appName": "CareRoute",
+  "appId": "org.nearsignal.health",
+  "appName": "NearSignal",
   "webDir": ".",
   "server": { "androidScheme": "https" }
 }

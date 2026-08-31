@@ -6,7 +6,7 @@ export class RoutingService {
 
   async matrix(origin, facilities) {
     if (!origin || facilities.length === 0) return new Map();
-    if (this.config.provider === 'api') return this.fromCareRouteApi(origin, facilities);
+    if (this.config.provider === 'api') return this.fromNearSignalApi(origin, facilities);
     return this.fromOsrm(origin, facilities);
   }
 
@@ -25,7 +25,7 @@ export class RoutingService {
     }));
   }
 
-  async fromCareRouteApi(origin, facilities) {
+  async fromNearSignalApi(origin, facilities) {
     const data = await this.request(this.config.endpoint, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },

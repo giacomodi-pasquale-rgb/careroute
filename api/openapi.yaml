@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: CareRoute Facility API
+  title: NearSignal Facility API
   version: 0.1.0
   description: Read-only contract for verified pediatric care navigation. Operational fields remain nullable unless backed by an approved live feed.
 servers:

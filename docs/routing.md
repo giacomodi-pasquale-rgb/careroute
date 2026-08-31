@@ -1,6 +1,6 @@
 # Routing and travel-information strategy
 
-## Fields CareRoute displays
+## Fields NearSignal displays
 
 Every successful route result carries:
 
@@ -22,7 +22,7 @@ The GitHub Pages pilot calls the public OSRM table service. It supplies real roa
 
 ### Production: server-side traffic provider
 
-The mobile and production web clients will call CareRoute's `/v1/routes/matrix` endpoint. The server will call a commercial provider so credentials, quotas, caching, failover, and spend controls remain off-device.
+The mobile and production web clients will call NearSignal's `/v1/routes/matrix` endpoint. The server will call a commercial provider so credentials, quotas, caching, failover, and spend controls remain off-device.
 
 Recommended primary provider: Google Routes `ComputeRouteMatrix` with `TRAFFIC_AWARE` for normal ranking and `TRAFFIC_AWARE_OPTIMAL` for a final selected route. It can provide traffic-aware duration, static duration, and distance. Mapbox `driving-traffic` Matrix is a viable alternative. Apple Maps directions/ETA should be evaluated for the native iOS presentation layer, but using one server-side matrix provider keeps cross-platform rankings consistent.
 

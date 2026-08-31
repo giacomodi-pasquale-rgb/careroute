@@ -27,4 +27,4 @@ createServer(async (request, response) => {
     response.writeHead(status, cors);
     response.end(JSON.stringify({ error: status === 400 ? error.message : 'Routing is temporarily unavailable.' }));
   }
-}).listen(port, () => console.log(`CareRoute routing API listening on ${port}`));
+}).listen(port, () => console.log(`NearSignal routing API listening on ${port}`));

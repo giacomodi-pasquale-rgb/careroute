@@ -1,13 +1,13 @@
 {
-  "name": "CareRoute",
-  "short_name": "CareRoute",
+  "name": "NearSignal",
+  "short_name": "NearSignal",
   "start_url": "./",
   "display": "standalone",
   "scope": "./",
   "id": "./",
-  "background_color": "#f5f3ed",
-  "theme_color": "#123c36",
-  "description": "Verified urgent and emergency care navigation for adults and children.",
+  "background_color": "#f3f6fb",
+  "theme_color": "#172554",
+  "description": "Verified access intelligence for urgent and emergency care.",
   "categories": ["medical", "navigation"],
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },

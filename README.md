@@ -1,6 +1,6 @@
-# CareRoute v0.8 Urgent & Emergency Navigation
+# NearSignal v0.8 Urgent & Emergency Navigation
 
-CareRoute is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
+NearSignal is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
@@ -14,7 +14,7 @@ CareRoute is a production-oriented, mobile-first foundation for national care na
 - A translated cost-access guide distinguishing FQHC full discounts or nominal charges, NJ hospital Charity Care, and service-specific published flat fees
 - Provider-sourced identity, address, phone, care setting, adult/child population, services, and published hours
 - Browser geolocation, with location kept in memory only
-- Optional five-digit ZIP lookup as an alternative to browser geolocation; the ZIP is sent to Zippopotam.us for an approximate area, used in memory for routing, and not stored by CareRoute
+- Optional five-digit ZIP lookup as an alternative to browser geolocation; the ZIP is sent to Zippopotam.us for an approximate area, used in memory for routing, and not stored by NearSignal
 - Sourced road-network distance, drive duration, and estimated arrival time, including explicit provider, timestamp, and traffic-awareness status
 - Conservative emergency gating: adult emergency searches show verified adult EDs; child searches require pediatric-specific emergency capability
 - Direct provider-source, calling, and navigation links
@@ -68,7 +68,7 @@ npm run import:hrsa -- Health_Center_Service_Delivery_and_LookAlike_Sites.csv
 npm run build:network
 ```
 
-CareRoute uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
+NearSignal uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
 
 The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 99 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
 
@@ -128,6 +128,6 @@ Then open `http://localhost:8000`.
 
 ## Production path
 
-The traffic gateway uses `ROUTING_PROVIDER=google`, a server-only `GOOGLE_ROUTES_API_KEY`, and `CAREROUTE_ALLOWED_ORIGIN` for the web origin. The client should be switched from OSRM to the CareRoute API only after that gateway has TLS, monitoring, quotas, budget alerts, and a stable domain. Raw origins are not logged or persisted by the included server.
+The traffic gateway uses `ROUTING_PROVIDER=google`, a server-only `GOOGLE_ROUTES_API_KEY`, and `CAREROUTE_ALLOWED_ORIGIN` for the web origin. The client should be switched from OSRM to the NearSignal API only after that gateway has TLS, monitoring, quotas, budget alerts, and a stable domain. Raw origins are not logged or persisted by the included server.
 
 The GitHub Pages version is a useful pilot, not a complete clinical product. A production release needs a governed database and update workflow, commercial routing with traffic/SLA, authenticated provider and insurer feeds, monitoring, analytics with consent, privacy/security review, accessibility and clinical safety validation, legal/regulatory review, and operational ownership. Native iOS/Android can share the dataset/API and scoring contract, then add native location, maps, notifications, secure storage, and app-store distribution.

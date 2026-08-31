@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#123c36">
-  <meta name="description" content="CareRoute helps adults and families decide between verified urgent care and emergency options, with separate pediatric safety rules.">
-  <meta property="og:title" content="CareRoute — a realistic path to care">
+  <meta name="theme-color" content="#172554">
+  <meta name="description" content="NearSignal turns fragmented facility facts into realistic urgent and emergency care options for adults and children.">
+  <meta property="og:title" content="NearSignal — care that fits the real world">
   <meta property="og:description" content="Verified, situation-specific care navigation built for the realities of fragmented healthcare.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://giacomodi-pasquale-rgb.github.io/careroute/">
@@ -14,16 +14,17 @@
   <meta property="og:image:height" content="909">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://giacomodi-pasquale-rgb.github.io/careroute/icons/og-care-route.png">
-  <title>CareRoute</title>
+  <title>NearSignal</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
   <link rel="stylesheet" href="access.css?v=6">
+  <link rel="stylesheet" href="brand.css?v=1">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#">CareRoute<span>.</span></a>
+    <a class="brand" href="#" aria-label="NearSignal home"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-word">NearSignal</span></a>
     <div class="topbar-actions"><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
@@ -32,26 +33,27 @@
   </aside>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow" data-i18n="eyebrow">Urgent care or ER · Adult or child</p>
-      <h1 data-i18n="heroTitle">Urgent care or ER? Find the right route for an adult or child.</h1>
-      <p data-i18n="heroBody">CareRoute helps with the decision before the directory: who needs care, whether urgent care or an emergency department fits, and which verified nearby locations can realistically serve that adult or child.</p>
+    <section class="hero signal-hero">
+      <div class="hero-kicker"><span class="live-dot"></span><span data-i18n="eyebrow">Verified access intelligence · Adult or child</span></div>
+      <h1 data-i18n="heroTitle">Find care that can actually receive you.</h1>
+      <p data-i18n="heroBody">NearSignal turns fragmented facility facts into a practical access brief: urgent care or ER, adult or pediatric capability, affordability, language support, and the travel reality from where you are.</p>
       <div class="trust-row" aria-label="Data principles" data-i18n-aria-label="dataPrinciples">
         <span data-i18n="trustReal">✓ Real facilities</span><span data-i18n="trustSources">✓ Source-linked facts</span><span data-i18n="trustWaits">✓ No invented waits</span>
       </div>
       <div class="hero-actions"><a class="primary link-button" href="#questionnaire" data-i18n="startNavigation">Find care options</a><button id="tryDemo" class="demo-button" type="button" data-i18n="tryDemo">▶ Try a 30-second demo</button></div>
-      <p class="demo-helper" data-i18n="demoHelper">See CareRoute help a parent in Newark find realistic care for a sick child without insurance.</p>
+      <p class="demo-helper" data-i18n="demoHelper">See NearSignal build an access brief for a parent in Newark seeking affordable care for a sick child.</p>
       <div class="proof-stats" aria-label="Pilot at a glance" data-i18n-aria-label="proofLabel">
         <div><strong id="facilityCount">99</strong><span data-i18n="statFacilities">verified care locations</span></div>
         <div><strong>9</strong><span data-i18n="statStates">Northeast states</span></div>
         <div><strong>4</strong><span data-i18n="statLanguages">complete languages</span></div>
       </div>
-      <div class="decision-path" aria-label="CareRoute decision path" data-i18n-aria-label="decisionPathLabel"><span><b>1</b><em data-i18n="decisionWho">Adult or child</em></span><i>→</i><span><b>2</b><em data-i18n="decisionSetting">Urgent care or ER</em></span><i>→</i><span><b>3</b><em data-i18n="decisionReality">Nearby realistic options</em></span></div>
+      <div class="signal-path" aria-label="NearSignal access brief" data-i18n-aria-label="decisionPathLabel"><span><b>WHO</b><em data-i18n="decisionWho">Adult or child</em></span><span><b>SAFETY</b><em data-i18n="decisionSetting">Urgent care or ER</em></span><span><b>ACCESS</b><em data-i18n="decisionReality">Nearby realistic options</em></span><span><b>EVIDENCE</b><em>Source-linked facts</em></span></div>
     </section>
 
     <section class="panel" id="questionnaire" aria-labelledby="form-title">
       <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
       <p class="step-label" id="stepLabel">Step 1 of 4</p>
+      <div class="brief-label"><span>ACCESS BRIEF</span><span id="briefStatus">Building</span></div>
       <h2 id="form-title">Who needs care?</h2>
 
       <form id="careForm" novalidate>
@@ -73,7 +75,7 @@
             <div class="zip-row">
               <label for="zipCode"><span data-i18n="zipLabel">Or enter ZIP code</span></label>
               <div><input id="zipCode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" placeholder="e.g. 06103" data-i18n-placeholder="zipPlaceholder"><button id="useZip" type="button" class="secondary" data-i18n="useZip">Use ZIP code</button></div>
-              <p class="helper" data-i18n="zipPrivacy">The ZIP is sent to a lookup service to find an approximate area. CareRoute does not store it.</p>
+              <p class="helper" data-i18n="zipPrivacy">The ZIP is sent to a lookup service to find an approximate area. NearSignal does not store it.</p>
               <p class="status" id="zipStatus" aria-live="polite"></p>
             </div>
           </div>
@@ -120,7 +122,7 @@
             </div>
             <p class="access-caution" data-i18n="accessCaution">“Low cost” does not mean every service is automatically free. Eligibility, income, family size, service type, and clinic policy can affect the amount.</p>
           </div>
-          <p class="helper" data-i18n="locationPrivacy">Your precise location is used only in this browser to request driving times. It is not stored by CareRoute.</p>
+          <p class="helper" data-i18n="locationPrivacy">Your precise location is used only in this browser to request driving times. It is not stored by NearSignal.</p>
           <button type="button" id="locateMe" class="location-button"><span aria-hidden="true">◎</span><span data-i18n="locationButton"><b>Use my current location</b><small>Allow location access when prompted</small></span></button>
           <p id="locationStatus" class="status" aria-live="polite" data-i18n="locationOptional">Optional. Using location will automatically calculate and open nearby results.</p>
           <div class="actions"><button type="button" class="secondary back" data-i18n="back">Back</button><button type="button" id="showCareOptions" class="primary" data-i18n="seeOptions">See care options</button></div>
@@ -138,15 +140,15 @@
       <div id="journeySummary" class="journey-summary"></div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
-      <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> CareRoute shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
-      <details><summary data-i18n="orderingTitle">How CareRoute orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
+      <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> NearSignal shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
+      <details><summary data-i18n="orderingTitle">How NearSignal orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
       <details><summary data-i18n="verifiedTitle">What “verified” means</summary><p data-i18n="verifiedBody">Facility identity, address, care setting, adult/child population, phone, displayed hours, listed capabilities, and access claims are tied to provider or government sources. Information can change—call before non-emergency travel.</p></details>
     </section>
 
     <section class="difference-section" aria-labelledby="difference-title">
-      <p class="eyebrow" data-i18n="differenceEyebrow">Why CareRoute is different</p>
+      <p class="eyebrow" data-i18n="differenceEyebrow">Why NearSignal is different</p>
       <h2 id="difference-title" data-i18n="differenceTitle">The decision layer between “something is wrong” and “where should we go?”</h2>
-      <p class="difference-lead" data-i18n="differenceLead">Most directories begin after someone already knows what to search for. CareRoute focuses on the urgent-care-versus-ER decision first, with separate adult and pediatric safety gates and real-world access constraints.</p>
+      <p class="difference-lead" data-i18n="differenceLead">Most directories list what is nearby. NearSignal asks what is realistic: the right setting, the right patient capability, and the access barriers that decide whether a location is truly usable.</p>
       <div class="difference-grid">
         <article><span>01</span><h3 data-i18n="differenceSafetyTitle">Safety before ranking</h3><p data-i18n="differenceSafetyBody">Emergency and pediatric suitability rules remove inappropriate settings before distance or convenience can influence the list.</p></article>
         <article><span>02</span><h3 data-i18n="differenceAccessTitle">Access changes the answer</h3><p data-i18n="differenceAccessBody">Insurance, reduced-cost care, language, age, opening hours, and travel feasibility become part of the pathway—not footnotes.</p></article>
@@ -158,7 +160,7 @@
     <section class="network-section" aria-labelledby="network-title">
       <div class="network-heading">
         <div><p class="eyebrow" data-i18n="networkEyebrow">The evidence network</p><h2 id="network-title" data-i18n="networkTitle">National reach without lowering the safety bar.</h2></div>
-        <p data-i18n="networkLead">CareRoute now organizes free federal data into a verification pipeline: broad enough to demonstrate national scale, strict enough that unverified records never become patient recommendations.</p>
+        <p data-i18n="networkLead">NearSignal organizes free federal data into a verification pipeline: broad enough to demonstrate national scale, strict enough that unverified records never become patient recommendations.</p>
       </div>
       <div class="network-stats" aria-label="Evidence network at a glance" data-i18n-aria-label="networkStatsLabel">
         <article><strong id="networkOfficial">22,292</strong><span data-i18n="networkOfficial">official records indexed</span></article>
@@ -171,21 +173,21 @@
         <article><span>02</span><div><h3 data-i18n="networkTier2Title">Evidence enriched</h3><p data-i18n="networkTier2Body">Location, contact, operating, and service evidence is added and checked for conflicts.</p></div></article>
         <article class="funnel-ready"><span>03</span><div><h3 data-i18n="networkTier3Title">Decision-ready</h3><p data-i18n="networkTier3Body">Only records that pass release-blocking checks can appear in the patient navigation flow.</p></div></article>
       </div>
-      <div class="network-safety"><strong data-i18n="networkSafetyTitle">The important distinction</strong><span data-i18n="networkSafetyBody">22,292 records demonstrate the expansion foundation. 99 now meet CareRoute’s patient-facing evidence standard. Scale is visible; uncertainty stays visible too.</span></div>
+      <div class="network-safety"><strong data-i18n="networkSafetyTitle">The important distinction</strong><span data-i18n="networkSafetyBody">22,292 records demonstrate the expansion foundation. 99 now meet NearSignal’s patient-facing evidence standard. Scale is visible; uncertainty stays visible too.</span></div>
       <p class="network-sources"><span data-i18n="networkSources">Official sources:</span> <a href="https://data.cms.gov/provider-data/dataset/xubh-q36u" target="_blank" rel="noopener">CMS Hospital General Information ↗</a> · <a href="https://data.hrsa.gov/topics/health-centers/" target="_blank" rel="noopener">HRSA Health Center Data ↗</a> · <a href="review.html" data-i18n="networkReviewLink">View the review system →</a></p>
     </section>
 
     <section class="scope-note">
       <p class="eyebrow" data-i18n="limitationsEyebrow">About this pilot</p>
       <h2 data-i18n="limitationsTitle">Built carefully from the start.</h2>
-      <p data-i18n="limitationsBody">CareRoute is currently a public pilot covering a curated set of verified adult and pediatric emergency, urgent-care, and community health-center options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, final cost, or insurance network status. Access labels describe verified programs, not individual eligibility. Facility and government pages remain the source of truth.</p>
+      <p data-i18n="limitationsBody">NearSignal is currently a public pilot covering a curated set of verified adult and pediatric emergency, urgent-care, and community health-center options. It is not exhaustive, does not assess symptoms, and does not know capacity, wait time, final cost, or insurance network status. Access labels describe verified programs, not individual eligibility. Facility and government pages remain the source of truth.</p>
     </section>
   </main>
 
-  <footer><span>CareRoute v0.8 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
+  <footer><span>NearSignal v0.9 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=25"></script>
+  <script type="module" src="app.js?v=26"></script>
 </body>
 </html>
