@@ -209,6 +209,11 @@ document.getElementById('startOver').addEventListener('click', () => {
 const billDialog = document.getElementById('billProtection');
 const billIntake = document.getElementById('billIntake');
 const billPlanResult = document.getElementById('billPlanResult');
+const BILL_STATES = [
+  ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']
+];
+const billStateSelect = document.getElementById('billState');
+billStateSelect.innerHTML = BILL_STATES.map(([code, name]) => `<option value="${code}"${code === 'NJ' ? ' selected' : ''}>${name}</option>`).join('');
 
 function openBillProtection() {
   billIntake.hidden = false;
@@ -231,6 +236,7 @@ document.getElementById('buildBillPlan').addEventListener('click', () => {
   const situation = document.querySelector('[name=billSituation]:checked').value;
   const plan = document.querySelector('[name=billPlan]:checked').value;
   const careState = document.getElementById('billState').value;
+  const careStateName = BILL_STATES.find(([code]) => code === careState)?.[1] || careState;
   const signalKeys = {
     directory: 'billSignalDirectory',
     facility: 'billSignalFacility',
@@ -238,7 +244,15 @@ document.getElementById('buildBillPlan').addEventListener('click', () => {
     other: 'billSignalOther'
   };
   document.getElementById('billProtectionSignal').innerHTML = `<strong>${t('billSignalLabel')}</strong><span>${t(signalKeys[situation])}</span>`;
-  document.getElementById('njBillHelp').hidden = careState !== 'NJ';
+  const stateHelp = document.getElementById('stateBillHelp');
+  const isNewJersey = careState === 'NJ';
+  stateHelp.href = isNewJersey
+    ? 'https://www.nj.gov/dobi/division_consumers/insurance/outofnetwork.html'
+    : 'https://content.naic.org/state-insurance-departments';
+  stateHelp.textContent = isNewJersey ? t('njBillRights') : format('stateInsuranceHelp', { state: careStateName });
+  document.getElementById('stateResourceNote').textContent = isNewJersey
+    ? t('njProtectionNote')
+    : format('stateProtectionNote', { state: careStateName });
   document.getElementById('dolBillHelp').hidden = plan !== 'employer';
   billIntake.hidden = true;
   billPlanResult.hidden = false;

@@ -191,6 +191,7 @@
       <p class="eyebrow" data-i18n="billEyebrow">NearSignal Bill Protection</p>
       <h2 id="bill-title" data-i18n="billTitle">Turn a frightening bill into an action plan.</h2>
       <p class="bill-intro" data-i18n="billIntro">This tool does not decide whether a bill is lawful or provide legal advice. It helps preserve evidence, identify possible protections, and reach the right appeal or complaint channel.</p>
+      <p class="bill-national-scope" data-i18n="billNationalScope">Nationwide guidance · Federal and state-specific routes</p>
 
       <div id="billIntake" class="bill-intake">
         <fieldset><legend data-i18n="billSituation">What happened?</legend><div class="bill-choices">
@@ -205,13 +206,14 @@
           <label><input type="radio" name="billPlan" value="public"><span data-i18n="billPublic">Medicare or Medicaid</span></label>
           <label><input type="radio" name="billPlan" value="unsure"><span data-i18n="billUnsure">Not sure</span></label>
         </div></fieldset>
-        <label class="bill-state"><span data-i18n="billState">Where did the care happen?</span><select id="billState"><option value="NJ">New Jersey</option><option value="other" data-i18n="billOtherState">Another state</option></select></label>
+        <label class="bill-state"><span data-i18n="billState">Where did the care happen?</span><select id="billState"></select></label>
         <button id="buildBillPlan" class="primary" value="" type="button" data-i18n="buildBillPlan">Build my action plan</button>
       </div>
 
       <section id="billPlanResult" class="bill-result" hidden aria-live="polite">
         <div class="bill-alert"><strong data-i18n="billFirstTitle">First: protect the clock and the paper trail</strong><p data-i18n="billFirstBody">Ask the provider to place the account on an administrative hold while it is disputed. Request the itemized bill, Explanation of Benefits, claim and denial codes, network records, any estimate, and every notice or consent form. Keep screenshots, names, dates, and confirmation numbers.</p></div>
         <div id="billProtectionSignal" class="protection-signal"></div>
+        <p id="stateResourceNote" class="state-resource-note"></p>
         <ol class="bill-steps">
           <li><b data-i18n="billStep1Title">Open an insurer appeal</b><span data-i18n="billStep1Body">Use the appeal address or portal in the denial notice. State that network information was relied on, identify the disputed charges, request reprocessing at the in-network level, and ask for all records used to decide the claim.</span></li>
           <li><b data-i18n="billStep2Title">Preserve the deadline</b><span data-i18n="billStep2Body">Use the deadline printed on the denial or plan documents. Many employer-plan claim appeals allow at least 180 days, but your notice and plan control. File something in writing before the deadline even if more evidence will follow.</span></li>
@@ -220,7 +222,7 @@
         <div class="official-actions">
           <a class="link-button primary" href="https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/get-help/find-action-plan-your-medical-bill/call-no-surprises-help-desk/submit-complaint" target="_blank" rel="noopener" data-i18n="cmsComplaint">CMS complaint ↗</a>
           <a class="link-button secondary" href="tel:18009853059" data-i18n="cmsCall">Call 1-800-985-3059</a>
-          <a id="njBillHelp" class="link-button secondary" href="https://www.nj.gov/dobi/division_consumers/insurance/outofnetwork.html" target="_blank" rel="noopener" data-i18n="njBillRights">NJ out-of-network rights ↗</a>
+          <a id="stateBillHelp" class="link-button secondary" href="https://content.naic.org/state-insurance-departments" target="_blank" rel="noopener">Find your state insurance department ↗</a>
           <a id="dolBillHelp" class="link-button secondary" href="https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/publications/filing-a-claim-for-your-health-benefits" target="_blank" rel="noopener" data-i18n="dolAppeal">Employer-plan appeal guide ↗</a>
         </div>
         <details class="appeal-template"><summary data-i18n="appealTemplateTitle">Plain-language appeal starter</summary><div id="appealTemplate" data-i18n="appealTemplateBody"><p><strong>Subject: Urgent request to review and reprocess disputed medical claim</strong></p><p>I am appealing the handling of this claim and asking that collection activity be paused while it is reviewed. Before care, I relied on information indicating that the facility or service was in network. I did not knowingly choose an out-of-network service at this price.</p><p>Please provide the complete claim file, the specific plan terms and codes used, all network-status records, and any notice or consent form you believe applies. Please review applicable federal and state surprise-billing protections and reprocess covered charges at the in-network cost-sharing level when required. Please confirm receipt and all appeal deadlines in writing.</p></div></details>
@@ -234,6 +236,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=28"></script>
+  <script type="module" src="app.js?v=29"></script>
 </body>
 </html>
