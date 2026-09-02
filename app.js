@@ -267,6 +267,56 @@ document.addEventListener('careroute:language', () => {
   if (!billPlanResult.hidden) document.getElementById('buildBillPlan').click();
 });
 
+const mentalDialog = document.getElementById('mentalSupport');
+const mentalChoices = document.getElementById('mentalChoices');
+const mentalResult = document.getElementById('mentalResult');
+let selectedMentalRoute = null;
+
+function openMentalSupport() {
+  selectedMentalRoute = null;
+  mentalChoices.hidden = false;
+  mentalResult.hidden = true;
+  if (typeof mentalDialog.showModal === 'function') {
+    try {
+      mentalDialog.showModal();
+      return;
+    } catch (error) {
+      console.warn('Native dialog unavailable; using compatible fallback.', error);
+    }
+  }
+  mentalDialog.setAttribute('open', '');
+  mentalDialog.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showMentalRoute(route) {
+  selectedMentalRoute = route;
+  const routeKeys = {
+    danger: ['mentalDangerResultTitle', 'mentalDangerResultBody'],
+    crisis: ['mentalCrisisResultTitle', 'mentalCrisisResultBody'],
+    urgent: ['mentalUrgentResultTitle', 'mentalUrgentResultBody']
+  };
+  const [titleKey, bodyKey] = routeKeys[route];
+  document.getElementById('mentalRouteMessage').innerHTML = `<strong>${t(titleKey)}</strong><span>${t(bodyKey)}</span>`;
+  document.getElementById('mental911').hidden = route !== 'danger';
+  document.getElementById('mentalTreatment').hidden = route !== 'urgent';
+  mentalChoices.hidden = true;
+  mentalResult.hidden = false;
+  mentalResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('openMentalHelp').addEventListener('click', openMentalSupport);
+document.getElementById('openMentalHelpHero').addEventListener('click', openMentalSupport);
+document.querySelectorAll('[data-mental-route]').forEach((button) => button.addEventListener('click', () => showMentalRoute(button.dataset.mentalRoute)));
+document.getElementById('restartMentalRoute').addEventListener('click', () => {
+  selectedMentalRoute = null;
+  mentalResult.hidden = true;
+  mentalChoices.hidden = false;
+  mentalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.addEventListener('careroute:language', () => {
+  if (selectedMentalRoute) showMentalRoute(selectedMentalRoute);
+});
+
 function getInputs() {
   const value = Number(document.getElementById('ageValue').value);
   const unit = document.getElementById('ageUnit').value;

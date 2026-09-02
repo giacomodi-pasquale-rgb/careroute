@@ -25,7 +25,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="NearSignal home"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-word">NearSignal</span></a>
-    <div class="topbar-actions"><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
+    <div class="topbar-actions"><button id="openMentalHelp" class="mental-help-link" type="button" data-i18n="mentalHelpNav">Mental health now</button><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
@@ -43,6 +43,7 @@
       <div class="hero-actions"><a class="primary link-button" href="#questionnaire" data-i18n="startNavigation">Find care options</a><button id="tryDemo" class="demo-button" type="button" data-i18n="tryDemo">▶ Try a 30-second demo</button></div>
       <p class="demo-helper" data-i18n="demoHelper">See NearSignal build an access brief for a parent in Newark seeking affordable care for a sick child.</p>
       <button id="openBillHelpHero" class="bill-protection-card" type="button"><span class="bill-icon" aria-hidden="true">$</span><span><b data-i18n="billCardTitle">Unexpected medical bill?</b><small data-i18n="billCardBody">Build a protection plan before a deadline passes.</small></span><em data-i18n="billCardAction">Start →</em></button>
+      <button id="openMentalHelpHero" class="mental-support-card" type="button"><span class="mental-icon" aria-hidden="true">♥</span><span><b data-i18n="mentalCardTitle">Mental health support now?</b><small data-i18n="mentalCardBody">Choose the safest next step for an adult or young person.</small></span><em data-i18n="mentalCardAction">Get support →</em></button>
       <div class="proof-stats" aria-label="Pilot at a glance" data-i18n-aria-label="proofLabel">
         <div><strong id="facilityCount">99</strong><span data-i18n="statFacilities">verified care locations</span></div>
         <div><strong>9</strong><span data-i18n="statStates">Northeast states</span></div>
@@ -232,10 +233,37 @@
     </form>
   </dialog>
 
+  <dialog id="mentalSupport" class="mental-dialog" aria-labelledby="mental-title">
+    <form method="dialog" class="mental-shell">
+      <button class="bill-close" value="close" aria-label="Close" data-i18n-aria-label="close">×</button>
+      <p class="eyebrow" data-i18n="mentalEyebrow">NearSignal Mental Health Route</p>
+      <h2 id="mental-title" data-i18n="mentalTitle">What kind of support is needed right now?</h2>
+      <p class="bill-intro" data-i18n="mentalIntro">For you, another adult, or a child or teen. NearSignal does not diagnose a condition. Choose the closest situation to reach an appropriate official resource.</p>
+      <p class="mental-privacy" data-i18n="mentalPrivacy">Private by design: your choice stays in this browser and is not stored or sent to NearSignal.</p>
+      <div id="mentalChoices" class="mental-choices">
+        <button type="button" data-mental-route="danger"><b data-i18n="mentalDangerTitle">Immediate danger or medical emergency</b><span data-i18n="mentalDangerBody">Someone may act now, has attempted suicide, cannot stay safe, has a weapon, or has a dangerous overdose or medical problem.</span></button>
+        <button type="button" data-mental-route="crisis"><b data-i18n="mentalCrisisTitle">Emotional or behavioral crisis</b><span data-i18n="mentalCrisisBody">Suicidal thoughts, severe distress, panic, substance-use crisis, or concern about someone else—without an immediate medical emergency.</span></button>
+        <button type="button" data-mental-route="urgent"><b data-i18n="mentalUrgentTitle">Urgent support or treatment search</b><span data-i18n="mentalUrgentBody">Help is needed soon, but the person can remain safe while connecting to crisis or treatment support.</span></button>
+      </div>
+      <section id="mentalResult" class="mental-result" hidden aria-live="polite">
+        <div id="mentalRouteMessage" class="mental-route-message"></div>
+        <div class="mental-actions">
+          <a id="mental911" class="link-button emergency-action" href="tel:911" data-i18n="call911">Call 911</a>
+          <a class="link-button primary" href="tel:988" data-i18n="call988">Call 988</a>
+          <a class="link-button secondary" href="sms:988" data-i18n="text988">Text 988</a>
+          <a class="link-button secondary" href="https://988lifeline.org/chat/" target="_blank" rel="noopener" data-i18n="chat988">Chat with 988 ↗</a>
+          <a id="mentalTreatment" class="link-button secondary" href="https://findtreatment.gov/" target="_blank" rel="noopener" data-i18n="findTreatment">Find treatment ↗</a>
+        </div>
+        <p class="mental-language" data-i18n="mentalLanguage">988 is free and confidential. Call support offers translation in more than 240 languages. For Spanish, call 988 and press 2 or text AYUDA to 988; text and chat are otherwise available in English.</p>
+        <button id="restartMentalRoute" class="secondary" type="button" value="" data-i18n="chooseAgain">Choose again</button>
+      </section>
+    </form>
+  </dialog>
+
   <footer><span>NearSignal v0.9 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/careroute" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=29"></script>
+  <script type="module" src="app.js?v=30"></script>
 </body>
 </html>
