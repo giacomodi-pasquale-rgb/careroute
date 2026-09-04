@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=12';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=13';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -202,6 +202,7 @@ document.getElementById('startOver').addEventListener('click', () => {
   document.getElementById('zipStatus').classList.remove('success');
   document.getElementById('results').hidden = true;
   document.getElementById('questionnaire').hidden = false;
+  document.getElementById('briefAppliedNotice').hidden = true;
   showStep(1);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -349,6 +350,11 @@ function openArrivalBrief() {
   arrivalDialog.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function closeArrivalBrief() {
+  if (typeof arrivalDialog.close === 'function') arrivalDialog.close();
+  else arrivalDialog.removeAttribute('open');
+}
+
 function buildArrivalBrief() {
   const concern = document.getElementById('arrivalConcern').value.trim();
   if (!concern) {
@@ -400,6 +406,27 @@ document.getElementById('editArrivalBrief').addEventListener('click', () => {
   arrivalResult.hidden = true;
   arrivalIntake.hidden = false;
   arrivalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.getElementById('useBriefForSearch').addEventListener('click', () => {
+  const patientValue = document.getElementById('arrivalPatient').value;
+  const categoryValue = document.getElementById('arrivalCategory').value;
+  const warningValue = document.getElementById('arrivalWarning').value;
+  closeArrivalBrief();
+  if (categoryValue === 'mental') {
+    openMentalSupport();
+    return;
+  }
+  const patientGroup = patientValue === 'child' ? 'pediatric' : 'adult';
+  document.querySelector(`[name=patientGroup][value=${patientGroup}]`).checked = true;
+  document.getElementById('childAge').hidden = patientGroup !== 'pediatric';
+  document.querySelector(`[name=need][value=${categoryValue}]`).checked = true;
+  document.querySelector(`[name=emergency][value=${warningValue === 'no' ? 'no' : 'yes'}]`).checked = true;
+  state.demoScenario = false;
+  document.getElementById('results').hidden = true;
+  document.getElementById('questionnaire').hidden = false;
+  document.getElementById('briefAppliedNotice').hidden = false;
+  showStep(1);
+  document.getElementById('questionnaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 document.querySelectorAll('[data-dictate-target]').forEach((button) => button.addEventListener('click', () => {
   const status = document.getElementById('dictationStatus');
