@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=10';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=11';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -315,6 +315,115 @@ document.getElementById('restartMentalRoute').addEventListener('click', () => {
 });
 document.addEventListener('careroute:language', () => {
   if (selectedMentalRoute) showMentalRoute(selectedMentalRoute);
+});
+
+const arrivalDialog = document.getElementById('arrivalBrief');
+const arrivalIntake = document.getElementById('arrivalIntake');
+const arrivalResult = document.getElementById('arrivalResult');
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const speechLocales = { en: 'en-US', es: 'es-US', pt: 'pt-BR', ht: 'ht-HT' };
+let activeRecognition = null;
+
+function openArrivalBrief() {
+  arrivalIntake.hidden = false;
+  arrivalResult.hidden = true;
+  document.getElementById('arrivalActionStatus').textContent = '';
+  if (typeof arrivalDialog.showModal === 'function') {
+    try {
+      arrivalDialog.showModal();
+      return;
+    } catch (error) {
+      console.warn('Native dialog unavailable; using compatible fallback.', error);
+    }
+  }
+  arrivalDialog.setAttribute('open', '');
+  arrivalDialog.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildArrivalBrief() {
+  const concern = document.getElementById('arrivalConcern').value.trim();
+  if (!concern) {
+    document.getElementById('dictationStatus').textContent = t('arrivalConcernRequired');
+    document.getElementById('arrivalConcern').focus();
+    return;
+  }
+  const patient = document.getElementById('arrivalPatient').value === 'child' ? t('arrivalChild') : t('arrivalAdult');
+  const started = document.getElementById('arrivalStarted').value.trim() || t('notProvided');
+  const medications = document.getElementById('arrivalMedications').value.trim() || t('notProvided');
+  document.getElementById('arrivalBriefText').innerHTML = [
+    [t('briefPatient'), patient],
+    [t('briefConcern'), concern],
+    [t('briefStarted'), started],
+    [t('briefMedications'), medications]
+  ].map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('');
+  document.getElementById('dictationStatus').textContent = '';
+  arrivalIntake.hidden = true;
+  arrivalResult.hidden = false;
+  arrivalResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('openArrivalBrief').addEventListener('click', openArrivalBrief);
+document.getElementById('openArrivalBriefHero').addEventListener('click', openArrivalBrief);
+document.getElementById('buildArrivalBrief').addEventListener('click', buildArrivalBrief);
+document.getElementById('editArrivalBrief').addEventListener('click', () => {
+  arrivalResult.hidden = true;
+  arrivalIntake.hidden = false;
+  arrivalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.querySelectorAll('[data-dictate-target]').forEach((button) => button.addEventListener('click', () => {
+  const status = document.getElementById('dictationStatus');
+  if (!SpeechRecognition) {
+    status.textContent = t('speechUnavailable');
+    return;
+  }
+  if (activeRecognition) {
+    activeRecognition.stop();
+    return;
+  }
+  const target = document.getElementById(button.dataset.dictateTarget);
+  const recognition = new SpeechRecognition();
+  activeRecognition = recognition;
+  recognition.lang = speechLocales[currentLanguage()] || 'en-US';
+  recognition.interimResults = false;
+  recognition.continuous = false;
+  button.classList.add('listening');
+  status.textContent = t('listeningNow');
+  recognition.onresult = (event) => {
+    const words = [...event.results].map((result) => result[0].transcript).join(' ').trim();
+    target.value = `${target.value.trim()}${target.value.trim() ? ' ' : ''}${words}`;
+  };
+  recognition.onerror = () => { status.textContent = t('speechError'); };
+  recognition.onend = () => {
+    button.classList.remove('listening');
+    if (status.textContent === t('listeningNow')) status.textContent = t('dictationAdded');
+    activeRecognition = null;
+  };
+  try { recognition.start(); } catch (error) { recognition.onerror(error); recognition.onend(); }
+}));
+document.getElementById('copyArrivalBrief').addEventListener('click', async () => {
+  const text = document.getElementById('arrivalBriefText').innerText;
+  const status = document.getElementById('arrivalActionStatus');
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = t('briefCopied');
+  } catch (error) {
+    status.textContent = t('copyUnavailable');
+  }
+});
+document.getElementById('listenArrivalBrief').addEventListener('click', () => {
+  const status = document.getElementById('arrivalActionStatus');
+  if (!('speechSynthesis' in window)) {
+    status.textContent = t('listenUnavailable');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(document.getElementById('arrivalBriefText').innerText);
+  utterance.lang = speechLocales[currentLanguage()] || 'en-US';
+  window.speechSynthesis.speak(utterance);
+  status.textContent = t('readingBrief');
+});
+document.addEventListener('careroute:language', () => {
+  if (!arrivalResult.hidden) buildArrivalBrief();
 });
 
 function getInputs() {
