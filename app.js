@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=11';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=12';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -322,6 +322,15 @@ const arrivalIntake = document.getElementById('arrivalIntake');
 const arrivalResult = document.getElementById('arrivalResult');
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const speechLocales = { en: 'en-US', es: 'es-US', pt: 'pt-BR', ht: 'ht-HT' };
+const arrivalCategoryKeys = { illness: 'categoryIllness', breathing: 'categoryBreathing', injury: 'categoryInjury', wound: 'categoryWound', stomach: 'categoryStomach', mental: 'categoryMental', other: 'categoryOther' };
+const arrivalSeverityKeys = { mild: 'severityMild', moderate: 'severityModerate', severe: 'severitySevere', unsure: 'severityUnsure' };
+const arrivalWarningKeys = { no: 'warningNo', unsure: 'warningUnsure', yes: 'warningYes' };
+const englishArrivalValues = {
+  patient: { adult: 'Adult', child: 'Child or teen' },
+  category: { illness: 'Illness or fever', breathing: 'Breathing problem', injury: 'Injury', wound: 'Cut or wound', stomach: 'Stomach symptoms', mental: 'Mental or behavioral health', other: 'Other or unsure' },
+  severity: { mild: 'Mild', moderate: 'Moderate', severe: 'Severe', unsure: 'Not sure' },
+  warning: { no: 'No', unsure: 'Not sure', yes: 'Yes' }
+};
 let activeRecognition = null;
 
 function openArrivalBrief() {
@@ -347,15 +356,37 @@ function buildArrivalBrief() {
     document.getElementById('arrivalConcern').focus();
     return;
   }
-  const patient = document.getElementById('arrivalPatient').value === 'child' ? t('arrivalChild') : t('arrivalAdult');
+  const patientValue = document.getElementById('arrivalPatient').value;
+  const categoryValue = document.getElementById('arrivalCategory').value;
+  const severityValue = document.getElementById('arrivalSeverity').value;
+  const warningValue = document.getElementById('arrivalWarning').value;
+  const patient = patientValue === 'child' ? t('arrivalChild') : t('arrivalAdult');
   const started = document.getElementById('arrivalStarted').value.trim() || t('notProvided');
   const medications = document.getElementById('arrivalMedications').value.trim() || t('notProvided');
   document.getElementById('arrivalBriefText').innerHTML = [
     [t('briefPatient'), patient],
+    [t('briefCategory'), t(arrivalCategoryKeys[categoryValue])],
+    [t('briefSeverity'), t(arrivalSeverityKeys[severityValue])],
+    [t('briefWarning'), t(arrivalWarningKeys[warningValue])],
     [t('briefConcern'), concern],
     [t('briefStarted'), started],
     [t('briefMedications'), medications]
   ].map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('');
+  const originalConcern = concern || 'Not provided';
+  const originalStarted = document.getElementById('arrivalStarted').value.trim() || 'Not provided';
+  const originalMedications = document.getElementById('arrivalMedications').value.trim() || 'Not provided';
+  document.getElementById('arrivalEnglishBrief').innerHTML = [
+    ['Patient', englishArrivalValues.patient[patientValue]],
+    ['Concern category', englishArrivalValues.category[categoryValue]],
+    ['Patient-reported severity', englishArrivalValues.severity[severityValue]],
+    ['Immediate warning signs reported', englishArrivalValues.warning[warningValue]],
+    ["Patient's original words (not automatically translated)", originalConcern],
+    ['Onset/change — original words (not automatically translated)', originalStarted],
+    ['Medicines/allergies/conditions — original words (not automatically translated)', originalMedications]
+  ].map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('');
+  const emergencyNotice = document.getElementById('arrivalEmergencyNotice');
+  emergencyNotice.hidden = warningValue === 'no';
+  emergencyNotice.classList.toggle('uncertain', warningValue === 'unsure');
   document.getElementById('dictationStatus').textContent = '';
   arrivalIntake.hidden = true;
   arrivalResult.hidden = false;
@@ -401,7 +432,7 @@ document.querySelectorAll('[data-dictate-target]').forEach((button) => button.ad
   try { recognition.start(); } catch (error) { recognition.onerror(error); recognition.onend(); }
 }));
 document.getElementById('copyArrivalBrief').addEventListener('click', async () => {
-  const text = document.getElementById('arrivalBriefText').innerText;
+  const text = `${t('patientLanguageBrief')}\n${document.getElementById('arrivalBriefText').innerText}\n\n${t('englishHandoffBrief')}\n${document.getElementById('arrivalEnglishBrief').innerText}\n\n${t('arrivalDisclaimer')}`;
   const status = document.getElementById('arrivalActionStatus');
   try {
     await navigator.clipboard.writeText(text);
@@ -421,6 +452,18 @@ document.getElementById('listenArrivalBrief').addEventListener('click', () => {
   utterance.lang = speechLocales[currentLanguage()] || 'en-US';
   window.speechSynthesis.speak(utterance);
   status.textContent = t('readingBrief');
+});
+document.getElementById('listenEnglishBrief').addEventListener('click', () => {
+  const status = document.getElementById('arrivalActionStatus');
+  if (!('speechSynthesis' in window)) {
+    status.textContent = t('listenUnavailable');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(document.getElementById('arrivalEnglishBrief').innerText);
+  utterance.lang = 'en-US';
+  window.speechSynthesis.speak(utterance);
+  status.textContent = t('readingEnglishBrief');
 });
 document.addEventListener('careroute:language', () => {
   if (!arrivalResult.hidden) buildArrivalBrief();

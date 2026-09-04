@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
   <link rel="stylesheet" href="access.css?v=6">
-  <link rel="stylesheet" href="brand.css?v=1">
+  <link rel="stylesheet" href="brand.css?v=2">
 </head>
 <body>
   <header class="topbar">
@@ -243,6 +243,11 @@
       <p class="arrival-privacy" data-i18n="arrivalPrivacy">NearSignal does not store or send this information. Voice recognition may be processed by your browser or device provider. Do not use voice input if you are not comfortable with that.</p>
       <div id="arrivalIntake" class="arrival-intake">
         <label><span data-i18n="arrivalPatient">Who is this for?</span><select id="arrivalPatient"><option value="adult" data-i18n="arrivalAdult">Adult</option><option value="child" data-i18n="arrivalChild">Child or teen</option></select></label>
+        <div class="arrival-select-grid">
+          <label><span data-i18n="arrivalCategory">What kind of concern is this?</span><select id="arrivalCategory"><option value="illness" data-i18n="categoryIllness">Illness or fever</option><option value="breathing" data-i18n="categoryBreathing">Breathing problem</option><option value="injury" data-i18n="categoryInjury">Injury</option><option value="wound" data-i18n="categoryWound">Cut or wound</option><option value="stomach" data-i18n="categoryStomach">Stomach symptoms</option><option value="mental" data-i18n="categoryMental">Mental or behavioral health</option><option value="other" data-i18n="categoryOther">Other or unsure</option></select></label>
+          <label><span data-i18n="arrivalSeverity">How serious does it feel?</span><select id="arrivalSeverity"><option value="mild" data-i18n="severityMild">Mild</option><option value="moderate" data-i18n="severityModerate">Moderate</option><option value="severe" data-i18n="severitySevere">Severe</option><option value="unsure" data-i18n="severityUnsure">Not sure</option></select></label>
+        </div>
+        <label><span data-i18n="arrivalWarning">Are any immediate warning signs present?</span><select id="arrivalWarning"><option value="no" data-i18n="warningNo">No</option><option value="unsure" data-i18n="warningUnsure">Not sure</option><option value="yes" data-i18n="warningYes">Yes</option></select><small class="arrival-helper" data-i18n="warningHelper">Examples: severe trouble breathing, blue or gray skin, unresponsiveness, uncontrolled bleeding, seizure, or immediate danger of self-harm.</small></label>
         <label><span data-i18n="arrivalConcern">What is happening?</span><div class="dictation-field"><textarea id="arrivalConcern" rows="4" data-i18n-placeholder="arrivalConcernPlaceholder" placeholder="Describe the main concern in your own words"></textarea><button class="mic-button" type="button" data-dictate-target="arrivalConcern" aria-label="Speak this answer" data-i18n-aria-label="speakAnswer">🎙</button></div></label>
         <label><span data-i18n="arrivalStarted">When did it begin or change?</span><div class="dictation-field"><textarea id="arrivalStarted" rows="2" data-i18n-placeholder="arrivalStartedPlaceholder" placeholder="For example: yesterday evening; suddenly 30 minutes ago"></textarea><button class="mic-button" type="button" data-dictate-target="arrivalStarted" aria-label="Speak this answer" data-i18n-aria-label="speakAnswer">🎙</button></div></label>
         <label><span data-i18n="arrivalMedications">Important medicines, allergies, or conditions</span><div class="dictation-field"><textarea id="arrivalMedications" rows="2" data-i18n-placeholder="arrivalMedicationsPlaceholder" placeholder="Include only what you want the care team to know"></textarea><button class="mic-button" type="button" data-dictate-target="arrivalMedications" aria-label="Speak this answer" data-i18n-aria-label="speakAnswer">🎙</button></div></label>
@@ -250,10 +255,15 @@
         <button id="buildArrivalBrief" class="primary" value="" type="button" data-i18n="buildArrivalBrief">Create my brief</button>
       </div>
       <section id="arrivalResult" class="arrival-result" hidden aria-live="polite">
+        <div id="arrivalEmergencyNotice" class="arrival-emergency" hidden><strong data-i18n="arrivalEmergencyTitle">Possible emergency warning</strong><span data-i18n="arrivalEmergencyBody">Do not wait for or rely on this brief. Call 911 now if there may be an immediate threat to life or safety.</span><a href="tel:911" data-i18n="call911">Call 911</a></div>
         <div class="arrival-result-heading"><div><span data-i18n="patientReviewed">PATIENT-REPORTED · REVIEW BEFORE SHARING</span><h3 data-i18n="arrivalBriefTitle">Pre-arrival brief</h3></div><span class="not-diagnosis" data-i18n="notDiagnosis">Not a diagnosis</span></div>
-        <div id="arrivalBriefText" class="arrival-brief-text"></div>
+        <div class="arrival-brief-grid">
+          <section><h4 data-i18n="patientLanguageBrief">Patient-language brief</h4><div id="arrivalBriefText" class="arrival-brief-text"></div></section>
+          <section><h4 data-i18n="englishHandoffBrief">Standardized English handoff</h4><div id="arrivalEnglishBrief" class="arrival-brief-text english-handoff"></div></section>
+        </div>
+        <p class="translation-boundary" data-i18n="translationBoundary">NearSignal translates only the selected structured fields. The patient's free-text words are preserved exactly and clearly marked—not automatically translated or interpreted.</p>
         <p class="arrival-disclaimer" data-i18n="arrivalDisclaimer">This summary contains information reported by a patient or caregiver. It has not been medically verified. In an emergency, call 911 rather than relying on this brief.</p>
-        <div class="arrival-actions"><button id="copyArrivalBrief" class="primary" type="button" value="" data-i18n="copyBrief">Copy brief</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button></div>
+        <div class="arrival-actions"><button id="copyArrivalBrief" class="primary" type="button" value="" data-i18n="copyBrief">Copy both briefs</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="listenEnglishBrief" class="secondary" type="button" value="" data-i18n="listenEnglishBrief">🔊 Listen in English</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button></div>
         <p id="arrivalActionStatus" class="dictation-status" aria-live="polite"></p>
         <div class="partner-handoff"><b data-i18n="partnerHandoffTitle">Future partner pathway</b><span data-i18n="partnerHandoffBody">With a health-system agreement, consent, security, identity matching, and EHR integration, a reviewed brief could be delivered to the receiving care team. Direct transmission is not active in this pilot.</span></div>
       </section>
@@ -291,6 +301,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=32"></script>
+  <script type="module" src="app.js?v=33"></script>
 </body>
 </html>
