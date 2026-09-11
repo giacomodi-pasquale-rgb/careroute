@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=13';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=14';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -335,6 +335,7 @@ const englishArrivalValues = {
 let activeRecognition = null;
 
 function openArrivalBrief() {
+  setCheckinMode(false);
   arrivalIntake.hidden = false;
   arrivalResult.hidden = true;
   document.getElementById('arrivalActionStatus').textContent = '';
@@ -348,6 +349,12 @@ function openArrivalBrief() {
   }
   arrivalDialog.setAttribute('open', '');
   arrivalDialog.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function setCheckinMode(enabled) {
+  arrivalDialog.classList.toggle('checkin-view', enabled);
+  document.getElementById('checkinInstruction').hidden = !enabled;
+  document.getElementById('exitCheckinMode').hidden = !enabled;
 }
 
 function closeArrivalBrief() {
@@ -403,9 +410,18 @@ document.getElementById('openArrivalBrief').addEventListener('click', openArriva
 document.getElementById('openArrivalBriefHero').addEventListener('click', openArrivalBrief);
 document.getElementById('buildArrivalBrief').addEventListener('click', buildArrivalBrief);
 document.getElementById('editArrivalBrief').addEventListener('click', () => {
+  setCheckinMode(false);
   arrivalResult.hidden = true;
   arrivalIntake.hidden = false;
   arrivalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.getElementById('showAtCheckIn').addEventListener('click', () => {
+  setCheckinMode(true);
+  arrivalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.getElementById('exitCheckinMode').addEventListener('click', () => {
+  setCheckinMode(false);
+  arrivalResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 document.getElementById('useBriefForSearch').addEventListener('click', () => {
   const patientValue = document.getElementById('arrivalPatient').value;

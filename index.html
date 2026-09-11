@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
   <link rel="stylesheet" href="access.css?v=6">
-  <link rel="stylesheet" href="brand.css?v=2">
+  <link rel="stylesheet" href="brand.css?v=3">
 </head>
 <body>
   <header class="topbar">
@@ -256,6 +256,7 @@
         <button id="buildArrivalBrief" class="primary" value="" type="button" data-i18n="buildArrivalBrief">Create my brief</button>
       </div>
       <section id="arrivalResult" class="arrival-result" hidden aria-live="polite">
+        <div id="checkinInstruction" class="checkin-instruction" hidden><strong data-i18n="checkinTitle">Show this screen at check-in</strong><span data-i18n="checkinBody">Give your phone to registration or triage staff, or hold it where they can read it. The English handoff appears beside your language.</span><small data-i18n="checkinNoSend">Nothing has been sent to the hospital. You control this screen, and the care team must confirm the information with you.</small></div>
         <div id="arrivalEmergencyNotice" class="arrival-emergency" hidden><strong data-i18n="arrivalEmergencyTitle">Possible emergency warning</strong><span data-i18n="arrivalEmergencyBody">Do not wait for or rely on this brief. Call 911 now if there may be an immediate threat to life or safety.</span><a href="tel:911" data-i18n="call911">Call 911</a></div>
         <div class="arrival-result-heading"><div><span data-i18n="patientReviewed">PATIENT-REPORTED · REVIEW BEFORE SHARING</span><h3 data-i18n="arrivalBriefTitle">Pre-arrival brief</h3></div><span class="not-diagnosis" data-i18n="notDiagnosis">Not a diagnosis</span></div>
         <div class="arrival-brief-grid">
@@ -264,7 +265,7 @@
         </div>
         <p class="translation-boundary" data-i18n="translationBoundary">NearSignal translates only the selected structured fields. The patient's free-text words are preserved exactly and clearly marked—not automatically translated or interpreted.</p>
         <p class="arrival-disclaimer" data-i18n="arrivalDisclaimer">This summary contains information reported by a patient or caregiver. It has not been medically verified. In an emergency, call 911 rather than relying on this brief.</p>
-        <div class="arrival-actions"><button id="useBriefForSearch" class="primary" type="button" value="" data-i18n="useBriefForSearch">Find care using this brief</button><button id="copyArrivalBrief" class="secondary" type="button" value="" data-i18n="copyBrief">Copy both briefs</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="listenEnglishBrief" class="secondary" type="button" value="" data-i18n="listenEnglishBrief">🔊 Listen in English</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button></div>
+        <div class="arrival-actions"><button id="useBriefForSearch" class="primary" type="button" value="" data-i18n="useBriefForSearch">Find care using this brief</button><button id="showAtCheckIn" class="primary checkin-button" type="button" value="" data-i18n="showAtCheckIn">Show at check-in</button><button id="copyArrivalBrief" class="secondary" type="button" value="" data-i18n="copyBrief">Copy both briefs</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="listenEnglishBrief" class="secondary" type="button" value="" data-i18n="listenEnglishBrief">🔊 Listen in English</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button><button id="exitCheckinMode" class="secondary exit-checkin" type="button" value="" hidden data-i18n="exitCheckin">Back to brief options</button></div>
         <p id="arrivalActionStatus" class="dictation-status" aria-live="polite"></p>
         <div class="partner-handoff"><b data-i18n="partnerHandoffTitle">Future partner pathway</b><span data-i18n="partnerHandoffBody">With a health-system agreement, consent, security, identity matching, and EHR integration, a reviewed brief could be delivered to the receiving care team. Direct transmission is not active in this pilot.</span></div>
       </section>
@@ -302,6 +303,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=34"></script>
+  <script type="module" src="app.js?v=35"></script>
 </body>
 </html>
