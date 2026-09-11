@@ -1,5 +1,6 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=14';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=15';
+import { translateBriefTextToEnglish } from './brief-translation.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -385,17 +386,24 @@ function buildArrivalBrief() {
     [t('briefStarted'), started],
     [t('briefMedications'), medications]
   ].map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('');
+  const language = currentLanguage();
   const originalConcern = concern || 'Not provided';
   const originalStarted = document.getElementById('arrivalStarted').value.trim() || 'Not provided';
   const originalMedications = document.getElementById('arrivalMedications').value.trim() || 'Not provided';
+  const englishConcern = translateBriefTextToEnglish(originalConcern, language);
+  const englishStarted = translateBriefTextToEnglish(originalStarted, language);
+  const englishMedications = translateBriefTextToEnglish(originalMedications, language);
+  const englishValue = (result, original) => language === 'en'
+    ? result.text
+    : result.translated ? `${result.text} (review with patient)` : `${original} (original ${language.toUpperCase()} words — interpreter review needed)`;
   document.getElementById('arrivalEnglishBrief').innerHTML = [
     ['Patient', englishArrivalValues.patient[patientValue]],
     ['Concern category', englishArrivalValues.category[categoryValue]],
     ['Patient-reported severity', englishArrivalValues.severity[severityValue]],
     ['Immediate warning signs reported', englishArrivalValues.warning[warningValue]],
-    ["Patient's original words (not automatically translated)", originalConcern],
-    ['Onset/change — original words (not automatically translated)', originalStarted],
-    ['Medicines/allergies/conditions — original words (not automatically translated)', originalMedications]
+    ['Main concern — draft English rendering', englishValue(englishConcern, originalConcern)],
+    ['Onset/change — draft English rendering', englishValue(englishStarted, originalStarted)],
+    ['Medicines/allergies/conditions — draft English rendering', englishValue(englishMedications, originalMedications)]
   ].map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('');
   const emergencyNotice = document.getElementById('arrivalEmergencyNotice');
   emergencyNotice.hidden = warningValue === 'no';

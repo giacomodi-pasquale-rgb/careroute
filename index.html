@@ -263,7 +263,7 @@
           <section><h4 data-i18n="patientLanguageBrief">Patient-language brief</h4><div id="arrivalBriefText" class="arrival-brief-text"></div></section>
           <section><h4 data-i18n="englishHandoffBrief">Standardized English handoff</h4><div id="arrivalEnglishBrief" class="arrival-brief-text english-handoff"></div></section>
         </div>
-        <p class="translation-boundary" data-i18n="translationBoundary">NearSignal translates only the selected structured fields. The patient's free-text words are preserved exactly and clearly marked—not automatically translated or interpreted.</p>
+        <p class="translation-boundary" data-i18n="translationBoundary">NearSignal creates a local draft English rendering for common terms and preserves the patient's original words when it is unsure. Staff should review it with the patient and use a qualified interpreter when needed.</p>
         <p class="arrival-disclaimer" data-i18n="arrivalDisclaimer">This summary contains information reported by a patient or caregiver. It has not been medically verified. In an emergency, call 911 rather than relying on this brief.</p>
         <div class="arrival-actions"><button id="useBriefForSearch" class="primary" type="button" value="" data-i18n="useBriefForSearch">Find care using this brief</button><button id="showAtCheckIn" class="primary checkin-button" type="button" value="" data-i18n="showAtCheckIn">Show at check-in</button><button id="copyArrivalBrief" class="secondary" type="button" value="" data-i18n="copyBrief">Copy both briefs</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="listenEnglishBrief" class="secondary" type="button" value="" data-i18n="listenEnglishBrief">🔊 Listen in English</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button><button id="exitCheckinMode" class="secondary exit-checkin" type="button" value="" hidden data-i18n="exitCheckin">Back to brief options</button></div>
         <p id="arrivalActionStatus" class="dictation-status" aria-live="polite"></p>
@@ -303,6 +303,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=35"></script>
+  <script type="module" src="app.js?v=36"></script>
 </body>
 </html>

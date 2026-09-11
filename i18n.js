@@ -208,6 +208,11 @@ Object.assign(copy.ht, {
   arrivalCategory:'Ki kalite pwoblèm sa a ye?', categoryIllness:'Maladi oswa lafyèv', categoryBreathing:'Pwoblèm pou respire', categoryInjury:'Blesi', categoryWound:'Koupe oswa blesi ouvè', categoryStomach:'Sentòm lestomak', categoryMental:'Sante mantal oswa konpòtman', categoryOther:'Lòt oswa mwen pa sèten', arrivalSeverity:'Ki jan li sanble grav?', severityMild:'Lejè', severityModerate:'Mwayen', severitySevere:'Grav', severityUnsure:'Mwen pa sèten', arrivalWarning:'Èske gen siy avètisman imedya?', warningNo:'Non', warningUnsure:'Mwen pa sèten', warningYes:'Wi', warningHelper:'Pa egzanp: gwo difikilte pou respire, po ble oswa gri, moun nan pa reponn, san k ap koule san kontwòl, kriz, oswa danje imedya pou blese tèt li.', briefCategory:'Kategori pwoblèm', briefSeverity:'Gravite pasyan an rapòte', briefWarning:'Siy avètisman imedya ki rapòte', patientLanguageBrief:'Rezime nan lang pasyan an', englishHandoffBrief:'Rezime estanda an anglè', translationBoundary:'NearSignal tradui sèlman chan estriktire moun nan chwazi yo. Nou kenbe pawòl lib pasyan an egzakteman jan li te di yo epi nou make yo klèman; nou pa tradui ni entèprete yo otomatikman.', arrivalEmergencyTitle:'Siy posib yon ijans', arrivalEmergencyBody:'Pa tann ni konte sou rezime sa a. Rele 911 kounye a si ka gen yon menas imedya pou lavi oswa sekirite.', listenEnglishBrief:'🔊 Koute an anglè', readingEnglishBrief:'N ap li rezime anglè a awotvwa…', copyBrief:'Kopye toude rezime yo', useBriefForSearch:'Chèche swen avèk rezime sa a', briefAppliedNotice:'Rezime pasyan an rapòte a ranpli rechèch sa a davans. Konfime chak repons anvan ou wè opsyon swen yo.', showAtCheckIn:'Montre lè w ap anrejistre', checkinTitle:'Montre ekran sa a lè w ap anrejistre', checkinBody:'Bay anplwaye enskripsyon oswa triyaj yo telefòn ou, oswa kenbe li kote yo ka li. Rezime anglè a parèt bò kote lang ou.', checkinNoSend:'Pa gen anyen ki te voye bay lopital la. Se ou ki kontwole ekran sa a, epi ekip swen an dwe konfime enfòmasyon yo avèk ou.', exitCheckin:'Retounen nan opsyon rezime yo'
 });
 
+Object.assign(copy.en, { translationBoundary:"NearSignal creates a local draft English rendering for common terms and preserves the patient's original words when it is unsure. Staff should review it with the patient and use a qualified interpreter when needed." });
+Object.assign(copy.es, { translationBoundary:'NearSignal crea localmente un borrador en inglés para términos comunes y conserva las palabras originales cuando no está seguro. El personal debe revisarlo con el paciente y usar un intérprete calificado cuando sea necesario.' });
+Object.assign(copy.pt, { translationBoundary:'O NearSignal cria localmente uma versão preliminar em inglês para termos comuns e preserva as palavras originais quando não tem certeza. A equipe deve revisá-la com o paciente e usar um intérprete qualificado quando necessário.' });
+Object.assign(copy.ht, { translationBoundary:'NearSignal kreye yon premye vèsyon anglè lokalman pou mo komen epi li kenbe pawòl orijinal pasyan an lè li pa sèten. Anplwaye yo dwe revize li ak pasyan an epi sèvi ak yon entèprèt kalifye lè sa nesesè.' });
+
 let current = 'en';
 
 export function t(key) { return copy[current]?.[key] || copy.en[key] || key; }
@@ -221,7 +226,11 @@ export function missingTranslationKeys() {
 export function setLanguage(language) {
   current = copy[language] ? language : 'en';
   document.documentElement.lang = current;
-  document.querySelectorAll('[data-i18n]').forEach((element) => { element.innerHTML = t(element.dataset.i18n); });
+  document.querySelectorAll('[data-i18n]').forEach((element) => {
+    const translated = t(element.dataset.i18n);
+    if (element.tagName === 'OPTION') element.textContent = translated.replace(/<[^>]*>/g, '');
+    else element.innerHTML = translated;
+  });
   document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => { element.setAttribute('aria-label', t(element.dataset.i18nAriaLabel)); });
   document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => { element.setAttribute('placeholder', t(element.dataset.i18nPlaceholder)); });
   localStorage.setItem('careroute-language', current);
