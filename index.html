@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="install.css">
   <link rel="stylesheet" href="access.css?v=6">
   <link rel="stylesheet" href="brand.css?v=3">
+  <link rel="stylesheet" href="insights.css?v=1">
 </head>
 <body>
   <header class="topbar">
@@ -146,9 +147,12 @@
       </div>
       <div id="emergencyBanner" class="emergency" hidden data-i18n="emergencyBanner"><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
       <div id="demoBanner" class="demo-banner" hidden data-i18n="demoBanner"><strong>Demo scenario:</strong> A parent in Newark is looking for non-emergency care for a 5-year-old with a fever, without insurance, and needs an affordable option.</div>
+      <button id="demoNext" class="demo-next primary" type="button" hidden data-i18n="demoNext">Continue the story: create the bilingual arrival brief →</button>
       <div id="journeySummary" class="journey-summary"></div>
       <p id="routingNote" class="data-note"></p>
       <div id="cards" class="cards"></div>
+      <details class="before-leave"><summary data-i18n="beforeLeaveTitle">Before you leave: protect access and cost</summary><div><p data-i18n="beforeLeaveIntro">For non-emergency care, use this checklist before traveling. Do not delay emergency care for these steps.</p><label><input type="checkbox"> <span data-i18n="checkService">Call and verify the exact service and age eligibility.</span></label><label><input type="checkbox"> <span data-i18n="checkNetwork">Ask whether both the facility and treating clinicians are in network.</span></label><label><input type="checkbox"> <span data-i18n="checkEstimate">Request an estimate or Good Faith Estimate when applicable.</span></label><label><input type="checkbox"> <span data-i18n="checkRecord">Write down the representative’s name, date, and confirmation number.</span></label></div></details>
+      <p id="learningLoop" class="learning-loop"></p>
       <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> NearSignal shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
       <details><summary data-i18n="orderingTitle">How NearSignal orders these options</summary><p data-i18n="orderingBody">Safety gates come first: emergency selections show only verified hospital emergency departments appropriate for the selected adult or child population. Age and published capability limits are applied next. Eligible options are then ordered by care-setting fit, access needs, and, when available, current driving duration. Unsupported wait, insurance, and cost claims are excluded.</p></details>
       <details><summary data-i18n="verifiedTitle">What “verified” means</summary><p data-i18n="verifiedBody">Facility identity, address, care setting, adult/child population, phone, displayed hours, listed capabilities, and access claims are tied to provider or government sources. Information can change—call before non-emergency travel.</p></details>
@@ -268,12 +272,24 @@
           <section><h4 data-i18n="patientLanguageBrief">Patient-language brief</h4><div id="arrivalBriefText" class="arrival-brief-text"></div></section>
           <section><h4 data-i18n="englishHandoffBrief">Standardized English handoff</h4><div id="arrivalEnglishBrief" class="arrival-brief-text english-handoff"></div></section>
         </div>
+        <div class="arrival-code"><span data-i18n="arrivalCodeLabel">Patient-controlled arrival code</span><strong id="arrivalCode">NS------</strong><small data-i18n="arrivalCodeHelp">Pilot demonstration only. This code identifies the brief on this device; it does not retrieve hospital records or mean the brief was transmitted.</small></div>
         <p class="translation-boundary" data-i18n="translationBoundary">NearSignal creates a local draft English rendering for common terms and preserves the patient's original words when it is unsure. Staff should review it with the patient and use a qualified interpreter when needed.</p>
         <p class="arrival-disclaimer" data-i18n="arrivalDisclaimer">This summary contains information reported by a patient or caregiver. It has not been medically verified. In an emergency, call 911 rather than relying on this brief.</p>
         <div class="arrival-actions"><button id="useBriefForSearch" class="primary" type="button" value="" data-i18n="useBriefForSearch">Find care using this brief</button><button id="showAtCheckIn" class="primary checkin-button" type="button" value="" data-i18n="showAtCheckIn">Show at check-in</button><button id="copyArrivalBrief" class="secondary" type="button" value="" data-i18n="copyBrief">Copy both briefs</button><button id="listenArrivalBrief" class="secondary" type="button" value="" data-i18n="listenBrief">🔊 Listen</button><button id="listenEnglishBrief" class="secondary" type="button" value="" data-i18n="listenEnglishBrief">🔊 Listen in English</button><button id="editArrivalBrief" class="secondary" type="button" value="" data-i18n="editBrief">Edit</button><button id="exitCheckinMode" class="secondary exit-checkin" type="button" value="" hidden data-i18n="exitCheckin">Back to brief options</button></div>
         <p id="arrivalActionStatus" class="dictation-status" aria-live="polite"></p>
         <div class="partner-handoff"><b data-i18n="partnerHandoffTitle">Future partner pathway</b><span data-i18n="partnerHandoffBody">With a health-system agreement, consent, security, identity matching, and EHR integration, a reviewed brief could be delivered to the receiving care team. Direct transmission is not active in this pilot.</span></div>
       </section>
+    </form>
+  </dialog>
+
+  <dialog id="outcomeDialog" class="outcome-dialog" aria-labelledby="outcome-title">
+    <form method="dialog" class="outcome-shell">
+      <button class="bill-close" value="close" aria-label="Close" data-i18n-aria-label="close">×</button>
+      <p class="eyebrow" data-i18n="outcomeEyebrow">NearSignal access follow-up</p><h2 id="outcome-title" data-i18n="outcomeTitle">Did this option work for you?</h2>
+      <p data-i18n="outcomePrivacy">This proof of concept saves the answer only on this device and does not collect names or medical details.</p><input id="outcomeFacility" type="hidden">
+      <fieldset><legend data-i18n="outcomeReached">Were you able to receive care?</legend><div class="outcome-choices"><label><input type="radio" name="outcomeResult" value="yes" required><span data-i18n="outcomeYes">Yes</span></label><label><input type="radio" name="outcomeResult" value="no"><span data-i18n="outcomeNo">No</span></label><label><input type="radio" name="outcomeResult" value="not-yet"><span data-i18n="outcomeNotYet">Not yet</span></label></div></fieldset>
+      <label><span data-i18n="barrierLabel">What got in the way, if anything?</span><select id="outcomeBarrier"><option value="none" data-i18n="barrierNone">Nothing</option><option value="closed" data-i18n="barrierClosed">Closed or unavailable</option><option value="service" data-i18n="barrierService">Wrong age or service</option><option value="insurance" data-i18n="barrierInsurance">Insurance problem</option><option value="cost" data-i18n="barrierCost">Cost</option><option value="language" data-i18n="barrierLanguage">Language</option><option value="transport" data-i18n="barrierTransport">Transportation</option><option value="wait" data-i18n="barrierWait">Long wait</option><option value="redirected" data-i18n="barrierRedirected">Sent somewhere else</option><option value="other" data-i18n="barrierOther">Other</option></select></label>
+      <button id="saveOutcome" class="primary" type="button" value="" data-i18n="saveOutcome">Save this follow-up</button><p id="outcomeStatus" class="status" aria-live="polite"></p>
     </form>
   </dialog>
 
@@ -304,10 +320,10 @@
     </form>
   </dialog>
 
-  <footer><span>NearSignal v0.9 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/nearsignal" data-i18n="openSource">Open-source pilot</a></span></footer>
+  <footer><span>NearSignal v1.0 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/nearsignal" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=36"></script>
+  <script type="module" src="app.js?v=37"></script>
 </body>
 </html>

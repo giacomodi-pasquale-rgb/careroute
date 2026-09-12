@@ -1,6 +1,7 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
 import { currentLanguage, format, initLanguage, t } from './i18n.js?v=15';
 import { translateBriefTextToEnglish } from './brief-translation.js?v=1';
+import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -334,8 +335,10 @@ const englishArrivalValues = {
   warning: { no: 'No', unsure: 'Not sure', yes: 'Yes' }
 };
 let activeRecognition = null;
+let currentArrivalCode = '';
 
 function openArrivalBrief() {
+  currentArrivalCode = '';
   setCheckinMode(false);
   arrivalIntake.hidden = false;
   arrivalResult.hidden = true;
@@ -374,6 +377,8 @@ function buildArrivalBrief() {
   const categoryValue = document.getElementById('arrivalCategory').value;
   const severityValue = document.getElementById('arrivalSeverity').value;
   const warningValue = document.getElementById('arrivalWarning').value;
+  if (!currentArrivalCode) currentArrivalCode = createArrivalCode();
+  document.getElementById('arrivalCode').textContent = currentArrivalCode;
   const patient = patientValue === 'child' ? t('arrivalChild') : t('arrivalAdult');
   const started = document.getElementById('arrivalStarted').value.trim() || t('notProvided');
   const medications = document.getElementById('arrivalMedications').value.trim() || t('notProvided');
@@ -616,17 +621,26 @@ function facilityCard(facility, index, inputs) {
       : facility.type === 'community-health-center'
         ? t('communityReason')
       : t('hospitalBackupReason');
+  const evidence = accessEvidence(facility, inputs, route, open);
+  const evidenceLabels = {
+    appropriateSetting: t('evidenceSetting'), verifiedCapability: t('evidenceCapability'), ageFit: t('evidenceAge'), openStatus: t('evidenceOpen'), travel: t('evidenceTravel'), uninsuredAccess: t('evidenceUninsured'), affordability: t('evidenceAffordable'), languageSupport: t('evidenceLanguage'),
+    ageLimit: t('verifyAge'), hours: t('verifyHours'), insurance: t('verifyInsurance'), cost: t('verifyCost')
+  };
+  const resolvedItems = evidence.resolved.map((key) => `<li>✓ ${escapeHtml(evidenceLabels[key])}</li>`).join('');
+  const verifyItems = evidence.verify.map((key) => `<li>${escapeHtml(evidenceLabels[key])}</li>`).join('');
   return `<article class="card ${index === 0 ? 'best' : ''}">
     <div class="card-top"><div><div class="rank">${route ? (index === 0 ? t('closestMatch') : format('option',{n:index+1})) : format('verifiedOption',{n:index+1})}</div><h3>${escapeHtml(facility.name)}</h3><p class="facility-type">${escapeHtml(typeLabel)} · ${escapeHtml(facility.city)}</p></div>${status}</div>
     <div class="metrics">${routeText}${ageText}${operationalStatus}${accessBadges}${facility.access.uninsuredWelcome ? '' : `<span class="metric">${t('insuranceVerify')}</span>`}</div>
     <p class="reason"><strong>${t('whyThisFits')}</strong> ${reason}</p>
+    <div class="access-confidence"><div><strong>${t('accessConfidence')}</strong><span class="confidence-level ${evidence.level}">${t(`confidence${evidence.level[0].toUpperCase()}${evidence.level.slice(1)}`)}</span></div><span class="confidence-count">${format('barriersResolved', { resolved: evidence.resolved.length, total: evidence.resolved.length + evidence.verify.length })}</span></div>
+    <details class="why-breakdown"><summary>${t('whyIncluded')}</summary><div class="why-columns"><div><b>${t('evidenceResolved')}</b><ul>${resolvedItems}</ul></div><div><b>${t('stillVerify')}</b><ul>${verifyItems || `<li>${t('nothingAdditional')}</li>`}</ul></div></div></details>
     <ul class="facts">${facts}</ul>
     <p class="hours"><strong>${t('publishedHours')}</strong> ${escapeHtml(hoursLabel)}</p>
     ${facility.access.note ? `<p class="access-note"><strong>${t('costAccess')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.access.note : t('accessNote'))} <a class="text-link" href="${facility.access.sourceUrl}" target="_blank" rel="noopener">${t('officialSource')}</a></p>` : ''}
     ${route ? `<p class="route-source"><strong>${t('routeSource')}</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? t('trafficYes') : t('trafficNo')} · ${t('calculated')} ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
     <p class="verification-line">✓ ${format('verificationReviewed', { date: new Date(`${facility.verification.reviewedAt}T12:00:00`).toLocaleDateString(currentLanguage(), { month: 'short', day: 'numeric', year: 'numeric' }) })}</p>
     <p class="quality"><strong>${t('quality')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.quality.note : t('qualityUnavailable'))}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">${t('njReport')}</a>` : ''}</p>
-    <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a></div>
+    <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a><button class="outcome-button" type="button" data-outcome-facility="${escapeHtml(facility.id)}">${t('didItWork')}</button></div>
   </article>`;
 }
 
@@ -650,6 +664,7 @@ async function renderResults() {
   document.getElementById('resultsTitle').textContent = inputs.emergency ? t(inputs.patientGroup === 'adult' ? 'adultEDs' : 'pediatricEDs') : t('concernOptions');
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
   document.getElementById('demoBanner').hidden = !state.demoScenario;
+  document.getElementById('demoNext').hidden = !state.demoScenario;
   document.getElementById('journeySummary').innerHTML = journeySummary(inputs);
   document.getElementById('routingNote').textContent = routed
     ? t('routingReady')
@@ -663,9 +678,48 @@ async function renderResults() {
   document.getElementById('cards').innerHTML = eligible.length
     ? `${resultControls}${visible.map((facility, index) => facilityCard(facility, index, inputs)).join('')}`
     : `<div class="empty"><h3>${t('noMatchTitle')}</h3><p>${t('noMatchBody')}</p></div>`;
+  document.getElementById('learningLoop').textContent = format('learningLoop', { n: outcomeCount(localStorage) });
   document.getElementById('toggleAllResults')?.addEventListener('click', async () => {
     state.showAllResults = !state.showAllResults;
     await renderResults();
     document.getElementById('cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
+
+const outcomeDialog = document.getElementById('outcomeDialog');
+document.getElementById('cards').addEventListener('click', (event) => {
+  const button = event.target.closest('[data-outcome-facility]');
+  if (!button) return;
+  document.getElementById('outcomeFacility').value = button.dataset.outcomeFacility;
+  document.querySelectorAll('[name=outcomeResult]').forEach((input) => { input.checked = false; });
+  document.getElementById('outcomeBarrier').value = 'none';
+  document.getElementById('outcomeStatus').textContent = '';
+  if (typeof outcomeDialog.showModal === 'function') outcomeDialog.showModal(); else outcomeDialog.setAttribute('open', '');
+});
+
+document.getElementById('saveOutcome').addEventListener('click', () => {
+  const result = document.querySelector('[name=outcomeResult]:checked');
+  const status = document.getElementById('outcomeStatus');
+  if (!result) { status.textContent = t('chooseOutcome'); return; }
+  const count = saveOutcome(localStorage, {
+    facilityId: document.getElementById('outcomeFacility').value,
+    result: result.value,
+    barrier: document.getElementById('outcomeBarrier').value,
+    createdAt: new Date().toISOString()
+  });
+  status.textContent = t('outcomeSaved');
+  document.getElementById('learningLoop').textContent = format('learningLoop', { n: count });
+});
+
+document.getElementById('demoNext').addEventListener('click', () => {
+  document.getElementById('languageSelect').value = 'es';
+  document.getElementById('languageSelect').dispatchEvent(new Event('change'));
+  openArrivalBrief();
+  document.getElementById('arrivalPatient').value = 'child';
+  document.getElementById('arrivalCategory').value = 'illness';
+  document.getElementById('arrivalSeverity').value = 'moderate';
+  document.getElementById('arrivalWarning').value = 'no';
+  document.getElementById('arrivalConcern').value = 'Mi hijo tiene fiebre y tos';
+  document.getElementById('arrivalStarted').value = 'Desde ayer por la noche';
+  document.getElementById('arrivalMedications').value = 'Alérgico a la penicilina';
+});
