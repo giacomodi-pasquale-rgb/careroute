@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=17';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=18';
 import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 import { buildDemoConfirmation, nextAlternative } from './verified-arrival.js?v=1';
@@ -23,6 +23,7 @@ const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
 if (evidenceNetwork) {
   const number = new Intl.NumberFormat().format;
   document.getElementById('networkOfficial').textContent = number(evidenceNetwork.tiers.officiallyIndexed.total);
+  document.getElementById('networkOfficialHero').textContent = number(evidenceNetwork.tiers.officiallyIndexed.total);
   document.getElementById('networkHospitals').textContent = number(evidenceNetwork.tiers.officiallyIndexed.hospitalCandidates);
   document.getElementById('networkHealthCenters').textContent = number(evidenceNetwork.tiers.officiallyIndexed.affordableHealthCenterCandidates);
   document.getElementById('networkReady').textContent = number(evidenceNetwork.tiers.decisionReady.total);

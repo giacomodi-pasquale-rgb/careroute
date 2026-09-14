@@ -33,7 +33,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="NearSignal home"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-word">NearSignal</span></a>
-    <div class="topbar-actions"><a href="command-center.html" class="command-link" data-i18n="commandCenterNav">Partner view</a><button id="openArrivalBrief" class="brief-help-link" type="button" data-i18n="arrivalBriefNav">Arrival brief</button><button id="openMentalHelp" class="mental-help-link" type="button" data-i18n="mentalHelpNav">Mental health now</button><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
+    <div class="topbar-actions"><a href="command-center.html" class="command-link" data-i18n="commandCenterNav">Partner view</a><button id="openArrivalBrief" class="brief-help-link" type="button" data-i18n="arrivalBriefNav">Arrival brief</button><button id="openMentalHelp" class="mental-help-link" type="button" data-i18n="mentalHelpNav">Mental health now</button><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">National discovery pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
@@ -54,8 +54,8 @@
       <button id="openBillHelpHero" class="bill-protection-card" type="button"><span class="bill-icon" aria-hidden="true">$</span><span><b data-i18n="billCardTitle">Unexpected medical bill?</b><small data-i18n="billCardBody">Build a protection plan before a deadline passes.</small></span><em data-i18n="billCardAction">Start →</em></button>
       <button id="openMentalHelpHero" class="mental-support-card" type="button"><span class="mental-icon" aria-hidden="true">♥</span><span><b data-i18n="mentalCardTitle">Mental health support now?</b><small data-i18n="mentalCardBody">Choose the safest next step for an adult or young person.</small></span><em data-i18n="mentalCardAction">Get support →</em></button>
       <div class="proof-stats" aria-label="Pilot at a glance" data-i18n-aria-label="proofLabel">
-        <div><strong id="facilityCount">99</strong><span data-i18n="statFacilities">verified care locations</span></div>
-        <div><strong>9</strong><span data-i18n="statStates">Northeast states</span></div>
+        <div><strong id="networkOfficialHero">22,292</strong><span data-i18n="statIndexed">official locations nationally indexed</span></div>
+        <div><strong id="facilityCount">99</strong><span data-i18n="statFacilities">decision-ready locations</span></div>
         <div><strong>4</strong><span data-i18n="statLanguages">complete languages</span></div>
       </div>
       <div class="signal-path" aria-label="NearSignal access brief" data-i18n-aria-label="decisionPathLabel"><span><b>WHO</b><em data-i18n="decisionWho">Adult or child</em></span><span><b>SAFETY</b><em data-i18n="decisionSetting">Urgent care or ER</em></span><span><b>ACCESS</b><em data-i18n="decisionReality">Nearby realistic options</em></span><span><b>EVIDENCE</b><em>Source-linked facts</em></span></div>
@@ -79,9 +79,7 @@
             <label for="stateSelect"><span data-i18n="stateQuestion">Where are you located?</span></label>
             <select id="stateSelect">
               <option value="" data-i18n="allStates">All United States</option>
-              <option value="CT" data-i18n="stateCT">Connecticut</option><option value="ME" data-i18n="stateME">Maine</option><option value="MA" data-i18n="stateMA">Massachusetts</option>
-              <option value="NH" data-i18n="stateNH">New Hampshire</option><option value="NJ" data-i18n="stateNJ">New Jersey</option><option value="NY" data-i18n="stateNY">New York</option>
-              <option value="PA" data-i18n="statePA">Pennsylvania</option><option value="RI" data-i18n="stateRI">Rhode Island</option><option value="VT" data-i18n="stateVT">Vermont</option>
+              <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AS">American Samoa</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="GU">Guam</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="FM">Micronesia</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="MP">Northern Mariana Islands</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VI">U.S. Virgin Islands</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="MH">Marshall Islands</option><option value="PW">Palau</option>
             </select>
             <p class="helper" data-i18n="stateHelper">Optional. Choose a state to show only verified options there.</p>
             <div class="zip-row">
@@ -144,7 +142,7 @@
 
     <section id="results" class="results" hidden aria-live="polite">
       <div class="results-head">
-        <div><p class="eyebrow" data-i18n="verifiedNetwork">Verified pilot network</p><h2 id="resultsTitle" data-i18n="careOptions">Care options</h2></div>
+        <div><p class="eyebrow" data-i18n="verifiedNetwork">Decision-ready recommendations</p><h2 id="resultsTitle" data-i18n="careOptions">Care options</h2></div>
         <button id="startOver" class="secondary" data-i18n="startOver">Start over</button>
       </div>
       <div id="emergencyBanner" class="emergency" hidden data-i18n="emergencyBanner"><strong>Emergency route:</strong> If there is an immediate threat to life, call <a href="tel:911">911</a>. Do not delay emergency care to compare this list.</div>
@@ -363,6 +361,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=45"></script>
+  <script type="module" src="app.js?v=46"></script>
 </body>
 </html>
