@@ -1,5 +1,5 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
-import { currentLanguage, format, initLanguage, t } from './i18n.js?v=16';
+import { currentLanguage, format, initLanguage, t } from './i18n.js?v=17';
 import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 import { buildDemoConfirmation, nextAlternative } from './verified-arrival.js?v=1';
@@ -8,7 +8,7 @@ import { discoverySource, loadDiscoveryState, rankDiscoveryRecords } from './nat
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, locationSource: null, locationZip: null, routes: new Map(), showAllResults: false, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
+const state = { step: 1, location: null, locationSource: null, locationZip: null, routes: new Map(), showAllResults: false, discoveryLimit: 12, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
 const MAX_SEARCH_MILES = 100;
 const NATIONAL_PLACES=[['AL','Alabama'],['AK','Alaska'],['AS','American Samoa'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['GU','Guam'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['FM','Micronesia'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['MP','Northern Mariana Islands'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['PR','Puerto Rico'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VI','U.S. Virgin Islands'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],['MH','Marshall Islands'],['PW','Palau']];
 const NATIONAL_CODES=new Set(NATIONAL_PLACES.map(([code])=>code));
@@ -184,6 +184,7 @@ document.getElementById('tryDemo').addEventListener('click', () => {
 
 async function showCareOptions(button) {
   state.showAllResults = false;
+  state.discoveryLimit = 12;
   button.disabled = true;
   button.textContent = state.location ? t('calculatingRoutes') : t('loadingOptions');
   document.getElementById('questionnaire').hidden = true;
@@ -673,9 +674,11 @@ async function renderNationalDiscovery(inputs){
   document.getElementById('discoveryCards').innerHTML='';
   try{
     const shard=await loadDiscoveryState(selectedState);
-    const records=rankDiscoveryRecords(shard.records,{origin:state.location,zip:state.locationZip,emergency:inputs.emergency,limit:12});
+    const ranked=rankDiscoveryRecords(shard.records,{origin:state.location,zip:state.locationZip,emergency:inputs.emergency,limit:shard.records.length});
+    const records=ranked.slice(0,state.discoveryLimit);
     document.getElementById('discoveryCounts').innerHTML=`<div><strong>${shard.total.toLocaleString()}</strong><span>${format('discoveryStateTotal',{state:selectedState})}</span></div><div><strong>${shard.hospitals.toLocaleString()}</strong><span>${t('discoveryCmsHospitals')}</span></div><div><strong>${shard.healthCenters.toLocaleString()}</strong><span>${t('discoveryHrsaCenters')}</span></div>`;
-    document.getElementById('discoveryCards').innerHTML=records.length?records.map(discoveryCard).join(''):`<p class="discovery-empty">${t('discoveryNone')}</p>`;
+    document.getElementById('discoveryCards').innerHTML=records.length?`${records.map(discoveryCard).join('')}${ranked.length>records.length?`<button id="showMoreDiscovery" class="secondary discovery-more" type="button">${format('discoveryShowMore',{remaining:Math.min(12,ranked.length-records.length)})}</button>`:''}`:`<p class="discovery-empty">${t('discoveryNone')}</p>`;
+    document.getElementById('showMoreDiscovery')?.addEventListener('click',async()=>{state.discoveryLimit+=12;await renderNationalDiscovery(inputs);});
   }catch(error){
     console.warn('National discovery unavailable',error);
     document.getElementById('discoveryCounts').innerHTML=`<span>${t('discoveryUnavailable')}</span>`;
