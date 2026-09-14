@@ -4,17 +4,20 @@ import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 import { buildDemoConfirmation, nextAlternative } from './verified-arrival.js?v=1';
 import { analyzeAccess, XRAY_REASON_ORDER } from './access-xray.js?v=1';
+import { discoverySource, loadDiscoveryState, rankDiscoveryRecords } from './national-discovery.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
+const state = { step: 1, location: null, locationSource: null, locationZip: null, routes: new Map(), showAllResults: false, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
 const MAX_SEARCH_MILES = 100;
-const NORTHEAST_STATES = new Set(['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']);
+const NATIONAL_PLACES=[['AL','Alabama'],['AK','Alaska'],['AS','American Samoa'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['GU','Guam'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['FM','Micronesia'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['MP','Northern Mariana Islands'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['PR','Puerto Rico'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VI','U.S. Virgin Islands'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],['MH','Marshall Islands'],['PW','Palau']];
+const NATIONAL_CODES=new Set(NATIONAL_PLACES.map(([code])=>code));
 let installPrompt = null;
 const steps = [...document.querySelectorAll('.step')];
 const titleKeys = ['step1', 'step2', 'step3', 'step4'];
 
 initLanguage();
+document.getElementById('stateSelect').innerHTML=`<option value="">${t('allStates')}</option>${NATIONAL_PLACES.map(([code,name])=>`<option value="${code}">${name}</option>`).join('')}`;
 document.getElementById('facilityCount').textContent = facilities.length;
 const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
 if (evidenceNetwork) {
@@ -59,6 +62,7 @@ document.querySelectorAll('[name=patientGroup]').forEach((input) => input.addEve
 }));
 document.querySelectorAll('.back').forEach((button) => button.addEventListener('click', () => showStep(state.step - 1)));
 document.addEventListener('careroute:language', async () => {
+  document.getElementById('stateSelect').options[0].textContent=t('allStates');
   showStep(state.step);
   if (!document.getElementById('results').hidden) await renderResults();
 });
@@ -67,6 +71,7 @@ showStep(state.step);
 function clearLocation() {
   state.location = null;
   state.locationSource = null;
+  state.locationZip = null;
   state.routes.clear();
   document.getElementById('locationStatus').textContent = '';
   document.getElementById('locationStatus').classList.remove('success');
@@ -74,6 +79,7 @@ function clearLocation() {
 
 document.getElementById('stateSelect').addEventListener('change', () => {
   clearLocation();
+  document.getElementById('zipCode').value = '';
   document.getElementById('zipStatus').textContent = '';
   document.getElementById('zipStatus').classList.remove('success');
 });
@@ -102,7 +108,7 @@ document.getElementById('useZip').addEventListener('click', async () => {
     const region = place?.['state abbreviation'];
     const lat = Number(place?.latitude);
     const lon = Number(place?.longitude);
-    if (!NORTHEAST_STATES.has(region)) {
+    if (!NATIONAL_CODES.has(region)) {
       clearLocation();
       status.textContent = t('zipOutside');
       return;
@@ -110,6 +116,7 @@ document.getElementById('useZip').addEventListener('click', async () => {
     document.getElementById('stateSelect').value = region;
     state.location = { lat, lon };
     state.locationSource = 'zip';
+    state.locationZip = zip;
     status.textContent = format('zipReady', { zip, place: place['place name'] });
     status.classList.add('success');
   } catch (error) {
@@ -170,6 +177,7 @@ document.getElementById('tryDemo').addEventListener('click', () => {
   document.querySelectorAll('[name=accessNeed]').forEach((input) => { input.checked = ['uninsured', 'low-cost'].includes(input.value); });
   state.location = { lat: 40.7357, lon: -74.1724 };
   state.locationSource = 'demo';
+  state.locationZip = '07102';
   state.demoScenario = true;
   showCareOptions(document.getElementById('showCareOptions'));
 });
@@ -646,6 +654,34 @@ function facilityCard(facility, index, inputs) {
   </article>`;
 }
 
+function discoveryCard(record){
+  const address=[record.address,record.city,record.state,record.zip].filter(Boolean).join(', ');
+  const directions=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+  const kind=t(record.kind==='hospital'?'discoveryHospital':'discoveryHealthCenter');
+  const proximity=record.distance!==null?`<span>${format('discoveryApproxMiles',{n:Math.round(record.distance)})}</span>`:record.zip?.slice(0,5)===state.locationZip?`<span>${t('discoverySameZip')}</span>`:'';
+  const source=discoverySource(record);
+  const resolved=2+(record.phone?1:0);
+  return `<article><div class="discovery-card-top"><div><span class="discovery-kind">${escapeHtml(kind)}</span><h4>${escapeHtml(record.name)}</h4><p>${escapeHtml(address)}</p></div><b>${t('discoveryTierOfficial')}</b></div><div class="discovery-meta">${proximity}${record.kind==='health-center'?`<span>${t('discoveryAffordableCandidate')}</span>`:`<span>${t('discoveryEmergencyReported')}</span>`}</div><div class="discovery-progress"><span style="--progress:${resolved/7*100}%"></span><b>${format('discoveryEvidenceCount',{resolved})}</b></div><details class="discovery-needed"><summary>${t('discoveryNeededTitle')}</summary><div><span>✓ ${t('discoveryIdentityResolved')}</span><span>✓ ${t('discoveryLocationResolved')}</span>${record.phone?`<span>✓ ${t('discoveryContactResolved')}</span>`:`<span>○ ${t('discoveryContactNeeded')}</span>`}<span>○ ${t('discoveryPopulationNeeded')}</span><span>○ ${t('discoveryServicesNeeded')}</span><span>○ ${t('discoveryHoursNeeded')}</span><span>○ ${t('discoveryAccessNeeded')}</span></div></details><p class="discovery-unknown">${t('discoveryUnknown')}</p><div class="discovery-actions"><a href="${directions}" target="_blank" rel="noopener">${t('directions')}</a>${record.phone?`<a href="tel:${record.phone.replace(/\D/g,'')}">${t('call')}</a>`:''}${record.website?`<a href="${escapeHtml(record.website)}" target="_blank" rel="noopener">${t('providerWebsite')}</a>`:''}<a href="${source}" target="_blank" rel="noopener">${t('officialSource')}</a></div></article>`;
+}
+
+async function renderNationalDiscovery(inputs){
+  const section=document.getElementById('nationalDiscovery');
+  const selectedState=inputs.selectedState;
+  if(!selectedState){section.hidden=true;return;}
+  section.hidden=false;
+  document.getElementById('discoveryCounts').innerHTML=`<span>${t('discoveryLoading')}</span>`;
+  document.getElementById('discoveryCards').innerHTML='';
+  try{
+    const shard=await loadDiscoveryState(selectedState);
+    const records=rankDiscoveryRecords(shard.records,{origin:state.location,zip:state.locationZip,emergency:inputs.emergency,limit:12});
+    document.getElementById('discoveryCounts').innerHTML=`<div><strong>${shard.total.toLocaleString()}</strong><span>${format('discoveryStateTotal',{state:selectedState})}</span></div><div><strong>${shard.hospitals.toLocaleString()}</strong><span>${t('discoveryCmsHospitals')}</span></div><div><strong>${shard.healthCenters.toLocaleString()}</strong><span>${t('discoveryHrsaCenters')}</span></div>`;
+    document.getElementById('discoveryCards').innerHTML=records.length?records.map(discoveryCard).join(''):`<p class="discovery-empty">${t('discoveryNone')}</p>`;
+  }catch(error){
+    console.warn('National discovery unavailable',error);
+    document.getElementById('discoveryCounts').innerHTML=`<span>${t('discoveryUnavailable')}</span>`;
+  }
+}
+
 function renderAccessXray(analysis, inputs, routed) {
   const afterState=analysis.total-analysis.counts.state;
   const afterPopulation=afterState-analysis.counts.population-analysis.counts.age;
@@ -660,6 +696,7 @@ function renderAccessXray(analysis, inputs, routed) {
   document.getElementById('accessXray').innerHTML=`
     <div class="xray-heading"><div><p class="eyebrow">${escapeHtml(t('xrayEyebrow'))}</p><h3 id="access-xray-title">${escapeHtml(t('xrayTitle'))}</h3></div><span>${escapeHtml(t('xrayRealData'))}</span></div>
     <p class="xray-intro">${escapeHtml(t('xrayIntro'))}</p>
+    <div class="xray-scale"><div><strong>22,292</strong><span>${t('xrayIndexed')}</span></div><i>→</i><div><strong>9,972</strong><span>${t('xrayEnriched')}</span></div><i>→</i><div><strong>99</strong><span>${t('xrayReady')}</span></div></div>
     <div class="xray-funnel"><div><strong>${analysis.total}</strong><span>${escapeHtml(t('xrayNetwork'))}</span></div><i>→</i><div><strong>${afterState}</strong><span>${escapeHtml(inputs.selectedState?t('xrayState'):t('xrayScope'))}</span></div><i>→</i><div><strong>${afterPopulation}</strong><span>${escapeHtml(t('xrayPopulation'))}</span></div><i>→</i><div><strong>${afterClinical}</strong><span>${escapeHtml(t('xrayClinical'))}</span></div>${routed?`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayDistance'))}</span></div>`:`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayRemain'))}</span></div>`}</div>
     <div class="xray-callout"><strong>${format('xrayResult',{n:analysis.eligible.length})}</strong><span>${openWarnings?format('xrayWarnings',{n:openWarnings}):t('xrayNoOpenWarnings')}</span></div>
     <details class="xray-exclusions"><summary>${escapeHtml(t('xrayWhyNot'))}</summary>${exclusions||`<p>${escapeHtml(t('xrayNoExclusions'))}</p>`}<p class="xray-method">${escapeHtml(t('xrayMethod'))}</p></details>`;
@@ -694,6 +731,7 @@ async function renderResults() {
   document.getElementById('cards').innerHTML = eligible.length
     ? `${resultControls}${visible.map((facility, index) => facilityCard(facility, index, inputs)).join('')}`
     : `<div class="empty"><h3>${t('noMatchTitle')}</h3><p>${t('noMatchBody')}</p></div>`;
+  await renderNationalDiscovery(inputs);
   document.getElementById('learningLoop').textContent = format('learningLoop', { n: outcomeCount(localStorage) });
   document.getElementById('toggleAllResults')?.addEventListener('click', async () => {
     state.showAllResults = !state.showAllResults;

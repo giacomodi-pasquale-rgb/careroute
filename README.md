@@ -8,6 +8,7 @@ NearSignal is a production-oriented, mobile-first foundation for national care n
 - A focused urgent-care-versus-emergency pathway with separate adult and pediatric eligibility and safety gates
 - At least one verified urgent-care option in every Northeast pilot state, including pediatric-only and adult-and-child locations
 - A national evidence foundation of 22,292 official federal records: 4,495 CMS emergency-hospital candidates and 17,797 active HRSA health-center service-site candidates
+- A state-sharded National Discovery Layer that makes all 22,292 official records searchable without relabeling them as patient recommendations
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
 - Optional uninsured, low-cost, and language-support needs without weakening emergency safety gates
 - Verified FQHC access labels for insurance-free entry, income-based sliding fees, and no-denial-for-lack-of-funds policies

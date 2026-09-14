@@ -29,3 +29,7 @@ The generated queue covers U.S. territories as well as the 50 states and Distric
 - **99 decision-ready locations:** records that passed NearSignal's release-blocking checks and may appear in patient results, including urgent-care coverage across every Northeast pilot state
 
 This funnel is a product capability, not merely a data count. It lets NearSignal demonstrate a credible national expansion path while refusing to disguise unverified listings as care recommendations.
+
+## Patient-facing discovery boundary
+
+The National Discovery Layer loads only the selected state or territory and may show official CMS or HRSA locations separately from decision-ready recommendations. These records are labeled as identity-verified discovery candidates. The interface does not infer service availability, patient age eligibility, hours, prices, insurance participation, or current capacity. Records that already reconcile to a decision-ready hospital are suppressed from the candidate list to avoid duplicate presentation.

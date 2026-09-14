@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
-  <link rel="stylesheet" href="access.css?v=7">
+  <link rel="stylesheet" href="access.css?v=8">
   <link rel="stylesheet" href="brand.css?v=3">
   <link rel="stylesheet" href="insights.css?v=2">
   <link rel="stylesheet" href="outcome-extra.css?v=1">
@@ -78,7 +78,7 @@
           <div class="state-row">
             <label for="stateSelect"><span data-i18n="stateQuestion">Where are you located?</span></label>
             <select id="stateSelect">
-              <option value="" data-i18n="allStates">All Northeast states</option>
+              <option value="" data-i18n="allStates">All United States</option>
               <option value="CT" data-i18n="stateCT">Connecticut</option><option value="ME" data-i18n="stateME">Maine</option><option value="MA" data-i18n="stateMA">Massachusetts</option>
               <option value="NH" data-i18n="stateNH">New Hampshire</option><option value="NJ" data-i18n="stateNJ">New Jersey</option><option value="NY" data-i18n="stateNY">New York</option>
               <option value="PA" data-i18n="statePA">Pennsylvania</option><option value="RI" data-i18n="stateRI">Rhode Island</option><option value="VT" data-i18n="stateVT">Vermont</option>
@@ -154,6 +154,13 @@
       <p id="routingNote" class="data-note"></p>
       <section id="accessXray" class="access-xray" aria-labelledby="access-xray-title"></section>
       <div id="cards" class="cards"></div>
+      <section id="nationalDiscovery" class="national-discovery" hidden aria-labelledby="national-discovery-title">
+        <div class="discovery-heading"><div><p class="eyebrow" data-i18n="discoveryEyebrow">NATIONAL DISCOVERY LAYER</p><h3 id="national-discovery-title" data-i18n="discoveryTitle">More official locations in your state</h3></div><span data-i18n="discoveryOfficial">Official federal records</span></div>
+        <p data-i18n="discoveryIntro">These locations expand discovery beyond NearSignal’s decision-ready network. Their identity comes from CMS or HRSA, but their exact services, ages, hours, prices, and availability have not completed NearSignal verification.</p>
+        <div id="discoveryCounts" class="discovery-counts"></div>
+        <div id="discoveryCards" class="discovery-cards"></div>
+        <p class="discovery-safety" data-i18n="discoverySafety">These are not NearSignal recommendations. Call before non-emergency travel and verify the service, patient age, hours, price, and insurance status.</p>
+      </section>
       <details class="before-leave"><summary data-i18n="beforeLeaveTitle">Before you leave: protect access and cost</summary><div><p data-i18n="beforeLeaveIntro">For non-emergency care, use this checklist before traveling. Do not delay emergency care for these steps.</p><label><input type="checkbox"> <span data-i18n="checkService">Call and verify the exact service and age eligibility.</span></label><label><input type="checkbox"> <span data-i18n="checkNetwork">Ask whether both the facility and treating clinicians are in network.</span></label><label><input type="checkbox"> <span data-i18n="checkEstimate">Request an estimate or Good Faith Estimate when applicable.</span></label><label><input type="checkbox"> <span data-i18n="checkRecord">Write down the representative’s name, date, and confirmation number.</span></label></div></details>
       <p id="learningLoop" class="learning-loop"></p>
       <details class="access-guide"><summary data-i18n="costGuideTitle">Understand the cost-access labels</summary><div data-i18n="costGuideBody"><p><strong>Community health centers/FQHCs:</strong> Insurance is not required. Fees are adjusted using income and family size. Patients at or below 100% of the federal poverty guideline receive a full discount or may pay a nominal charge, depending on the center’s policy and service.</p><p><strong>NJ Charity Care:</strong> This is hospital financial assistance for eligible uninsured or underinsured patients. An application and screening are required, and some separate professional, prescription, or other charges may not be covered.</p><p><strong>Published flat fee:</strong> NearSignal shows one only when a current authoritative source confirms the exact service and price.</p><p><a href="https://bphc.hrsa.gov/about-health-centers/what-health-center" target="_blank" rel="noopener">HRSA health-center information ↗</a> · <a href="https://www.nj.gov/health/charitycare/" target="_blank" rel="noopener">NJ Charity Care ↗</a></p></div></details>
@@ -356,6 +363,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=42"></script>
+  <script type="module" src="app.js?v=43"></script>
 </body>
 </html>

@@ -146,3 +146,41 @@
 .network-sources a { color: var(--green); font-weight: 750; }
 @media (max-width: 760px) { .network-section { margin-inline: 10px; padding: 34px 22px; } .network-heading { grid-template-columns: 1fr; gap: 14px; } .network-stats { grid-template-columns: repeat(2,1fr); } .network-safety { grid-template-columns: 1fr; gap: 5px; } }
 @media (max-width: 480px) { .network-stats { grid-template-columns: 1fr; } .evidence-funnel article,.evidence-funnel article:nth-child(2),.evidence-funnel article:nth-child(3) { width: 100%; margin-left: 0; } }
+.xray-scale { display:flex;align-items:stretch;gap:7px;margin:0 0 14px;padding:10px;border:1px solid #e2c985;border-radius:14px;background:#fff8e6;overflow-x:auto; }
+.xray-scale>div { min-width:130px;flex:1;text-align:center; }
+.xray-scale strong,.xray-scale span { display:block; }
+.xray-scale strong { color:#172554;font:700 23px/1 Georgia,serif; }
+.xray-scale span { margin-top:5px;color:#665631;font-size:10px;font-weight:800; }
+.xray-scale i { align-self:center;color:#a17b22;font-style:normal; }
+.national-discovery { margin:28px 0;padding:25px;border:2px solid #d7b65b;border-radius:22px;background:#fffdf7; }
+.discovery-heading { display:flex;justify-content:space-between;gap:18px;align-items:flex-start; }
+.discovery-heading h3 { margin:0;font:700 27px/1.15 Georgia,serif; }
+.discovery-heading>span { flex:none;padding:7px 10px;border-radius:999px;background:#fff0c9;color:#684d15;font-size:10px;font-weight:900;text-transform:uppercase; }
+.national-discovery>p { color:var(--muted); }
+.discovery-counts { display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0; }
+.discovery-counts>div { padding:15px;border:1px solid #ead9ac;border-radius:13px;background:white; }
+.discovery-counts strong,.discovery-counts span { display:block; }
+.discovery-counts strong { color:#172554;font:700 25px/1 Georgia,serif; }
+.discovery-counts span { margin-top:5px;color:var(--muted);font-size:11px;font-weight:750; }
+.discovery-cards { display:grid;grid-template-columns:repeat(2,1fr);gap:10px; }
+.discovery-cards article { padding:18px;border:1px solid #dccb9f;border-radius:15px;background:white; }
+.discovery-card-top { display:flex;justify-content:space-between;gap:12px;align-items:flex-start; }
+.discovery-card-top h4 { margin:5px 0;font-size:18px; }
+.discovery-card-top p { margin:0;color:var(--muted);font-size:13px; }
+.discovery-card-top>b { flex:none;padding:5px 7px;border-radius:6px;background:#eef3ff;color:#273a78;font-size:9px;letter-spacing:.06em; }
+.discovery-kind { color:var(--green);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em; }
+.discovery-meta { display:flex;flex-wrap:wrap;gap:6px;margin:13px 0; }
+.discovery-meta span { padding:5px 8px;border-radius:999px;background:#f2f5f3;color:#425651;font-size:10px;font-weight:750; }
+.discovery-unknown { margin:0 0 13px;padding:10px;border-left:3px solid #d7b65b;background:#fff9e9;color:#665631;font-size:11px; }
+.discovery-progress { display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin:12px 0; }
+.discovery-progress>span { height:7px;border-radius:99px;background:linear-gradient(90deg,#176458 var(--progress),#e5ece9 var(--progress)); }
+.discovery-progress>b { color:var(--muted);font-size:10px; }
+.discovery-needed { margin:0 0 12px;font-size:11px; }
+.discovery-needed summary { color:var(--green);font-weight:850;cursor:pointer; }
+.discovery-needed>div { display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:9px;padding:10px;border-radius:10px;background:#f4f7f5; }
+.discovery-needed span { color:#4f625d; }
+.discovery-actions { display:flex;flex-wrap:wrap;gap:7px; }
+.discovery-actions a { padding:7px 9px;border:1px solid var(--line);border-radius:8px;color:var(--green);font-size:11px;font-weight:800;text-decoration:none; }
+.discovery-safety { padding-top:16px;border-top:1px solid #ead9ac;font-size:12px;font-weight:700; }
+.discovery-empty { grid-column:1/-1; }
+@media(max-width:700px){.discovery-heading{flex-direction:column}.discovery-heading>span{flex:auto}.discovery-counts{grid-template-columns:1fr}.discovery-cards{grid-template-columns:1fr}.national-discovery{padding:19px}.discovery-card-top{flex-direction:column}.discovery-needed>div{grid-template-columns:1fr}}
