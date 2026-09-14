@@ -687,12 +687,26 @@ async function renderResults() {
 }
 
 const outcomeDialog = document.getElementById('outcomeDialog');
+const outcomeBarrier = document.getElementById('outcomeBarrier');
+const outcomeOtherWrap = document.getElementById('outcomeOtherWrap');
+const outcomeOther = document.getElementById('outcomeOther');
+
+function updateOutcomeOther() {
+  const enabled = outcomeBarrier.value === 'other';
+  outcomeOtherWrap.hidden = !enabled;
+  outcomeOther.required = enabled;
+  if (!enabled) outcomeOther.value = '';
+}
+
+outcomeBarrier.addEventListener('change', updateOutcomeOther);
 document.getElementById('cards').addEventListener('click', (event) => {
   const button = event.target.closest('[data-outcome-facility]');
   if (!button) return;
   document.getElementById('outcomeFacility').value = button.dataset.outcomeFacility;
   document.querySelectorAll('[name=outcomeResult]').forEach((input) => { input.checked = false; });
-  document.getElementById('outcomeBarrier').value = 'none';
+  outcomeBarrier.value = 'none';
+  outcomeOther.value = '';
+  updateOutcomeOther();
   document.getElementById('outcomeStatus').textContent = '';
   if (typeof outcomeDialog.showModal === 'function') outcomeDialog.showModal(); else outcomeDialog.setAttribute('open', '');
 });
@@ -701,10 +715,16 @@ document.getElementById('saveOutcome').addEventListener('click', () => {
   const result = document.querySelector('[name=outcomeResult]:checked');
   const status = document.getElementById('outcomeStatus');
   if (!result) { status.textContent = t('chooseOutcome'); return; }
+  if (outcomeBarrier.value === 'other' && !outcomeOther.value.trim()) {
+    status.textContent = t('describeOtherBarrier');
+    outcomeOther.focus();
+    return;
+  }
   const count = saveOutcome(localStorage, {
     facilityId: document.getElementById('outcomeFacility').value,
     result: result.value,
-    barrier: document.getElementById('outcomeBarrier').value,
+    barrier: outcomeBarrier.value,
+    barrierDetail: outcomeBarrier.value === 'other' ? outcomeOther.value.trim() : '',
     createdAt: new Date().toISOString()
   });
   status.textContent = t('outcomeSaved');

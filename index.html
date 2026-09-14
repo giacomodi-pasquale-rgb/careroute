@@ -26,7 +26,8 @@
   <link rel="stylesheet" href="install.css">
   <link rel="stylesheet" href="access.css?v=6">
   <link rel="stylesheet" href="brand.css?v=3">
-  <link rel="stylesheet" href="insights.css?v=1">
+  <link rel="stylesheet" href="insights.css?v=2">
+  <link rel="stylesheet" href="outcome-extra.css?v=1">
 </head>
 <body>
   <header class="topbar">
@@ -289,6 +290,7 @@
       <p data-i18n="outcomePrivacy">This proof of concept saves the answer only on this device and does not collect names or medical details.</p><input id="outcomeFacility" type="hidden">
       <fieldset><legend data-i18n="outcomeReached">Were you able to receive care?</legend><div class="outcome-choices"><label><input type="radio" name="outcomeResult" value="yes" required><span data-i18n="outcomeYes">Yes</span></label><label><input type="radio" name="outcomeResult" value="no"><span data-i18n="outcomeNo">No</span></label><label><input type="radio" name="outcomeResult" value="not-yet"><span data-i18n="outcomeNotYet">Not yet</span></label></div></fieldset>
       <label><span data-i18n="barrierLabel">What got in the way, if anything?</span><select id="outcomeBarrier"><option value="none" data-i18n="barrierNone">Nothing</option><option value="closed" data-i18n="barrierClosed">Closed or unavailable</option><option value="service" data-i18n="barrierService">Wrong age or service</option><option value="insurance" data-i18n="barrierInsurance">Insurance problem</option><option value="cost" data-i18n="barrierCost">Cost</option><option value="language" data-i18n="barrierLanguage">Language</option><option value="transport" data-i18n="barrierTransport">Transportation</option><option value="wait" data-i18n="barrierWait">Long wait</option><option value="redirected" data-i18n="barrierRedirected">Sent somewhere else</option><option value="other" data-i18n="barrierOther">Other</option></select></label>
+      <label id="outcomeOtherWrap" class="outcome-other" hidden><span data-i18n="barrierOtherLabel">Please tell us what happened</span><textarea id="outcomeOther" maxlength="280" rows="3" data-i18n-placeholder="barrierOtherPlaceholder" placeholder="Describe the barrier without including names or medical details."></textarea><small data-i18n="barrierOtherPrivacy">Do not include a name, date of birth, diagnosis, or other identifying information.</small></label>
       <button id="saveOutcome" class="primary" type="button" value="" data-i18n="saveOutcome">Save this follow-up</button><p id="outcomeStatus" class="status" aria-live="polite"></p>
     </form>
   </dialog>
@@ -324,6 +326,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=39"></script>
+  <script type="module" src="app.js?v=40"></script>
 </body>
 </html>
