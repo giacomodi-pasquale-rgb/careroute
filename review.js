@@ -1,9 +1,16 @@
 const reviewData = window.CARE_ROUTE_REVIEW_QUEUE;
 const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
+const readinessAudit = window.NEARSIGNAL_READINESS_AUDIT;
 const queueElement = document.getElementById('reviewQueue');
 const searchElement = document.getElementById('reviewSearch');
 const filterElement = document.getElementById('reviewFilter');
 const stateElement = document.getElementById('stateFilter');
+
+if(readinessAudit){
+  document.getElementById('auditLead').textContent=`${readinessAudit.totalRecords.toLocaleString()} records · ${readinessAudit.totalDomainChecks.toLocaleString()} evidence-domain checks · audited ${new Date(`${readinessAudit.auditedAt}T12:00:00`).toLocaleDateString()}`;
+  const labels={identity:'Official identity',location:'Recorded location',contact:'Contact number',population:'Adult/child eligibility',services:'Location-level services',hours:'Current daily hours',access:'Cost and access terms'};
+  document.getElementById('auditDomains').innerHTML=Object.entries(readinessAudit.domains).map(([domain,result])=>{const percentage=Math.round(result.resolved/readinessAudit.totalRecords*100);return `<article><div><strong>${escapeHtml(labels[domain])}</strong><span>${result.resolved.toLocaleString()} resolved · ${result.missing.toLocaleString()} require evidence</span></div><b>${percentage}%</b><i><em style="width:${percentage}%"></em></i></article>`;}).join('');
+}
 
 if (evidenceNetwork) {
   const indexed = evidenceNetwork.tiers.officiallyIndexed;

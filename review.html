@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <title>NearSignal Facility Review Queue</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="review.css">
+  <link rel="stylesheet" href="review.css?v=2">
 </head>
 <body class="review-body">
   <header class="topbar">
@@ -22,6 +22,13 @@
       <p>Official CMS hospital and HRSA health-center identities across the states, District of Columbia, and U.S. territories, organized into a safety-gated evidence pipeline. This is an operational review view, not a patient-care directory.</p>
     </section>
     <section id="evidenceSummary" class="review-summary evidence-summary" aria-label="National evidence network summary"></section>
+    <section class="review-method readiness-audit">
+      <p class="eyebrow">NATIONAL RELEASE-STANDARD AUDIT</p>
+      <h2>Every official record tested against the same evidence bar</h2>
+      <p id="auditLead"></p>
+      <div id="auditDomains" class="audit-domains"></div>
+      <p class="audit-truth"><strong>Promotion rule:</strong> automation may resolve evidence, but it may not waive a missing release domain. Provider attestation or human review is required when authoritative public evidence is absent or conflicting.</p>
+    </section>
     <section class="review-method network-method">
       <h2>Three evidence tiers</h2>
       <div id="evidenceTiers" class="review-tiers"></div>
@@ -50,7 +57,8 @@
   </main>
   <footer><span>NearSignal data operations v0.3</span><span id="reviewGenerated"></span><span><a href="index.html">Patient pilot</a></span></footer>
   <script src="data/review/evidence-network.js"></script>
+  <script src="data/review/national-readiness-audit.js?v=1"></script>
   <script src="data/review/us-hospitals.js"></script>
-  <script src="review.js"></script>
+  <script src="review.js?v=2"></script>
 </body>
 </html>

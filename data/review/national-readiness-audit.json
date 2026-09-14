@@ -1,0 +1,811 @@
+{
+  "auditedAt": "2026-09-14",
+  "standardVersion": "nearsignal-decision-ready-v1",
+  "totalRecords": 22292,
+  "totalDomainChecks": 156044,
+  "candidateSources": {
+    "cmsHospitals": 4495,
+    "hrsaHealthCenters": 17797
+  },
+  "domains": {
+    "identity": {
+      "resolved": 22292,
+      "missing": 0
+    },
+    "location": {
+      "resolved": 22292,
+      "missing": 0
+    },
+    "contact": {
+      "resolved": 22279,
+      "missing": 13
+    },
+    "population": {
+      "resolved": 0,
+      "missing": 22292
+    },
+    "services": {
+      "resolved": 4495,
+      "missing": 17797
+    },
+    "hours": {
+      "resolved": 0,
+      "missing": 22292
+    },
+    "access": {
+      "resolved": 0,
+      "missing": 22292
+    }
+  },
+  "automaticallyDecisionReady": 0,
+  "explanation": "Federal identity records can resolve identity, recorded location, and usually a contact number. They do not independently establish location-level adult or pediatric eligibility, exact services, current daily hours, or patient-specific access and cost terms.",
+  "jurisdictions": {
+    "AK": {
+      "total": 238,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 238,
+        "location": 238,
+        "contact": 238,
+        "population": 0,
+        "services": 24,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "AL": {
+      "total": 302,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 302,
+        "location": 302,
+        "contact": 302,
+        "population": 0,
+        "services": 90,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "AR": {
+      "total": 348,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 348,
+        "location": 348,
+        "contact": 348,
+        "population": 0,
+        "services": 81,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "AS": {
+      "total": 9,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 9,
+        "location": 9,
+        "contact": 7,
+        "population": 0,
+        "services": 1,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "AZ": {
+      "total": 337,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 337,
+        "location": 337,
+        "contact": 337,
+        "population": 0,
+        "services": 75,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "CA": {
+      "total": 3040,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 3040,
+        "location": 3040,
+        "contact": 3035,
+        "population": 0,
+        "services": 284,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "CO": {
+      "total": 355,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 355,
+        "location": 355,
+        "contact": 355,
+        "population": 0,
+        "services": 88,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "CT": {
+      "total": 487,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 487,
+        "location": 487,
+        "contact": 486,
+        "population": 0,
+        "services": 27,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "DC": {
+      "total": 85,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 85,
+        "location": 85,
+        "contact": 85,
+        "population": 0,
+        "services": 7,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "DE": {
+      "total": 22,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 22,
+        "location": 22,
+        "contact": 22,
+        "population": 0,
+        "services": 9,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "FL": {
+      "total": 916,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 916,
+        "location": 916,
+        "contact": 915,
+        "population": 0,
+        "services": 184,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "FM": {
+      "total": 8,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 8,
+        "location": 8,
+        "contact": 8,
+        "population": 0,
+        "services": 0,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "GA": {
+      "total": 544,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 544,
+        "location": 544,
+        "contact": 544,
+        "population": 0,
+        "services": 103,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "GU": {
+      "total": 5,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 5,
+        "location": 5,
+        "contact": 5,
+        "population": 0,
+        "services": 2,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "HI": {
+      "total": 137,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 137,
+        "location": 137,
+        "contact": 137,
+        "population": 0,
+        "services": 21,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "IA": {
+      "total": 234,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 234,
+        "location": 234,
+        "contact": 234,
+        "population": 0,
+        "services": 114,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "ID": {
+      "total": 278,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 278,
+        "location": 278,
+        "contact": 278,
+        "population": 0,
+        "services": 40,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "IL": {
+      "total": 688,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 688,
+        "location": 688,
+        "contact": 688,
+        "population": 0,
+        "services": 175,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "IN": {
+      "total": 602,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 602,
+        "location": 602,
+        "contact": 601,
+        "population": 0,
+        "services": 117,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "KS": {
+      "total": 285,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 285,
+        "location": 285,
+        "contact": 285,
+        "population": 0,
+        "services": 118,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "KY": {
+      "total": 740,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 740,
+        "location": 740,
+        "contact": 740,
+        "population": 0,
+        "services": 94,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "LA": {
+      "total": 633,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 633,
+        "location": 633,
+        "contact": 633,
+        "population": 0,
+        "services": 98,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MA": {
+      "total": 326,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 326,
+        "location": 326,
+        "contact": 326,
+        "population": 0,
+        "services": 60,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MD": {
+      "total": 208,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 208,
+        "location": 208,
+        "contact": 208,
+        "population": 0,
+        "services": 43,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "ME": {
+      "total": 210,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 210,
+        "location": 210,
+        "contact": 210,
+        "population": 0,
+        "services": 32,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MH": {
+      "total": 5,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 5,
+        "location": 5,
+        "contact": 5,
+        "population": 0,
+        "services": 0,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MI": {
+      "total": 586,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 586,
+        "location": 586,
+        "contact": 586,
+        "population": 0,
+        "services": 119,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MN": {
+      "total": 212,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 212,
+        "location": 212,
+        "contact": 212,
+        "population": 0,
+        "services": 116,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MO": {
+      "total": 570,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 570,
+        "location": 570,
+        "contact": 570,
+        "population": 0,
+        "services": 105,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MP": {
+      "total": 4,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 4,
+        "location": 4,
+        "contact": 4,
+        "population": 0,
+        "services": 1,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MS": {
+      "total": 415,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 415,
+        "location": 415,
+        "contact": 415,
+        "population": 0,
+        "services": 92,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "MT": {
+      "total": 195,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 195,
+        "location": 195,
+        "contact": 195,
+        "population": 0,
+        "services": 60,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NC": {
+      "total": 881,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 881,
+        "location": 881,
+        "contact": 881,
+        "population": 0,
+        "services": 105,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "ND": {
+      "total": 77,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 77,
+        "location": 77,
+        "contact": 77,
+        "population": 0,
+        "services": 45,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NE": {
+      "total": 171,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 171,
+        "location": 171,
+        "contact": 171,
+        "population": 0,
+        "services": 84,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NH": {
+      "total": 97,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 97,
+        "location": 97,
+        "contact": 97,
+        "population": 0,
+        "services": 26,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NJ": {
+      "total": 210,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 210,
+        "location": 210,
+        "contact": 210,
+        "population": 0,
+        "services": 57,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NM": {
+      "total": 291,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 291,
+        "location": 291,
+        "contact": 291,
+        "population": 0,
+        "services": 38,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NV": {
+      "total": 110,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 110,
+        "location": 110,
+        "contact": 110,
+        "population": 0,
+        "services": 37,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "NY": {
+      "total": 1003,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 1003,
+        "location": 1003,
+        "contact": 1002,
+        "population": 0,
+        "services": 160,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "OH": {
+      "total": 766,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 766,
+        "location": 766,
+        "contact": 766,
+        "population": 0,
+        "services": 139,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "OK": {
+      "total": 322,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 322,
+        "location": 322,
+        "contact": 322,
+        "population": 0,
+        "services": 121,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "OR": {
+      "total": 365,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 365,
+        "location": 365,
+        "contact": 365,
+        "population": 0,
+        "services": 58,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "PA": {
+      "total": 606,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 606,
+        "location": 606,
+        "contact": 606,
+        "population": 0,
+        "services": 148,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "PR": {
+      "total": 212,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 212,
+        "location": 212,
+        "contact": 212,
+        "population": 0,
+        "services": 54,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "PW": {
+      "total": 10,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 10,
+        "location": 10,
+        "contact": 10,
+        "population": 0,
+        "services": 0,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "RI": {
+      "total": 76,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 76,
+        "location": 76,
+        "contact": 76,
+        "population": 0,
+        "services": 12,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "SC": {
+      "total": 364,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 364,
+        "location": 364,
+        "contact": 364,
+        "population": 0,
+        "services": 55,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "SD": {
+      "total": 95,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 95,
+        "location": 95,
+        "contact": 95,
+        "population": 0,
+        "services": 54,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "TN": {
+      "total": 333,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 333,
+        "location": 333,
+        "contact": 333,
+        "population": 0,
+        "services": 98,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "TX": {
+      "total": 1161,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 1161,
+        "location": 1161,
+        "contact": 1161,
+        "population": 0,
+        "services": 390,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "UT": {
+      "total": 106,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 106,
+        "location": 106,
+        "contact": 106,
+        "population": 0,
+        "services": 48,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "VA": {
+      "total": 308,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 308,
+        "location": 308,
+        "contact": 308,
+        "population": 0,
+        "services": 84,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "VI": {
+      "total": 7,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 7,
+        "location": 7,
+        "contact": 7,
+        "population": 0,
+        "services": 2,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "VT": {
+      "total": 114,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 114,
+        "location": 114,
+        "contact": 113,
+        "population": 0,
+        "services": 15,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "WA": {
+      "total": 535,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 535,
+        "location": 535,
+        "contact": 535,
+        "population": 0,
+        "services": 85,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "WI": {
+      "total": 427,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 427,
+        "location": 427,
+        "contact": 427,
+        "population": 0,
+        "services": 125,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "WV": {
+      "total": 568,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 568,
+        "location": 568,
+        "contact": 567,
+        "population": 0,
+        "services": 49,
+        "hours": 0,
+        "access": 0
+      }
+    },
+    "WY": {
+      "total": 53,
+      "fullyReady": 0,
+      "domains": {
+        "identity": 53,
+        "location": 53,
+        "contact": 53,
+        "population": 0,
+        "services": 26,
+        "hours": 0,
+        "access": 0
+      }
+    }
+  }
+}
