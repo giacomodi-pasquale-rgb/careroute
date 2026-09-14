@@ -1,8 +1,25 @@
 import { syntheticAccessEvents, summarizeAccess, estimateOpportunity, barrierLabels } from './access-command.js';
+import { analyzeAccess, primaryAccessGap } from './access-xray.js';
 
 const number=new Intl.NumberFormat('en-US');
 const percent=new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1});
 let activeEvents=syntheticAccessEvents;
+const verifiedFacilities=window.CARE_ROUTE_FACILITIES || [];
+const stressLabels={population:'Population not verified',age:'Outside verified age limit',setting:'Wrong setting',capability:'Capability not published',distance:'Outside route radius'};
+
+function renderStressTest(){
+  const patientGroup=document.getElementById('stressPatient').value;
+  document.getElementById('stressAgeWrap').hidden=patientGroup!=='pediatric';
+  const inputs={selectedState:document.getElementById('stressState').value,patientGroup,ageMonths:patientGroup==='pediatric'?Number(document.getElementById('stressAge').value):360,need:document.getElementById('stressNeed').value,emergency:document.getElementById('stressEmergency').checked,accessNeeds:new Set()};
+  const analysis=analyzeAccess(verifiedFacilities,inputs);
+  const gap=primaryAccessGap(analysis);
+  document.getElementById('stressScope').textContent=number.format(analysis.inState);
+  document.getElementById('stressEligible').textContent=number.format(analysis.eligible.length);
+  document.getElementById('stressGap').textContent=stressLabels[gap.reason] || gap.reason;
+  document.getElementById('stressGapCount').textContent=`${number.format(gap.count)} facilities removed at this gate`;
+  const relevant=Object.entries(analysis.counts).filter(([reason,count])=>reason!=='state'&&count>0).sort((a,b)=>b[1]-a[1]);
+  document.getElementById('stressReasons').innerHTML=relevant.length?relevant.map(([reason,count])=>`<span><b>${number.format(count)}</b>${stressLabels[reason]||reason}</span>`).join(''):'<span><b>0</b>No required gate removed a facility</span>';
+}
 
 function render() {
   const summary=summarizeAccess(activeEvents);
@@ -28,6 +45,7 @@ function renderOpportunity() {
 document.getElementById('barrierSelect').innerHTML=Object.entries(barrierLabels).map(([key,label])=>`<option value="${key}">${label}</option>`).join('');
 document.getElementById('barrierSelect').addEventListener('change',renderOpportunity);
 document.getElementById('recoverySelect').addEventListener('change',renderOpportunity);
+document.querySelectorAll('.stress-controls select,.stress-controls input').forEach(control=>control.addEventListener('change',renderStressTest));
 
 const allCard={state:'ALL',searches:syntheticAccessEvents.reduce((n,r)=>n+r.searches,0),successful:syntheticAccessEvents.reduce((n,r)=>n+r.successful,0)};
 document.getElementById('stateCards').innerHTML=[allCard,...syntheticAccessEvents].map(row=>`<button data-state="${row.state}" class="${row.state==='ALL'?'active':''}"><strong>${row.state==='ALL'?'All nine states':row.state}</strong><span>${percent.format(row.successful/row.searches)} completed</span><small>${number.format(row.searches)} attempts</small></button>`).join('');
@@ -38,3 +56,4 @@ document.getElementById('stateCards').addEventListener('click',event=>{
   render();
 });
 render();
+renderStressTest();

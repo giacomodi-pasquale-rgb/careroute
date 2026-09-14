@@ -59,6 +59,30 @@
 .command-center-cta small { margin-top: 3px; color: #cfe6df; }
 .command-center-cta em { flex: none; color: #a9e1d1; font-style: normal; font-weight: 850; }
 @media(max-width:600px){.command-center-cta{align-items:flex-start;flex-direction:column}.command-center-cta em{flex:auto}}
+.access-xray { margin: 18px 0 26px; padding: 22px; border: 1px solid #a8cfc3; border-radius: 20px; background: linear-gradient(145deg,#f5fbf8,#edf6f2); }
+.xray-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.xray-heading h3 { margin: 0; font: 700 25px/1.15 Georgia,serif; }
+.xray-heading>span { flex: none; padding: 6px 9px; border-radius: 999px; background: #176458; color: white; font-size: 10px; font-weight: 900; text-transform: uppercase; }
+.xray-intro { margin: 10px 0 18px; color: #5f716e; }
+.xray-funnel { display: flex; align-items: stretch; gap: 6px; overflow-x: auto; padding-bottom: 5px; }
+.xray-funnel>div { display: grid; align-content: center; min-width: 108px; padding: 12px 10px; border: 1px solid #c9ddd6; border-radius: 12px; background: white; text-align: center; }
+.xray-funnel strong,.xray-funnel span { display: block; }
+.xray-funnel strong { color: #176458; font: 700 25px/1 Georgia,serif; }
+.xray-funnel span { margin-top: 5px; color: #5f716e; font-size: 10px; font-weight: 800; }
+.xray-funnel>i { align-self: center; color: #78958d; font-style: normal; font-weight: 900; }
+.xray-funnel .xray-final { border-color: #176458; background: #12332f; }
+.xray-funnel .xray-final strong { color: #a9e1d1; }
+.xray-funnel .xray-final span { color: white; }
+.xray-callout { display: grid; gap: 3px; margin-top: 15px; padding: 14px 16px; border-left: 5px solid #ff7448; border-radius: 7px 13px 13px 7px; background: white; }
+.xray-callout span { color: #5f716e; font-size: 12px; }
+.xray-exclusions { margin-top: 15px; padding-top: 14px; border-top: 1px solid #c9ddd6; }
+.xray-exclusions article { display: grid; grid-template-columns: 235px 1fr; gap: 15px; padding: 11px 0; border-bottom: 1px solid #dce8e3; }
+.xray-exclusions article>div { display: grid; grid-template-columns: 38px 1fr; gap: 7px; align-items: center; }
+.xray-exclusions article strong { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #fff0c9; color: #684d15; }
+.xray-exclusions article span { font-size: 12px; font-weight: 800; }
+.xray-exclusions article small { align-self: center; color: #5f716e; }
+.xray-method { color: #5f716e; font-size: 12px; }
+@media(max-width:650px){.access-xray{padding:18px}.xray-heading{flex-direction:column}.xray-heading>span{flex:auto}.xray-exclusions article{grid-template-columns:1fr}.xray-funnel{margin-inline:-4px}}
 .hero-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
 .hero-actions .link-button, .demo-button { min-width: 190px; padding: 14px 20px; }
 .demo-button { border: 1px solid #9cc5b7; background: #f1f8f5; color: var(--green-dark); }

@@ -3,13 +3,15 @@
 ## What is operational today
 
 - Patient-side adult and pediatric care navigation across the verified pilot network.
+- A patient-facing Access X-Ray showing how the full verified network narrows through geography, population, age, setting, capability, and route-distance gates—and why other facilities were excluded.
 - Access-confidence evidence, source links, travel calculations when routing is available, affordability pathways, multilingual interface, patient-controlled arrival brief, and private device-local outcome follow-up.
-- A synthetic institutional dashboard that demonstrates how aggregated outcomes could reveal fragmentation patterns.
+- A live Network Stress Test analyzing the actual verified pilot directory for a selected state, patient, and concern.
+- A clearly separated synthetic institutional dashboard demonstrating how future aggregated outcomes could reveal fragmentation patterns.
 - A device-local Verified Arrival simulation that demonstrates consent, partner response, and automatic rerouting.
 
 ## What is deliberately simulated
 
-The Command Center metrics are synthetic. The Verified Arrival response is generated locally. No patient information is transmitted, no named facility confirms availability, no appointment is created, and no care is reserved.
+The Network Stress Test uses the current verified pilot facility directory. The Command Center performance metrics remain synthetic. The Verified Arrival response is generated locally. No patient information is transmitted, no named facility confirms availability, no appointment is created, and no care is reserved.
 
 ## What a live institutional pilot requires
 

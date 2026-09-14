@@ -3,6 +3,7 @@ import { currentLanguage, format, initLanguage, t } from './i18n.js?v=15';
 import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 import { buildDemoConfirmation, nextAlternative } from './verified-arrival.js?v=1';
+import { analyzeAccess, XRAY_REASON_ORDER } from './access-xray.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
@@ -645,20 +646,32 @@ function facilityCard(facility, index, inputs) {
   </article>`;
 }
 
+function renderAccessXray(analysis, inputs, routed) {
+  const afterState=analysis.total-analysis.counts.state;
+  const afterPopulation=afterState-analysis.counts.population-analysis.counts.age;
+  const afterClinical=afterPopulation-analysis.counts.setting-analysis.counts.capability;
+  const openWarnings=analysis.eligible.filter(facility=>isOpenNow(facility.hours)!==true).length;
+  const reasonLabels={state:t('xrayReasonState'),population:t('xrayReasonPopulation'),age:t('xrayReasonAge'),setting:t('xrayReasonSetting'),capability:t('xrayReasonCapability'),distance:t('xrayReasonDistance')};
+  const relevantReasons=XRAY_REASON_ORDER.filter(reason=>reason!=='state' && analysis.counts[reason]>0);
+  const exclusions=relevantReasons.map(reason=>{
+    const examples=analysis.excluded.filter(item=>item.reason===reason).slice(0,5).map(item=>escapeHtml(item.facility.name)).join(' · ');
+    return `<article><div><strong>${analysis.counts[reason]}</strong><span>${escapeHtml(reasonLabels[reason])}</span></div>${examples?`<small>${examples}${analysis.counts[reason]>5?' · …':''}</small>`:''}</article>`;
+  }).join('');
+  document.getElementById('accessXray').innerHTML=`
+    <div class="xray-heading"><div><p class="eyebrow">${escapeHtml(t('xrayEyebrow'))}</p><h3 id="access-xray-title">${escapeHtml(t('xrayTitle'))}</h3></div><span>${escapeHtml(t('xrayRealData'))}</span></div>
+    <p class="xray-intro">${escapeHtml(t('xrayIntro'))}</p>
+    <div class="xray-funnel"><div><strong>${analysis.total}</strong><span>${escapeHtml(t('xrayNetwork'))}</span></div><i>→</i><div><strong>${afterState}</strong><span>${escapeHtml(inputs.selectedState?t('xrayState'):t('xrayScope'))}</span></div><i>→</i><div><strong>${afterPopulation}</strong><span>${escapeHtml(t('xrayPopulation'))}</span></div><i>→</i><div><strong>${afterClinical}</strong><span>${escapeHtml(t('xrayClinical'))}</span></div>${routed?`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayDistance'))}</span></div>`:`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayRemain'))}</span></div>`}</div>
+    <div class="xray-callout"><strong>${format('xrayResult',{n:analysis.eligible.length})}</strong><span>${openWarnings?format('xrayWarnings',{n:openWarnings}):t('xrayNoOpenWarnings')}</span></div>
+    <details class="xray-exclusions"><summary>${escapeHtml(t('xrayWhyNot'))}</summary>${exclusions||`<p>${escapeHtml(t('xrayNoExclusions'))}</p>`}<p class="xray-method">${escapeHtml(t('xrayMethod'))}</p></details>`;
+}
+
 async function renderResults() {
   const inputs = getInputs();
-  let eligible = facilities.filter((facility) => {
-    const groupEligible = inputs.patientGroup === 'adult'
-      ? facility.patientGroups.includes('adult')
-      : facility.patientGroups.includes('pediatric') && (facility.type !== 'emergency' || facility.pediatricSpecific);
-    const ageEligible = inputs.patientGroup === 'adult' || !facility.age.verifiedLimits || (inputs.ageMonths >= facility.age.minMonths && inputs.ageMonths <= facility.age.maxMonths);
-    const settingEligible = inputs.emergency ? facility.type === 'emergency' : true;
-    const capabilityEligible = inputs.need === 'other' || facility.capabilities.includes(inputs.need);
-    const stateEligible = !inputs.selectedState || facility.state === inputs.selectedState;
-    return groupEligible && ageEligible && settingEligible && capabilityEligible && stateEligible;
-  });
+  const initialAnalysis=analyzeAccess(facilities,inputs);
+  let eligible=initialAnalysis.eligible;
   const routed = await loadRoutes(eligible);
-  if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);
+  const analysis=analyzeAccess(facilities,inputs,routed?{routeMap:state.routes,maxDistanceMeters:MAX_SEARCH_MILES*1609.344}:{});
+  eligible=analysis.eligible;
   eligible = eligible.map((facility) => ({ ...facility, rankScore: scoreFacility(facility, inputs) }))
     .sort((a, b) => b.rankScore - a.rankScore || a.name.localeCompare(b.name));
   state.lastEligible = eligible;
@@ -673,6 +686,7 @@ async function renderResults() {
     : state.location
       ? t('routingFailed')
       : t('routingOptional');
+  renderAccessXray(analysis,inputs,routed);
   const visible = state.showAllResults ? eligible : eligible.slice(0, 3);
   const resultControls = eligible.length > 3
     ? `<div class="result-controls"><p>${format('showingResults', { shown: visible.length, total: eligible.length })}</p><button class="secondary" id="toggleAllResults" type="button">${state.showAllResults ? t('showTopThree') : format('viewAllOptions', { n: eligible.length })}</button></div>`

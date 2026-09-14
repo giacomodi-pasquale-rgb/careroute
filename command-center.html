@@ -16,7 +16,23 @@
       <p class="eyebrow">ACCESS COMMAND CENTER</p>
       <h1>See where access breaks.<br><em>Know what to fix next.</em></h1>
       <p>NearSignal turns patient navigation outcomes into an operational view of fragmentation—without exposing names, symptoms, or individual records.</p>
-      <div class="truth-banner"><strong>Investor demonstration</strong><span>Every number on this page is synthetic and illustrative. No hospital system or patient supplied this data.</span></div>
+      <div class="truth-banner"><strong>Investor demonstration</strong><span>The Network Stress Test uses NearSignal's real verified pilot directory. Performance metrics below it are clearly labeled synthetic and illustrative.</span></div>
+    </section>
+
+    <section class="surface stress-test" aria-labelledby="stress-test-title">
+      <div class="stress-copy"><p class="eyebrow">LIVE NETWORK STRESS TEST</p><h2 id="stress-test-title">Make the verified network answer a harder question.</h2><p>This analysis uses the actual 99 decision-ready facilities. Change the patient and situation to see how many locations survive every published eligibility and capability gate.</p><span class="real-data-badge">REAL VERIFIED PILOT DATA · NOT SYNTHETIC</span></div>
+      <div class="stress-controls">
+        <label>State<select id="stressState"><option value="">All nine states</option><option>CT</option><option>ME</option><option>MA</option><option>NH</option><option>NJ</option><option>NY</option><option>PA</option><option>RI</option><option>VT</option></select></label>
+        <label>Patient<select id="stressPatient"><option value="adult">Adult</option><option value="pediatric">Child or teen</option></select></label>
+        <label id="stressAgeWrap" hidden>Child age<select id="stressAge"><option value="12">1 year</option><option value="60" selected>5 years</option><option value="144">12 years</option><option value="204">17 years</option></select></label>
+        <label>Concern<select id="stressNeed"><option value="illness">Illness or fever</option><option value="breathing">Breathing concern</option><option value="injury">Injury</option><option value="wound">Cut or wound</option><option value="stomach">Stomach symptoms</option><option value="other">Other or unsure</option></select></label>
+        <label class="stress-check"><input id="stressEmergency" type="checkbox"><span>Possible emergency — require an emergency department</span></label>
+      </div>
+      <div class="stress-result">
+        <div><small>Verified facilities in scope</small><strong id="stressScope">—</strong></div><i>→</i><div><small>Survive every required gate</small><strong id="stressEligible">—</strong></div><div class="stress-gap"><small>Largest access collapse</small><strong id="stressGap">—</strong><span id="stressGapCount">—</span></div>
+      </div>
+      <div id="stressReasons" class="stress-reasons"></div>
+      <p class="stress-truth">This measures the current curated pilot network. It does not claim that excluded facilities lack the service; it means NearSignal does not currently have sufficient published, reviewed evidence to recommend them for this selection.</p>
     </section>
 
     <section class="kpi-grid" aria-label="Illustrative access performance">
@@ -53,7 +69,8 @@
 
     <section class="executive-ask"><p class="eyebrow">A PILOT CAN ANSWER THE QUESTION</p><h2>Can verified, constraint-aware navigation increase the percentage of patients who reach appropriate care—without adding another staff inbox?</h2><a href="index.html">Experience the patient journey →</a></section>
   </main>
-  <footer><span>NearSignal Access Command Center</span><span>Synthetic product demonstration · Not operational reporting</span></footer>
-  <script type="module" src="command-center.js?v=1"></script>
+  <footer><span>NearSignal Access Command Center</span><span>Verified network analysis + labeled synthetic performance demonstration · Not operational reporting</span></footer>
+  <script src="data/facilities.js?v=9"></script>
+  <script type="module" src="command-center.js?v=2"></script>
 </body>
 </html>
