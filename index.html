@@ -20,6 +20,7 @@
   <meta name="twitter:description" content="Verified, situation-specific care navigation built for the realities of fragmented healthcare.">
   <meta name="twitter:image" content="https://giacomodi-pasquale-rgb.github.io/nearsignal/icons/og-nearsignal-v2.png">
   <title>NearSignal</title>
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
@@ -32,7 +33,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="NearSignal home"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-word">NearSignal</span></a>
-    <div class="topbar-actions"><button id="openArrivalBrief" class="brief-help-link" type="button" data-i18n="arrivalBriefNav">Arrival brief</button><button id="openMentalHelp" class="mental-help-link" type="button" data-i18n="mentalHelpNav">Mental health now</button><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
+    <div class="topbar-actions"><a href="command-center.html" class="command-link" data-i18n="commandCenterNav">Partner view</a><button id="openArrivalBrief" class="brief-help-link" type="button" data-i18n="arrivalBriefNav">Arrival brief</button><button id="openMentalHelp" class="mental-help-link" type="button" data-i18n="mentalHelpNav">Mental health now</button><button id="openBillHelp" class="bill-help-link" type="button" data-i18n="billHelpNav">Bill help</button><label class="language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="languageLabel"><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="ht">Kreyòl ayisyen</option></select></label><span class="pilot-pill" data-i18n="pilot">Northeast pilot</span><button id="installApp" class="install-button" data-i18n="installApp" hidden>Install app</button></div>
   </header>
 
   <aside class="safety-strip" role="note">
@@ -169,6 +170,7 @@
         <article><span>03</span><h3 data-i18n="differenceEvidenceTitle">Every claim is accountable</h3><p data-i18n="differenceEvidenceBody">Displayed facts link back to provider or government sources. Unknown information stays visibly unknown instead of being guessed.</p></article>
       </div>
       <div class="vision-line"><strong data-i18n="visionTitle">Focused, then expandable</strong><span data-i18n="visionBody">Own the high-stakes urgent-care-versus-ER decision for adults and children, while preserving affordable community care as a verified access pathway when the situation is non-emergency.</span></div>
+      <a class="command-center-cta" href="command-center.html"><span><b data-i18n="commandCtaTitle">See the institutional intelligence layer</b><small data-i18n="commandCtaBody">Explore the synthetic Access Command Center demonstration.</small></span><em data-i18n="commandCtaAction">Open partner view →</em></a>
     </section>
 
     <section class="network-section" aria-labelledby="network-title">
@@ -283,6 +285,33 @@
     </form>
   </dialog>
 
+  <dialog id="verifiedArrivalDialog" class="verified-arrival-dialog" aria-labelledby="verified-arrival-title">
+    <form method="dialog" class="verified-arrival-shell">
+      <button class="bill-close" value="close" aria-label="Close" data-i18n-aria-label="close">×</button>
+      <div class="demo-ribbon" data-i18n="verifiedDemoRibbon">DEMONSTRATION · NOT CONNECTED TO A HOSPITAL</div>
+      <p class="eyebrow" data-i18n="verifiedEyebrow">NearSignal Verified Arrival</p>
+      <h2 id="verified-arrival-title" data-i18n="verifiedTitle2">Know whether the path still works.</h2>
+      <p data-i18n="verifiedIntro">This demonstrates a future partner workflow. Today, NearSignal cannot contact a facility or reserve care.</p>
+      <section id="verifiedArrivalConsent">
+        <div class="selected-facility"><span data-i18n="selectedDestination">Selected destination</span><strong id="verifiedFacilityName">—</strong></div>
+        <label class="consent-row"><input id="verifiedConsent" type="checkbox"><span><b data-i18n="verifiedConsentTitle">I choose to demonstrate sharing</b><small data-i18n="verifiedConsentBody">No name, medical record, or brief will leave this device. This consent applies only to the simulation.</small></span></label>
+        <button id="runVerifiedArrival" type="button" class="primary" data-i18n="runVerifiedArrival">Run partner confirmation demo</button>
+        <p id="verifiedArrivalStatus" class="status" aria-live="polite"></p>
+      </section>
+      <section id="verifiedArrivalResult" hidden aria-live="polite">
+        <div class="confirmation-card accepted">
+          <span data-i18n="demoPartnerResponse">SIMULATED PARTNER RESPONSE</span>
+          <strong data-i18n="demoAccepted">Path confirmed for demonstration</strong>
+          <p data-i18n="demoAcceptedBody">In a live partnership, the receiving organization would confirm the service, age group, arrival instructions, and unresolved access questions.</p>
+          <div class="handoff-code"><small data-i18n="demoHandoffCode">Demo handoff code</small><b id="verifiedArrivalCode">NS------</b></div>
+        </div>
+        <div id="verifiedRerouteResult" class="reroute-result" hidden></div>
+        <p class="demo-truth" data-i18n="demoTruth">Nothing was transmitted. This is not an appointment, reservation, clinical clearance, or confirmation from the named facility.</p>
+        <div class="verified-actions"><button id="simulateRedirect" type="button" class="secondary" data-i18n="simulateRedirect">Simulate “cannot receive”</button><button type="submit" class="primary" data-i18n="done">Done</button></div>
+      </section>
+    </form>
+  </dialog>
+
   <dialog id="outcomeDialog" class="outcome-dialog" aria-labelledby="outcome-title">
     <form method="dialog" class="outcome-shell">
       <button class="bill-close" value="close" aria-label="Close" data-i18n-aria-label="close">×</button>
@@ -326,6 +355,6 @@
   <script src="config.js"></script>
   <script src="data/facilities.js?v=9"></script>
   <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=40"></script>
+  <script type="module" src="app.js?v=41"></script>
 </body>
 </html>

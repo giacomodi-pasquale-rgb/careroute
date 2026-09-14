@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d2926">
+  <meta name="robots" content="noindex">
+  <title>NearSignal Access Command Center — demonstration</title>
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="command-center.css?v=1">
+</head>
+<body>
+  <header class="command-topbar"><a href="index.html" class="command-brand"><span class="mark">◒</span>NearSignal</a><div><span class="demo-badge">SYNTHETIC DEMONSTRATION</span><a href="index.html" class="back-link">← Patient experience</a></div></header>
+  <main>
+    <section class="command-hero">
+      <p class="eyebrow">ACCESS COMMAND CENTER</p>
+      <h1>See where access breaks.<br><em>Know what to fix next.</em></h1>
+      <p>NearSignal turns patient navigation outcomes into an operational view of fragmentation—without exposing names, symptoms, or individual records.</p>
+      <div class="truth-banner"><strong>Investor demonstration</strong><span>Every number on this page is synthetic and illustrative. No hospital system or patient supplied this data.</span></div>
+    </section>
+
+    <section class="kpi-grid" aria-label="Illustrative access performance">
+      <article><span>Navigation attempts</span><strong id="totalSearches">—</strong><small>illustrative 90-day period</small></article>
+      <article><span>Reached feasible care</span><strong id="completionRate">—</strong><small id="successfulSearches">—</small></article>
+      <article class="warning"><span>Access failures observed</span><strong id="failedSearches">—</strong><small>reported or inferred barriers</small></article>
+      <article class="accent"><span>Largest recoverable barrier</span><strong id="largestBarrier">—</strong><small id="largestBarrierCount">—</small></article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="surface barrier-panel">
+        <div class="section-head"><div><p class="eyebrow">FRAGMENTATION SIGNAL</p><h2>Why patients lost the path</h2></div><span>Illustrative counts</span></div>
+        <div id="barrierBars" class="barrier-bars"></div>
+      </article>
+      <article class="surface opportunity-panel">
+        <p class="eyebrow">INTERVENTION SIMULATOR</p>
+        <h2>What should we fix first?</h2>
+        <label>Choose an access barrier<select id="barrierSelect"></select></label>
+        <label>Estimated recovery after intervention<select id="recoverySelect"><option value="0.20">20% conservative</option><option value="0.35" selected>35% working case</option><option value="0.50">50% ambitious</option></select></label>
+        <div class="opportunity-result"><span>Potential additional completed paths</span><strong id="recoveredPaths">—</strong><small id="newRate">—</small></div>
+        <p class="method-note">This is a scenario calculation, not a forecast. A real pilot would estimate causal impact using agreed measures and comparison methods.</p>
+      </article>
+    </section>
+
+    <section class="surface state-panel">
+      <div class="section-head"><div><p class="eyebrow">REGIONAL VIEW</p><h2>Where fragmentation is concentrated</h2></div><span>Click a state to focus the analysis</span></div>
+      <div id="stateCards" class="state-cards"></div>
+    </section>
+
+    <section class="surface loop-panel">
+      <div><p class="eyebrow">THE COMPOUNDING ASSET</p><h2>Every patient journey makes the access map more useful.</h2><p>NearSignal does not stop at a recommendation. It records whether the option worked, which barrier intervened, and where a system-level change could improve the next journey.</p></div>
+      <ol><li><b>1</b><span>Patient seeks a realistic option</span></li><li><b>2</b><span>NearSignal resolves known access constraints</span></li><li><b>3</b><span>Patient reports whether the path worked</span></li><li><b>4</b><span>Partners see aggregated failure patterns</span></li><li><b>5</b><span>A pilot measures whether changes improve access</span></li></ol>
+    </section>
+
+    <section class="executive-ask"><p class="eyebrow">A PILOT CAN ANSWER THE QUESTION</p><h2>Can verified, constraint-aware navigation increase the percentage of patients who reach appropriate care—without adding another staff inbox?</h2><a href="index.html">Experience the patient journey →</a></section>
+  </main>
+  <footer><span>NearSignal Access Command Center</span><span>Synthetic product demonstration · Not operational reporting</span></footer>
+  <script type="module" src="command-center.js?v=1"></script>
+</body>
+</html>

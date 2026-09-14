@@ -2,10 +2,11 @@ import { RoutingService, presentRoute } from './routing.js?v=2';
 import { currentLanguage, format, initLanguage, t } from './i18n.js?v=15';
 import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
+import { buildDemoConfirmation, nextAlternative } from './verified-arrival.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
-const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false, demoScenario: false };
+const state = { step: 1, location: null, locationSource: null, routes: new Map(), showAllResults: false, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
 const MAX_SEARCH_MILES = 100;
 const NORTHEAST_STATES = new Set(['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT']);
 let installPrompt = null;
@@ -640,7 +641,7 @@ function facilityCard(facility, index, inputs) {
     ${route ? `<p class="route-source"><strong>${t('routeSource')}</strong> ${escapeHtml(route.provider)} · ${route.trafficAware ? t('trafficYes') : t('trafficNo')} · ${t('calculated')} ${new Date(route.calculatedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</p>` : ''}
     <p class="verification-line">✓ ${format('verificationReviewed', { date: new Date(`${facility.verification.reviewedAt}T12:00:00`).toLocaleDateString(currentLanguage(), { month: 'short', day: 'numeric', year: 'numeric' }) })}</p>
     <p class="quality"><strong>${t('quality')}</strong> ${escapeHtml(currentLanguage()==='en' ? facility.quality.note : t('qualityUnavailable'))}${facility.quality.url ? ` <a href="${facility.quality.url}" target="_blank" rel="noopener">${t('njReport')}</a>` : ''}</p>
-    <div class="card-actions"><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a><button class="outcome-button" type="button" data-outcome-facility="${escapeHtml(facility.id)}">${t('didItWork')}</button></div>
+    <div class="card-actions"><button class="verified-arrival-button" type="button" data-verified-arrival="${escapeHtml(facility.id)}">${t('verifiedArrivalButton')}</button><a class="primary link-button" href="${directions}" target="_blank" rel="noopener">${t('directions')}</a><a class="secondary link-button" href="tel:${facility.phone.replace(/\D/g, '')}">${t('call')}</a><a class="text-link" href="${facility.sourceUrl}" target="_blank" rel="noopener">${t('verifyDetails')}</a><button class="outcome-button" type="button" data-outcome-facility="${escapeHtml(facility.id)}">${t('didItWork')}</button></div>
   </article>`;
 }
 
@@ -660,6 +661,7 @@ async function renderResults() {
   if (routed) eligible = eligible.filter((facility) => (state.routes.get(facility.id)?.distanceMeters || Infinity) <= MAX_SEARCH_MILES * 1609.344);
   eligible = eligible.map((facility) => ({ ...facility, rankScore: scoreFacility(facility, inputs) }))
     .sort((a, b) => b.rankScore - a.rankScore || a.name.localeCompare(b.name));
+  state.lastEligible = eligible;
 
   document.getElementById('resultsTitle').textContent = inputs.emergency ? t(inputs.patientGroup === 'adult' ? 'adultEDs' : 'pediatricEDs') : t('concernOptions');
   document.getElementById('emergencyBanner').hidden = !inputs.emergency;
@@ -685,6 +687,47 @@ async function renderResults() {
     document.getElementById('cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
+
+const verifiedArrivalDialog = document.getElementById('verifiedArrivalDialog');
+const verifiedArrivalConsent = document.getElementById('verifiedArrivalConsent');
+const verifiedArrivalResult = document.getElementById('verifiedArrivalResult');
+
+function openVerifiedArrival(facilityId) {
+  const facility=state.lastEligible.find(item=>item.id===facilityId);
+  if(!facility)return;
+  state.verifiedFacilityId=facilityId;
+  document.getElementById('verifiedFacilityName').textContent=facility.name;
+  document.getElementById('verifiedConsent').checked=false;
+  document.getElementById('verifiedArrivalStatus').textContent='';
+  document.getElementById('verifiedRerouteResult').hidden=true;
+  verifiedArrivalConsent.hidden=false;
+  verifiedArrivalResult.hidden=true;
+  if(typeof verifiedArrivalDialog.showModal==='function')verifiedArrivalDialog.showModal(); else verifiedArrivalDialog.setAttribute('open','');
+}
+
+document.getElementById('cards').addEventListener('click',(event)=>{
+  const button=event.target.closest('[data-verified-arrival]');
+  if(button)openVerifiedArrival(button.dataset.verifiedArrival);
+});
+
+document.getElementById('runVerifiedArrival').addEventListener('click',()=>{
+  const status=document.getElementById('verifiedArrivalStatus');
+  if(!document.getElementById('verifiedConsent').checked){status.textContent=t('verifiedConsentRequired');return;}
+  const facility=state.lastEligible.find(item=>item.id===state.verifiedFacilityId);
+  const confirmation=buildDemoConfirmation(facility,getInputs());
+  document.getElementById('verifiedArrivalCode').textContent=confirmation.code;
+  verifiedArrivalConsent.hidden=true;
+  verifiedArrivalResult.hidden=false;
+});
+
+document.getElementById('simulateRedirect').addEventListener('click',()=>{
+  const alternative=nextAlternative(state.lastEligible,state.verifiedFacilityId);
+  const box=document.getElementById('verifiedRerouteResult');
+  box.hidden=false;
+  box.innerHTML=alternative
+    ? `<strong>${escapeHtml(t('rerouteFound'))}</strong><span>${escapeHtml(alternative.name)}</span><small>${escapeHtml(t('rerouteFoundBody'))}</small>`
+    : `<strong>${escapeHtml(t('rerouteNone'))}</strong><small>${escapeHtml(t('rerouteNoneBody'))}</small>`;
+});
 
 const outcomeDialog = document.getElementById('outcomeDialog');
 const outcomeBarrier = document.getElementById('outcomeBarrier');
