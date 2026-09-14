@@ -11,6 +11,7 @@
     "reconcile:cms": "node scripts/reconcile-candidates.mjs",
     "reconcile:national": "node scripts/reconcile-national.mjs",
     "build:network": "node scripts/build-evidence-network.mjs",
+    "build:enrichment": "node scripts/build-provider-enrichment.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run validate:data && npm test",
     "start:api": "node server/index.mjs"

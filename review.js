@@ -1,6 +1,7 @@
 const reviewData = window.CARE_ROUTE_REVIEW_QUEUE;
 const evidenceNetwork = window.CARE_ROUTE_EVIDENCE_NETWORK;
 const readinessAudit = window.NEARSIGNAL_READINESS_AUDIT;
+const enrichmentBatch = window.NEARSIGNAL_PROVIDER_ENRICHMENT;
 const queueElement = document.getElementById('reviewQueue');
 const searchElement = document.getElementById('reviewSearch');
 const filterElement = document.getElementById('reviewFilter');
@@ -10,6 +11,24 @@ if(readinessAudit){
   document.getElementById('auditLead').textContent=`${readinessAudit.totalRecords.toLocaleString()} records · ${readinessAudit.totalDomainChecks.toLocaleString()} evidence-domain checks · audited ${new Date(`${readinessAudit.auditedAt}T12:00:00`).toLocaleDateString()}`;
   const labels={identity:'Official identity',location:'Recorded location',contact:'Contact number',population:'Adult/child eligibility',services:'Location-level services',hours:'Current daily hours',access:'Cost and access terms'};
   document.getElementById('auditDomains').innerHTML=Object.entries(readinessAudit.domains).map(([domain,result])=>{const percentage=Math.round(result.resolved/readinessAudit.totalRecords*100);return `<article><div><strong>${escapeHtml(labels[domain])}</strong><span>${result.resolved.toLocaleString()} resolved · ${result.missing.toLocaleString()} require evidence</span></div><b>${percentage}%</b><i><em style="width:${percentage}%"></em></i></article>`;}).join('');
+}
+
+if(enrichmentBatch){
+  const summary=enrichmentBatch.summary;
+  document.getElementById('enrichmentLead').textContent=`Batch ${enrichmentBatch.batchId} · ${enrichmentBatch.providerSystem} · reviewed ${new Date(`${enrichmentBatch.reviewedAt}T12:00:00`).toLocaleDateString()}`;
+  document.getElementById('enrichmentSummary').innerHTML=[['Records reviewed',summary.reviewed],['Evidence checks',summary.claimsChecked],['Claims resolved',summary.claimsResolved],['Safely held',summary.held]].map(([label,value])=>`<article><strong>${value}</strong><span>${escapeHtml(label)}</span></article>`).join('');
+  document.getElementById('enrichmentRecords').innerHTML=enrichmentBatch.records.map(record=>{
+    const resolved=Object.values(record.domains).filter(domain=>domain.status==='resolved').length;
+    const domains=Object.entries(record.domains).map(([name,domain])=>`<li class="${domain.status}"><button type="button" aria-expanded="false"><span>${domain.status==='resolved'?'✓':'!'} ${escapeHtml(name)}</span><b>${escapeHtml(domain.status)}</b></button><p>${escapeHtml(domain.evidence)}</p></li>`).join('');
+    return `<article class="enrichment-card"><header><div><span class="ccn">CMS ${escapeHtml(record.cmsCertificationNumber)}</span><h3>${escapeHtml(record.name)}</h3><p>${escapeHtml(record.location)}</p></div><span class="review-status pending">Held safely</span></header><div class="confidence-row"><strong>${resolved} of 8 domains resolved</strong><i><em style="width:${resolved/8*100}%"></em></i></div><ul>${domains}</ul><p class="hold-reason"><strong>Release decision:</strong> ${escapeHtml(record.statusReason)}</p><a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener">Inspect provider source ↗</a></article>`;
+  }).join('');
+  document.getElementById('enrichmentRecords').addEventListener('click',event=>{
+    const button=event.target.closest('button');
+    if(!button)return;
+    const open=button.getAttribute('aria-expanded')==='true';
+    button.setAttribute('aria-expanded',String(!open));
+    button.parentElement.classList.toggle('open',!open);
+  });
 }
 
 if (evidenceNetwork) {
