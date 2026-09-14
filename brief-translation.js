@@ -1,5 +1,10 @@
 const dictionaries = {
   es: [
+    ['mi hijo tiene fiebre y tos', 'my child has a fever and cough'],
+    ['mi hija tiene fiebre y tos', 'my child has a fever and cough'],
+    ['desde ayer por la noche', 'since last night'],
+    ['alérgico a la penicilina', 'allergic to penicillin'],
+    ['alérgica a la penicilina', 'allergic to penicillin'],
     ['en este momento ningún medicamento o enfermedad. no tengo ningún problema de alergias.', 'I am not currently taking any medications and I have no medical conditions. I have no known allergies.'],
     ['en este momento ningun medicamento o enfermedad. no tengo ningun problema de alergias.', 'I am not currently taking any medications and I have no medical conditions. I have no known allergies.'],
     ['me duele la cabeza y la espalda y tengo frío', 'I have a headache and back pain, and I feel cold'],

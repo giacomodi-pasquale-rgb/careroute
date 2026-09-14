@@ -1,6 +1,6 @@
 import { RoutingService, presentRoute } from './routing.js?v=2';
 import { currentLanguage, format, initLanguage, t } from './i18n.js?v=15';
-import { translateBriefTextToEnglish } from './brief-translation.js?v=2';
+import { translateBriefTextToEnglish } from './brief-translation.js?v=3';
 import { accessEvidence, createArrivalCode, outcomeCount, saveOutcome } from './access-insight.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;

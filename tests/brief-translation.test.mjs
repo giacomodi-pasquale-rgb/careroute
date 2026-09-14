@@ -4,7 +4,7 @@ import { translateBriefTextToEnglish } from '../brief-translation.js';
 
 test('creates an English draft for common Spanish symptom language', () => {
   const result = translateBriefTextToEnglish('Mi hijo tiene fiebre y tos desde ayer', 'es');
-  assert.match(result.text, /my son/i);
+  assert.match(result.text, /my child/i);
   assert.match(result.text, /fever/i);
   assert.match(result.text, /cough/i);
   assert.match(result.text, /since yesterday/i);
@@ -17,6 +17,12 @@ test('fully translates the Spanish brief reported in check-in testing', () => {
   assert.equal(concern.text, 'I have a headache and back pain, and I feel cold');
   assert.equal(onset.text, 'this morning when I woke up');
   assert.equal(history.text, 'I am not currently taking any medications and I have no medical conditions. I have no known allergies.');
+});
+
+test('fully translates every free-text field in the Spanish demo', () => {
+  assert.equal(translateBriefTextToEnglish('Mi hijo tiene fiebre y tos', 'es').text, 'my child has a fever and cough');
+  assert.equal(translateBriefTextToEnglish('Desde ayer por la noche', 'es').text, 'since last night');
+  assert.equal(translateBriefTextToEnglish('Alérgico a la penicilina', 'es').text, 'allergic to penicillin');
 });
 
 test('creates English drafts for Portuguese and Haitian Creole terms', () => {
