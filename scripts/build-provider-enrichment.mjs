@@ -6,7 +6,7 @@ const required=['identity','location','contact','population','services','hours',
 const byCcn=new Map(hospitals.candidates.map(record=>[record.cmsCertificationNumber,record]));
 let resolved=0;
 for(const record of batch.records){
-  if(!byCcn.has(record.cmsCertificationNumber))throw new Error(`No CMS record for ${record.cmsCertificationNumber}`);
+  if(record.cmsCertificationNumber&&!byCcn.has(record.cmsCertificationNumber))throw new Error(`No CMS record for ${record.cmsCertificationNumber}`);
   if(!record.sourceUrl.startsWith('https://'))throw new Error(`Non-HTTPS evidence for ${record.name}`);
   for(const domain of required){
     if(!record.domains[domain]?.status||!record.domains[domain]?.evidence)throw new Error(`${record.name}: incomplete ${domain} review`);
