@@ -7,6 +7,7 @@ import { analyzeAccess, XRAY_REASON_ORDER } from './access-xray.js?v=1';
 import { discoverySource, loadDiscoveryState, rankDiscoveryRecords } from './national-discovery.js?v=1';
 
 const facilities = window.CARE_ROUTE_FACILITIES;
+const commonspiritBatch = window.NEARSIGNAL_PROVIDER_ENRICHMENT;
 const routingService = new RoutingService(window.CARE_ROUTE_CONFIG?.routing);
 const state = { step: 1, location: null, locationSource: null, locationZip: null, routes: new Map(), showAllResults: false, discoveryLimit: 12, demoScenario: false, lastEligible: [], verifiedFacilityId: null };
 const MAX_SEARCH_MILES = 100;
@@ -666,6 +667,21 @@ function discoveryCard(record){
   return `<article><div class="discovery-card-top"><div><span class="discovery-kind">${escapeHtml(kind)}</span><h4>${escapeHtml(record.name)}</h4><p>${escapeHtml(address)}</p></div><b>${t('discoveryTierOfficial')}</b></div><div class="discovery-meta">${proximity}${record.kind==='health-center'?`<span>${t('discoveryAffordableCandidate')}</span>`:`<span>${t('discoveryEmergencyReported')}</span>`}</div><div class="discovery-progress"><span style="--progress:${resolved/7*100}%"></span><b>${format('discoveryEvidenceCount',{resolved})}</b></div><details class="discovery-needed"><summary>${t('discoveryNeededTitle')}</summary><div><span>✓ ${t('discoveryIdentityResolved')}</span><span>✓ ${t('discoveryLocationResolved')}</span>${record.phone?`<span>✓ ${t('discoveryContactResolved')}</span>`:`<span>○ ${t('discoveryContactNeeded')}</span>`}<span>○ ${t('discoveryPopulationNeeded')}</span><span>○ ${t('discoveryServicesNeeded')}</span><span>○ ${t('discoveryHoursNeeded')}</span><span>○ ${t('discoveryAccessNeeded')}</span></div></details><p class="discovery-unknown">${t('discoveryUnknown')}</p><div class="discovery-actions"><a href="${directions}" target="_blank" rel="noopener">${t('directions')}</a>${record.phone?`<a href="tel:${record.phone.replace(/\D/g,'')}">${t('call')}</a>`:''}${record.website?`<a href="${escapeHtml(record.website)}" target="_blank" rel="noopener">${t('providerWebsite')}</a>`:''}<a href="${source}" target="_blank" rel="noopener">${t('officialSource')}</a></div></article>`;
 }
 
+function renderCommonSpiritCohort(inputs){
+  const section=document.getElementById('commonspiritCohort');
+  const selected=commonspiritBatch?.records?.filter(record=>record.location.endsWith(`, ${inputs.selectedState}`))||[];
+  if(!inputs.selectedState||!selected.length){section.hidden=true;return;}
+  section.hidden=false;
+  document.getElementById('commonspiritCards').innerHTML=selected.map(record=>{
+    const ready=record.status==='release-eligible';
+    const resolved=Object.values(record.domains).filter(domain=>domain.status==='resolved').length;
+    const address=record.address.trim();
+    const directions=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+    const phone=record.phone?.replace(/\D/g,'');
+    return `<article><div class="cohort-card-top"><div><span>${ready?t('cohortReady'):t('cohortConfirm')}</span><h4>${escapeHtml(record.name)}</h4><p>${escapeHtml(address)}</p></div><b>${resolved}/8</b></div><div class="cohort-progress"><span style="--progress:${resolved/8*100}%"></span></div><p>${ready?t('cohortReadyBody'):t('cohortConfirmBody')}</p><div class="discovery-actions"><a href="${directions}" target="_blank" rel="noopener">${t('directions')}</a>${phone?`<a href="tel:${phone}">${t('call')}</a>`:''}<a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener">${t('providerWebsite')}</a></div></article>`;
+  }).join('');
+}
+
 async function renderNationalDiscovery(inputs){
   const section=document.getElementById('nationalDiscovery');
   const selectedState=inputs.selectedState;
@@ -700,7 +716,7 @@ function renderAccessXray(analysis, inputs, routed) {
   document.getElementById('accessXray').innerHTML=`
     <div class="xray-heading"><div><p class="eyebrow">${escapeHtml(t('xrayEyebrow'))}</p><h3 id="access-xray-title">${escapeHtml(t('xrayTitle'))}</h3></div><span>${escapeHtml(t('xrayRealData'))}</span></div>
     <p class="xray-intro">${escapeHtml(t('xrayIntro'))}</p>
-    <div class="xray-scale"><div><strong>22,292</strong><span>${t('xrayIndexed')}</span></div><i>→</i><div><strong>9,972</strong><span>${t('xrayEnriched')}</span></div><i>→</i><div><strong>99</strong><span>${t('xrayReady')}</span></div></div>
+    <div class="xray-scale"><div><strong>22,292</strong><span>${t('xrayIndexed')}</span></div><i>→</i><div><strong>9,972</strong><span>${t('xrayEnriched')}</span></div><i>→</i><div><strong>${facilities.length}</strong><span>${t('xrayReady')}</span></div></div>
     <div class="xray-funnel"><div><strong>${analysis.total}</strong><span>${escapeHtml(t('xrayNetwork'))}</span></div><i>→</i><div><strong>${afterState}</strong><span>${escapeHtml(inputs.selectedState?t('xrayState'):t('xrayScope'))}</span></div><i>→</i><div><strong>${afterPopulation}</strong><span>${escapeHtml(t('xrayPopulation'))}</span></div><i>→</i><div><strong>${afterClinical}</strong><span>${escapeHtml(t('xrayClinical'))}</span></div>${routed?`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayDistance'))}</span></div>`:`<i>→</i><div class="xray-final"><strong>${analysis.eligible.length}</strong><span>${escapeHtml(t('xrayRemain'))}</span></div>`}</div>
     <div class="xray-callout"><strong>${format('xrayResult',{n:analysis.eligible.length})}</strong><span>${openWarnings?format('xrayWarnings',{n:openWarnings}):t('xrayNoOpenWarnings')}</span></div>
     <details class="xray-exclusions"><summary>${escapeHtml(t('xrayWhyNot'))}</summary>${exclusions||`<p>${escapeHtml(t('xrayNoExclusions'))}</p>`}<p class="xray-method">${escapeHtml(t('xrayMethod'))}</p></details>`;
@@ -736,6 +752,7 @@ async function renderResults() {
     ? `${resultControls}${visible.map((facility, index) => facilityCard(facility, index, inputs)).join('')}`
     : `<div class="empty"><h3>${t('noMatchTitle')}</h3><p>${t('noMatchBody')}</p></div>`;
   await renderNationalDiscovery(inputs);
+  renderCommonSpiritCohort(inputs);
   document.getElementById('learningLoop').textContent = format('learningLoop', { n: outcomeCount(localStorage) });
   document.getElementById('toggleAllResults')?.addEventListener('click', async () => {
     state.showAllResults = !state.showAllResults;

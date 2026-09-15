@@ -1,7 +1,7 @@
 // Generated from data/v1/facilities.json. Do not edit by hand.
 window.CARE_ROUTE_DATASET = {
-  "datasetVersion": "2026-08-30.9",
-  "reviewedAt": "2026-08-30"
+  "datasetVersion": "2026-09-14.1",
+  "reviewedAt": "2026-09-14"
 };
 window.CARE_ROUTE_FACILITIES = [
   {
@@ -37,7 +37,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated nine-room pediatric suite",
@@ -55,7 +56,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -100,7 +103,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Separate pediatric emergency area",
@@ -118,7 +122,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -163,7 +169,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency room",
@@ -181,7 +188,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -226,7 +235,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Provider identifies a Pediatric Emergency Department and pediatric emergency area",
@@ -244,7 +254,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -289,7 +301,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats adult, pediatric, geriatric, forensic, and psychiatric patients",
@@ -307,7 +320,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -351,7 +366,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated children’s hospital emergency department",
@@ -369,7 +385,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -413,7 +431,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency care location",
@@ -431,7 +450,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -474,7 +495,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Dynamic—check the provider page or call before travel",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -492,7 +514,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -582,7 +606,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -672,7 +698,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -714,7 +742,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Call or check the provider before travel; an appointment may be required",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Primary, preventive, and pediatric care",
@@ -732,7 +761,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.",
       "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/"
     },
@@ -774,7 +805,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Call or check the provider before travel; an appointment may be required",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Primary, preventive, and pediatric care",
@@ -792,7 +824,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "FQHC access terms are verified statewide; call this location for eligibility, documents, language assistance, and same-day availability.",
       "sourceUrl": "https://www.nj.gov/health/fhs/fqhc/"
     },
@@ -836,7 +870,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Accepts emergency patients from birth through age 21",
@@ -900,7 +935,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated exclusively to children from infancy through age 20",
@@ -918,7 +954,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -963,7 +1001,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Maine’s only dedicated pediatric emergency department",
@@ -1028,7 +1067,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Pediatric Emergency Services Unit for patients age 18 and under",
@@ -1046,7 +1086,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1091,7 +1133,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Separate pediatric emergency department affiliated with UVM Children’s Hospital",
@@ -1109,7 +1152,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "The emergency department states that it treats all patients regardless of insurance coverage or ability to pay; this does not mean every service is free.",
       "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-university-of-vermont-medical-center"
     },
@@ -1153,7 +1198,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency department",
@@ -1171,7 +1217,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1215,7 +1263,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency department staffed by pediatric experts",
@@ -1233,7 +1282,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1277,7 +1328,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency department",
@@ -1295,7 +1347,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1339,7 +1393,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats pediatric patients from infancy through age 20",
@@ -1357,7 +1412,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "The provider states emergency patients are treated even if they cannot pay and links to Charity Care and payment assistance. This does not mean every service is free.",
       "sourceUrl": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/treatment-care/emergency-room-services/"
     },
@@ -1401,7 +1458,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency and inpatient center",
@@ -1419,7 +1477,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1463,7 +1523,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Separate pediatric emergency entrance, waiting room, registration, and triage",
@@ -1481,7 +1542,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1525,7 +1588,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency and trauma care",
@@ -1543,7 +1607,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1587,7 +1653,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department dedicated entirely to children",
@@ -1605,7 +1672,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1649,7 +1718,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated Pediatric Emergency Medicine Division available 24/7",
@@ -1667,7 +1737,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1711,7 +1783,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated pediatric emergency and Level 1 pediatric trauma care",
@@ -1776,7 +1849,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Dedicated children’s hospital emergency department",
@@ -1794,7 +1868,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1839,7 +1915,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Distinct pediatric emergency unit with separate waiting and exam rooms",
@@ -1857,7 +1934,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "Mass General states that patients presenting to the Emergency Department are assessed and stabilized regardless of ability to pay. This does not mean all services are free.",
       "sourceUrl": "https://www.massgeneral.org/surgery/trauma/about/support/patients-and-families"
     },
@@ -1901,7 +1980,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "35-bed pediatric emergency department open 24/7",
@@ -1919,7 +1999,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -1963,7 +2045,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Hospital emergency department open 24 hours every day",
@@ -1980,7 +2063,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2024,7 +2109,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency and trauma team available 24 hours every day",
@@ -2042,7 +2128,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "Elliot states that it cares for all patients regardless of ability to pay. This does not mean all services are free.",
       "sourceUrl": "https://www.elliothospital.org/about-us/newsroom/news/j-and-leslie-roberto-share-their-story-life-saving-care-elliot-hospital"
     },
@@ -2087,7 +2175,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24/7",
@@ -2105,7 +2194,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": true,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": "The provider states that its Emergency Department treats all patients regardless of insurance coverage or ability to pay. This does not mean all services are free; financial counselors are available.",
       "sourceUrl": "https://www.uvmhealth.org/locations/emergency-department-uvm-health-central-vermont-medical-center"
     },
@@ -2149,7 +2240,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department available 24 hours a day, 365 days a year",
@@ -2167,7 +2259,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2211,7 +2305,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24 hours every day",
@@ -2229,7 +2324,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2273,7 +2370,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24 hours a day, 365 days a year",
@@ -2291,7 +2389,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2335,7 +2435,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency care available 24/7",
@@ -2353,7 +2454,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2397,7 +2500,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Adult emergency entrance open 24/7",
@@ -2415,7 +2519,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2459,7 +2565,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24/7",
@@ -2477,7 +2584,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2521,7 +2630,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Hospital and emergency department available 24 hours",
@@ -2539,7 +2649,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2583,7 +2695,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Adult emergency department with more than 100,000 annual visits",
@@ -2601,7 +2714,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2645,7 +2760,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Hospital emergency care available 24/7",
@@ -2663,7 +2779,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2707,7 +2825,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Immediate emergency care 24 hours a day, seven days a week",
@@ -2725,7 +2844,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2769,7 +2890,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Trauma and emergency professionals available 24/7/365",
@@ -2787,7 +2909,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2831,7 +2955,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency Trauma Center open 24/7",
@@ -2849,7 +2974,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": true,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2894,7 +3021,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency care 24 hours a day, seven days a week",
@@ -2912,7 +3040,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -2956,7 +3086,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24/7",
@@ -2974,7 +3105,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3018,7 +3151,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department staffed 24 hours a day, 365 days a year",
@@ -3036,7 +3170,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3080,7 +3216,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "always",
       "label": "Open 24 hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Emergency department open 24/7/365",
@@ -3098,7 +3235,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3188,7 +3327,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3274,7 +3415,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3364,7 +3507,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3453,7 +3598,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3543,7 +3690,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3587,7 +3736,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Extended hours; check the provider page or call before travel",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Same-day walk-in care without an appointment",
@@ -3605,7 +3755,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3695,7 +3847,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3738,7 +3892,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Dynamic—check the provider page or call before travel",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats children and young adults ages 0–26",
@@ -3756,7 +3911,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3799,7 +3956,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Dynamic—check the provider page or call before travel",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats children and young adults ages 0–26",
@@ -3817,7 +3975,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3908,7 +4068,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -3999,7 +4161,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4090,7 +4254,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4181,7 +4347,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4224,7 +4392,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4242,7 +4411,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4285,7 +4456,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4303,7 +4475,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4346,7 +4520,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4364,7 +4539,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4407,7 +4584,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4425,7 +4603,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4468,7 +4648,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4486,7 +4667,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4529,7 +4712,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4547,7 +4731,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4590,7 +4776,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4608,7 +4795,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4651,7 +4840,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor illness and injury",
@@ -4669,7 +4859,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4712,7 +4904,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Same-day walk-in care without an appointment",
@@ -4730,7 +4923,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4773,7 +4968,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Same-day walk-in care without an appointment",
@@ -4791,7 +4987,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4834,7 +5032,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -4852,7 +5051,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4895,7 +5096,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -4913,7 +5115,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -4956,7 +5160,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -4974,7 +5179,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5017,7 +5224,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -5035,7 +5243,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5078,7 +5288,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -5096,7 +5307,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5139,7 +5352,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -5157,7 +5371,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5200,7 +5416,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -5218,7 +5435,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5261,7 +5480,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Walk-in care for minor, non-life-threatening illness and injury",
@@ -5279,7 +5499,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5322,7 +5544,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5340,7 +5563,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5383,7 +5608,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5401,7 +5627,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5444,7 +5672,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5462,7 +5691,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5505,7 +5736,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5523,7 +5755,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5566,7 +5800,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5584,7 +5819,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5627,7 +5864,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5645,7 +5883,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5688,7 +5928,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5706,7 +5947,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5749,7 +5992,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5767,7 +6011,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5810,7 +6056,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5828,7 +6075,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5871,7 +6120,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Treats ages 0–26",
@@ -5889,7 +6139,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5932,7 +6184,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -5950,7 +6203,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -5993,7 +6248,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6011,7 +6267,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6054,7 +6312,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6072,7 +6331,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6115,7 +6376,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6133,7 +6395,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6176,7 +6440,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6194,7 +6459,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6237,7 +6504,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6255,7 +6523,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6298,7 +6568,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6316,7 +6587,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6359,7 +6632,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6377,7 +6651,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6420,7 +6696,8 @@ window.CARE_ROUTE_FACILITIES = [
     "hours": {
       "kind": "live",
       "label": "Check the provider page or call for today’s hours",
-      "days": {}
+      "days": {
+      }
     },
     "highlights": [
       "Urgent care for adults and children",
@@ -6438,7 +6715,9 @@ window.CARE_ROUTE_FACILITIES = [
       "noOneTurnedAway": false,
       "charityCare": false,
       "flatFee": null,
-      "languages": [],
+      "languages": [
+
+      ],
       "note": null,
       "sourceUrl": null
     },
@@ -6447,6 +6726,466 @@ window.CARE_ROUTE_FACILITIES = [
       "reviewedAt": "2026-08-30",
       "reviewBy": "2026-11-30",
       "method": "authoritative-provider-source-and-public-geocoder"
+    }
+  },
+  {
+    "id": "commonspirit-041324-morrilton-ar",
+    "name": "CHI St. Vincent Morrilton - Emergency Room",
+    "city": "Morrilton",
+    "state": "AR",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "4 Hospital Drive, Morrilton, AR 72110",
+    "coordinates": {
+      "lat": 35.1673972,
+      "lon": -92.7209243
+    },
+    "phone": "(501) 977-2300",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Adult and pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/chi-st-vincent-morrilton-emergency-room-1382",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/chi-st-vincent-morrilton-emergency-room-1382"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-110236-ringgold-ga",
+    "name": "CommonSpirit - Memorial Hospital - Emergency Room - North Georgia",
+    "city": "Ringgold",
+    "state": "GA",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "4710 Battlefield Parkway, Ringgold, GA 30736",
+    "coordinates": {
+      "lat": 34.932429,
+      "lon": -85.1874763
+    },
+    "phone": "(706) 944-2703",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Adult and pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/commonspirit-memorial-hospital-emergency-room-north-georgia-3989",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/commonspirit-memorial-hospital-emergency-room-north-georgia-3989"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-030110-goodyear-az",
+    "name": "Emergency Room at Dignity Health Arizona General Hospital Emergency Room - Goodyear",
+    "city": "Goodyear",
+    "state": "AZ",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "251 N Estrella Pkwy, Goodyear, AZ 85338",
+    "coordinates": {
+      "lat": 33.449421,
+      "lon": -112.3918469
+    },
+    "phone": "(623) 322-6900",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Adult and pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-at-dignity-health-az-general-hospital-emergency-room-goodyear-3845",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-at-dignity-health-az-general-hospital-emergency-room-goodyear-3845"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-050036-bakersfield-ca",
+    "name": "Dignity Health - Robert A Grimm Children's Pavilion for Emergency Services",
+    "city": "Bakersfield",
+    "state": "CA",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "420 34th St, Bakersfield, CA 93301",
+    "coordinates": {
+      "lat": 35.3920989,
+      "lon": -119.0059836
+    },
+    "phone": "(661) 327-4647",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/dignity-health-robert-a-grimm-childrens-pavilion-for-emergency-services-2169",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/dignity-health-robert-a-grimm-childrens-pavilion-for-emergency-services-2169"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-290045-henderson-nv",
+    "name": "Children's Emergency Room - Dignity Health - St. Rose Dominican, Siena Campus - Henderson, NV",
+    "city": "Henderson",
+    "state": "NV",
+    "type": "emergency",
+    "typeLabel": "Pediatric emergency department",
+    "pediatricSpecific": true,
+    "patientGroups": [
+      "pediatric"
+    ],
+    "address": "3001 St Rose Pkwy, Henderson, NV 89052",
+    "coordinates": {
+      "lat": 36.0046332,
+      "lon": -115.1149857
+    },
+    "phone": "(702) 616-5000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/childrens-emergency-room-dignity-health-st-rose-dominican-siena-campus-henderson-686",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/childrens-emergency-room-dignity-health-st-rose-dominican-siena-campus-henderson-686"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-290012-henderson-nv",
+    "name": "Emergency Room - Dignity Health - St. Rose Dominican, Rose de Lima Campus - Henderson, NV",
+    "city": "Henderson",
+    "state": "NV",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "102 E Lake Mead Pkwy, Henderson, NV 89015",
+    "coordinates": {
+      "lat": 36.0387885,
+      "lon": -114.9848258
+    },
+    "phone": "(702) 564-2622",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Adult and pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-dignity-health-st-rose-dominican-rose-de-lima-campus-henderson-2884",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-dignity-health-st-rose-dominican-rose-de-lima-campus-henderson-2884"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
+    }
+  },
+  {
+    "id": "commonspirit-290053-las-vegas-nv",
+    "name": "Emergency Room - Dignity Health - St. Rose Dominican, San Martin Campus - Las Vegas, NV",
+    "city": "Las Vegas",
+    "state": "NV",
+    "type": "emergency",
+    "typeLabel": "Adult and pediatric emergency department",
+    "pediatricSpecific": false,
+    "patientGroups": [
+      "adult",
+      "pediatric"
+    ],
+    "address": "8280 W Warm Springs Rd, Las Vegas, NV 89113",
+    "coordinates": {
+      "lat": 36.0577689,
+      "lon": -115.2721826
+    },
+    "phone": "(702) 492-8000",
+    "age": {
+      "minMonths": null,
+      "maxMonths": null,
+      "verifiedLimits": false
+    },
+    "capabilities": [
+      "illness",
+      "breathing",
+      "injury",
+      "wound",
+      "stomach",
+      "other"
+    ],
+    "hours": {
+      "kind": "always",
+      "label": "Open 24 hours",
+      "days": {
+      }
+    },
+    "highlights": [
+      "Adult and pediatric emergency department",
+      "Provider explicitly publishes 24/7 emergency availability",
+      "Provider publishes emergency access without insurance or ability to pay"
+    ],
+    "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-dignity-health-st-rose-dominican-san-martin-campus-las-vegas-1780",
+    "quality": {
+      "note": "No comparable public emergency-care quality score is displayed.",
+      "url": null
+    },
+    "access": {
+      "uninsuredWelcome": true,
+      "slidingFee": false,
+      "noOneTurnedAway": true,
+      "charityCare": false,
+      "flatFee": null,
+      "languages": [
+
+      ],
+      "note": "Emergency care is provided regardless of insurance or ability to pay; financial assistance may be available. Verify plan participation and financial-assistance terms.",
+      "sourceUrl": "https://www.commonspirit.org/find-a-location/emergency-room-dignity-health-st-rose-dominican-san-martin-campus-las-vegas-1780"
+    },
+    "verification": {
+      "status": "verified-with-unknowns",
+      "reviewedAt": "2026-09-14",
+      "reviewBy": "2026-12-14",
+      "method": "cms-match-and-authoritative-provider-source"
     }
   }
 ];

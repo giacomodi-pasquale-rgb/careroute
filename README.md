@@ -1,12 +1,12 @@
 # NearSignal v0.8 Urgent & Emergency Navigation
 
-NearSignal is a production-oriented, mobile-first foundation for national care navigation for adults and children. The patient-facing verified pilot currently covers the Northeast corridor; the data-operations layer seeds a nationwide evidence review queue.
+NearSignal is a production-oriented, mobile-first foundation for national care navigation for adults and children. Its decision-ready network began in the Northeast and now includes a rigorously reviewed CommonSpirit access cohort in six additional states; the data-operations layer seeds a nationwide evidence review queue.
 
 ## What is real
 
-- Fifty-eight decision-ready adult and/or pediatric emergency, urgent-care, or community health-center locations across nine Northeast states
+- 106 decision-ready adult and/or pediatric emergency, urgent-care, or community health-center locations, including a seven-location CommonSpirit release batch
 - A focused urgent-care-versus-emergency pathway with separate adult and pediatric eligibility and safety gates
-- At least one verified urgent-care option in every Northeast pilot state, including pediatric-only and adult-and-child locations
+- A 25-location CommonSpirit fragmentation-priority cohort spanning Arkansas, Arizona, California, Georgia, Kentucky, and Nevada, with unresolved evidence kept visibly separate from decision-ready recommendations
 - A national evidence foundation of 22,292 official federal records: 4,495 CMS emergency-hospital candidates and 17,797 active HRSA health-center service-site candidates
 - A state-sharded National Discovery Layer that makes all 22,292 official records searchable without relabeling them as patient recommendations
 - Complete patient-facing navigation in English, Spanish, Portuguese, and Haitian Creole, including questionnaire screens, live status messages, results, access badges, explanations, and translated summaries of provider-sourced details; professional translation review remains required before a clinical release
@@ -71,9 +71,9 @@ npm run build:network
 
 NearSignal uses three explicit evidence tiers: **officially indexed**, **evidence enriched**, and **decision-ready**. The first two are operational research queues and remain invisible in patient results. Only decision-ready records that pass the release-blocking data checks are published.
 
-The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 99 decision-ready records visibly distinct. All other records remain non-publishable until their location-level service details are verified from authoritative sources. This operational view is explicitly not a patient directory.
+The national queue is available at `review.html`. It shows the 22,292-record expansion foundation and the CMS hospital review workflow while keeping the 106 decision-ready records visibly distinct. The patient experience also presents a 25-location CommonSpirit fragmentation-priority cohort: seven cleared locations participate in recommendations, while 18 remain explicitly marked “confirm before travel” until their remaining location-level evidence gaps are resolved. This operational view is explicitly not a patient directory.
 
-Data reviewed: August 30, 2026.
+Data reviewed: September 14, 2026.
 
 ### Primary facility sources
 

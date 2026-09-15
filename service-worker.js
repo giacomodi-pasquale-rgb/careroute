@@ -1,5 +1,5 @@
-const CACHE = 'nearsignal-shell-v19';
-const SHELL = ['./', './index.html', './styles.css', './brand.css', './install.css', './access.css', './app.js', './routing.js', './i18n.js', './config.js', './data/facilities.js', './data/review/evidence-network.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'nearsignal-shell-v20';
+const SHELL = ['./', './index.html', './styles.css', './brand.css', './install.css', './access.css', './cohort.css', './app.js', './routing.js', './i18n.js', './config.js', './data/facilities.js', './data/review/evidence-network.js', './data/review/provider-enrichment.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)));

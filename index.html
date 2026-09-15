@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="brand.css?v=3">
   <link rel="stylesheet" href="insights.css?v=2">
   <link rel="stylesheet" href="outcome-extra.css?v=1">
+  <link rel="stylesheet" href="cohort.css?v=1">
 </head>
 <body>
   <header class="topbar">
@@ -55,7 +56,7 @@
       <button id="openMentalHelpHero" class="mental-support-card" type="button"><span class="mental-icon" aria-hidden="true">♥</span><span><b data-i18n="mentalCardTitle">Mental health support now?</b><small data-i18n="mentalCardBody">Choose the safest next step for an adult or young person.</small></span><em data-i18n="mentalCardAction">Get support →</em></button>
       <div class="proof-stats" aria-label="Pilot at a glance" data-i18n-aria-label="proofLabel">
         <div><strong id="networkOfficialHero">22,292</strong><span data-i18n="statIndexed">official locations nationally indexed</span></div>
-        <div><strong id="facilityCount">99</strong><span data-i18n="statFacilities">decision-ready locations</span></div>
+        <div><strong id="facilityCount">106</strong><span data-i18n="statFacilities">decision-ready locations</span></div>
         <div><strong>4</strong><span data-i18n="statLanguages">complete languages</span></div>
       </div>
       <div class="signal-path" aria-label="NearSignal access brief" data-i18n-aria-label="decisionPathLabel"><span><b>WHO</b><em data-i18n="decisionWho">Adult or child</em></span><span><b>SAFETY</b><em data-i18n="decisionSetting">Urgent care or ER</em></span><span><b>ACCESS</b><em data-i18n="decisionReality">Nearby realistic options</em></span><span><b>EVIDENCE</b><em>Source-linked facts</em></span></div>
@@ -152,6 +153,11 @@
       <p id="routingNote" class="data-note"></p>
       <section id="accessXray" class="access-xray" aria-labelledby="access-xray-title"></section>
       <div id="cards" class="cards"></div>
+      <section id="commonspiritCohort" class="commonspirit-cohort" hidden aria-labelledby="commonspirit-cohort-title">
+        <div class="discovery-heading"><div><p class="eyebrow" data-i18n="cohortEyebrow">COMMONSPIRIT ACCESS COHORT</p><h3 id="commonspirit-cohort-title" data-i18n="cohortTitle">CommonSpirit locations in this state</h3></div><span data-i18n="cohortOfficial">Official provider sources</span></div>
+        <p data-i18n="cohortIntro">NearSignal reviewed these locations as part of a fragmentation-priority cohort. Completed records can enter recommendations; records with unresolved age or access evidence remain clearly marked for confirmation.</p>
+        <div id="commonspiritCards" class="cohort-cards"></div>
+      </section>
       <section id="nationalDiscovery" class="national-discovery" hidden aria-labelledby="national-discovery-title">
         <div class="discovery-heading"><div><p class="eyebrow" data-i18n="discoveryEyebrow">NATIONAL DISCOVERY LAYER</p><h3 id="national-discovery-title" data-i18n="discoveryTitle">More official locations in your state</h3></div><span data-i18n="discoveryOfficial">Official federal records</span></div>
         <p data-i18n="discoveryIntro">These locations expand discovery beyond NearSignal’s decision-ready network. Their identity comes from CMS or HRSA, but their exact services, ages, hours, prices, and availability have not completed NearSignal verification.</p>
@@ -188,14 +194,14 @@
         <article><strong id="networkOfficial">22,292</strong><span data-i18n="networkOfficial">official records indexed</span></article>
         <article><strong id="networkHospitals">4,495</strong><span data-i18n="networkHospitals">hospital candidates from CMS</span></article>
         <article><strong id="networkHealthCenters">17,797</strong><span data-i18n="networkHealthCenters">affordable-care candidates from HRSA</span></article>
-        <article class="decision-ready"><strong id="networkReady">99</strong><span data-i18n="networkReady">decision-ready locations</span></article>
+        <article class="decision-ready"><strong id="networkReady">106</strong><span data-i18n="networkReady">decision-ready locations</span></article>
       </div>
       <div class="evidence-funnel">
         <article><span>01</span><div><h3 data-i18n="networkTier1Title">Officially indexed</h3><p data-i18n="networkTier1Body">Facility identities come from CMS and HRSA public datasets. They are candidates, not recommendations.</p></div></article>
         <article><span>02</span><div><h3 data-i18n="networkTier2Title">Evidence enriched</h3><p data-i18n="networkTier2Body">Location, contact, operating, and service evidence is added and checked for conflicts.</p></div></article>
         <article class="funnel-ready"><span>03</span><div><h3 data-i18n="networkTier3Title">Decision-ready</h3><p data-i18n="networkTier3Body">Only records that pass release-blocking checks can appear in the patient navigation flow.</p></div></article>
       </div>
-      <div class="network-safety"><strong data-i18n="networkSafetyTitle">The important distinction</strong><span data-i18n="networkSafetyBody">22,292 records demonstrate the expansion foundation. 99 now meet NearSignal’s patient-facing evidence standard. Scale is visible; uncertainty stays visible too.</span></div>
+      <div class="network-safety"><strong data-i18n="networkSafetyTitle">The important distinction</strong><span data-i18n="networkSafetyBody">22,292 records demonstrate the expansion foundation. 106 now meet NearSignal’s patient-facing evidence standard. Scale is visible; uncertainty stays visible too.</span></div>
       <p class="network-sources"><span data-i18n="networkSources">Official sources:</span> <a href="https://data.cms.gov/provider-data/dataset/xubh-q36u" target="_blank" rel="noopener">CMS Hospital General Information ↗</a> · <a href="https://data.hrsa.gov/topics/health-centers/" target="_blank" rel="noopener">HRSA Health Center Data ↗</a> · <a href="review.html" data-i18n="networkReviewLink">View the review system →</a></p>
     </section>
 
@@ -359,8 +365,9 @@
 
   <footer><span>NearSignal v1.0 Proof of concept</span><span data-i18n="dataReviewed">Data reviewed August 30, 2026</span><span><a href="https://github.com/giacomodi-pasquale-rgb/nearsignal" data-i18n="openSource">Open-source pilot</a></span></footer>
   <script src="config.js"></script>
-  <script src="data/facilities.js?v=9"></script>
-  <script src="data/review/evidence-network.js?v=3"></script>
-  <script type="module" src="app.js?v=46"></script>
+  <script src="data/facilities.js?v=10"></script>
+  <script src="data/review/evidence-network.js?v=4"></script>
+  <script src="data/review/provider-enrichment.js?v=4"></script>
+  <script type="module" src="app.js?v=47"></script>
 </body>
 </html>
